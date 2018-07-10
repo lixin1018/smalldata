@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+.pageContentPlay{
+	width: 100%; 
+	margin: auto;
+	overflow:hidden;
+	} 
+.pageContentPlayOuter{
+	width: 320px;
+	height: 120px; 
+	position: relative;
+	overflow:hidden;
+	margin: auto;
+	} 
+.pageContentPlayInner{
+	width: 960px;
+	height: 540px; 
+	position: absolute;
+	left: -200px;
+	top: 0px;
+	overflow:hidden; 
+	margin: auto;
+	} 

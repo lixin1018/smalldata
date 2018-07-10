@@ -1,0 +1,524 @@
+@CHARSET "UTF-8";
+body{
+	position:relative;  
+	overflow-y:auto;
+	overflow-x:auto;
+	font-size: 13px;
+	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+}
+.pageHeader{
+	height:118px;
+	width:100%; 
+}
+.headerMain{
+	position:relative; 
+	min-width: 440px; 
+	height:113px;  
+	font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size:9px;
+}
+.headerTop{
+	color:#000000; 
+    background-color:#dddddd;
+    border-bottom:solid 1px #CCCCCC;
+    position:absolute;
+    height:30px;
+    left:0px;
+    right:0px;
+    z-index:4;
+}
+.headerTopInner{
+	position:absolute; 
+	width:400px;
+	height:100%;
+	left:10px;
+	line-height:30px;
+}
+.headerLeftTop{
+	position:absolute; 
+	width:420px; 
+	top:0px;  
+    left:10px; 
+    bottom:0px;  
+	height:100%;
+	line-height:30px;
+    text-align:left; 
+    font-size:12px;
+	color:#000000;
+}
+.headerRightTop{
+	position:absolute;  
+	top:0px;  
+    right:10px; 
+    width:200px;
+	height:100%;
+    font-size:12px;
+    text-align:center;
+    line-height:30px;  
+	color:#ffffff;
+}
+.headerBottom{ 
+	background-color:#ffffff;
+	position:absolute;
+	height:83px;
+	width:100%;
+	top:31px;
+	left:0px;
+	right:0px;
+	z-index:4;
+}
+.headerBottomInner{
+	position:relative; 
+	width:1200px;
+	height:81px;
+	margin:1px auto; 
+}
+.headerLeftBottom{
+	position:absolute; 
+	width:320px;  
+    left:0px;
+	height:100%; 
+}
+.headerLogo{
+	position:absolute;
+	left:30px;
+	top:10px;
+}
+.headerSysName{
+	position:absolute;
+	left:120px;
+	top:15px;
+	font-size:27px;
+	width:110px;
+	text-align:center;
+	font-family:'Microsoft YaHei',tahoma,arial,'Hiragino Sans GB',\5b8b体\4f53,sans-serif;
+}
+.headerSysSubName{
+	position:absolute;
+	left:120px;
+	top:55px;
+	width:110px;
+	text-align:center;
+	font-size:12px; 
+	font-family:arial,sans-serif;
+}
+.headerRightBottom{
+	position:absolute;
+	left:320px;
+	right:0px;
+	height:100%;
+}
+.headerRightBottomInner{
+	position:absolute;
+	height:34px;
+	bottom:0px; 
+	width:100%;
+}
+.headerTitleItem{
+	position:relative;
+	width:80px;
+	height:100%;
+	bottom:0px;
+	display: inline-block; 
+	text-align:center;
+	color:#666666;
+}
+.headerTitleItem a{
+	text-decoration:none;
+    color:#666666;
+    font-weight:500;
+} 
+.headerTitleItemActive{
+    background-color: #E3E4E5;
+}
+.headerTitleItemActive a{ 
+    font-weight:600;
+}
+.headerTitleItemText{
+	font-size:15px;
+	line-height:34px;
+	font-family:Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\5b8b体\4f53,sans-serif;
+}
+.headerTitleItemText:hover{
+	color:#000000; 
+	font-weight:700;
+}
+.headerSearchItem{
+	position:absolute;
+	width:190px;
+	height:29px;
+	bottom:5px;
+	right:0px;
+}
+.headerSearchGroup{
+	position:relative;
+    border:solid 1px #E3E4E5;
+    width: 187px;  
+	height:25px;
+}
+.headerSearchInputText{ 
+	position:absolute;
+	border-width:0px;
+	left:2px;
+	top:1px;
+    height: 21px;
+    width:156px;  
+    font-size:12px;
+    box-shadow: none;
+}  
+.headerSearchButton{  
+	position:absolute;  
+	border-width:0px;
+	left:160px;
+	top:1px;
+    height: 23px;
+    width:23px; 
+	box-shadow: none;
+    background: #fafafa url(../images/search.png) center no-repeat;
+    cursor:pointer;
+} 
+.pageFooter{
+	height:70px; 
+	width:100%;
+}
+
+.footerMain{
+	position:relative; 
+	height:100%;
+	width:1200px;
+	margin:1px auto;
+}
+
+.footerLeft{
+	position:relative; 
+    display:none;
+}
+
+.footerCenter{
+	height:100%;  
+	width:100%;
+	text-align:center;
+	color:#999999;
+}
+
+.footerRight{
+	position:absolute;  
+    display:none;
+}
+
+.footerCopyright{  
+	font-size:10px;
+	font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+	line-height:30px;
+	height:30px;
+	color:#999999;
+}
+
+.footerMenu{
+	font-size:12px;
+	font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+	line-height:30px;
+	height:30px;
+}
+
+.footerLink{
+	color:#999999;
+	text-decoration:none;
+}
+
+.pageContent{ 
+	width:100%;
+	height:auto;
+} 
+
+
+.sectionBlankSpace{  
+	height:5px;
+	width:1200px;
+	margin:1px auto;
+} 
+
+.sectionWidth{
+	width:1200px;
+	margin:1px auto;
+}
+
+.sectionBlankSpaceTopBorder{  
+	border-top: solid 1px #E3E4E5;
+}
+
+/*首页*/
+.contentMainContainer{
+	margin:1px auto;
+	width:1200px;
+	height:317px;
+	display: table;
+}
+
+.contentMainImgContainer{
+	width:960px;
+	height:317px;
+	text-align:right; 
+	float:right;
+	display:inline;
+}
+
+.contentMainImg{
+	width:950px;
+	height:317px;
+}
+
+.contentMainServiceContainer{
+	width:240px;
+	height:317px;  
+	float:left;
+}
+
+.contentMainServiceContainerInner{
+	width:238px;
+	height:315px;  
+	border: solid 1px #E3E4E5; 	
+}
+
+.mainServiceListHeader{
+	font-size:15px;
+	font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+	height:40px;
+	line-height:40px;
+	margin:0px; 
+	color:#666666;
+	text-align:left;
+	padding-left:20px;
+}
+
+.mainServiceList{
+	margin:0px;
+	margin-left:40px;
+	padding:0px; 
+}
+
+.mainServiceItem{
+	font-size:13px;
+	font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+	color:#666666; 
+	line-height:27px;
+	height:27px; 
+}
+
+.mainServiceItem:hover{ 
+	font-weight:700;
+	color:#C81623; 
+	background-color:#cccccc;
+}
+
+.mainServiceList a{
+	padding-left:5px;
+	color:#666666; 
+	text-decoration:none;
+}
+
+.mainServiceList a:hover{ 
+	color:#C81623; 
+}
+
+.mainServiceItem span{
+	padding-right:15px;
+	float:right;
+    font-family: iconfont!important;
+}
+
+.serviceListContaienr{
+	margin:1px auto;
+	width:1200px;
+	height:200px;	
+	display: table;
+}
+
+.serviceListBlock{
+	position:relative;
+	width:50%;
+	height:100%; 
+	display: table-cell; 
+	text-align:center;
+	vertical-align: top;
+}
+
+.serviceListBlockBorder{
+	width:1px;
+	border-left:solid 1px #E3E4E5;
+	height:100%;
+	display: table-cell; 
+}
+
+.serviceListHeader{
+	font-size:15px;
+	font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+	height:30px;
+	line-height:30px;
+	margin:0px; 
+	color:#666666;
+	text-align:left;
+	padding-left:15px;
+}
+
+.serviceList{ 
+	width:95%;
+	height:100%;
+	display: inline-block; 
+	margin:0px;
+	padding:0px;
+	text-align:left;
+}
+
+.serviceItem{
+	font-size:13px;
+	font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+	color:#666666; 
+	margin-left: 5px;
+	margin-right: 5px;
+	line-height:27px;
+	height:27px; 
+}
+.serviceItemTime{
+	float:right;
+} 
+.serviceItemH{ 
+	float:left; 
+	list-style:none;
+}
+.linkContainer{
+	margin:1px auto;
+	width:1200px;
+	height:50px;
+	padding-top:5px;
+	font-size:13px;
+	color:#999999;
+}
+.linkItem{
+	margin-left:0px;
+	margin-right:5px;
+	text-decoration:none;
+    color:#999999;
+    height:25px;
+    line-height:25px;
+}
+.toLogin{
+	color:#000000;
+	font-weight:bold;
+	text-decoration:none;
+}
+.toLogin:hover{
+	font-weight:bold;
+	text-decoration:underline;
+}
+.toReg{
+	color:#000000;
+	font-weight:bold;
+	text-decoration:none;
+}
+.toReg:hover{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.toLogout{
+	color:#000000;
+	text-decoration:none;
+}
+.toLogout:hover{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.toHelp{
+	color:#000000;
+	text-decoration:none;
+	cursor:pointer;
+	line-height:20px; 
+}
+.toHelp:hover{
+	font-weight:bold;
+	text-decoration:underline;
+} 
+
+.toOrderList{
+	color:#000000;
+	text-decoration:none;
+	cursor:pointer;
+	line-height:20px; 
+}
+
+.toOrderList:hover{
+	font-weight:600;
+	text-decoration:underline;
+}
+
+.toContainer{
+	cursor:pointer;
+	line-height:30px;
+	width:200px;
+	height:30px;
+	top:0px;
+	right:0px;
+	position:absolute;
+}
+
+.toCartLink{
+	height:20px;
+	line-height:20px;
+	color:#ffffff;
+	font-size:12px;
+	font-weight:600;
+	width:60px;
+	text-decoration:none;
+	position:relative;
+}
+
+.toCartImage{
+	width:18px;
+	height:16px;
+	left:0px;
+	bottom:0px;
+	position:absolute;
+}
+
+.toCartLineCount{
+	text-align:center;
+	width:20px;
+	left:20px;
+	bottom:0px;
+	line-height:20px;
+	position:absolute;
+}
+
+.toChangePwd{
+	color:#ffffff;
+	text-decoration:none;
+}
+.toChangePwd:hover{
+	font-weight:bold;
+	text-decoration:underline;
+}
+.pagePathContainer{    
+	margin: 1px auto;
+	width:1200px;
+	height:20px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+}
+.pagePathInner{
+	width:100%;
+	height:100%;
+	text-align:left;
+}
+.pagePathNameLink{
+    text-decoration: none;
+    color: #757575;
+    font-size: 12px;
+}
+.pagePathNameLink:hover{
+    color: #3333333;
+}
+.pathPathNameText{
+    font-size: 12px;
+}

@@ -1,0 +1,40 @@
+viewModels.ie_hsgpgg = {
+  id:"3d4f9a0b-c5a9-488e-b7a9-c9189486cd26",
+  name:"ie_hsgpgg",
+  dataName:"ie_hsgpgg",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"pysx", label:"拼音缩写", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"mc", label:"名称", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"dm", label:"代码", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"zzjgid", label:"组织结构ID", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"jys", label:"交易所", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"gplx", label:"股票类型", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"ggmc", label:"公告名称", width:300, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"ggsj", label:"公告时间", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"ggid", label:"公告ID", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"wjlx", label:"文件类型", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"dz", label:"地址", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"id", label:"ID", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"parentid", label:"parentid", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"createtime", label:"记录创建时间", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"isdeleted", label:"已删除", width:50, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"}
+  ],
+  dispUnitModel:[
+    {name:"pysx", label:"拼音缩写", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"mc", label:"名称", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"dm", label:"代码", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"zzjgid", label:"组织结构ID", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"jys", label:"交易所", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"gplx", label:"股票类型", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"ggmc", label:"公告名称", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"ggsj", label:"公告时间", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"ggid", label:"公告ID", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"wjlx", label:"文件类型", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"dz", label:"地址", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"id", label:"ID", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"parentid", label:"parentid", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"createtime", label:"记录创建时间", editable:true,nullable:true, hidden:true, dispunitType:"time", },
+    {name:"isdeleted", label:"已删除", editable:true,nullable:true, hidden:false, dispunitType:"checkbox", }
+  ]
+}

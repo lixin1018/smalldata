@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  	<display-name>Nova Data</display-name>
+  	<session-config>
+    	<session-timeout>60</session-timeout>
+  	</session-config>
+  	<welcome-file-list> 
+		<welcome-file>/index.html</welcome-file>
+  	</welcome-file-list>
+	
+	<!-- struts2 
+	<filter>        
+		<filter-name>struts2</filter-name>       
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>  
+    	<init-param>   
+		   <param-name>config</param-name>   
+		   <param-value>struts-default.xml,struts.xml</param-value>   
+		</init-param>    
+	</filter>
+    <filter-mapping>        
+    	<filter-name>struts2</filter-name>        
+    	<url-pattern>/*</url-pattern>   
+   	</filter-mapping>
+	-->
+	
+	<filter>        
+		<filter-name>struts2</filter-name>       
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+    <filter-mapping>        
+    	<filter-name>struts2</filter-name>        
+    	<url-pattern>/page/*</url-pattern>   
+   	</filter-mapping> 
+    <filter-mapping>        
+    	<filter-name>struts2</filter-name>        
+    	<url-pattern>*.action</url-pattern>   
+   	</filter-mapping> 
+	
+	 <error-page>
+        <exception-type>com.novacloud.novaone.common.NcpNonePurviewException</exception-type>
+        <location>/page/sys/purviewerror.jsp</location>
+    </error-page>
+  	
+	<!-- spring容器配置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>WEB-INF/classes/spring.xml</param-value>
+	</context-param>
+		
+	<!-- spring容器监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	 
+	<listener>
+	    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	
+	<listener>
+	    <listener-class>com.novacloud.novaone.common.listener.ApplicationListener</listener-class>
+	</listener> 
+	
+  	<filter>
+    	<filter-name>checkAdminLogin</filter-name>
+    	<filter-class>com.novacloud.novaone.common.filter.CheckAdminLoginFilter</filter-class>
+  	</filter>
+  	<filter>
+    	<filter-name>checkCommonUserLogin</filter-name>
+    	<filter-class>com.novacloud.novaone.common.filter.CheckCommonUserLoginFilter</filter-class>
+    	<init-param>  
+			<param-name>excludedPages</param-name>  
+			<param-value>/page/h/tdgl/teamInfoGuest.jsp</param-value>  
+		</init-param> 
+  	</filter>
+  	<filter>
+    	<filter-name>checkPagePurview</filter-name>
+    	<filter-class>com.novacloud.novaone.common.filter.CheckPagePurviewFilter</filter-class>
+  	</filter>
+  	
+  	
+  	<filter-mapping>
+    	<filter-name>checkPagePurview</filter-name>
+    	<url-pattern>/page/sa/*</url-pattern>
+  	</filter-mapping>
+  	<filter-mapping>
+    	<filter-name>checkAdminLogin</filter-name>
+    	<url-pattern>/page/sys/main.jsp</url-pattern>
+  	</filter-mapping>
+  	<filter-mapping>
+    	<filter-name>checkAdminLogin</filter-name>
+    	<url-pattern>/page/sys/main.jsp</url-pattern>
+  	</filter-mapping>
+  	
+  	<!-- Team管理相关 --> 
+  	<filter>
+    	<filter-name>checkIsTeamManager</filter-name>
+    	<filter-class>com.novacloud.novaone.excelGrid.filter.CheckIsTeamManagerFilter</filter-class>
+  	</filter>
+  	<filter>
+    	<filter-name>checkIsTeamMember</filter-name>
+    	<filter-class>com.novacloud.novaone.excelGrid.filter.CheckIsTeamMemberFilter</filter-class>
+  	</filter>  
+  	<filter-mapping>
+    	<filter-name>checkCommonUserLogin</filter-name>
+    	<url-pattern>/page/h/tdgl/*</url-pattern>
+  	</filter-mapping> 
+  	<filter-mapping>
+    	<filter-name>checkCommonUserLogin</filter-name>
+    	<url-pattern>/page/h/rwgl/*</url-pattern>
+  	</filter-mapping> 
+  	<filter-mapping>
+    	<filter-name>checkCommonUserLogin</filter-name>
+    	<url-pattern>/page/h/mydata/*</url-pattern>
+  	</filter-mapping> 
+  	<filter-mapping>
+    	<filter-name>checkIsTeamManager</filter-name>
+    	<url-pattern>/page/h/tdgl/teamInfoManager.jsp</url-pattern>
+  	</filter-mapping>
+  	<filter-mapping>
+    	<filter-name>checkIsTeamMember</filter-name>
+    	<url-pattern>/page/h/tdgl/teamInfoMember.jsp</url-pattern>
+  	</filter-mapping>  
+  	
+  	<!-- myData相关 -->  
+  	<filter-mapping>
+    	<filter-name>checkCommonUserLogin</filter-name>
+    	<url-pattern>/page/h/myData/*</url-pattern>
+  	</filter-mapping> 
+  	
+  	<!-- 个人中心 -->  
+  	<filter-mapping>
+    	<filter-name>checkCommonUserLogin</filter-name>
+    	<url-pattern>/page/h/grzx/changePwd.jsp</url-pattern> 
+    	<url-pattern>/page/h/grzx/changeUserInfo.jsp</url-pattern>
+    	<url-pattern>/page/h/grzx/grzx.jsp</url-pattern>
+    	<url-pattern>/page/h/grzx/userMessageDetail.jsp</url-pattern>
+    	<url-pattern>/page/h/grzx/userMessageList.jsp</url-pattern>
+  	</filter-mapping> 
+
+  	<!-- excelGrid的definition和instance页面 --> 
+  	<filter>
+    	<filter-name>checkIsDefinitionCreator</filter-name>
+    	<filter-class>com.novacloud.novaone.excelGrid.filter.CheckIsDefinitionCreator</filter-class>
+  	</filter> 
+  	<filter>
+    	<filter-name>checkIsInstanceOwner</filter-name>
+    	<filter-class>com.novacloud.novaone.excelGrid.filter.CheckIsInstanceOwner</filter-class>
+  	</filter> 
+  	<filter>
+    	<filter-name>checkIsWaitingStepProcessUser</filter-name>
+    	<filter-class>com.novacloud.novaone.excelGrid.filter.CheckIsWaitingStepProcessUser</filter-class>
+  	</filter> 
+  	<filter>
+    	<filter-name>checkIsHistoryStepProcessUser</filter-name>
+    	<filter-class>com.novacloud.novaone.excelGrid.filter.CheckIsHistoryStepProcessUser</filter-class>
+  	</filter> 
+  	<filter>
+    	<filter-name>processPageTypeRouter</filter-name>
+    	<filter-class>com.novacloud.novaone.excelGrid.filter.ProcessPageTypeRouter</filter-class>
+  	</filter> 
+  	<filter-mapping>
+    	<filter-name>checkIsDefinitionCreator</filter-name>
+    	<url-pattern>/page/h/rwgl/definition/editDefinition.jsp</url-pattern>
+  	</filter-mapping>  
+  	<filter-mapping>
+    	<filter-name>checkIsInstanceOwner</filter-name>
+    	<url-pattern>/page/h/rwgl/instance/myInstance.jsp</url-pattern>
+  	</filter-mapping>  
+  	<filter-mapping>
+    	<filter-name>checkIsWaitingStepProcessUser</filter-name>
+    	<url-pattern>/page/h/rwgl/instance/processInstance.jsp</url-pattern>
+  	</filter-mapping>  
+  	<filter-mapping>
+    	<filter-name>checkIsHistoryStepProcessUser</filter-name>
+    	<url-pattern>/page/h/rwgl/instance/historyStep.jsp</url-pattern>
+  	</filter-mapping>  
+  	<filter-mapping>
+    	<filter-name>processPageTypeRouter</filter-name>
+    	<url-pattern>/page/h/rwgl/instance/processInstance.jsp</url-pattern>
+  	</filter-mapping>  
+  	
+  	<!-- admin涉及的页面 -->
+  	<filter-mapping>
+    	<filter-name>checkPagePurview</filter-name>
+    	<url-pattern>/page/admin/*</url-pattern>
+  	</filter-mapping> 
+  	
+  	<!-- 上传文件 -->
+  	<servlet>
+    	<servlet-name>UploadFile</servlet-name>
+    	<servlet-class>com.novacloud.novaone.service.UploadFile</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>UploadFile</servlet-name>
+    	<url-pattern>/accessory/uploadFile</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- 验证码 -->
+  	<servlet>
+    	<servlet-name>createValidateCodeServlet</servlet-name>
+    	<servlet-class>com.novacloud.novaone.common.validatecode.CreateValidateCode</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>createValidateCodeServlet</servlet-name>
+    	<url-pattern>/createValidateCodeServlet</url-pattern>
+  	</servlet-mapping>
+  	<servlet>
+    	<servlet-name>checkValidateCodeServlet</servlet-name>
+    	<servlet-class>com.novacloud.novaone.common.validatecode.CheckValidateCode</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>checkValidateCodeServlet</servlet-name>
+    	<url-pattern>/checkValidateCodeServlet</url-pattern>
+  	</servlet-mapping>
+  		
+  	<!-- webservice 
+	<servlet>
+	    <servlet-name>CXFService</servlet-name>
+	    <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+	</servlet> 
+	
+	<servlet-mapping>
+	    <servlet-name>CXFService</servlet-name>
+	    <url-pattern>/ws/*</url-pattern>
+	</servlet-mapping> 
+	-->
+	
+	<!-- Log4j 配置 -->
+	<context-param>        
+		<param-name>webAppRootKey</param-name>         
+		<param-value>webapp.root</param-value>    
+	</context-param>  
+	<context-param>      
+		<param-name>log4jConfigLocation</param-name>      
+		<param-value>/WEB-INF/classes/log4j.properties</param-value>  
+	</context-param> 
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>60000</param-value>
+	</context-param>
+	<listener>      
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>  
+	</listener>  
+  	
+  	<!-- 图片浏览 -->
+  	<servlet>
+    	<servlet-name>getSSImage</servlet-name>
+    	<servlet-class>com.novacloud.shuShuo.GetImage</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getSSImage</servlet-name>
+    	<url-pattern>/shuShuo/getImage</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- 音频 -->
+  	<servlet>
+    	<servlet-name>getSSAudio</servlet-name>
+    	<servlet-class>com.novacloud.shuShuo.GetAudio</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getSSAudio</servlet-name>
+    	<url-pattern>/shuShuo/getAudio</url-pattern>
+  	</servlet-mapping>
+</web-app>

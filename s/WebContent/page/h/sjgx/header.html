@@ -1,0 +1,89 @@
+﻿<div id="headerMainDiv" class="headerMain">
+	<div class="headerTop">
+		<div class="headerTopInner">
+			<div id="headerLeftTopDiv" class="headerLeftTop">
+			<%				
+				HttpSession httpSession = request.getSession();
+				NcpSession ncpSession = new NcpSession(httpSession, false);
+				if(ncpSession.getIsOnline()){
+					String userName = ncpSession.getUserName();
+					%>				
+						<%=userName%>, &nbsp;欢迎您&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/changePwd.jsp" class="toChangePwd">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/logout.jsp" class="toLogout">退出</a>
+					<% 
+				}
+				else{
+					%>				
+					&nbsp;&nbsp;请&nbsp;<a href="../home/login.jsp" class="toLogin">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/reg.jsp" class="toReg">注册</a>
+					<% 
+				}
+			%>				
+			</div>
+			<div id="headerRightTopDiv" class="headerRightTop">  
+				<div class="toContainer"> 
+					<a href="../../h/buy/orderList.jsp" class="toOrderList">我的订单</a>
+					&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="../home/help.jsp" class="toHelp">帮助</a>
+					&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="../../h/buy/cart.jsp" class="toCartLink">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<img src="../../h/buy/images/cart.png" class="toCartImage" title="进入购入车页面"/>
+						<div id="cartLineCountSpanId" class="toCartLineCount">(?)</div>
+					</a>
+				</div>
+			</div>
+		</div> 
+	</div> 
+	<div class="headerBottom">
+		<div class="headerBottomInner">
+			<div class="headerLeftBottom">
+				<a href="../../../"><img class="headerLogo" src="../images/logo.png" /></a>
+				<span class="headerSysName">数据助理</span>
+				<span class="headerSysSubName">Power Data Helper</span>
+			</div>
+			<div class="headerRightBottom">
+				<div class="headerRightBottomInner">
+					<div name="sjjs" class="headerTitleItem">
+						<a href="../home/index.jsp" target="_self"> 
+							<span class="headerTitleItemText">首&nbsp;&nbsp;页</span>
+						</a>
+					</div>
+					<div name="sjgx" class="headerTitleItem headerTitleItemActive">
+						<a href="../sjgx/sjgx.jsp" target="_self"> 
+							<span class="headerTitleItemText">数据共享</span>
+						</a>
+					</div>
+					<div name="sjsj" class="headerTitleItem">
+						<a href="../sjsj/sjsj.jsp" target="_self"> 
+							<span class="headerTitleItemText">数据收集</span>
+						</a>
+					</div>
+					<div name="sjzl" class="headerTitleItem">
+						<a href="../sjzl/sjzl.jsp" target="_self"> 
+							<span class="headerTitleItemText">数据质量</span>
+						</a>
+					</div>
+					<div name="tjfx" class="headerTitleItem" target="_self">
+						<a href="../tjfx/tjfx.jsp"> 
+							<span class="headerTitleItemText">统计分析</span>
+						</a>
+					</div>
+					<div name="sjksh" class="headerTitleItem" target="_self">
+						<a href="../sjksh/sjksh.jsp"> 
+							<span class="headerTitleItemText">可视化</span>
+						</a>
+					</div>
+					<div name="jsjl" class="headerTitleItem">
+						<a href="../jsjl/jsjl.jsp" target="_self"> 
+							<span class="headerTitleItemText">技术交流</span>
+						</a>
+					</div>
+					<div name="headerSearch" class="headerSearchItem"> 
+						<div class="headerSearchGroup"> 
+				      		<input type="text" class="headerSearchInputText" placeholder="查找需要的数据"> 
+				       		<input type="button" class="headerSearchButton"></input>  
+				        </div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div> 
+</div>

@@ -1,0 +1,106 @@
+/*数据共享*/
+.categoryListContaienr{ margin:1px auto; width:1200px;height:200px;display: table;}
+.categoryBlock{position:relative;height:100%;display: table-cell;text-align:center;vertical-align:top;width:33.3%;}
+.categoryBlockBorder{height:5px;width:1px;border-left:solid 1px #E3E4E5;height:100%;display: table-cell;} 
+.categoryHeader{position: relative;font-size:15px;height:30px;line-height:30px;margin:0px;color:#666666;text-align:left;}
+.categoryNameLink{font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;position:absolute;top:0px;left:15px;height:30px;line-height:30px;width:200px;text-decoration:none;color:#666666;font-weight: bold;}
+.categoryNameLink:hover{text-decoration:underline;color:#000000;}
+.categoryMoreLink{ font-family:sans-serif, "lucida grande", tahoma, verdana, arial; position:absolute; top:0px; right:0px; height:30px; line-height:30px; width:60px; text-decoration:none; color:#cccccc; font-size:11px; }
+.categoryMoreLink:hover{ text-decoration:underline; color:#000000; }
+.categoryList{height:100%; display: inline-block; margin:0px; padding:0px; text-align:left; width:100%; }
+.categoryItem{ position: relative; font-size:13px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color:#666666; margin-left: 25px; margin-right: 5px; line-height:27px; height:27px; }
+.categoryItem span{ position: absolute; font-size:13px; color:#999999; right: 5px; width:100px; line-height:27px; height:27px; }
+.categoryItemH{float:left;list-style:none;}
+.categoryLinkContainer{margin:1px auto;width:1200px;height:50px;padding-top:5px;font-size:13px;color:#999999;}
+.categoryLinkItem{margin-left:0px;margin-right:5px;text-decoration:none;color:#666666;height:25px;line-height:25px;}
+.categoryLinkItem:hover{text-decoration:underline;color:#000000;}
+ 
+ 
+
+@media all and (min-width: 480px) and (max-width: 767px){
+	.categoryListContaienr{ height:600px;width:100%;}
+	.categoryBlock{ height:200px;width:100%;display:block;}
+	.categoryBlockBorder{height:5px;border-top:solid 1px #E3E4E5;width:100%;}
+	.categoryHeader{ font-size:16px;height:30px;line-height:30px; }
+	.categoryNameLink{ left:16px;height:30px;line-height:30px;width:200px; } 
+	.categoryMoreLink{ height:30px; line-height:30px; width:60px; font-size:16px; } 
+	.categoryList{ }
+	.categoryItem{ font-size:13px; margin-left:25px; margin-right: 5px; line-height:27px; height:27px; }
+	.categoryItem span{ font-size:16px; right: 5px; width:100px; line-height:27px; height:27px; } 
+	.categoryLinkContainer{margin:1px auto;width:1200px;height:50px;padding-top:5px;font-size:16px;color:#999999;}
+	.categoryLinkItem{font-size:16px; margin-left:0px;margin-right:5px;text-decoration:none;color:#666666;height:25px;line-height:25px;}
+	.categoryLinkItem:hover{text-decoration:underline;color:#000000;} 
+} 
+
+@media all and (min-width: 360px) and (max-width: 479px){
+	.categoryListContaienr{ height:600px;width:100%;}
+	.categoryBlock{ height:200px;width:100%;display:block;}
+	.categoryBlockBorder{height:5px;border-top:solid 1px #E3E4E5;width:100%;}
+	.categoryHeader{ font-size:15px;height:30px;line-height:30px; }
+	.categoryNameLink{ left:15px;height:30px;line-height:30px;width:200px; } 
+	.categoryMoreLink{ height:30px; line-height:30px; width:60px; font-size:15px; } 
+	.categoryList{ }
+	.categoryItem{ font-size:15px; margin-left:25px; margin-right: 5px; line-height:27px; height:27px; }
+	.categoryItem span{ font-size:15px; right: 5px; width:100px; line-height:27px; height:27px; } 
+	.categoryLinkContainer{margin:1px auto;width:1200px;height:50px;padding-top:5px;font-size:15px;color:#999999;}
+	.categoryLinkItem{margin-left:0px;margin-right:5px;text-decoration:none;color:#666666;height:25px;line-height:25px;}
+	.categoryLinkItem:hover{text-decoration:underline;color:#000000;} 
+} 
+
+@media all and (min-width: 240px) and (max-width: 359px){
+	.categoryListContaienr{ height:600px;width:100%;}
+	.categoryBlock{ height:200px;width:100%;display:block;}
+	.categoryBlockBorder{height:5px;border-top:solid 1px #E3E4E5;width:100%;}
+	.categoryHeader{ font-size:15px;height:30px;line-height:30px; }
+	.categoryNameLink{ left:15px;height:30px;line-height:30px;width:200px; } 
+	.categoryMoreLink{ height:30px; line-height:30px; width:60px; font-size:12px; } 
+	.categoryList{ }
+	.categoryItem{ font-size:13px; margin-left:25px; margin-right: 5px; line-height:27px; height:27px; }
+	.categoryItem span{ font-size:14px; right: 5px; width:100px; line-height:27px; height:27px; } 
+	.categoryLinkContainer{margin:1px auto;width:1200px;height:50px;padding-top:5px;font-size:15px;color:#999999;}
+	.categoryLinkItem{margin-left:0px;margin-right:5px;text-decoration:none;color:#666666;height:25px;line-height:25px;}
+	.categoryLinkItem:hover{text-decoration:underline;color:#000000;} 
+} 
+
+
+@media all and (min-width: 768px) and (max-width: 999px){
+	.categoryListContaienr{ margin:1px auto; width:768px;height:200px;display: table;}
+	.categoryBlock{position:relative;height:100%;display: table-cell;text-align:center;vertical-align: top;width:33.2%;}
+	.categoryBlockBorder{width:1px;border-left:solid 1px #E3E4E5;height:100%;display: table-cell;}
+	.categoryHeader{position: relative;font-size:14px;height:30px;line-height:30px;margin:0px;color:#666666;text-align:left;}
+	.categoryNameLink{font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;position:absolute;top:0px;left:15px;height:30px;line-height:30px;width:200px;text-decoration:none;color:#666666;font-weight: bold;}
+	.categoryNameLink:hover{text-decoration:underline;color:#000000;}
+	.categoryMoreLink{ font-family:sans-serif, "lucida grande", tahoma, verdana, arial; position:absolute; top:0px; right:0px; height:30px; line-height:30px; width:60px; text-decoration:none; color:#cccccc; font-size:11px; }
+	.categoryMoreLink:hover{ text-decoration:underline; color:#000000; }
+	.categoryList{ margin-left: 10px;width:95%; height:100%; display: inline-block; margin:0px; padding:0px; text-align:left; }
+	.categoryItem{ position: relative; font-size:13px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color:#666666; margin-left: 15px; margin-right: 5px; line-height:27px; height:27px; }
+	.categoryItemH{float:left;list-style:none;} 
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){
+	.categoryListContaienr{ margin:1px auto; width:1000px;height:200px;display: table;}
+	.categoryBlock{position:relative;height:100%;display: table-cell;text-align:center;vertical-align: top;width:33.2%;}
+	.categoryBlockBorder{width:1px;border-left:solid 1px #E3E4E5;height:100%;display: table-cell;}
+	.categoryHeader{position: relative;font-size:14px;height:30px;line-height:30px;margin:0px;color:#666666;text-align:left;}
+	.categoryNameLink{font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;position:absolute;top:0px;left:15px;height:30px;line-height:30px;width:200px;text-decoration:none;color:#666666;font-weight: bold;}
+	.categoryNameLink:hover{text-decoration:underline;color:#000000;}
+	.categoryMoreLink{ font-family:sans-serif, "lucida grande", tahoma, verdana, arial; position:absolute; top:0px; right:0px; height:30px; line-height:30px; width:60px; text-decoration:none; color:#cccccc; font-size:11px; }
+	.categoryMoreLink:hover{ text-decoration:underline; color:#000000; }
+	.categoryList{ margin-left: 10px;width:95%; height:100%; display: inline-block; margin:0px; padding:0px; text-align:left; }
+	.categoryItem{ position: relative; font-size:13px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color:#666666; margin-left: 15px; margin-right: 5px; line-height:27px; height:27px; }
+	.categoryItemH{float:left;list-style:none;} 
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){
+	.categoryListContaienr{ margin:1px auto; width:1200px;height:200px;display: table;}
+	.categoryBlock{position:relative;height:100%;display: table-cell;text-align:center;vertical-align: top;width:33.3%;}
+	.categoryBlockBorder{width:1px;border-left:solid 1px #E3E4E5;height:100%;display: table-cell;}
+	.categoryHeader{position: relative;font-size:15px;height:30px;line-height:30px;margin:0px;color:#666666;text-align:left;}
+	.categoryNameLink{font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;position:absolute;top:0px;left:15px;height:30px;line-height:30px;width:200px;text-decoration:none;color:#666666;font-weight: bold;}
+	.categoryNameLink:hover{text-decoration:underline;color:#000000;}
+	.categoryMoreLink{ font-family:sans-serif, "lucida grande", tahoma, verdana, arial; position:absolute; top:0px; right:0px; height:30px; line-height:30px; width:60px; text-decoration:none; color:#cccccc; font-size:11px; }
+	.categoryMoreLink:hover{ text-decoration:underline; color:#000000; }
+	.categoryList{ margin-left: 10px;width:95%; height:100%; display: inline-block; margin:0px; padding:0px; text-align:left; }
+	.categoryItem{ position: relative; font-size:13px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color:#666666; margin-left: 15px; margin-right: 5px; line-height:27px; height:27px; }
+	.categoryItemH{float:left;list-style:none;} 
+}

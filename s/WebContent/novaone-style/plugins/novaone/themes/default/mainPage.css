@@ -1,0 +1,79 @@
+﻿@CHARSET "UTF-8";
+html, body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width:100%;
+	height:100%;
+}
+
+.mainTable{ 
+	width:100%;
+	height:100%;
+}
+
+.topTr{ 
+	height:0px;
+}
+
+.leftTd{ 
+	background:url('images/login/main_l.png') repeat-x center center;
+}
+
+.rightTd{ 
+	background:url('images/login/main_r.png') repeat-x center center;
+}
+
+.bottomTd{
+	background:url('images/login/main_b.png') repeat-y center center;
+}
+
+.bottomLeftTd{
+	background:url('images/login/main_lb.png') repeat  center center;
+}
+
+.bottomRightTd{
+	background:url('images/login/main_rb.png') repeat  center center;
+}
+
+.centerTr{  
+	height:544px;  
+}
+.centerTd{  
+	z-index:1;
+	position:relative;
+	width:1007px;  
+}
+
+.innerline{ 
+	height:36px;
+	text-align:center;
+}
+
+.innerTable{
+	height:545px;
+	width:1007px;
+	font-size:14px;
+}
+
+.centerDiv{
+	width:1007px;
+	height:545px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:1;
+}
+.center1{position:absolute;left:0px;top:0px;width:336px;height:167px;background-image:url('images/login/main_bk_01.png');}
+.center2{position:absolute;left:336px;top:0px;width:335px;height:167px;background-image:url('images/login/main_bk_02.png');}
+.center3{position:absolute;left:671px;top:0px;width:336px;height:167px;background-image:url('images/login/main_bk_03.png');}
+.center4{position:absolute;left:0px;top:167px;width:336px;height:189px;background-image:url('images/login/main_bk_04.png');}
+.center5{position:absolute;left:336px;top:167px;width:335px;height:189px;background-image:url('images/login/main_bk_05.png');}
+.center6{position:absolute;left:671px;top:167px;width:336px;height:189px;background-image:url('images/login/main_bk_06.png');}
+.center7{position:absolute;left:0px;top:356px;width:336px;height:189px;background-image:url('images/login/main_bk_07.png');}
+.center8{position:absolute;left:336px;top:356px;width:335px;height:189px;background-image:url('images/login/main_bk_08.png');}
+.center9{position:absolute;left:671px;top:356px;width:336px;height:189px;background-image:url('images/login/main_bk_09.png');}
+
+
+
+

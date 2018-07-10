@@ -1,0 +1,95 @@
+﻿@CHARSET "UTF-8";
+html, body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width:100%;
+	height:100%;
+}
+
+#novaoneHeader{
+	position:relative;
+	height:74px;
+	background:#FFFFFF;
+	padding:0px
+}
+
+#novaoneBanner{
+	width:477px;
+}
+
+.headerImg1{
+	background-image:url('images/login/header_02.png');
+}
+.headerImg2{
+	position:absolute;
+	right:0px;
+	height:100%;
+	width:300px;
+	background-image:url('images/login/header_03.png');
+}
+.headerImg3{
+	position:absolute;
+	color:#ffffff;
+	right:20px;
+	height:20px;
+	top:10px;
+	width:300px;
+	text-align:right;
+}
+.headerLogout{
+	position:absolute;
+	right:20px;
+	height:25px;
+	top:38px;
+	width:58px;
+	text-align:right; 
+	CURSOR: pointer;
+	color:#ffffff;
+	
+}
+
+.ncpMenuContainer{
+	width:100%;
+	height:100%;
+}
+
+.icon-menu{
+	background:url('images/menu/menu.png') no-repeat center center;
+}
+.icon-yqsj{
+	background:url('images/menu/yqsj.png') no-repeat center center;
+}
+.icon-cxtj{
+	background:url('images/menu/cxtj.png') no-repeat center center;
+}
+.icon-kjfb{
+	background:url('images/menu/kjfb.png') no-repeat center center;
+}
+.icon-sxzs{
+	background:url('images/menu/sxzs.png') no-repeat center center;
+}
+.icon-rdfb{
+	background:url('images/menu/rdfb.png') no-repeat center center;
+}
+.icon-fxmn{
+	background:url('images/menu/fxmn.png') no-repeat center center;
+}
+.icon-fzjc{
+	background:url('images/menu/fzjc.png') no-repeat center center;
+}
+.icon-hjsj{
+	background:url('images/menu/hjsj.png') no-repeat center center;
+}
+.icon-xtgl{
+	background:url('images/menu/xtgl.png') no-repeat center center;
+}
+.icon-grpz{
+	background:url('images/menu/grpz.png') no-repeat center center;
+} 
+.icon-xtkf{
+	background:url('images/menu/xtkf.png') no-repeat center center;
+}
+.icon-common{
+	background:url('images/menu/common.png') no-repeat center center;
+}

@@ -1,0 +1,96 @@
+.pageIndexContainer{
+	position:absolute;
+	right:0px;
+	top:10px;
+	height:30px; 
+	width:500px;
+	float:right;
+	display: table;
+	border-spacing:5px 0px;
+	margin:0px;
+}
+
+.pageIndexItem{ 
+	display: table-cell; 
+	text-align:center;
+	font-size:12px;
+	color: #666666; 
+	width: 30px; 
+	vertical-align:middle;
+}
+.pageCount{ 
+	display: table-cell; 
+	text-align:left;
+	font-size:12px;
+	color: #666666; 
+	width: 30px; 
+	vertical-align:middle;
+	width:100px;
+}
+
+
+.pageItem{ 
+	display: table-cell;
+	vertical-align:middle;
+}
+
+.pageIndexCurrent{
+	font-weight:bold;
+}
+
+.pageIndexLink{  
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	color: #666666;
+	border:solid 1px #cccccc;  
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	vertical-align:middle;	
+	cursor: pointer;
+}
+
+.pageIndexText{  
+	text-align:center;
+	display:block;
+	color: #666666;
+	border:solid 1px #cccccc;  
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	vertical-align:middle;	 
+}
+
+.pageIndexLink:hover{ 
+	background-color:#808080;
+	color:#ffffff;
+}
+
+.pageIndexOther{
+	
+}
+
+.pageIndexFirst{
+	
+}
+
+.pageIndexLast{
+	
+}
+.pageIndexNext{
+	
+}
+
+.pageIndexPrevious{
+	
+}
+
+.alertCategoryError{
+	width:100%;
+	height:300px;
+	text-align:center;
+	font-size: 20px;
+	color: #666666;
+    font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; 
+}

@@ -1,0 +1,155 @@
+@CHARSET "UTF-8"; 
+.loginPageContent{ height:480px;width:100%;background-color:#dddddd;text-align:center;}
+.loginMainDiv{width:1000px;position:relative;height:100%;margin:1px auto;}
+.loginMainImageContainerDiv{position:absolute;left:0px; top:50px;bottom:0px;width:650px;height:325px;}
+.loginMainImage{width:650px;height:325px;margin:1px auto;}
+.loginInputDiv{position:absolute;right:20px;top:50px;bottom:50px;width:350px;background-color:#ffffff;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.loginInputTitle{position:absolute;right:0px;top:30px;height:40px;left:0px;text-align:center;color: #5B9BD5;font-size:22px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+.loginInputCode{position:absolute;left:25px;top:80px;width:270px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:100%;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.loginInputPassword{position:absolute;left:25px;top:140px;width:270px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:100%;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.loginAlertDiv{position:absolute;left:25px;top:175px;width:270px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:12px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;text-align:left;color: #5B9BD5;}
+.loginBtn{position:absolute;left:25px;top:210px;width:294px;height:42px;line-height:42px;padding:0px;display: block;color:#333333;font-size:16px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;background-color: #5B9BD5;color:#ffffff;cursor:pointer;}
+.loginInfoDiv{position:absolute;left:25px;top:270px;width:294px;height:42px;line-height:42px;padding:0px;display: block;font-size:15px;color: #999999;}
+.loginToReg{color: #999999;text-decoration: none;}
+.loginToForgetPwd{color: #999999;text-decoration: none;}
+.pageHeader{height:78px;}
+.headerMain{height:78px;}
+.headerBottom{top:0px;}           
+
+@media all and (min-width: 240px) and (max-width: 359px){ 
+	.pageHeader{height:68px;}
+	.headerMain{height:68px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:10px;}
+	.headerSysSubName{font-size:12px;left:130px;top:40px;}
+	.loginPageContent{height:350px;}
+	.loginMainDiv{width:100%;}
+	.loginMainImageContainerDiv{display:none;}
+	.loginMainImage{display:none;}
+	.loginInputDiv{width:240px;position:relative;margin:0 auto;height:350px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;}
+	.loginInputTitle{right:0px;top:20px;height:40px;left:0px;font-size:22px;}
+	.loginInputCode{left:5px;top:80px;width:206px;height:22px;line-height:22px;padding:10px;font-size:16px;}
+	.loginInputPassword{left:5px;top:140px;width:206px;height:22px;line-height:22px;padding:10px;font-size:16px;}
+	.loginAlertDiv{left:5px;top:175px;width:230px;height:22px;line-height:22px;padding:10px;font-size:13px;}
+	.loginBtn{left:5px;top:210px;width:230px;height:42px;line-height:42px;font-size:16px;}
+	.loginInfoDiv{left:5px;top:270px;width:230px;height:42px;line-height:42px;padding:0px;font-size:16px;}
+	.loginToReg{ }
+	.loginToForgetPwd{ }
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:20px;}
+	.headerSysSubName{font-size:12px;left:130px;top:50px;}
+	.loginPageContent{height:380px;}
+	.loginMainDiv{width:100%;}
+	.loginMainImageContainerDiv{display:none;}
+	.loginMainImage{display:none;}
+	.loginInputDiv{width:360px;position:relative;margin:0 auto;height:380px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;}
+	.loginInputTitle{right:0px;top:20px;height:40px;left:0px;font-size:22px;}
+	.loginInputCode{left:5px;top:80px;width:326px;height:22px;line-height:22px;padding:10px;font-size:16px;}
+	.loginInputPassword{left:5px;top:140px;width:326px;height:22px;line-height:22px;padding:10px;font-size:16px;}
+	.loginAlertDiv{left:5px;top:175px;width:350px;height:22px;line-height:22px;padding:10px;font-size:13px;}
+	.loginBtn{left:5px;top:210px;width:350px;height:42px;line-height:42px;font-size:16px;}
+	.loginInfoDiv{left:5px;top:270px;width:350px;height:42px;line-height:42px;padding:0px;font-size:16px;}
+	.loginToReg{ }
+	.loginToForgetPwd{ }
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:20px;}
+	.headerSysSubName{font-size:12px;left:130px;top:50px;}
+	.loginPageContent{height:400px;}
+	.loginMainDiv{width:100%;}
+	.loginMainImageContainerDiv{display:none;}
+	.loginMainImage{display:none;}
+	.loginInputDiv{width:480px;position:relative;margin:0 auto;height:400px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;}
+	.loginInputTitle{right:0px;top:20px;height:40px;left:0px;font-size:22px;}
+	.loginInputCode{left:5px;top:80px;width:446px;height:22px;line-height:22px;padding:10px;font-size:16px;}
+	.loginInputPassword{left:5px;top:140px;width:446px;height:22px;line-height:22px;padding:10px;font-size:16px;}
+	.loginAlertDiv{left:5px;top:175px;width:470px;height:22px;line-height:22px;padding:10px;font-size:13px;}
+	.loginBtn{left:5px;top:210px;width:470px;height:42px;line-height:42px;font-size:16px;}
+	.loginInfoDiv{left:5px;top:270px;width:470px;height:42px;line-height:42px;padding:0px;font-size:16px;}
+	.loginToReg{ }
+	.loginToForgetPwd{ }
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.loginPageContent{ height:480px;}
+	.loginMainDiv{width:640px;}
+	.loginMainImageContainerDiv{top:130px;;width:400px;height:200px;}
+	.loginMainImage{width:400px;height:200px;}
+	.loginInputDiv{right:10px;top:50px;bottom:50px;width:240px;}
+	.loginInputTitle{top:30px;height:40px;font-size:22px;}
+	.loginInputCode{left:15px;top:80px;width:180px;height:22px;line-height:22px;padding:10px;}
+	.loginInputPassword{left:15px;top:140px;width:180px;height:22px;line-height:22px;padding:10px;}
+	.loginAlertDiv{left:15px;top:175px;width:180px;height:22px;line-height:22px;padding:10px;}
+	.loginBtn{left:15px;top:210px;width:204px;height:42px;line-height:42px;padding:0px;}
+	.loginInfoDiv{left:15px;top:270px;width:204px;height:42px;line-height:42px;}
+} 
+
+@media all and (min-width: 768px) and (max-width: 999px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.loginPageContent{ height:480px;}
+	.loginMainDiv{width:768px;}
+	.loginMainImageContainerDiv{top:105px;;width:520px;height:260px;}
+	.loginMainImage{width:520px;height:260px;}
+	.loginInputDiv{right:20px;top:50px;bottom:50px;width:240px;}
+	.loginInputTitle{top:30px;height:40px;font-size:22px;}
+	.loginInputCode{left:15px;top:80px;width:180px;height:22px;line-height:22px;padding:10px;}
+	.loginInputPassword{left:15px;top:140px;width:180px;height:22px;line-height:22px;padding:10px;}
+	.loginAlertDiv{left:15px;top:175px;width:180px;height:22px;line-height:22px;padding:10px;}
+	.loginBtn{left:15px;top:210px;width:204px;height:42px;line-height:42px;padding:0px;}
+	.loginInfoDiv{left:15px;top:270px;width:204px;height:42px;line-height:42px;}
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){	 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.loginPageContent{ height:480px;}
+	.loginMainDiv{width:1000px;}
+	.loginMainImageContainerDiv{top:50px;;width:650px;height:325px;}
+	.loginMainImage{width:650px;height:325px;}
+	.loginInputDiv{right:20px;top:50px;bottom:50px;width:350px;}
+	.loginInputTitle{top:30px;height:40px;font-size:22px;}
+	.loginInputCode{left:25px;top:80px;width:270px;height:22px;line-height:22px;padding:10px;}
+	.loginInputPassword{left:25px;top:140px;width:270px;height:22px;line-height:22px;padding:10px;}
+	.loginAlertDiv{left:25px;top:175px;width:270px;height:22px;line-height:22px;padding:10px;}
+	.loginBtn{left:25px;top:210px;width:294px;height:42px;line-height:42px;padding:0px;}
+	.loginInfoDiv{left:25px;top:270px;width:294px;height:42px;line-height:42px;}
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.loginPageContent{ height:480px;}
+	.loginMainDiv{width:1200px;}
+	.loginMainImageContainerDiv{top:30px;;width:800px;height:400px;}
+	.loginMainImage{width:800px;height:400px;}
+	.loginInputDiv{right:20px;top:50px;bottom:50px;width:350px;}
+	.loginInputTitle{top:30px;height:40px;font-size:22px;}
+	.loginInputCode{left:25px;top:80px;width:270px;height:22px;line-height:22px;padding:10px;}
+	.loginInputPassword{left:25px;top:140px;width:270px;height:22px;line-height:22px;padding:10px;}
+	.loginAlertDiv{left:25px;top:175px;width:270px;height:22px;line-height:22px;padding:10px;}
+	.loginBtn{left:25px;top:210px;width:294px;height:42px;line-height:42px;padding:0px;}
+	.loginInfoDiv{left:25px;top:270px;width:294px;height:42px;line-height:42px;} 	
+}

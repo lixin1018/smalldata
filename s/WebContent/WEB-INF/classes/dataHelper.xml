@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd 
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd"> 	 
+	 
+	<bean id="dataShareControl" class="com.novacloud.dataHelper.control.DataShareControl" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" />    
+		<property name="viewProcessor" ref="viewProcessor" />		 
+	</bean>	
+	<bean id="viewProcessor" class="com.novacloud.dataHelper.share.ShareViewProcessor">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>	
+	  
+	<!-- shareViewService 更新数据共享的分类信息，这样编辑好的分类，就会更新到数据分享首页里 added by lixin 20180607 -->
+	<bean id="shareViewServiceBean" class="com.novacloud.dataHelper.service.ShareViewService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="shareViewProcessor" ref="viewProcessor" /> 
+	</bean>	
+	
+	<!-- data模型dh_GobalVariableType -->
+	<bean id="dh_GobalVariableType" class="com.novacloud.dataHelper.memory.impl.Dh_GobalVariableTypeImpl" scope="prototype">
+	</bean>
+	
+	<bean id="shareDataBaseDao" class="com.novacloud.dataHelper.share.ShareDataBaseDao" scope="prototype">  
+	</bean>
+	  
+	<bean id="shareDataGridServiceBean" class="com.novacloud.dataHelper.service.ShareDataGridService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	
+	
+	<bean id="editShareDataBaseDao" class="com.novacloud.dataHelper.share.EditShareDataBaseDao" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />    
+	</bean>
+	  
+	<bean id="editShareDataGridServiceBean" class="com.novacloud.dataHelper.service.EditShareDataGridService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	
+	
+	<bean id="emailUtils" class="com.novacloud.dataHelper.util.EmailUtils" scope="prototype">  
+	    <property name="host" value="smtp.163.com" />  
+	    <property name="from" value="wangsuilian@163.com" />  
+	    <property name="user" value="wangsuilian" />  
+	    <property name="pwd" value="moker1018" />  
+	</bean>	
+	
+	<bean id="dataHelperUserProcessor" class="com.novacloud.dataHelper.user.UserProcessor">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="emailUtils" ref="emailUtils" />
+	</bean>	
+	  
+	<bean id="dataHelperUserServiceBean" class="com.novacloud.dataHelper.service.UserService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="userProcessor" ref="dataHelperUserProcessor" />		 
+	</bean>	
+	
+	<bean id="dataHelperBuyProcessor" class="com.novacloud.dataHelper.buy.BuyProcessor">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>	
+	  
+	<bean id="dataHelperBuyServiceBean" class="com.novacloud.dataHelper.service.BuyService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="buyProcessor" ref="dataHelperBuyProcessor" />		 
+	</bean>	
+	
+	<bean id="dataHelperBuyControl" class="com.novacloud.dataHelper.control.BuyControl" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" />    
+		<property name="buyProcessor" ref="dataHelperBuyProcessor" />	 
+		<property name="weixinPayProcessor" ref="weixinPayProcessor" />		 
+	</bean>	
+	
+	<bean id="weixinPayProcessor" class="com.novacloud.dataHelper.buy.WeixinPayProcessor">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	    <property name="connectTimeout" value="10000" />
+	    <property name="readTimeout" value="10000" />
+	    <property name="requestUrl" value="https://api.mch.weixin.qq.com/pay/unifiedorder" />
+	    <property name="appId" value="wx4582997ce0e636f6" />
+	    <property name="merchantId" value="1406057002" />
+	    <property name="deviceInfo" value="WEB" />
+	    <property name="orderName" value="购买数据" />
+	    <property name="spbillCreateIp" value="58.57.253.100" />
+	    <property name="notifyUrl" value="http://58.57.253.100/s/h/buy/wx.jsp" />
+	    <property name="tradeType" value="NATIVE" />
+	</bean>	
+</beans>

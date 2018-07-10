@@ -1,0 +1,178 @@
+@CHARSET "UTF-8";
+body{
+	width:100%;
+	height:100%;
+}
+.createExcelGridNavigator{
+	width:500px;
+	height:280px;
+	border: solid 0px #cccccc;
+	margin:0 auto; 
+}
+.createExcelGridTitleDiv{
+	position:relative;
+	width:100%;
+	height:50px;
+	text-align:left;
+	padding-left:10px;
+	border-bottom:solid 1px #dddddd;
+}
+.createExcelGridTitle{
+	position:absolute;
+	left:10px;
+	bottom:10px;
+	font-size:15px; 
+	font-weight:600;
+}
+.createExcelGridBackToBegin{
+	position:absolute;
+	right:10px;
+	bottom:5px;
+	font-size:10px; 
+	cursor:pointer;
+	text-decoration:none;
+	color:#888888;
+}
+.createExcelGridBackToBegin:hover{
+	text-decoration:underline;
+}
+.createExcelGridStyleItem{
+	width:400px;
+	height:80px;
+	cursor:pointer;
+	border: solid 1px #dddddd;
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.createExcelGridStyleItem:hover{
+	background-color:#F56600; 
+	border: solid 0px #dddddd;
+	color:#ffffff;
+}
+
+.createExcelGridStyleItem h3{ 
+	height:40px;
+	margin:0px;
+	line-height:40px;
+	font-size:15px;
+	padding-left:10px;
+}
+
+.createExcelGridStyleItem span{ 
+	height:40px; 
+	font-size:10px;
+	padding-left:10px;
+	text-decoration:none;
+}
+
+.createExcelGridStyleUpload{
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:400px;
+	height:300px;
+	border: solid 0px #dddddd;
+	padding:10px;
+	font-size:15px;
+}
+.selectExcelDiv{
+	width:100%;
+	height:40px;
+	margin:0 auto;
+	margin-top:20px;
+	position:relative;
+	text-align:left;
+}
+.createExcelGridStyleUpload input{
+	position:absolute;
+	top:5px;
+	left:110px;
+	cursor:pointer;
+	margin:10px;
+	text-align:center;
+}
+.selectExcelPromptDiv{
+	position:absolute;
+	top:0px;
+	left:105px;
+	width:100%;
+	height:23px;
+	line-height:23px;
+	font-size:10px;
+}
+.selectErrorDiv{
+	width:100%;
+	height:100p;
+	font-size:10px;
+	color: #FF4300;
+	display:none;
+}
+.uploadExcelBtnDiv{
+	width:100%;
+	margin-top:10px; 
+	height:40px;
+	line-height:40px;	
+	cursor: pointer;
+	text-align:center; 
+	color:#ffffff;
+	background-color:#F56600; 
+}
+
+.waitingValidateExcelDiv{
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:400px;
+	height:300px;
+	border: solid 0px #dddddd;
+	padding:10px;
+	font-size:15px;
+}
+
+.sheetNameContainerDiv{
+	margin:0 auto;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:430px;
+	height:200px;
+	border: solid 0px #dddddd;
+	padding:10px;
+	font-size:15px;
+	overflow: auto;
+}
+.sheetNameItem{
+	width:400px;
+	height:40px;
+	line-height:40px;
+	cursor:pointer;
+	padding-left: 10px;
+	border: solid 1px #dddddd;
+	margin:0 auto;
+	margin-top:5px;
+	margin-bottom:5px;
+	font-size:13px;
+}
+.sheetNameItemSelected{ 
+	background-color:#888888; 
+	font-weight:600; 
+	color:#ffffff;
+}
+.sheetNameItem:hover{
+	background-color:#dddddd; 
+}
+.sheetNameItemSelected:hover{
+	background-color:#888888; 
+	font-weight:600; 
+	color:#ffffff;
+}
+.validateExcelSheetBtnDiv{
+	width:100%;
+	margin-top:10px; 
+	height:40px;
+	line-height:40px;	
+	cursor: pointer;
+	text-align:center; 
+	color:#ffffff;
+	background-color:#F56600; 
+} 

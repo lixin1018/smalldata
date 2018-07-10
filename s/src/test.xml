@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd 
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd"> 	 
+			
+	<bean id="testWorkflowServiceBean" class="com.novacloud.novaone.workflow.TestWorkflow" scope="prototype">   
+		<!-- <property name="processEngine" ref="processEngine" /> --> 	
+		<property name="transactionManager" ref="transactionManager" /> 	  
+		<property name="dBParserAccess" ref="dBParserAccess" />	 	 
+	</bean>	   
+			
+	<bean id="testExpressionServiceBean" class="com.novacloud.novaone.expression.test.TestExpression" scope="prototype">
+		<property name="expValidator" ref="expValidator" />		 
+		<property name="expRunner" ref="expRunner" />		 
+	</bean>	   
+	
+</beans>

@@ -1,0 +1,69 @@
+.tableHeader{height:80px;width:100%;position:absolute;top:31px;left:0px;overflow:hidden;}
+.tableHeaderInner{height:80px;width:100%;position:relavtive;}
+.tableTitle{font-family:'Microsoft Yahei'; font-size:20px;font-weight:400;position:absolute;right:350px;top:15px;left:0px;height:35px;text-align:center;}
+.tablePagination{position:absolute;top:15px;right:0px;width:380px;height:35px;}
+.tableQueryBlankCell{width:10px;height:5px;}
+.headerRightTop{width:60px;}
+.tableQueryPopButtonDiv{width:60px;position:absolute;right:10px;font-size:12px;height:30px;line-height:30px;text-align:right;}
+.tableQueryPopButtonDiv span{text-decoration:underline;cursor:pointer;}
+.tableQueryContainer{position:absolute;font-size:13px;top:0px;height:100%;width:200px;right:0px;display:none;z-index:100;background-color:#cccccc;}
+.tableQueryContainerShow{display:block;}
+.tableQueryLine{position:relative;height:30px;width:100%;padding-top:5px;display:table;} 
+.tableQueryItemName{position:relative;width:100px;height:25px;padding-left:10px;display:table-cell;vertical-align: bottom;}
+.tableQueryCheckItemName{vertical-align: middle;}
+.tableQueryItemInput{width:180px;height:25px;}
+.tableQueryItemInputContainer{position:absolute;height:25px;left:10px;right:10px;}
+.tableQueryItemCheckTitleContainer{ left:25px; }
+.tableQueryItemInputCheck{width:25px;height:25px;}
+.tableQueryButtonLine{height:25px;width:100%;text-align:right;}
+.tableQueryButtonLineInner{position:absolute;height:25px;left:10px;right:10px;height:25px;font-size:15px;line-height:25px;text-align:left;}
+.tableQueryButtonLineInner span{text-decoration:underline;cursor:pointer;height:25px;width:40px;margin:10px;}
+.headerMain{height:90px;}
+
+
+@media all and (min-width: 240px) and (max-width: 359px){
+	.headerMain{height:118px;} 
+	.tableHeader{height:90px;top:21px;}
+	.tableHeaderInner{height:90px;}
+	.tableTitle{font-size:16px;right:0px;top:20px;left:0px;height:35px;}
+	.tablePagination{top:60px;right:0px;width:380px;height:35px;}
+	.tableQueryPopButtonDiv{font-size:12px;height:20px;line-height:20px;} 
+	.tableQueryContainer{font-size:12px;}  
+	.pagination-info{display:none;}
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){ 
+	.headerMain{height:118px;}
+	.tableHeader{height:90px;top:31px;}
+	.tableHeaderInner{height:90px;}
+	.tableTitle{font-size:18px;right:0px;top:20px;left:0px;height:35px;}
+	.tablePagination{top:60px;right:0px;width:380px;height:35px;}
+	.tableQueryPopButtonDiv{font-size:12px;height:30px;line-height:30px;} 
+	.tableQueryContainer{font-size:12px;}
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){	
+	.headerMain{height:118px;}
+	.tableHeader{height:90px;top:31px;}
+	.tableHeaderInner{height:90px;}
+	.tableTitle{font-size:20px;right:0px;top:20px;left:0px;height:35px;}
+	.tablePagination{top:60px;right:0px;width:380px;height:35px;}
+	.tableQueryPopButtonDiv{font-size:12px;height:30px;line-height:30px;} 
+	.tableQueryContainer{font-size:12px;} 
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){ 
+	.headerMain{height:90px;}
+} 
+
+@media all and (min-width: 768px) and (max-width: 999px){ 
+	.headerMain{height:90px;}
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){ 
+	.headerMain{height:90px;}
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){	  
+	.headerMain{height:90px;}
+}

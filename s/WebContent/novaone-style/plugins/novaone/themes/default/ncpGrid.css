@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+
+.ncpGridContainer{ 
+}
+.ncpGridSearchBar {
+	font-size:12px;  
+	width:110px;
+	float:right;
+	padding-left:2px;
+	padding-right:2px;
+	padding-bottom:2px;
+	padding-top:4px;	
+}
+.ncpGridComplexQueryBar {
+	font-size:12px;  
+	width:30px;
+	float:right;
+	padding-left:2px;
+	padding-right:2px;
+	padding-bottom:2px;
+	padding-top:2px;	
+}
+.ncpGridDiv{ 
+	overflow:hidden;
+	padding:7px;
+	padding-top:0px;
+	background-color:#FFFFFF;
+}
+.ncpGridToolbarContainer{
+	width:100%;
+	height:30px; 
+	overflow:hidden;
+	padding-top:5px;
+	padding-left:5px;
+	background-color:#FFFFFF;
+}
+.ncpGridPagination{
+	float:right;
+}
+.ncpGridToolbar{
+	float:left;
+	padding-left:2px;
+	padding-right:2px;
+	padding-bottom:2px;
+	padding-top:2px;
+}
+.ncpSelectedItemsDiv{
+	height:50px;
+	padding-left:7px;
+	padding-bottom:7px;
+	padding-right:7px;
+	overflow:hidden;
+}
+.ncpSelectedItemsContainerDiv{
+	border:solid 1px #A6C9E2;
+	width:100%;
+	height:100%;
+	overflow-x:hidden;
+	overflow-y:auto;
+}

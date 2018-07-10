@@ -1,0 +1,81 @@
+.gridToolbar{ width: 100%; height:27px;}
+.gridEditbar{position:absolute;width:100%;top:114px;left:0px;right:0px;z-index:4;font-size: 13px;height:29px;background-color:#ffffff;}
+.gridEditor{font-size: 13px;width: 100%;height: 100%;}   
+.gridCellDiv{ position: absolute; top:0px;left:0px;background-color: #ffffff;}
+.gridCellInnerDiv{position: relative;left:0px;top:0px;z-index: 4;background-color: #ffffff;overflow:hidden;text-align:left;	display:table-cell;}
+.gridCellInnerTextDiv{ position: relative; pointer-events: none; width: 100%; word-wrap: break-word; word-break: break-all; white-space: pre-line;} 
+.titleCellInnerDiv {width:100%;height:100%;line-height:22px;}
+.gridCellInnerDivEditing {padding:0px;}
+.cellEditor{position: absolute;	border-width: 0px;padding: 0px;resize: none;font-size: 11px;left:0px;top:0px;overflow-x: auto;overflow-y: auto;	outline: none;	background-color: transparent;color: transparent;font-size:0px;}
+.gridCellEditorEditing {background-color: #FFFFFF;color: #000000;border-width:1px;top:1px;left:1px;right:1px;bottom:1px;border-color:#68C5FF;border-style:solid;font-size:12px;}
+.normalTable {border-spacing: 0px;border-left-width: 0px;border-top-width: 0px;border-bottom-width: 0px;border-right-width: 0px;border-style: solid;border-color: #000000;font-size: 11px;font-family: SimSun;padding: 0px;}
+.titleCell { position: relative;border-style:solid;border-left-width:0px;border-top-width:0px;border-bottom-width:1px;border-bottom-color:#cccccc;border-right-width:1px;border-right-color:#cccccc;padding:0px;background-color:#F4F4F4;text-align:center;display:table-cell;font-size: 12px;}
+.titleCellRightResize{position:absolute;right:0px;width:5px;top:0px;bottom:0px;cursor:col-resize;}
+.titleCellBottomResize{position:absolute;right:0px;height:5px;left:0px;bottom:0px;cursor:row-resize;}
+.titleCellDiv{position:absolute;left:0px;top:0px;right:0px;bottom:0px;border-style: none;background-color:#ffffff;}
+.selectedCell{background-color: #BFE5FF;}		
+.selectedCell div{background-color: #BFE5FF;}		
+.gridSelectedCell{background-color: #cccccc;}		
+.rowSelectedCell{background-color: #dddddd;}		
+.rowSelectedCell div{background-color: #dddddd;}		
+.colSelectedCell{background-color: #dddddd;}		
+.colSelectedCell div{background-color: #dddddd;}		
+.normalCell{ position: relative;border-style:solid;border-left-width:0px;border-top-width:0px;border-bottom-width:1px;border-bottom-color:#cccccc;border-right-width:1px;border-right-color:#cccccc;padding:0px;font-family: "SimSun";font-size: 11px;display:table;}
+.gridCellInnerDivCurrent{background-color:#68C5FF;}
+.gridCellInnerDivCurrent div{background-color:#68C5FF;}
+.fillCellBtn{position: absolute;right: 0px;bottom: 0px;height: 5px;width: 5px;background-color: #444444;z-index: 100;cursor: crosshair;}
+.lastFillValueDisplay{position: absolute;border: solid 1px #dddddd;background-color: #ffffff;z-index: 100;}
+
+@media all and (min-width: 240px) and (max-width: 359px){
+	.tabs{ font-size:12px;}
+	.headerTop{	height:50px;}
+	.headerTopInner{left:5px;}
+	.headerLeftTop{	left: 3px;bottom:30px;line-height:20px;}
+	.titleBar{top:25px;}
+	.headerTopInner{left:0px;}
+	.toolbarViewBtn{display: none;}
+	.toolbarStyleBtn{display: none;}
+	.headerRightTop{width:120px;}
+}
+@media all and (min-width: 1200px) and (max-width: 4096px){
+	.tabs{font-size:16px;} 
+}
+@media all and (min-width: 1000px) and (max-width: 1199px){
+	.tabs{font-size:16px;} 
+}
+@media all and (min-width: 768px) and (max-width: 999px){
+	.tabs{font-size:15px;}
+	.toolbarViewBtn{display: none;}
+	.toolbarStyleBtn{display: none;}
+	.headerRightTop{width:120px;}
+}
+@media all and (min-width: 640px) and (max-width: 767px){
+	.tabs{font-size:14px;}
+	.headerTop{height:50px;}
+	.headerTopInner{left:5px;}
+	.headerLeftTop{left: 3px;bottom:30px;line-height:30px;}
+	.titleBar{top:25px;}
+	.toolbarViewBtn{display: none;}
+	.toolbarStyleBtn{display: none;}
+	.headerRightTop{width:120px;}
+}
+@media all and (min-width: 480px) and (max-width: 639px){
+	.tabs{font-size:13px;}
+	.headerTop{height:50px;}
+	.headerTopInner{left:5px;}
+	.headerLeftTop{left: 3px;bottom:30px;line-height:30px;}
+	.titleBar{top:25px;}
+	.toolbarViewBtn{display: none;}
+	.toolbarStyleBtn{display: none;}
+	.headerRightTop{width:120px;}
+}
+@media all and (min-width: 360px) and (max-width: 479px){
+	.tabs{font-size:12px;}
+	.headerTop{height:50px;}
+	.headerTopInner{left:5px;}
+	.headerLeftTop{left: 3px;bottom:30px;line-height:30px;}
+	.titleBar{top:25px;}
+	.toolbarViewBtn{display: none;}
+	.toolbarStyleBtn{display: none;}
+	.headerRightTop{width:120px;}
+}

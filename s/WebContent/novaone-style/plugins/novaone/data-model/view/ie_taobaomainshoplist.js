@@ -1,0 +1,40 @@
+viewModels.ie_taobaomainshoplist = {
+  id:"cab14935-b9ac-4061-b8a0-2ea5c5522491",
+  name:"ie_taobaomainshoplist",
+  dataName:"ie_taobaomainshoplist",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"shopname", label:"店铺名", width:0, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"shopurl", label:"网址", width:0, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"shoptype", label:"一级分类", width:0, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"shopkey", label:"二级分类", width:0, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"seller", label:"卖家", width:0, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"address", label:"所在地", width:0, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"sales", label:"销售量", width:0, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"decimal"},
+    {name:"themain", label:"主营", width:0, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"skunumber", label:"SKU数量", width:0, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"decimal"},
+    {name:"sitetype", label:"店铺类型", width:0, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"praiserate", label:"好评率", width:0, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"decimal"},
+    {name:"bz", label:"备注", width:0, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"id", label:"ID", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"parentid", label:"parentid", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"createtime", label:"记录创建时间", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"}
+  ],
+  dispUnitModel:[
+    {name:"shopname", label:"店铺名", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"shopurl", label:"网址", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"shoptype", label:"一级分类", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"shopkey", label:"二级分类", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"seller", label:"卖家", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"address", label:"所在地", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"sales", label:"销售量", editable:true,nullable:true, hidden:false, dispunitType:"decimal", },
+    {name:"themain", label:"主营", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"skunumber", label:"SKU数量", editable:true,nullable:true, hidden:false, dispunitType:"decimal", },
+    {name:"sitetype", label:"店铺类型", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"praiserate", label:"好评率", editable:true,nullable:true, hidden:false, dispunitType:"decimal", },
+    {name:"bz", label:"备注", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"id", label:"ID", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"parentid", label:"parentid", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"createtime", label:"记录创建时间", editable:true,nullable:true, hidden:true, dispunitType:"time", }
+  ]
+}

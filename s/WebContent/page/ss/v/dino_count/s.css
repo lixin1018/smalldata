@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";  
+.mainBody{
+	position:relative;
+  	overflow: hidden;
+}
+
+.outerDiv{
+	position:relative;
+	width:960px;
+	height:540px;
+  	overflow: hidden;
+}

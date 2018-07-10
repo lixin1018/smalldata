@@ -1,0 +1,26 @@
+@CHARSET "UTF-8"; 
+.pptSlider_main_div {  
+  background-image: none!important;; 
+  position:absolute;
+  left:0px;
+  top:0px;
+  background-color:transparent;
+  	overflow: hidden;
+}
+.fog_main_div {
+  position:absolute;
+  left:0px;
+  top:0px;
+}
+
+.mainBody{
+	position:relative;
+  	overflow: hidden;
+}
+
+.outerDiv{
+	position:relative;
+	width:960px;
+	height:540px;
+  	overflow: hidden;
+}

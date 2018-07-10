@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:jaxws="http://cxf.apache.org/jaxws"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+ 
+	<!-- webserice cxf默认配置-->
+    <import resource="classpath:META-INF/cxf/cxf.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml" /> 
+    
+	<!-- 数据库配置 -->
+	<import resource="/db.xml"/>  
+
+	<!-- 系统性功能 -->
+	<import resource="/systemFunction.xml"/> 
+    
+	<!-- 数据模型 -->
+	<import resource="/model.xml"/> 
+
+	<!-- 表达式自定义函数 -->
+	<import resource="/expFunction.xml"/> 
+
+	<!-- excel函数 -->
+	<import resource="/egExpFunction.xml"/> 
+
+	<!-- dataHelper -->
+	<import resource="/dataHelper.xml"/> 
+
+	<!-- 测试 
+	<import resource="/test.xml"/> -->
+</beans>

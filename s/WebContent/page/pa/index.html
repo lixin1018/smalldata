@@ -1,0 +1,448 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+	<title>创想数据-APP数据抓取|网页数据抓取|微信公众号数据抓取</title>
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="keywords" content="爬虫,APP,app,数据,爬取,抓取,爬虫,数据爬取,数据抓取,创想数据,微信公众号,网页">
+	<meta http-equiv="description" content="定制化数据爬取服务，数据抓取服务">
+	<script type="text/javascript" src="js/swiper/swiper-3.4.2.min.js"></script>
+	<script type="text/javascript" src="js/swiper/swiper.animate1.0.2.min.js"></script>
+    <link rel="shortcut icon" href="images/logo.ico">
+	<link rel="stylesheet" type="text/css" href="js/swiper/swiper-3.4.2.min.css">
+	<link rel="stylesheet" type="text/css" href="js/swiper/animate.min.css">
+	<style>
+		.subTitleItem{
+			float:left;
+			height:75px;
+			line-height:75px;
+			width:100px;
+			cursor:pointer;
+			font-size:20px;
+			font-weight:500;
+		}
+		.subTitleLink{
+			text-decoration: none;
+			color:#666666; 
+		}
+		.subTitleLink:hover{
+			text-decoration: none;
+			color:#666666; 
+		}
+		.subTitleItem:hover{
+			border-bottom:3px #20A3FE solid;
+		}
+		.sectionBlank{
+			width:100%;
+			height:80px;
+		}
+		.swiperOuter{
+			width:100%;
+			min-width:1194px;
+			height:698px;
+			text-align:center;
+			background-image:URL('images/banner_bg.jpg');
+			background-position: center;
+			background-repeat: no-repeat;
+		} 
+		.swiperSildeContainer{
+			text-align:center;
+		} 
+		.swiperItemContainer{
+			position:relative; 
+			width:1194px;
+			height:698px;
+			margin:0 auto;
+		}
+		.swiperSildeImage{
+			position:absolute;
+			width:1194px;
+			height:698px;
+			left:0px;
+			top:0px;
+		}
+		.swiperImageTitle{
+			position:absolute;
+			font-size:49px;
+			color:#333333;	 
+			width:1194px;
+			text-align:center;
+			top:41px;		
+		}
+		.swiperImageTitleMark{
+			color:#20A3FE;			
+		}
+		.swiperImageSubTitle{
+			position:absolute;
+			font-size:36px;
+			color:#666666;
+			width:1194px;
+			text-align:center;
+			top:120px;
+		}
+		.swiper-pagination-bullet{
+			background:#DDDBDC;
+		}
+		.swiper-pagination-bullet-active{
+			background:#878787;
+		}
+		
+		.flowStep{
+			position:absolute;
+			width:140px;
+			height:140px;
+			line-height:140px;
+			text-align:center;
+			background-repeat: no-repeat;
+		}
+		.flowStep img{
+			position:absolute;
+			top:25px;
+			left:25px;
+			width:90px;
+			height:90px; 
+		}
+		.flowFromPointer{
+			position:absolute;
+			top:64px;
+			width:12px;
+			height:12px;
+			background-image:url("images/flowFrom.png");
+			background-repeat: no-repeat;
+		}
+		.flowToPointer{
+			position:absolute;
+			top:64px;
+			width:12px;
+			height:12px;
+			background-image:url("images/flowTo.png");
+			background-repeat: no-repeat;
+		}
+		.flowLine{
+			position:absolute;
+			top:64px;
+			height:12px;
+			background-image:url("images/flowLine.png");
+			background-repeat: repeat-x;
+			
+		}
+		.flowStepTitle{
+			position:absolute;
+			font-size:24px;
+			color:#393939;
+			top: 140px;
+			width:300px;
+			text-align:center;
+		}
+		.flowStepDescription{
+			position:absolute;
+			font-size:20px;
+			color:#666666;
+			top: 180px;
+			width:300px;
+			text-align:center;
+			line-height:35px;
+		}
+		.projectImage{
+			position:absolute;  
+			top: 0px;
+			width:354px;  
+			height:201px;
+		}
+		.projectTitle{
+			position:absolute;
+			font-size:24px;
+			color:#393939;
+			top: 220px;
+			height:40px;
+			width:354px;
+			text-align:center; 		
+		}
+		.projectDescription{
+			position:absolute;
+			font-size:18px;
+			color:#666666;
+			top: 260px;
+			height:130px;
+			width:354px;
+			text-align:left;
+			line-height:30px;
+			border-bottom: 3px #28b1f7 solid;
+		}
+		
+		.groupInfo{
+			position:absolute;
+			width:260px;
+			height:120px;
+			line-height:120px;
+			text-align:center;
+			background-repeat: no-repeat;
+		}
+		.groupInfo img{
+			position:absolute;
+			top:0px;
+			left:70px;
+			width:120px;
+			height:120px; 
+		}
+		.groupInfoTitle{
+			position:absolute;
+			font-size:24px;
+			color:#393939;
+			top: 140px;
+			width:260px;
+			text-align:center;
+		}
+		.groupInfoDescription{
+			position:absolute;
+			font-size:20px;
+			color:#666666;
+			top: 180px;
+			width:260px;
+			text-align:center;
+			line-height:35px;
+		}
+		.customerService{
+			display:none;
+			position:fixed;
+			top:200px;
+			right:20px;
+			width:45px;
+			height:60px;
+			border-style:none;
+			z-index:100;
+		}
+		.customerServiceLink{
+			text-decoration: none; 
+		}
+		.customerServiceLink:hover{
+			text-decoration: none; 
+		}
+		.customerServiceImage{
+			width:45px;
+			height:60px;		
+		} 
+		.contactItem{
+			position:absolute;
+			left:250px;
+			width:400px;
+			height:40px;
+		}
+		.contactItemImage{
+			position:absolute;
+			left:0px;
+			width:40px;
+			height:40px;		
+		}
+		.contactItemText{
+			position:absolute;
+			left:50px;
+			height:40px;
+			width:360px;
+			line-height:40px;
+			text-align:left;
+			font-size:28px;
+			color:#666666;
+		}
+		.contactItemText a{
+			text-decoration: none; 
+			color:#666666;
+		}
+		.contactItemText a:hover{
+			text-decoration: none; 
+			color:#666666;
+		}
+	</style>
+</head>
+<body style="border: 0;	margin: 0; padding: 0; width: 100%;text-align:center; font-family: 'Hiragino Sans GB','Microsoft Yahei';">
+	<div name="pageHeader" style="z-index:100;position:fixed;top:0px;left:0px;width:100%;height:80px;margin: 0 auto;background-color:#ffffff;">
+		<div style="width:1194px;height:80px;margin: 0 auto;">
+			<img title="创想数据-数据抓取服务提供商" src="images/logo.png" style="position:absolute;left:50px;top:0px;width:590px;height:80px;">
+			<div style="position:absolute;right:0px;top:0px;width:450px;height:80px;">
+				<a class="subTitleLink" href="#serviceFlows"><div class="subTitleItem">服务流程</div></a>
+				<a class="subTitleLink" href="#projectInfos"><div class="subTitleItem">案例介绍</div></a>
+				<a class="subTitleLink" href="#aboutUs"><div class="subTitleItem">关于我们</div></a>
+				<a class="subTitleLink" href="#contracts"><div class="subTitleItem">联系方式</div></a>
+			</div>
+		</div>
+	</div>
+	<div class="customerService">
+		<a href="#contracts" class="customerServiceLink"><img class="customerServiceImage" src="images/kf.png" /></a>
+	</div>
+	<div style="width:100%;height:80px;"></div>
+	<div class="swiperOuter">
+		<div class="swiper-container" style="width:100%;min-width:1194px;height:698px;margin: 0 auto; ">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide swiperSildeContainer">
+		        	<div class="swiperItemContainer">
+			        	<img src="images/banner2.png" class="swiperSildeImage"></img>
+			        	<div class="swiperImageTitle">提供网络数据抓取服务</div>
+			        	<div class="swiperImageSubTitle"><font class="swiperImageTitleMark">APP、网页、微信公众号</font>等数据</div>
+		        	</div>
+				</div>
+		        <div class="swiper-slide swiperSildeContainer">
+		        	<div class="swiperItemContainer">
+			        	<img src="images/banner1.png" class="swiperSildeImage"></img>
+			        	<div class="swiperImageTitle">专业的数据抓取服务</div>
+			        	<div class="swiperImageSubTitle"><font class="swiperImageTitleMark">定制服务&nbsp;使命必达</font></div>
+		        	</div>
+				</div>
+		        <div class="swiper-slide swiperSildeContainer">
+		        	<div class="swiperItemContainer">
+			        	<img src="images/banner3.png" class="swiperSildeImage"></img>
+			        	<div class="swiperImageTitle" style="width:500px;left:70px;top:200px;text-align:left;">支持多种输出格式</div>
+			        	<div class="swiperImageSubTitle" style="width:300px;left:90px;top:280px;text-align:left;"><font class="swiperImageTitleMark">&bull;&nbsp;Excel<br/>&bull;&nbsp;CSV<br/>&bull;&nbsp;XML<br/>&bull;&nbsp;RESTFul</font></div>
+		        	</div>
+				</div>
+		    </div>
+		    <div class="swiper-pagination" style="width:150px;left:initial;right:0px;bottom:20px;"></div>
+		</div>
+		<script> 
+			var imgSwiper = new Swiper(".swiper-container", {
+				pagination : '.swiper-pagination',
+				loop : true,
+				paginationClickable :true,
+				autoplay: 5000,//可选选项，自动滑动
+				speed:600
+			})
+		</script>
+	</div>
+	<div id="serviceFlows" class="sectionBlank"></div> 
+	<div style="width:100%;min-width:1194px;height:450px;text-align:center;">
+		<div style="width:1194px;height:450px;margin: 0 auto;"> 
+			<div style="width:100%;height:30px;"></div>
+			<div style="width:100%;height:70px;text-align:center;">
+				<div style="width:360px;height:65px;margin:0 auto;text-align:center;color:#333333;font-size:38px;border-bottom:4px #20A3FE solid;">
+					想要数据?&nbsp;轻松搞定!
+				</div>
+			</div>
+			<div style="width:100%;height:50px;"></div>
+			<div style="width:100%;height:300px;position:relative;">
+				<div class="flowStep" style="left:180px;top:0px;">
+					<img src="images/flow1.png" />
+				</div>
+				<div class="flowFromPointer" style="left:320px;"></div>
+				<div class="flowLine" style="left:332px;width:186px;"></div>
+				<div class="flowToPointer" style="left:518px;"></div>
+				<div class="flowStep" style="left:530px;top:0px;">
+					<img src="images/flow2.png" />
+				</div>
+				<div class="flowFromPointer" style="left:670px;"></div>
+				<div class="flowLine" style="left:682px;width:186px;"></div>
+				<div class="flowToPointer" style="left:868px;"></div>
+				<div class="flowStep" style="left:880px;">
+					<img src="images/flow3.png" />
+				</div>
+				<div class="flowStepTitle" style="left:100px;">Step 1: 需求沟通 技术预研</div>
+				<div class="flowStepDescription" style="left:100px;">您把APP、网站或微信公众号名称及数据项告诉我们，双方讨论制定抓取方案。</div>
+				<div class="flowStepTitle" style="left:450px;">Step 2: 付首付款 实施抓取</div>
+				<div class="flowStepDescription" style="left:450px;">双方确定方案及报价。我们收到首付款， 实施抓取任务。</div>
+				<div class="flowStepTitle" style="left:800px;">Step 3: 结清余款 提交数据</div>
+				<div class="flowStepDescription" style="left:800px;">抓取完成，结清剩余款项。我们提交抓取的到的结果数据。</div>
+			</div>
+		</div>
+	</div>
+	<div id="projectInfos" class="sectionBlank"></div> 
+	<div style="width:100%;min-width:1194px;height:1020px;text-align:center;background-color:#f8f8f8;">
+		<div style="width:1194px;height:1020px;margin: 0 auto;">  
+			<div style="width:100%;height:30px;"></div>
+			<div style="width:100%;height:70px;text-align:center;">
+				<div style="width:160px;height:65px;margin:0 auto;text-align:center;color:#333333;font-size:38px;border-bottom:4px #20A3FE solid;">
+					案例介绍
+				</div>
+			</div>
+			<div style="width:100%;height:40px;"></div>
+			<div style="width:100%;height:430px;position:relative;"> 
+				<img class="projectImage" style="left:22px;" src="images/p_ds.png"></img>
+				<img class="projectImage" style="left:420px;" src="images/p_ky.png"></img>
+				<img class="projectImage" style="left:818px;" src="images/p_dt.png"></img>
+				<div class="projectTitle" style="left:22px;">电商竞品</div>
+				<div class="projectTitle" style="left:420px;">科学研究</div>
+				<div class="projectTitle" style="left:818px;">销售公司</div>
+				<div class="projectDescription" style="left:22px;border-bottom-color:#F44A31;">为某生鲜电商公司抓取竞品价格数据（来自多个竞争对手的APP、网站或微信公众号），帮助其建立价格分析系统，以快速制定营销策略。</div>
+				<div class="projectDescription" style="left:420px;border-bottom-color:#5EC35D;">持续从某权威气象网站抓取全国3000多个地区的天气、空气质量等数据，为多家科学研究院所提供数据服务。</div>
+				<div class="projectDescription" style="left:818px;border-bottom-color:#27B2F5;">从主流的在线地图服务网站抓取POI信息，为多家公司的销售业务提供数据支持。</div>
+			</div>
+			<div style="width:100%;height:20px;"></div>
+			<div style="width:100%;height:430px;position:relative;"> 
+				<img class="projectImage" style="left:22px;" src="images/p_gh.png"></img>
+				<img class="projectImage" style="left:420px;" src="images/p_lt.png"></img>
+				<img class="projectImage" style="left:818px;" src="images/p_ct.png"></img>
+				<div class="projectTitle" style="left:22px;">城市规划</div>
+				<div class="projectTitle" style="left:420px;">人力资源</div>
+				<div class="projectTitle" style="left:818px;">内部与外部系统集成</div>
+				<div class="projectDescription" style="left:22px;border-bottom-color:#28B1F7;">从某统计网站抓取城市的实时人口分布，形成该城市各点的人口密度信息，为智慧城市建设和城市精细化管理提供数据依据。</div>
+				<div class="projectDescription" style="left:420px;border-bottom-color:#F44A30;">根据关键词从招聘网站、APP抓取人才信息，大大降低了HR的工作量，帮助其建立外部人才库。</div>
+				<div class="projectDescription" style="left:818px;border-bottom-color:#5FC45E;">将企业内部和外部系统连接起来，实现了信息自动流转。例如，自动抓取海关网站的船运信息，并写入到货代公司内部系统，实现物流信息的及时更新。</div>
+			</div>
+		</div>
+	</div> 
+	<div id="aboutUs" class="sectionBlank"></div> 
+	<div style="width:100%;min-width:1194px;height:590px;text-align:center;">
+		<div style="width:1194px;height:590px;margin: 0 auto; ">  
+			<div style="width:100%;height:70px;text-align:center;">
+				<div style="width:160px;height:65px;margin:0 auto;text-align:center;color:#333333;font-size:38px;border-bottom:4px #20A3FE solid;">
+					关于我们
+				</div>
+			</div>
+			<div style="width:100%;height:50px;"></div>
+			<div style="width:100%;height:140px;position:relative;font-size:20px;color:#393939;text-align:left;line-height:35px;">　　创想数据团队参与过石油、化工、生物、金融、生鲜、会展、政府机构、科研院所、卫生和疾病防控、大宗商品贸易和中小商品贸易等行业领域的“互联网+”建设项目，积累了丰富的数据获取、处理的实践经验，逐渐形成了APP数据抓取、网页数据抓取等方面的技术优势。我们的目标是致力于为客户提供稳定、持续的数据服务，愿与客户一起迎接数据经济时代的机遇和挑战。</div>
+			<div style="width:100%;height:30px;"></div>
+			<div style="width:100%;height:300px;position:relative;">
+			
+				<div class="groupInfo" style="left:20px;top:0px;"><img src="images/groupInfo1.png" /></div> 
+				<div class="groupInfoTitle" style="left:20px;">经验丰富</div>
+				<div class="groupInfoDescription" style="left:20px;">已为国内外数十家企业、组织提供数据抓取服务</div>  
+				
+				<div class="groupInfo" style="left:319px;top:0px;"><img src="images/groupInfo2.png" /></div> 
+				<div class="groupInfoTitle" style="left:319px;">技术先进</div>
+				<div class="groupInfoDescription" style="left:319px;">分布式搭建数据抓取云服务平台，形成持续稳定的运行环境</div>
+				 
+				<div class="groupInfo" style="left:618px;top:0px;"><img src="images/groupInfo3.png" /></div> 
+				<div class="groupInfoTitle" style="left:618px;">设施完善</div>
+				<div class="groupInfoDescription" style="left:618px;">组建了十余种配套方案，以适应各种数据抓取场景</div>  
+				
+				<div class="groupInfo" style="left:917px;top:0px;"><img src="images/groupInfo4.png" /></div> 
+				<div class="groupInfoTitle" style="left:917px;">售后保障</div>
+				<div class="groupInfoDescription" style="left:917px;">一对一的跟踪服务，已于多家客户建立长期合作关系</div>  
+			</div>
+		</div>
+	</div> 
+	<div id="contracts" class="sectionBlank"></div> 
+	<div style="width:100%;min-width:1194px;height:300px;text-align:center;">
+		<div style="width:1194px;height:300px;margin: 0 auto; ">  
+			<div style="width:100%;height:70px;text-align:center;">
+				<div style="width:160px;height:65px;margin:0 auto;text-align:center;color:#333333;font-size:38px;border-bottom:4px #20A3FE solid;">
+					联系方式
+				</div>
+			</div>
+			<div style="width:100%;height:30px;"></div>
+			<div style="width:100%;height:150px;position:relative;">			
+				<div class="contactItem" style="top:10px;">
+					<img class="contactItemImage" src="images/qq.png" />
+					<div class="contactItemText">QQ: <a href="tencent://message/?uin=1101101101&Site=&Menu=yes">987654321</a></div>
+				</div> 	
+				<div class="contactItem" style="top:80px;">
+					<img class="contactItemImage" src="images/tel.png" />
+					<div class="contactItemText">电话: <a href="tel:0531-81217236">0531-81217236</a></div>
+				</div> 	
+				<div class="contactItem" style="top:150px;">
+					<img class="contactItemImage" src="images/email.png" />
+					<div class="contactItemText">邮箱: kf@novacloud.com</div>
+				</div>  
+				<div style="position:absolute;width:200px;height:200px;top:0px;left:750px;">
+					<img style="width:200px;height:200px;" src="images/code.png" />
+				</div>
+			</div>
+		</div>
+	</div> 
+	<div class="sectionBlank"></div> 
+	<div style="width:100%;min-width:1194px;height:100px;text-align:center;background-color:#484848;">
+		<div style="width:100%;height:35px;"></div>
+		<div style="width:1194px;height:65px;margin: 0 auto;font-size:16px;color:#ffffff;line-height:30px;">
+		Copyright&nbsp;&copy;&nbsp;2017&nbsp;Novacloud.Inc&nbsp;济南易贸创想软件有限公司
+		</div>
+	</div> 
+</body>
+</html>

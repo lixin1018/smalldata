@@ -1,0 +1,42 @@
+viewModels.ie_qgcskqzl = {
+  id:"9a914b37-d1ff-4ca9-8643-d30e5a51a3df",
+  name:"ie_qgcskqzl",
+  dataName:"ie_qgcskqzl",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"csbm", label:"城市编码", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"csmc", label:"城市名称", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"rq", label:"日期", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"aqizs", label:"AQI指数", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"zldj", label:"质量等级", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"dtaqipm", label:"当天AQI排名", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"pm25", label:"PM2.5", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"pm10", label:"PM10", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"co", label:"Co", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"no2", label:"No2", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"so2", label:"So2", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"o3", label:"O3", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"id", label:"ID", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"parentid", label:"parentid", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"createtime", label:"记录创建时间", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"isdeleted", label:"已删除", width:50, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"}
+  ],
+  dispUnitModel:[
+    {name:"csbm", label:"城市编码", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"csmc", label:"城市名称", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"rq", label:"日期", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"aqizs", label:"AQI指数", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"zldj", label:"质量等级", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"dtaqipm", label:"当天AQI排名", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"pm25", label:"PM2.5", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"pm10", label:"PM10", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"co", label:"Co", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"no2", label:"No2", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"so2", label:"So2", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"o3", label:"O3", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"id", label:"ID", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"parentid", label:"parentid", editable:true,nullable:true, hidden:true, dispunitType:"text", },
+    {name:"createtime", label:"记录创建时间", editable:true,nullable:true, hidden:true, dispunitType:"time", },
+    {name:"isdeleted", label:"已删除", editable:true,nullable:true, hidden:false, dispunitType:"checkbox", }
+  ]
+}

@@ -1,0 +1,932 @@
+.dirPageContent{height:710px;width:100%;background-color:#ffffff;text-align:center;}
+.dirMainContainer{height:710px;width:100%;position:relative;}
+.dirInnerDiv{position:absolute;left:0px;top:0px;bottom:0px;width:100%;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+.dirListDiv{position:absolute;left:0px;top:0px;bottom:0px;width:100%;height:100%;}
+.operateBar{position:absolute;left:0px;top:0px;right:0px;height:33px;text-align:left;background-color:#eeeeee;}
+.operateBarInner{position:absolute;top:4px;left:4px;right:4px;bottom:0px;}
+.navigateBar{position:absolute;left:0px;top:30px;right:0px;height:40px;}
+.pathBar{position:absolute;left:0px;bottom:0px;width:100%;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+.headerSearchItem{display:none;}
+.dirPathInfo{position:absolute;left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+.dirSummaryInfo{position:absolute;right:0px;width:60px;top:0px;bottom:0px;text-align:center;font-size:12px;}
+.columnTitleBar{position:absolute;left:0px;top:80px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+.dirAndFileList{position:absolute;left:0px;top:100px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+.itemLineDiv{position:relative;width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;}
+.itemLineSelected{background-color:#CCE8FF;}
+.itemSelectDiv{position:absolute;left:0px;top:0px;width:26px;height:30px;line-height:30px;padding-top:2px;text-align:center;}
+.itemIconDiv{position:absolute;left:26px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+.itemNameDiv{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:50px;top:0px;width:300px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.itemNameDiv span{display:none;}
+.itemNameDiv a{color:#757575;text-decoration:none;word-break: break-all;}
+.itemNameDiv a:hover{text-decoration:underline;cursor:pointer;}
+.itemLastModifyTimeDiv{position:absolute;left:350px;top:0px;width:150px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.itemLastModifyTimeDiv span{display:none;}
+.itemCreateTimeDiv{position:absolute;left:500px;top:0px;width:150px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.itemCreateTimeDiv span{display:none;}
+.itemFileTypeDiv{position:absolute;left:650px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.itemFileTypeDiv span{display:none;}
+.itemFileSizeDiv{position:absolute;left:700px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:right;color:#757575;}
+.itemFileSizeDiv span{display:none;}
+.itemDescriptionDiv{position:absolute;left:750px;top:0px;width:250px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.itemDescriptionDiv span{display:none;}
+.columnTitle{float:left;}
+.columnTitleSortBy{position:absolute;display:none;left:0px;top:0px;width:26px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+.columnTitleSelectAll{position:absolute;left:0px;top:0px;width:26px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+.columnTitleSelectAll span{display:none;}
+.columnTitleName{position:absolute;left:26px;top:0px;width:324px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.columnTitleName:hover{background-color:#eeeeee;cursor:default;}
+.columnTitleLastModifyTime{position:absolute;left:350px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+.columnTitleLastModifyTime:hover{background-color:#eeeeee;cursor:default;}
+.columnTitleCreateTime{position:absolute;left:500px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+.columnTitleCreateTime:hover{background-color:#eeeeee;cursor:default;}
+.columnTitleFileType{position:absolute;left:650px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+.columnTitleFileSize{position:absolute;left:700px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+.columnTitleDescription{position:absolute;left:750px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.listSortDisable{display: none;}
+.listSort{float:left;width:16px;height:16px;}
+.listSortAsc{display: block;background-image:url('../img/arrow_up.png');}
+.listSortDesc{display: block;background-image:url('../img/arrow_down.png');}
+.pathPart{font-size:13px;cursor:pointer;}
+.pathPart a{color:#757575;text-decoration: none;}
+.pathPart a:hover{color:#757575;text-decoration: underline;}
+
+.selectDir{display:none;position:absolute;width:600px;height:400px;}
+.selectTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+.selectTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+.selectClose{position:absolute;right:2px;top:2px;width:16px;height:16px;}
+.selectCloseImage{width:16px;height:16px;}
+.selectNavigateBar{position:absolute;left:0px;top:20px;right:0px;height:40px;}
+.selectDirPathContainer{position:absolute;left:0px;bottom:7px;right:85px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+.selectDirPathInfo{position:absolute;left:3px;right:0px;top:0px;bottom:0px;text-align:left;}
+.selectBtnContainer{position:absolute;right:0px;bottom:7px;width:80px;height:30px;line-height:30px;text-align:center;}
+.selectSelectBtn{width:80px;height:30px;}
+.selectColumnTitleContainer{position:absolute;left:0px;top:60px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+.selectNameSortDirection{width:50px;}
+.selectDirAndFileList{position:absolute;left:0px;top:80px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+.selectFile{display:none;position:absolute;width:600px;height:400px;}
+.popItemLineDiv{position:relative;width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+.popItemLineDivSelected{background-color:#CCE8FF;} 
+.popItemIconDiv{position:absolute;left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+.popItemNameDiv{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.popItemNameDiv a{color:#757575;text-decoration:none;word-break: break-all;}
+.popItemNameDiv a:hover{text-decoration:underline;cursor:pointer;}
+.popItemFileTypeDiv{position:absolute;left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.popColumnTitleName{position:absolute;left:0px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.popColumnTitleName:hover{background-color:#eeeeee;cursor:default;}
+.popColumnTitleFileType{position:absolute;left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+.popItemSelectDivMultiSelect{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:30px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.popItemIconDivMultiSelect{position:absolute;left:30px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+.popItemNameDivMultiSelect{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:54px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.popItemNameDivMultiSelect a{color:#757575;text-decoration:none;word-break: break-all;}
+.popItemNameDivMultiSelect a:hover{text-decoration:underline;cursor:pointer;}
+.popItemFileTypeDivMultiSelect{position:absolute;left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.popColumnTitleSelectMultiSelect{position:absolute;left:0px;top:0px;width:30px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.popColumnTitleNameMultiSelect{position:absolute;left:30px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.popColumnTitleNameMultiSelect:hover{background-color:#eeeeee;cursor:default;}
+.popColumnTitleFileTypeMultiSelect{position:absolute;left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+
+.sendFile{display:none;position:absolute;width:600px;height:400px;}
+.sendTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+.sendTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+.sendClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+.sendCloseImage{width:16px;height:16px;}
+.sendNavigateBar{position:absolute;left:0px;top:20px;right:0px;height:90px;}
+.sendToEmailsBtn{position:absolute;left:100px;top:0px;width:80px;height:27px;cursor:pointer;}
+.sendToEmailsContainer{position:absolute;top:0px;left:189px;right:10px;height:40px;line-height:40px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+.sendToEmails{position:absolute;left:0px;right:0px;top:0px;height:40px;padding:0px;border:0px;resize:none;}
+.sendSelectFileBtn{position:absolute;left:100px;top:48px;width:80px;height:27px;cursor:pointer;}
+.sendFileListContainer{position:absolute;top:48px;left:189px;right:10px;height:45px;line-height:20px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:auto;}
+.sendFileList{position:absolute;left:0px;right:0px;top:0px;height:45px;}
+.sendFileBtnContainer{position:absolute;top:0px;left:0px;width:100px;height:95px;line-height:95px;text-align:center;}
+.sendFileBtn{width:80px;height:95px;cursor:pointer;}
+.sendMessageContainer{position:absolute;left:10px;top:125px;right:10px;bottom:5px;overflow-x:hidden;overflow-y:auto;text-align:center;border: solid 1px #E3E4E5;}
+.sendMessageContent{position:relative;top:0px;width:578px;height:285px;resize:none;padding:0px;border:0px;}
+
+.selectUser{display:none;position:absolute;width:600px;height:400px;}
+.selectUserTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+.selectUserTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+.selectUserClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+.selectUserCloseImage{width:16px;height:16px;}
+.selectUserMain{position:absolute;left:0px;top:20px;right:0px;height:380px;}
+.selectUserLayout{position:absolute;height:380px;width:600px;}
+.selectUserFilterContainer{height:30px;}
+.selectUserFilterTable{width:100%;height:26px;font-size:12px;}
+.selectUserFilterTitleTeamTd{width:40px;text-align:right;padding-left:3px;}
+.selectUserFilterTeamTd{width:100px;}
+.selectUserFilterTeam{width:100px;height:24px;}
+.selectUserFilterTitleUserTd{width:40px;text-align:right;padding-left:3px;}
+.selectUserFilterUserTd{width:100px;}
+.selectUserFilterUser{width:100px;height:24px;}
+.selectUserFilterBtnContainer{width:50px;text-align:center;}
+.selectUserFilterBtn{width:50px;color:#333333;cursor:pointer;}
+.selectUserFilterReturnBtnContainer{width:85px;text-align:left;}
+.selectUserFilterReturnBtn{width:80px;height:24px;cursor:pointer;}
+.selectUserPaginationContainer{height:24px;}
+.selectUserPagination{float:left;}
+
+.selectFileType{display:none;position:absolute;width:600px;height:400px;}
+.selectFileTypeTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+.selectFileTypeTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+.selectFileTypeClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+.selectFileTypeCloseImage{width:16px;height:16px;}
+.selectFileTypeListContainer{position:absolute;left:0px;top:20px;right:0px;height:340px;}
+.fileTypeItemDiv{position:relative;font-size:13x; float:left; height:50px; width:180px;}
+.fileTypeItemInnerDiv{position:absolute; left: 5px;top:5px; height:40px; width:170px; border: solid 1px #e9eaea;cursor:pointer;}
+.fileTypeItemInnerDivSelected{background-color:#CCE8FF;}
+.fileTypeItemImg{position:absolute;left: 5px;top:12px; width:16px; height:16px;}
+.fileTypeItemTypeNameDiv{position:absolute;left: 30px;top:0px; width:140px; height:20px;}
+.fileTypeItemTypeDescriptionDiv{position:absolute;font-size:11px;left: 30px;top:20px; width:140px; height:20px;}
+.selectFileTypeOperateContainer{position:absolute;left:0px;bottom:0px;right:0px;height:30px;}
+.selectFileTypeInputNameContainer{position:absolute;left:0px;bottom:0px;right:80px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+.selectFileTypeInputName{position:absolute;left:5px;right:100px;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+.selectFileTypeBtnContainer{position:absolute;right:0px;bottom:0px;width:80px;height:30px;line-height:30px;text-align:center;}
+.selectFileTypeReturnBtn{width:70px;height:30px;}
+
+
+@media all and (min-width: 240px) and (max-width: 359px){   
+	.dirPageContent{height:710px;}
+	.dirMainContainer{height:710px;}
+	.operateBar{height:90px;}
+	.operateBarInner{top:4px;left:4px;right:4px;}
+	.navigateBar{top:95px;height:60px;}
+	.pathBar{height:60px;line-height:30px;font-size:13px;}
+	.dirPathInfo{left:3px;}
+	.dirSummaryInfo{font-size:12px;top:30px;}
+	.columnTitleBar{top:160px;height:20px;}
+	.dirAndFileList{top:180px;}
+	.columnTitleSelectAll{left:0px;top:0px;width:66px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleSelectAll input{float:left;}
+	.columnTitleSelectAll span{display:block;float:left;}
+	.columnTitleSortBy{display:block;left:75px;width:40px;}
+	.columnTitleName{left:115px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:left;}
+	.columnTitleLastModifyTime{left:165px;top:0px;width:75px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleCreateTime{left:240px;top:0px;width:75px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleFileType{display:none;left:650px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleFileSize{display:none;left:700px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleDescription{display:none;left:750px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.listSort{width:16px;height:16px;}
+	.pathPart{font-size:14px;}
+	.itemLineDiv{height:75px;border-bottom:dashed #eeeeee 1px;} 
+	.itemSelectDiv{width:26px;height:30px;line-height:30px;padding-top:2px;}
+	.itemIconDiv{left:26px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.itemNameDiv{left:50px;top:0px;width:300px;right:0px;line-height:30px;font-size:15px;text-align:left;font-weight:600;}
+	.itemNameDiv span{display:none;float:left;} 
+	.itemLastModifyTimeDiv{left:24px;top:30px;width:200px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemLastModifyTimeDiv span{display:block;float:left;}
+	.itemCreateTimeDiv{left:24px;top:50px;width:200px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemCreateTimeDiv span{display:block;float:left;}
+	.itemFileTypeDiv{left:210px;top:30px;width:120px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemFileTypeDiv span{display:block;float:left;}
+	.itemFileSizeDiv{left:210px;top:50px;width:80px;height:20px;line-height:20px;font-size:12px;text-align:right;}
+	.itemFileSizeDiv span{display:block;float:left;}
+	.itemDescriptionDiv{display:none;left:750px;top:20px;width:250px;height:20px;line-height:20px;font-size:12px;text-align:left;} 
+	.itemDescriptionDiv span{display:block;float:left;}
+	
+	.selectDir{display:none;width:240px;height:350px;} 
+	.selectFile{display:none;width:240px;height:350px;}
+	.selectTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectTitle{left:0px;top:0px;right:0px;height:20px;}
+	.selectClose{right:2px;top:2px;width:16px;height:16px;}
+	.selectCloseImage{width:16px;height:16px;}
+	.selectNavigateBar{left:0px;top:20px;right:0px;height:60px;}
+	.selectDirPathContainer{left:0px;bottom:0px;right:65px;height:60px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectDirPathInfo{left:3px;right:0px;top:0px;bottom:0px;text-align:left;}
+	.selectBtnContainer{right:0px;bottom:0px;width:60px;height:30px;line-height:30px;text-align:center;}
+	.selectSelectBtn{width:60px;height:30px;}
+	.selectColumnTitleContainer{left:0px;top:85px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.selectNameSortDirection{width:50px;}
+	.selectDirAndFileList{left:0px;top:105px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+	.popItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.popItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDiv{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDiv{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleName{left:0px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileType{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	.popItemSelectDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:30px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemIconDivMultiSelect{left:30px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:54px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDivMultiSelect{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleSelectMultiSelect{left:0px;top:0px;width:30px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleNameMultiSelect{left:30px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileTypeMultiSelect{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	
+	.sendFile{display:none;width:240px;height:350px;}
+	.sendTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sendTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.sendClose{right:1px;top:1px;width:16px;height:16px;}
+	.sendCloseImage{width:16px;height:16px;}
+	.sendNavigateBar{left:0px;top:20px;right:0px;height:140px;}
+	.sendToEmailsBtn{left:0px;top:0px;width:75px;height:30px;cursor:pointer;}
+	.sendToEmailsContainer{top:0px;left:85px;right:0px;height:40px;line-height:40px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendToEmails{left:0px;right:0px;top:0px;height:40px;padding:0px;border:0px;resize:none;}
+	.sendSelectFileBtn{left:0px;top:48px;width:75px;height:30px;cursor:pointer;}
+	.sendFileListContainer{top:48px;left:85px;right:0px;height:45px;line-height:20px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendFileList{left:0px;right:0px;top:0px;height:45px;}
+	.sendFileBtnContainer{bottom:10px;left:auto;top:auto;right:0px;width:65px;height:30px;line-height:40px;text-align:center;}
+	.sendFileBtn{width:60px;height:30px;cursor:pointer;right:0px;top:0px;}
+	.sendMessageContainer{left:0px;top:160px;right:0px;bottom:10px;overflow:hidden;text-align:center;}
+	.sendMessageContent{top:0px;width:100%;height:100%;resize:none;padding:0px;border:0px;}
+	
+	.selectUser{display:none;width:240px;height:350px;}
+	.selectUserTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+	.selectUserTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectUserClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+	.selectUserCloseImage{width:16px;height:16px;}
+	.selectUserMain{position:absolute;left:0px;top:20px;right:0px;height:380px;width:100%;}
+	.selectUserLayout{position:absolute;height:320px;width:240px;}
+	.selectUserFilterContainer{height:30px;width:100%;}
+	.selectUserFilterTable{width:100%;height:26px;font-size:12px;}
+	.selectUserFilterTitleTeamTd{display:none;width:30px;text-align:right;padding-left:3px;}
+	.selectUserFilterTeamTd{display:none;width:100px;}
+	.selectUserFilterTeam{display:none;width:100px;height:24px;}
+	.selectUserFilterTitleUserTd{width:50px;text-align:right;padding-left:3px;}
+	.selectUserFilterUserTd{width:70px;}
+	.selectUserFilterUser{width:70px;height:24px;}
+	.selectUserFilterBtnContainer{width:50px;text-align:center;}
+	.selectUserFilterBtn{width:50px;color:#333333;cursor:pointer;}
+	.selectUserFilterReturnBtnContainer{width:50px;text-align:left;}
+	.selectUserFilterReturnBtn{width:50px;height:24px;cursor:pointer;}
+	.selectUserPaginationContainer{height:26px;}
+	.selectUserPagination{float:left;}
+	
+	.selectFileType{display:none;width:240px;height:350px;}
+	.selectFileTypeTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectFileTypeTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectFileTypeClose{right:1px;top:1px;width:16px;height:16px;}
+	.selectFileTypeCloseImage{width:16px;height:16px;}
+	.selectFileTypeListContainer{left:0px;top:20px;right:0px;height:290px;}
+	.fileTypeItemDiv{font-size:13x; float:left; height:50px; width:180px;}
+	.fileTypeItemInnerDiv{left: 5px;top:5px; height:40px; width:170px; border: solid 1px #e9eaea;cursor:pointer;}
+	.fileTypeItemImg{left: 5px;top:12px; width:16px; height:16px;}
+	.fileTypeItemTypeNameDiv{left: 30px;top:0px; width:140px; height:20px;}
+	.fileTypeItemTypeDescriptionDiv{font-size:11px;left: 30px;top:20px; width:140px; height:20px;}
+	.selectFileTypeOperateContainer{left:0px;bottom:0px;right:0px;height:30px;}
+	.selectFileTypeInputNameContainer{left:0px;bottom:0px;right:70px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectFileTypeInputName{left:0px;width:100%;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.selectFileTypeBtnContainer{right:0px;bottom:0px;width:70px;height:30px;line-height:30px;text-align:center;}
+	.selectFileTypeReturnBtn{width:60px;height:30px;}
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){   
+	.dirPageContent{height:710px;}
+	.dirMainContainer{height:710px;}
+	.operateBar{height:60px;}
+	.operateBarInner{top:4px;left:4px;right:4px;}
+	.navigateBar{top:65px;height:60px;}
+	.pathBar{height:60px;line-height:30px;font-size:13px;}
+	.dirPathInfo{left:3px;}
+	.dirSummaryInfo{font-size:12px;top:30px;}
+	.columnTitleBar{top:130px;height:20px;}
+	.dirAndFileList{top:150px;}
+	.columnTitleSelectAll{left:0px;top:0px;width:66px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleSelectAll input{float:left;}
+	.columnTitleSelectAll span{display:block;float:left;}
+	.columnTitleSortBy{display:block;left:75px;width:40px;}
+	.columnTitleName{left:115px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:left;}
+	.columnTitleLastModifyTime{left:165px;top:0px;width:75px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleCreateTime{left:240px;top:0px;width:75px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleFileType{display:none;left:650px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleFileSize{display:none;left:700px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleDescription{display:none;left:750px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.listSort{width:16px;height:16px;}
+	.pathPart{font-size:14px;}
+	.itemLineDiv{height:75px;border-bottom:dashed #eeeeee 1px;} 
+	.itemSelectDiv{width:26px;height:30px;line-height:30px;padding-top:2px;}
+	.itemIconDiv{left:26px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.itemNameDiv{left:50px;top:0px;width:300px;right:0px;line-height:30px;font-size:15px;text-align:left;font-weight:600;}
+	.itemNameDiv span{display:none;float:left;} 
+	.itemLastModifyTimeDiv{left:24px;top:30px;width:200px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemLastModifyTimeDiv span{display:block;float:left;}
+	.itemCreateTimeDiv{left:24px;top:50px;width:200px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemCreateTimeDiv span{display:block;float:left;}
+	.itemFileTypeDiv{left:210px;top:30px;width:120px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemFileTypeDiv span{display:block;float:left;}
+	.itemFileSizeDiv{left:210px;top:50px;width:80px;height:20px;line-height:20px;font-size:12px;text-align:right;}
+	.itemFileSizeDiv span{display:block;float:left;}
+	.itemDescriptionDiv{display:none;left:750px;top:20px;width:250px;height:20px;line-height:20px;font-size:12px;text-align:left;} 
+	.itemDescriptionDiv span{display:block;float:left;}
+	
+	.selectDir{display:none;width:340px;height:350px;} 
+	.selectFile{display:none;width:340px;height:350px;}
+	.selectTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectTitle{left:0px;top:0px;right:0px;height:20px;}
+	.selectClose{right:2px;top:2px;width:16px;height:16px;}
+	.selectCloseImage{width:16px;height:16px;}
+	.selectNavigateBar{left:0px;top:20px;right:0px;height:60px;}
+	.selectDirPathContainer{left:0px;bottom:0px;right:65px;height:60px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectDirPathInfo{left:3px;right:0px;top:0px;bottom:0px;text-align:left;}
+	.selectBtnContainer{right:0px;bottom:0px;width:60px;height:30px;line-height:30px;text-align:center;}
+	.selectSelectBtn{width:60px;height:30px;}
+	.selectColumnTitleContainer{left:0px;top:85px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.selectNameSortDirection{width:50px;}
+	.selectDirAndFileList{left:0px;top:105px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+	.popItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.popItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDiv{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDiv{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleName{left:0px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileType{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	.popItemSelectDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:30px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemIconDivMultiSelect{left:30px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:54px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDivMultiSelect{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleSelectMultiSelect{left:0px;top:0px;width:30px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleNameMultiSelect{left:30px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileTypeMultiSelect{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	
+	.sendFile{display:none;width:340px;height:350px;}
+	.sendTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sendTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.sendClose{right:1px;top:1px;width:16px;height:16px;}
+	.sendCloseImage{width:16px;height:16px;}
+	.sendNavigateBar{left:0px;top:20px;right:0px;height:140px;}
+	.sendToEmailsBtn{left:0px;top:0px;width:75px;height:30px;cursor:pointer;}
+	.sendToEmailsContainer{top:0px;left:85px;right:0px;height:40px;line-height:40px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendToEmails{left:0px;right:0px;top:0px;height:40px;padding:0px;border:0px;resize:none;}
+	.sendSelectFileBtn{left:0px;top:48px;width:75px;height:30px;cursor:pointer;}
+	.sendFileListContainer{top:48px;left:85px;right:0px;height:45px;line-height:20px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendFileList{left:0px;right:0px;top:0px;height:45px;}
+	.sendFileBtnContainer{bottom:10px;left:auto;top:auto;right:0px;width:65px;height:30px;line-height:40px;text-align:center;}
+	.sendFileBtn{width:60px;height:30px;cursor:pointer;right:0px;top:0px;}
+	.sendMessageContainer{left:0px;top:160px;right:0px;bottom:10px;overflow:hidden;text-align:center;}
+	.sendMessageContent{top:0px;width:100%;height:100%;resize:none;padding:0px;border:0px;}
+	
+	.selectUser{display:none;width:340px;height:350px;}
+	.selectUserTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+	.selectUserTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectUserClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+	.selectUserCloseImage{width:16px;height:16px;}
+	.selectUserMain{position:absolute;left:0px;top:20px;right:0px;height:380px;width:100%;}
+	.selectUserLayout{position:absolute;height:320px;width:340px;}
+	.selectUserFilterContainer{height:30px;width:100%;}
+	.selectUserFilterTable{width:100%;height:26px;font-size:12px;}
+	.selectUserFilterTitleTeamTd{display:none;width:30px;text-align:right;padding-left:3px;}
+	.selectUserFilterTeamTd{display:none;width:100px;}
+	.selectUserFilterTeam{display:none;width:100px;height:24px;}
+	.selectUserFilterTitleUserTd{width:50px;text-align:right;padding-left:3px;}
+	.selectUserFilterUserTd{width:70px;}
+	.selectUserFilterUser{width:70px;height:24px;}
+	.selectUserFilterBtnContainer{width:50px;text-align:center;}
+	.selectUserFilterBtn{width:50px;color:#333333;cursor:pointer;}
+	.selectUserFilterReturnBtnContainer{width:50px;text-align:left;}
+	.selectUserFilterReturnBtn{width:50px;height:24px;cursor:pointer;}
+	.selectUserPaginationContainer{height:26px;}
+	.selectUserPagination{float:left;}
+	
+	.selectFileType{display:none;width:340px;height:350px;}
+	.selectFileTypeTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectFileTypeTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectFileTypeClose{right:1px;top:1px;width:16px;height:16px;}
+	.selectFileTypeCloseImage{width:16px;height:16px;}
+	.selectFileTypeListContainer{left:0px;top:20px;right:0px;height:290px;}
+	.fileTypeItemDiv{font-size:13x; float:left; height:50px; width:180px;}
+	.fileTypeItemInnerDiv{left: 5px;top:5px; height:40px; width:170px; border: solid 1px #e9eaea;cursor:pointer;}
+	.fileTypeItemImg{left: 5px;top:12px; width:16px; height:16px;}
+	.fileTypeItemTypeNameDiv{left: 30px;top:0px; width:140px; height:20px;}
+	.fileTypeItemTypeDescriptionDiv{font-size:11px;left: 30px;top:20px; width:140px; height:20px;}
+	.selectFileTypeOperateContainer{left:0px;bottom:0px;right:0px;height:30px;}
+	.selectFileTypeInputNameContainer{left:0px;bottom:0px;right:70px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectFileTypeInputName{left:0px;width:100%;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.selectFileTypeBtnContainer{right:0px;bottom:0px;width:70px;height:30px;line-height:30px;text-align:center;}
+	.selectFileTypeReturnBtn{width:60px;height:30px;}
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){ 
+	.dirPageContent{height:710px;}
+	.dirMainContainer{height:710px;}
+	.operateBar{height:60px;}
+	.operateBarInner{top:4px;left:4px;right:4px;}
+	.navigateBar{top:65px;height:60px;}
+	.pathBar{height:60px;line-height:30px;font-size:13px;}
+	.dirPathInfo{left:3px;}
+	.dirSummaryInfo{font-size:12px;top:30px;}
+	.columnTitleBar{top:130px;height:20px;}
+	.dirAndFileList{top:150px;}
+	.columnTitleSelectAll{left:0px;top:0px;width:66px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleSelectAll input{float:left;}
+	.columnTitleSelectAll span{display:block;float:left;}
+	.columnTitleSortBy{display:block;left:75px;width:40px;}
+	.columnTitleName{left:115px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:left;}
+	.columnTitleLastModifyTime{left:165px;top:0px;width:75px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleCreateTime{left:240px;top:0px;width:75px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleFileType{display:none;left:650px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleFileSize{display:none;left:700px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleDescription{display:none;left:750px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.listSort{width:16px;height:16px;}
+	.pathPart{font-size:14px;}
+	.itemLineDiv{height:75px;border-bottom:dashed #eeeeee 1px;} 
+	.itemSelectDiv{width:26px;height:30px;line-height:30px;padding-top:2px;}
+	.itemIconDiv{left:26px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.itemNameDiv{left:50px;top:0px;width:300px;right:0px;line-height:30px;font-size:15px;text-align:left;font-weight:600;}
+	.itemNameDiv span{display:none;float:left;} 
+	.itemLastModifyTimeDiv{left:24px;top:30px;width:200px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemLastModifyTimeDiv span{display:block;float:left;}
+	.itemCreateTimeDiv{left:24px;top:50px;width:200px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemCreateTimeDiv span{display:block;float:left;}
+	.itemFileTypeDiv{left:210px;top:30px;width:120px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemFileTypeDiv span{display:block;float:left;}
+	.itemFileSizeDiv{left:210px;top:50px;width:80px;height:20px;line-height:20px;font-size:12px;text-align:right;}
+	.itemFileSizeDiv span{display:block;float:left;}
+	.itemDescriptionDiv{display:none;left:750px;top:20px;width:250px;height:20px;line-height:20px;font-size:12px;text-align:left;} 
+	.itemDescriptionDiv span{display:block;float:left;}
+	
+	.selectDir{display:none;width:460px;height:350px;} 
+	.selectFile{display:none;width:460px;height:350px;}
+	.selectTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectTitle{left:0px;top:0px;right:0px;height:20px;}
+	.selectClose{right:2px;top:2px;width:16px;height:16px;}
+	.selectCloseImage{width:16px;height:16px;}
+	.selectNavigateBar{left:0px;top:20px;right:0px;height:60px;}
+	.selectDirPathContainer{left:0px;bottom:0px;right:65px;height:60px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectDirPathInfo{left:3px;right:0px;top:0px;bottom:0px;text-align:left;}
+	.selectBtnContainer{right:0px;bottom:0px;width:60px;height:30px;line-height:30px;text-align:center;}
+	.selectSelectBtn{width:60px;height:30px;}
+	.selectColumnTitleContainer{left:0px;top:85px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.selectNameSortDirection{width:50px;}
+	.selectDirAndFileList{left:0px;top:105px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+	.popItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.popItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDiv{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDiv{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleName{left:0px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileType{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	.popItemSelectDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:30px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemIconDivMultiSelect{left:30px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:54px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDivMultiSelect{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleSelectMultiSelect{left:0px;top:0px;width:30px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleNameMultiSelect{left:30px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileTypeMultiSelect{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	
+	.sendFile{display:none;width:460px;height:350px;}
+	.sendTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sendTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.sendClose{right:1px;top:1px;width:16px;height:16px;}
+	.sendCloseImage{width:16px;height:16px;}
+	.sendNavigateBar{left:0px;top:20px;right:0px;height:140px;}
+	.sendToEmailsBtn{left:0px;top:0px;width:75px;height:30px;cursor:pointer;}
+	.sendToEmailsContainer{top:0px;left:85px;right:0px;height:40px;line-height:40px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendToEmails{left:0px;right:0px;top:0px;height:40px;padding:0px;border:0px;resize:none;}
+	.sendSelectFileBtn{left:0px;top:48px;width:75px;height:30px;cursor:pointer;}
+	.sendFileListContainer{top:48px;left:85px;right:0px;height:45px;line-height:20px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendFileList{left:0px;right:0px;top:0px;height:45px;}
+	.sendFileBtnContainer{bottom:10px;left:auto;top:auto;right:0px;width:65px;height:30px;line-height:40px;text-align:center;}
+	.sendFileBtn{width:60px;height:30px;cursor:pointer;right:0px;top:0px;}
+	.sendMessageContainer{left:0px;top:160px;right:0px;bottom:10px;overflow:hidden;text-align:center;}
+	.sendMessageContent{top:0px;width:100%;height:100%;resize:none;padding:0px;border:0px;}
+	
+	.selectUser{display:none;width:460px;height:350px;}
+	.selectUserTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+	.selectUserTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectUserClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+	.selectUserCloseImage{width:16px;height:16px;}
+	.selectUserMain{position:absolute;left:0px;top:20px;right:0px;height:380px;width:100%;}
+	.selectUserLayout{position:absolute;height:320px;width:460px;}
+	.selectUserFilterContainer{height:30px;width:100%;}
+	.selectUserFilterTable{width:100%;height:26px;font-size:12px;}
+	.selectUserFilterTitleTeamTd{display:none;width:30px;text-align:right;padding-left:3px;}
+	.selectUserFilterTeamTd{display:none;width:100px;}
+	.selectUserFilterTeam{display:none;width:100px;height:24px;}
+	.selectUserFilterTitleUserTd{width:50px;text-align:right;padding-left:3px;}
+	.selectUserFilterUserTd{width:100px;}
+	.selectUserFilterUser{width:100px;height:24px;}
+	.selectUserFilterBtnContainer{width:50px;text-align:center;}
+	.selectUserFilterBtn{width:50px;color:#333333;cursor:pointer;}
+	.selectUserFilterReturnBtnContainer{width:50px;text-align:left;}
+	.selectUserFilterReturnBtn{width:50px;height:24px;cursor:pointer;}
+	.selectUserPaginationContainer{height:26px;}
+	.selectUserPagination{float:left;}
+	
+	.selectFileType{display:none;width:460px;height:350px;}
+	.selectFileTypeTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectFileTypeTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectFileTypeClose{right:1px;top:1px;width:16px;height:16px;}
+	.selectFileTypeCloseImage{width:16px;height:16px;}
+	.selectFileTypeListContainer{left:0px;top:20px;right:0px;height:290px;}
+	.fileTypeItemDiv{font-size:13x; float:left; height:50px; width:180px;}
+	.fileTypeItemInnerDiv{left: 5px;top:5px; height:40px; width:170px; border: solid 1px #e9eaea;cursor:pointer;}
+	.fileTypeItemImg{left: 5px;top:12px; width:16px; height:16px;}
+	.fileTypeItemTypeNameDiv{left: 30px;top:0px; width:140px; height:20px;}
+	.fileTypeItemTypeDescriptionDiv{font-size:11px;left: 30px;top:20px; width:140px; height:20px;}
+	.selectFileTypeOperateContainer{left:0px;bottom:0px;right:0px;height:30px;}
+	.selectFileTypeInputNameContainer{left:0px;bottom:0px;right:70px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectFileTypeInputName{left:0px;width:100%;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.selectFileTypeBtnContainer{right:0px;bottom:0px;width:70px;height:30px;line-height:30px;text-align:center;}
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){
+	.dirPageContent{height:710px;}
+	.dirMainContainer{height:710px;}
+	.operateBar{height:30px;}
+	.operateBarInner{top:4px;left:4px;right:4px;}
+	.navigateBar{top:35px;height:60px;}
+	.pathBar{height:60px;line-height:30px;font-size:13px;}
+	.dirPathInfo{left:3px;}
+	.dirSummaryInfo{font-size:12px;top:30px;}
+	.columnTitleBar{top:100px;height:20px;}
+	.dirAndFileList{top:120px;}
+	.columnTitleSelectAll{left:0px;top:0px;width:66px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleSelectAll input{float:left;}
+	.columnTitleSelectAll span{display:block;float:left;}
+	.columnTitleSortBy{display:block;left:75px;width:40px;}
+	.columnTitleName{left:115px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:left;}
+	.columnTitleLastModifyTime{left:165px;top:0px;width:75px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleCreateTime{left:240px;top:0px;width:75px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleFileType{display:none;left:650px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleFileSize{display:none;left:700px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.columnTitleDescription{display:none;left:750px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.listSort{width:16px;height:16px;}
+	.pathPart{font-size:14px;}
+	.itemLineDiv{height:75px;border-bottom:dashed #eeeeee 1px;} 
+	.itemSelectDiv{width:26px;height:30px;line-height:30px;padding-top:2px;}
+	.itemIconDiv{left:26px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.itemNameDiv{left:50px;top:0px;width:300px;right:0px;line-height:30px;font-size:15px;text-align:left;font-weight:600;}
+	.itemNameDiv span{display:none;float:left;} 
+	.itemLastModifyTimeDiv{left:24px;top:30px;width:200px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemLastModifyTimeDiv span{display:block;float:left;}
+	.itemCreateTimeDiv{left:24px;top:50px;width:200px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemCreateTimeDiv span{display:block;float:left;}
+	.itemFileTypeDiv{left:210px;top:30px;width:120px;height:20px;line-height:20px;font-size:12px;text-align:left;}
+	.itemFileTypeDiv span{display:block;float:left;}
+	.itemFileSizeDiv{left:210px;top:50px;width:80px;height:20px;line-height:20px;font-size:12px;text-align:right;}
+	.itemFileSizeDiv span{display:block;float:left;}
+	.itemDescriptionDiv{display:none;left:750px;top:20px;width:250px;height:20px;line-height:20px;font-size:12px;text-align:left;} 
+	.itemDescriptionDiv span{display:block;float:left;}
+	
+	.selectDir{display:none;width:620px;height:350px;} 
+	.selectFile{display:none;width:620px;height:350px;}
+	.selectTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectTitle{left:0px;top:0px;right:0px;height:20px;}
+	.selectClose{right:2px;top:2px;width:16px;height:16px;}
+	.selectCloseImage{width:16px;height:16px;}
+	.selectNavigateBar{left:0px;top:20px;right:0px;height:60px;}
+	.selectDirPathContainer{left:0px;bottom:0px;right:65px;height:60px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectDirPathInfo{left:3px;right:0px;top:0px;bottom:0px;text-align:left;}
+	.selectBtnContainer{right:0px;bottom:0px;width:60px;height:30px;line-height:30px;text-align:center;}
+	.selectSelectBtn{width:60px;height:30px;}
+	.selectColumnTitleContainer{left:0px;top:85px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.selectNameSortDirection{width:50px;}
+	.selectDirAndFileList{left:0px;top:105px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+	.popItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.popItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDiv{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDiv{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleName{left:0px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileType{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	.popItemSelectDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:30px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemIconDivMultiSelect{left:30px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:54px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDivMultiSelect{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleSelectMultiSelect{left:0px;top:0px;width:30px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleNameMultiSelect{left:30px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileTypeMultiSelect{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	
+	.sendFile{display:none;width:620px;height:350px;}
+	.sendTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sendTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.sendClose{right:1px;top:1px;width:16px;height:16px;}
+	.sendCloseImage{width:16px;height:16px;}
+	.sendNavigateBar{left:0px;top:20px;right:0px;height:140px;}
+	.sendToEmailsBtn{left:0px;top:0px;width:75px;height:30px;cursor:pointer;}
+	.sendToEmailsContainer{top:0px;left:85px;right:0px;height:40px;line-height:40px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendToEmails{left:0px;right:0px;top:0px;height:40px;padding:0px;border:0px;resize:none;}
+	.sendSelectFileBtn{left:0px;top:48px;width:75px;height:30px;cursor:pointer;}
+	.sendFileListContainer{top:48px;left:85px;right:0px;height:45px;line-height:20px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendFileList{left:0px;right:0px;top:0px;height:45px;}
+	.sendFileBtnContainer{bottom:10px;left:auto;top:auto;right:0px;width:65px;height:30px;line-height:40px;text-align:center;}
+	.sendFileBtn{width:60px;height:30px;cursor:pointer;right:0px;top:0px;}
+	.sendMessageContainer{left:0px;top:160px;right:0px;bottom:10px;overflow:hidden;text-align:center;}
+	.sendMessageContent{top:0px;width:100%;height:100%;resize:none;padding:0px;border:0px;}
+	
+	.selectUser{display:none;width:620px;height:350px;}
+	.selectUserTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+	.selectUserTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectUserClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+	.selectUserCloseImage{width:16px;height:16px;}
+	.selectUserMain{position:absolute;left:0px;top:20px;right:0px;height:380px;width:100%;}
+	.selectUserLayout{position:absolute;height:320px;width:620px;}
+	.selectUserFilterContainer{height:30px;width:100%;}
+	.selectUserFilterTable{width:100%;height:26px;font-size:12px;}
+	.selectUserFilterTitleTeamTd{display:none;width:30px;text-align:right;padding-left:3px;}
+	.selectUserFilterTeamTd{display:none;width:100px;}
+	.selectUserFilterTeam{display:none;width:100px;height:24px;}
+	.selectUserFilterTitleUserTd{width:50px;text-align:right;padding-left:3px;}
+	.selectUserFilterUserTd{width:150px;}
+	.selectUserFilterUser{width:150px;height:24px;}
+	.selectUserFilterBtnContainer{width:50px;text-align:center;}
+	.selectUserFilterBtn{width:50px;color:#333333;cursor:pointer;}
+	.selectUserFilterReturnBtnContainer{width:50px;text-align:left;}
+	.selectUserFilterReturnBtn{width:50px;height:24px;cursor:pointer;}
+	.selectUserPaginationContainer{height:26px;}
+	.selectUserPagination{float:left;}
+	
+	.selectFileType{display:none;width:620px;height:350px;}
+	.selectFileTypeTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectFileTypeTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectFileTypeClose{right:1px;top:1px;width:16px;height:16px;}
+	.selectFileTypeCloseImage{width:16px;height:16px;}
+	.selectFileTypeListContainer{left:0px;top:20px;right:0px;height:290px;}
+	.fileTypeItemDiv{font-size:13x; float:left; height:50px; width:180px;}
+	.fileTypeItemInnerDiv{left: 5px;top:5px; height:40px; width:170px; border: solid 1px #e9eaea;cursor:pointer;}
+	.fileTypeItemImg{left: 5px;top:12px; width:16px; height:16px;}
+	.fileTypeItemTypeNameDiv{left: 30px;top:0px; width:140px; height:20px;}
+	.fileTypeItemTypeDescriptionDiv{font-size:11px;left: 30px;top:20px; width:140px; height:20px;}
+	.selectFileTypeOperateContainer{left:0px;bottom:0px;right:0px;height:30px;}
+	.selectFileTypeInputNameContainer{left:0px;bottom:0px;right:70px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectFileTypeInputName{left:0px;width:100%;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.selectFileTypeBtnContainer{right:0px;bottom:0px;width:70px;height:30px;line-height:30px;text-align:center;}
+} 
+
+@media all and (min-width: 768px) and (max-width: 999px){ 
+	.dirPageContent{height:710px;}
+	.dirMainContainer{height:710px;}
+	.operateBar{height:30px;}
+	.operateBarInner{top:4px;left:4px;right:4px;}
+	.navigateBar{top:35px;height:30px;}
+	.pathBar{height:30px;line-height:30px;font-size:13px;}
+	.dirPathInfo{left:3px;}
+	.dirSummaryInfo{font-size:12px;top:0px;}
+	.columnTitleBar{top:70px;height:20px;}
+	.dirAndFileList{top:90px;} 
+	.columnTitleDescription{display:none;left:750px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:center;}
+	.itemDescriptionDiv{display:none;left:750px;top:20px;width:250px;height:20px;line-height:20px;font-size:12px;text-align:left;} 
+	.itemDescriptionDiv span{display:block;float:left;}
+	
+	.selectDir{display:none;width:620px;height:350px;} 
+	.selectFile{display:none;width:620px;height:350px;}
+	.selectTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectTitle{left:0px;top:0px;right:0px;height:20px;}
+	.selectClose{right:2px;top:2px;width:16px;height:16px;}
+	.selectCloseImage{width:16px;height:16px;}
+	.selectNavigateBar{left:0px;top:20px;right:0px;height:60px;}
+	.selectDirPathContainer{left:0px;bottom:0px;right:65px;height:60px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectDirPathInfo{left:3px;right:0px;top:0px;bottom:0px;text-align:left;}
+	.selectBtnContainer{right:0px;bottom:0px;width:60px;height:30px;line-height:30px;text-align:center;}
+	.selectSelectBtn{width:60px;height:30px;}
+	.selectColumnTitleContainer{left:0px;top:85px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.selectNameSortDirection{width:50px;}
+	.selectDirAndFileList{left:0px;top:105px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+	.popItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.popItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDiv{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDiv{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleName{left:0px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileType{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	.popItemSelectDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:30px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemIconDivMultiSelect{left:30px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:54px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDivMultiSelect{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleSelectMultiSelect{left:0px;top:0px;width:30px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleNameMultiSelect{left:30px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileTypeMultiSelect{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	
+	.sendFile{display:none;width:620px;height:350px;}
+	.sendTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sendTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.sendClose{right:1px;top:1px;width:16px;height:16px;}
+	.sendCloseImage{width:16px;height:16px;}
+	.sendNavigateBar{left:0px;top:20px;right:0px;height:140px;}
+	.sendToEmailsBtn{left:0px;top:0px;width:75px;height:30px;cursor:pointer;}
+	.sendToEmailsContainer{top:0px;left:85px;right:0px;height:40px;line-height:40px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendToEmails{left:0px;right:0px;top:0px;height:40px;padding:0px;border:0px;resize:none;}
+	.sendSelectFileBtn{left:0px;top:48px;width:75px;height:30px;cursor:pointer;}
+	.sendFileListContainer{top:48px;left:85px;right:0px;height:45px;line-height:20px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendFileList{left:0px;right:0px;top:0px;height:45px;}
+	.sendFileBtnContainer{bottom:10px;left:auto;top:auto;right:0px;width:65px;height:30px;line-height:40px;text-align:center;}
+	.sendFileBtn{width:60px;height:30px;cursor:pointer;right:0px;top:0px;}
+	.sendMessageContainer{left:0px;top:160px;right:0px;bottom:10px;overflow:hidden;text-align:center;}
+	.sendMessageContent{top:0px;width:100%;height:100%;resize:none;padding:0px;border:0px;}
+	
+	.selectUser{display:none;width:620px;height:350px;}
+	.selectUserTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+	.selectUserTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectUserClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+	.selectUserCloseImage{width:16px;height:16px;}
+	.selectUserMain{position:absolute;left:0px;top:20px;right:0px;height:380px;width:100%;}
+	.selectUserLayout{position:absolute;height:320px;width:620px;}
+	.selectUserFilterContainer{height:30px;width:100%;}
+	.selectUserFilterTable{width:100%;height:26px;font-size:12px;}
+	.selectUserFilterTitleTeamTd{display:none;width:30px;text-align:right;padding-left:3px;}
+	.selectUserFilterTeamTd{display:none;width:100px;}
+	.selectUserFilterTeam{display:none;width:100px;height:24px;}
+	.selectUserFilterTitleUserTd{width:50px;text-align:right;padding-left:3px;}
+	.selectUserFilterUserTd{width:150px;}
+	.selectUserFilterUser{width:150px;height:24px;}
+	.selectUserFilterBtnContainer{width:50px;text-align:center;}
+	.selectUserFilterBtn{width:50px;color:#333333;cursor:pointer;}
+	.selectUserFilterReturnBtnContainer{width:50px;text-align:left;}
+	.selectUserFilterReturnBtn{width:50px;height:24px;cursor:pointer;}
+	.selectUserPaginationContainer{height:26px;}
+	.selectUserPagination{float:left;}
+	
+	.selectFileType{display:none;width:620px;height:350px;}
+	.selectFileTypeTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectFileTypeTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectFileTypeClose{right:1px;top:1px;width:16px;height:16px;}
+	.selectFileTypeCloseImage{width:16px;height:16px;}
+	.selectFileTypeListContainer{left:0px;top:20px;right:0px;height:290px;}
+	.fileTypeItemDiv{font-size:13x; float:left; height:50px; width:180px;}
+	.fileTypeItemInnerDiv{left: 5px;top:5px; height:40px; width:170px; border: solid 1px #e9eaea;cursor:pointer;}
+	.fileTypeItemImg{left: 5px;top:12px; width:16px; height:16px;}
+	.fileTypeItemTypeNameDiv{left: 30px;top:0px; width:140px; height:20px;}
+	.fileTypeItemTypeDescriptionDiv{font-size:11px;left: 30px;top:20px; width:140px; height:20px;}
+	.selectFileTypeOperateContainer{left:0px;bottom:0px;right:0px;height:30px;}
+	.selectFileTypeInputNameContainer{left:0px;bottom:0px;right:70px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectFileTypeInputName{left:0px;width:100%;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.selectFileTypeBtnContainer{right:0px;bottom:0px;width:70px;height:30px;line-height:30px;text-align:center;}
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){	
+	.dirPageContent{height:710px;}
+	.dirMainContainer{height:710px;}
+	.operateBar{height:30px;}
+	.operateBarInner{top:4px;left:4px;right:4px;}
+	.navigateBar{top:35px;height:30px;}
+	.pathBar{height:30px;line-height:30px;font-size:13px;}
+	.dirPathInfo{left:3px;}
+	.dirSummaryInfo{font-size:12px;top:0px;}
+	.columnTitleBar{top:70px;height:20px;}
+	.dirAndFileList{top:90px;}  
+	
+	.selectDir{display:none;width:620px;height:350px;} 
+	.selectFile{display:none;width:620px;height:350px;}
+	.selectTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectTitle{left:0px;top:0px;right:0px;height:20px;}
+	.selectClose{right:2px;top:2px;width:16px;height:16px;}
+	.selectCloseImage{width:16px;height:16px;}
+	.selectNavigateBar{left:0px;top:20px;right:0px;height:60px;}
+	.selectDirPathContainer{left:0px;bottom:0px;right:65px;height:60px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectDirPathInfo{left:3px;right:0px;top:0px;bottom:0px;text-align:left;}
+	.selectBtnContainer{right:0px;bottom:0px;width:60px;height:30px;line-height:30px;text-align:center;}
+	.selectSelectBtn{width:60px;height:30px;}
+	.selectColumnTitleContainer{left:0px;top:85px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.selectNameSortDirection{width:50px;}
+	.selectDirAndFileList{left:0px;top:105px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+	.popItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.popItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDiv{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDiv{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleName{left:0px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileType{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	.popItemSelectDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:30px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemIconDivMultiSelect{left:30px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:54px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDivMultiSelect{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleSelectMultiSelect{left:0px;top:0px;width:30px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleNameMultiSelect{left:30px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileTypeMultiSelect{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	
+	.sendFile{display:none;width:620px;height:350px;}
+	.sendTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sendTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.sendClose{right:1px;top:1px;width:16px;height:16px;}
+	.sendCloseImage{width:16px;height:16px;}
+	.sendNavigateBar{left:0px;top:20px;right:0px;height:140px;}
+	.sendToEmailsBtn{left:0px;top:0px;width:75px;height:30px;cursor:pointer;}
+	.sendToEmailsContainer{top:0px;left:85px;right:0px;height:40px;line-height:40px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendToEmails{left:0px;right:0px;top:0px;height:40px;padding:0px;border:0px;resize:none;}
+	.sendSelectFileBtn{left:0px;top:48px;width:75px;height:30px;cursor:pointer;}
+	.sendFileListContainer{top:48px;left:85px;right:0px;height:45px;line-height:20px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendFileList{left:0px;right:0px;top:0px;height:45px;}
+	.sendFileBtnContainer{bottom:10px;left:auto;top:auto;right:0px;width:65px;height:30px;line-height:40px;text-align:center;}
+	.sendFileBtn{width:60px;height:30px;cursor:pointer;right:0px;top:0px;}
+	.sendMessageContainer{left:0px;top:160px;right:0px;bottom:10px;overflow:hidden;text-align:center;}
+	.sendMessageContent{top:0px;width:100%;height:100%;resize:none;padding:0px;border:0px;}
+	
+	.selectUser{display:none;width:620px;height:350px;}
+	.selectUserTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+	.selectUserTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectUserClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+	.selectUserCloseImage{width:16px;height:16px;}
+	.selectUserMain{position:absolute;left:0px;top:20px;right:0px;height:380px;width:100%;}
+	.selectUserLayout{position:absolute;height:320px;width:620px;}
+	.selectUserFilterContainer{height:30px;width:100%;}
+	.selectUserFilterTable{width:100%;height:26px;font-size:12px;}
+	.selectUserFilterTitleTeamTd{display:none;width:30px;text-align:right;padding-left:3px;}
+	.selectUserFilterTeamTd{display:none;width:100px;}
+	.selectUserFilterTeam{display:none;width:100px;height:24px;}
+	.selectUserFilterTitleUserTd{width:50px;text-align:right;padding-left:3px;}
+	.selectUserFilterUserTd{width:150px;}
+	.selectUserFilterUser{width:150px;height:24px;}
+	.selectUserFilterBtnContainer{width:50px;text-align:center;}
+	.selectUserFilterBtn{width:50px;color:#333333;cursor:pointer;}
+	.selectUserFilterReturnBtnContainer{width:50px;text-align:left;}
+	.selectUserFilterReturnBtn{width:50px;height:24px;cursor:pointer;}
+	.selectUserPaginationContainer{height:26px;}
+	.selectUserPagination{float:left;}
+	
+	.selectFileType{display:none;width:620px;height:350px;}
+	.selectFileTypeTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectFileTypeTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectFileTypeClose{right:1px;top:1px;width:16px;height:16px;}
+	.selectFileTypeCloseImage{width:16px;height:16px;}
+	.selectFileTypeListContainer{left:0px;top:20px;right:0px;height:290px;}
+	.fileTypeItemDiv{font-size:13x; float:left; height:50px; width:180px;}
+	.fileTypeItemInnerDiv{left: 5px;top:5px; height:40px; width:170px; border: solid 1px #e9eaea;cursor:pointer;}
+	.fileTypeItemImg{left: 5px;top:12px; width:16px; height:16px;}
+	.fileTypeItemTypeNameDiv{left: 30px;top:0px; width:140px; height:20px;}
+	.fileTypeItemTypeDescriptionDiv{font-size:11px;left: 30px;top:20px; width:140px; height:20px;}
+	.selectFileTypeOperateContainer{left:0px;bottom:0px;right:0px;height:30px;}
+	.selectFileTypeInputNameContainer{left:0px;bottom:0px;right:70px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectFileTypeInputName{left:0px;width:100%;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.selectFileTypeBtnContainer{right:0px;bottom:0px;width:70px;height:30px;line-height:30px;text-align:center;}
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){ 
+	.dirPageContent{height:710px;}
+	.dirMainContainer{height:710px;}
+	.operateBar{height:30px;}
+	.operateBarInner{top:4px;left:4px;right:4px;}
+	.navigateBar{top:35px;height:30px;}
+	.pathBar{height:30px;line-height:30px;font-size:13px;}
+	.dirPathInfo{left:3px;}
+	.dirSummaryInfo{font-size:12px;top:0px;}
+	.columnTitleBar{top:70px;height:20px;}
+	.dirAndFileList{top:90px;}  
+	
+	.selectDir{display:none;width:620px;height:350px;} 
+	.selectFile{display:none;width:620px;height:350px;}
+	.selectTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectTitle{left:0px;top:0px;right:0px;height:20px;}
+	.selectClose{right:2px;top:2px;width:16px;height:16px;}
+	.selectCloseImage{width:16px;height:16px;}
+	.selectNavigateBar{left:0px;top:20px;right:0px;height:60px;}
+	.selectDirPathContainer{left:0px;bottom:0px;right:65px;height:60px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectDirPathInfo{left:3px;right:0px;top:0px;bottom:0px;text-align:left;}
+	.selectBtnContainer{right:0px;bottom:0px;width:60px;height:30px;line-height:30px;text-align:center;}
+	.selectSelectBtn{width:60px;height:30px;}
+	.selectColumnTitleContainer{left:0px;top:85px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.selectNameSortDirection{width:50px;}
+	.selectDirAndFileList{left:0px;top:105px;right:0px;bottom:0px;overflow-x:hidden;overflow-y:auto;}
+	.popItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.popItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDiv{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDiv{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleName{left:0px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileType{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	.popItemSelectDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:30px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemIconDivMultiSelect{left:30px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.popItemNameDivMultiSelect{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:54px;top:0px;width:400px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popItemFileTypeDivMultiSelect{left:424px;top:0px;width:50px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleSelectMultiSelect{left:0px;top:0px;width:30px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleNameMultiSelect{left:30px;top:0px;width:424px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.popColumnTitleFileTypeMultiSelect{left:424px;top:0px;width:50px;height:20px;line-height:20px;font-size:13px;text-align:center;color:#757575;}
+	
+	.sendFile{display:none;width:620px;height:350px;}
+	.sendTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sendTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.sendClose{right:1px;top:1px;width:16px;height:16px;}
+	.sendCloseImage{width:16px;height:16px;}
+	.sendNavigateBar{left:0px;top:20px;right:0px;height:140px;}
+	.sendToEmailsBtn{left:0px;top:0px;width:75px;height:30px;cursor:pointer;}
+	.sendToEmailsContainer{top:0px;left:85px;right:0px;height:40px;line-height:40px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendToEmails{left:0px;right:0px;top:0px;height:40px;padding:0px;border:0px;resize:none;}
+	.sendSelectFileBtn{left:0px;top:48px;width:75px;height:30px;cursor:pointer;}
+	.sendFileListContainer{top:48px;left:85px;right:0px;height:45px;line-height:20px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;overflow:hidden;}
+	.sendFileList{left:0px;right:0px;top:0px;height:45px;}
+	.sendFileBtnContainer{bottom:10px;left:auto;top:auto;right:0px;width:65px;height:30px;line-height:40px;text-align:center;}
+	.sendFileBtn{width:60px;height:30px;cursor:pointer;right:0px;top:0px;}
+	.sendMessageContainer{left:0px;top:160px;right:0px;bottom:10px;overflow:hidden;text-align:center;}
+	.sendMessageContent{top:0px;width:100%;height:100%;resize:none;padding:0px;border:0px;}
+	
+	.selectUser{display:none;width:620px;height:350px;}
+	.selectUserTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+	.selectUserTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectUserClose{position:absolute;right:1px;top:1px;width:16px;height:16px;}
+	.selectUserCloseImage{width:16px;height:16px;}
+	.selectUserMain{position:absolute;left:0px;top:20px;right:0px;height:380px;width:100%;}
+	.selectUserLayout{position:absolute;height:320px;width:620px;}
+	.selectUserFilterContainer{height:30px;width:100%;}
+	.selectUserFilterTable{width:100%;height:26px;font-size:12px;}
+	.selectUserFilterTitleTeamTd{display:none;width:30px;text-align:right;padding-left:3px;}
+	.selectUserFilterTeamTd{display:none;width:100px;}
+	.selectUserFilterTeam{display:none;width:100px;height:24px;}
+	.selectUserFilterTitleUserTd{width:50px;text-align:right;padding-left:3px;}
+	.selectUserFilterUserTd{width:150px;}
+	.selectUserFilterUser{width:150px;height:24px;}
+	.selectUserFilterBtnContainer{width:50px;text-align:center;}
+	.selectUserFilterBtn{width:50px;color:#333333;cursor:pointer;}
+	.selectUserFilterReturnBtnContainer{width:50px;text-align:left;}
+	.selectUserFilterReturnBtn{width:50px;height:24px;cursor:pointer;}
+	.selectUserPaginationContainer{height:26px;}
+	.selectUserPagination{float:left;}
+	
+	.selectFileType{display:none;width:620px;height:350px;}
+	.selectFileTypeTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.selectFileTypeTitle{left:0px;top:0px;right:0px;height:20px;text-align:center;}
+	.selectFileTypeClose{right:1px;top:1px;width:16px;height:16px;}
+	.selectFileTypeCloseImage{width:16px;height:16px;}
+	.selectFileTypeListContainer{left:0px;top:20px;right:0px;height:290px;}
+	.fileTypeItemDiv{font-size:13x; float:left; height:50px; width:180px;}
+	.fileTypeItemInnerDiv{left: 5px;top:5px; height:40px; width:170px; border: solid 1px #e9eaea;cursor:pointer;}
+	.fileTypeItemImg{left: 5px;top:12px; width:16px; height:16px;}
+	.fileTypeItemTypeNameDiv{left: 30px;top:0px; width:140px; height:20px;}
+	.fileTypeItemTypeDescriptionDiv{font-size:11px;left: 30px;top:20px; width:140px; height:20px;}
+	.selectFileTypeOperateContainer{left:0px;bottom:0px;right:0px;height:30px;}
+	.selectFileTypeInputNameContainer{left:0px;bottom:0px;right:80px;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.selectFileTypeInputName{left:0px;width:100%;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.selectFileTypeBtnContainer{right:0px;bottom:0px;width:70px;height:30px;line-height:30px;text-align:center;}
+}
+
+
+

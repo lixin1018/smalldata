@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:jaxws="http://cxf.apache.org/jaxws"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	
+		 
+	<!-- excelGrid表达式执行，为表达式内执行的函数提供调用系统功能的接口 -->
+	<bean id="egDatabaseAccess" class="com.novacloud.novaone.excelGrid.expression.run.DatabaseAccess" scope="prototype">  
+	    <property name="transactionManager" ref="transactionManager" /> 
+	    <property name="dBParserAccess" ref="dBParserAccess" />   
+	    <property name="sequenceGenerator" ref="sequenceGenerator" />   
+	</bean> 
+	<bean id="excelCommonFunction" class="com.novacloud.novaone.excelGrid.expression.run.ExcelCommonFunction" scope="singleton">  
+		<property name="databaseAccess" ref="egDatabaseAccess" />
+	</bean>
+	 
+</beans>

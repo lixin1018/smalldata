@@ -1,0 +1,3 @@
+js      :平台js
+locale  :国际化
+themes  :不同的UI风格

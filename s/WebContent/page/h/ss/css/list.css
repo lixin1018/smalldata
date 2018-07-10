@@ -1,0 +1,98 @@
+/*数据共享*/
+.categoryContaienr{margin:1px auto;width:1200px;height:auto;min-height:530px;display: table;}  
+.categoryHeaderSection{width:100%;height:45px;line-height:35px;position:relative;}
+.categoryNameContainer{width:400px;height:100%;color: #666666;text-align:left;font-size:13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+.categoryNameLink{text-decoration:none;color: #666666;}
+.categoryNameLink:hover{text-decoration: underline;}
+.categoryFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+.dataListSection{}
+.dataItem{position: relative;width:100%;height:100px;} 
+.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;} 
+.dataTitle{position: absolute;text-align:left;top:0px;left:0px;height:30px;width:300px;font-size:15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color:#666666 font-weight:bold;line-height: 30px;}
+.dataTime{position: absolute;text-align:right;top:0px;right:0px;height:30px;width:140px;font-size:12px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+.dataTime{display:block;}
+.dataTitleLink:hover{color: #000000;	cursor:pointer; text-decoration: underline;}
+.dataTitleLink{text-decoration:none;color: #666666;font-weight:bold;}
+.dataDetail{position: absolute;	text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 12px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666; line-height: 30px;}
+.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+.dataDetailLink{text-decoration:none;color: #666666;}
+.dataDescription{position: absolute;top: 30px;right: 0px;width:100%;height:70px;text-align: left;font-size: 13px;color: #666666; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 22px;}
+.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+.pageIndexItem{	display: table-cell;text-align:center;font-size:12px;color: #666666;width: 30px;vertical-align:middle;}
+.pageCount{ display: table-cell;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+.pageItem{display: table-cell;vertical-align:middle;}
+.pageIndexCurrent{font-weight:bold;}
+.pageIndexLink{	text-decoration:none;text-align:center;display:block;color: #666666;border:solid 1px #cccccc;width: 30px;height: 30px;line-height: 30px;vertical-align:middle;	cursor: pointer;}
+.pageIndexText{	text-align:center;display:block;color: #666666;border:solid 1px #cccccc;width: 30px;height: 30px;line-height: 30px;vertical-align:middle;}
+.pageIndexLink:hover{background-color:#808080;color:#ffffff;}
+.pageIndexOther{}
+.pageIndexFirst{}
+.pageIndexLast{}
+.pageIndexNext{}
+.pageIndexPrevious{}
+.alertCategoryError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+
+@media all and (min-width: 480px) and (max-width: 767px){ 
+	.categoryContaienr{width:95%;}  
+	.categoryHeaderSection{ }
+	.categoryNameContainer{width:100%; font-size:16px;font-weight:bold;}   
+	.dataItem{height:100px;} 
+	.dataTitle{top:0px; font-size:16px; height:25px;line-height:25px;font-weight:bold;}
+	.dataTime{top:75px;height:20px;width:auto;font-size:16px;left:0px;right:0px;}
+	.dataDetail{display:none;}  
+	.dataDescription{top: 25px;height:50px;font-size: 16px;}  
+} 
+@media all and (min-width: 360px) and (max-width: 479px){ 
+	.categoryContaienr{width:95%;}  
+	.categoryHeaderSection{ }
+	.categoryNameContainer{width:100%; font-size:15px;font-weight:bold;}   
+	.dataItem{height:100px;} 
+	.dataTitle{top:0px; font-size:15px; height:25px;line-height:25px;font-weight:bold;}
+	.dataTime{top:75px;height:20px;width:auto;font-size:15px;left:0px;right:0px;}
+	.dataDetail{display:none;}  
+	.dataDescription{top: 25px;height:50px;font-size: 15px;}  
+} 
+@media all and (min-width: 240px) and (max-width: 359px){ 
+	.categoryContaienr{width:95%;}  
+	.categoryHeaderSection{ }
+	.categoryNameContainer{width:100%; font-size:13px;font-weight:bold;}   
+	.dataItem{height:100px;} 
+	.dataTitle{top:0px; font-size:13px; height:25px;line-height:25px;font-weight:bold;}
+	.dataTime{top:75px;height:20px;width:auto;font-size:13px;left:0px;right:0px;}
+	.dataDetail{display:none;}  
+	.dataDescription{top: 25px;height:50px;font-size: 13px;}  
+} 
+
+
+@media all and (min-width: 768px) and (max-width: 999px){
+	.categoryContaienr{width:95%;}  
+	.categoryHeaderSection{ }
+	.categoryNameContainer{width:500px; font-size:15px;}   
+	.dataItem{height:100px;} 
+	.dataTitle{top:0px; font-size:15px; height:30px;line-height:30px;font-weight:bold;}
+	.dataTime{top:0px;height:30px;line-height:30px;width:150px;font-size:13px;right:0px;}
+	.dataDetail{top:0px;height:30px;line-height:30px;width:200px;font-size:13px;right:150px;}
+	.dataDescription{top: 30px;height:70px;font-size: 13px;}  
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){
+	.categoryContaienr{width:990px;}  
+	.categoryHeaderSection{ }
+	.categoryNameContainer{width:500px; font-size:15px;}   
+	.dataItem{height:100px;} 
+	.dataTitle{top:0px; font-size:15px; height:30px;line-height:30px;font-weight:bold;}
+	.dataTime{top:0px;height:30px;line-height:30px;width:150px;font-size:13px;right:0px;}
+	.dataDetail{top:0px;height:30px;line-height:30px;width:200px;font-size:13px;right:150px;}
+	.dataDescription{top: 30px;height:70px;font-size: 13px;}  
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){
+	.categoryContaienr{width:1190px;}  
+	.categoryHeaderSection{ }
+	.categoryNameContainer{width:500px; font-size:15px;}   
+	.dataItem{height:100px;} 
+	.dataTitle{top:0px; font-size:15px; height:30px;line-height:30px;font-weight:bold;}
+	.dataTime{top:0px;height:30px;line-height:30px;width:150px;font-size:13px;right:0px;}
+	.dataDetail{top:0px;height:30px;line-height:30px;width:200px;font-size:13px;right:150px;}
+	.dataDescription{top: 30px;height:70px;font-size: 13px;}  
+}

@@ -1,0 +1,146 @@
+﻿@CHARSET "UTF-8";
+
+html,body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+/*上传按钮样式*/
+.filespan{display: inline-block; *display:inline;background-image: url(images/upload/uphoto.gif);cursor:pointer}
+.filespan-disabled{display: inline-block; *display:inline;background-image: url(images/upload/uphoto-di.gif);cursor:pointer}
+.input_ll{ width:91px; height:27px;filter:alpha(opacity=0);-moz-opacity:.0;opacity:0.0; cursor:pointer;}
+/*新增图片预览*/
+.multimage-gallery{}
+.multimage-gallery ul{ margin:3px 0;}
+.multimage-gallery ul li{display: inline-block; *display:inline;*zoom:1; width:130px; height:130px;border: 1px solid #CDCDCD;margin-right: 10px;position: relative;vertical-align: top;}
+.multimage-gallery ul li .info{width:100%; height:100%; text-align:center; line-height:130px;}
+.multimage-gallery ul li .operate{ position:absolute; bottom:0; left:0; z-index:2; background-color:#808080; height:20px; line-height:24px; width:100%; text-align:center;}
+.multimage-gallery ul li .operate i{display: inline-block; *display:inline;*zoom:1; width:12px; height:12px; cursor:pointer; margin-right:10px; overflow:hidden; font-size:0; line-height:0; background:url(images/upload/preview.png) 0 0 no-repeat;}
+.multimage-gallery ul li .operate i.toleft{ background-position:0 0;}
+.multimage-gallery ul li .operate i.toright{ background-position:-12px 0;}
+.multimage-gallery ul li .operate i.del{ background-position:-24px 0;}
+.multimage-gallery ul li .preview{ position:absolute; top:0; left:0; width:100%; height:100%; }
+.multimage-gallery ul li .preview img{ width:100%; height:100%;}
+.ncpToolbarContainer {
+	
+}
+
+.waiting {
+	background: url('images/wait.gif') no-repeat center center;
+	height: 16px;
+	width: 16px;
+}
+
+.dispunit {
+}
+
+.ncpPopOverlay {
+	filter: alpha(opacity =     70);
+	-moz-opacity: 0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+	background-color: #F8F8F8;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 100;
+}
+
+.ncpListOverlay {
+	filter: alpha(opacity =     10);
+	-moz-opacity: 0.1;
+	-khtml-opacity: 0.1;
+	opacity: 0.1;
+	background-color: #FFFFFF;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 100;
+}
+
+.ncpRowSelect {
+	width: 100%;
+	height: 14px;
+}
+
+.ncpPopBox {
+	position: fixed;
+	top: -500px;
+	left: 30%;
+	right: 30%;
+	background-color: #FFFFFF;
+	color: #7F7F7F;
+	height: 300px;
+	width: 300px;
+	padding: 5px;
+	border: 1px solid #95B8E7;
+	border-top: 5px solid #95B8E7;
+	z-index: 101;
+}
+
+.ncpListBox {
+	position: fixed;
+	top: -500px;
+	left: 30%;
+	right: 30%;
+	background-color: #fff;
+	color: #7F7F7F;
+	height: 300px;
+	width: 300px;
+	border: 1px solid #ccc;
+	z-index: 101;
+}
+
+.ncpDispunitTable {
+	border: solid 1px #A6C9E2;
+	height: 100%;
+}
+
+.ui-jqgrid .ncpDispunitTable {
+	border: none;
+}
+
+.ncpDispunitCtrl {	
+	height: 100%;
+	float:left;
+}
+
+.ncpDispunitContent {
+	width: 100%;
+	height: 20px;
+	min-height: 20px;
+	border: 0px;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	font-size: 13px;
+}
+
+.ncpDispunitBtn {
+	width: 20px;
+	height: 16px;
+	float:left;
+	cursor:default;
+}
+
+.ncpDispunitList {
+	background: url('images/common/dispunitList.png') no-repeat center
+		center;
+}
+
+.ncpDispunitPop {
+	background: url('images/common/dispunitPop.png') no-repeat center center
+		;
+}
+
+.ncpDispunitDateTime {
+	background: url('images/common/dispunitDateTime.png') no-repeat center
+		center;
+}

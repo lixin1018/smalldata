@@ -1,0 +1,142 @@
+.icon-add{
+	background:url('images/common/add.png') no-repeat center center;
+}
+.icon-addchild{
+	background:url('images/common/addchild.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('images/common/edit.png') no-repeat center center;
+}
+.icon-delete{
+	background:url('images/common/delete.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('images/common/cancel.png') no-repeat center center;
+}
+.icon-save{
+	background:url('images/common/save.png') no-repeat center center;
+}
+.icon-find{
+	background:url('images/common/find.png') no-repeat center center;
+}
+.icon-blank{
+	background:url('images/common/blank.gif') no-repeat center center;
+} 
+.icon-cut{
+	background:url('images/common/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('images/common/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('images/common/no.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('images/common/reload.png') no-repeat center center;
+}
+.icon-print{
+	background:url('images/common/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('images/common/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('images/common/undo.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('images/common/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('images/common/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('images/common/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('images/common/tip.png') no-repeat center center;
+}
+.icon-import{
+	background:url('images/common/import.png') no-repeat center center;
+}
+.icon-run{
+	background:url('images/common/run.png') no-repeat center center;
+}
+.icon-detail{
+	background:url('images/common/detail.png') no-repeat center center;
+}
+.icon-complexQuery{
+	background:url('images/common/complexQuery.png') no-repeat center center;
+}
+
+.icon-mini-add{
+	background:url('images/common/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('images/common/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('images/common/mini_refresh.png') no-repeat center center;
+}
+.icon-property{
+	background:url('images/common/property.png') no-repeat center center;
+}
+.icon-refresh{
+	background:url('images/common/refresh.png') no-repeat center center;
+}
+.icon-mark{
+	background:url('images/common/mark.png') no-repeat center center;
+}
+.icon-bringBack{
+	background:url('images/common/bringBack.png') no-repeat center center;
+}
+.icon-sendBack{
+	background:url('images/common/sendBack.png') no-repeat center center;
+}
+.icon-driveToNext{
+	background:url('images/common/driveToNext.png') no-repeat center center;
+}
+.icon-enable{
+	background:url('images/common/enable.png') no-repeat center center;
+}
+.icon-end{
+	background:url('images/common/end.png') no-repeat center center;
+}
+.icon-showFlow{
+	background:url('images/common/showFlow.png') no-repeat center center;
+}
+.icon-converge{
+	background:url('images/common/converge.png') no-repeat center center;
+}
+.icon-style{
+	background:url('images/common/style.png') no-repeat center center;
+}
+.icon-view{
+	background:url('images/common/view.png') no-repeat center center;
+}
+.icon-up{
+	background:url('images/common/up.png') no-repeat center center;
+}
+.icon-newDir{
+	background:url('images/common/newDir.png') no-repeat center center;
+}
+.icon-newFile{
+	background:url('images/common/newFile.png') no-repeat center center;
+}
+.icon-copyTo{
+	background:url('images/common/copyTo.png') no-repeat center center;
+}
+.icon-moveTo{
+	background:url('images/common/moveTo.png') no-repeat center center;
+}
+.icon-rename{
+	background:url('images/common/rename.png') no-repeat center center;
+}
+.icon-export{
+	background:url('images/common/export.png') no-repeat center center;
+}
+.icon-send{
+	background:url('images/common/send.png') no-repeat center center;
+}
+.icon-saveAs{
+	background:url('images/common/saveAs.png') no-repeat center center;
+}

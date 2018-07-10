@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:jaxws="http://cxf.apache.org/jaxws"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<bean id="d_User" class="com.novacloud.novaone.dao.system.impl.D_UserImpl" scope="prototype">  
+	</bean> 
+	
+	<bean id="sys_DataPurviewFactor" class="com.novacloud.novaone.dao.system.impl.Sys_DataPurviewFactorImpl" scope="prototype">  
+	</bean> 
+	
+	<bean id="sys_Data" class="com.novacloud.novaone.dao.system.impl.Sys_DataImpl" scope="prototype">  
+		<property name="dataCollection" ref="dataCollection" /> 
+	</bean> 
+	
+	<bean id="sys_View" class="com.novacloud.novaone.dao.system.impl.Sys_ViewImpl" scope="prototype">  
+		<property name="viewCollection" ref="viewCollection" /> 
+	</bean> 
+	
+	<bean id="sys_Sheet" class="com.novacloud.novaone.dao.system.impl.Sys_SheetImpl" scope="prototype">  
+		<property name="sheetCollection" ref="sheetCollection" /> 
+	</bean> 
+	
+	<bean id="sys_Tree" class="com.novacloud.novaone.dao.system.impl.Sys_TreeImpl" scope="prototype">  
+		<property name="treeCollection" ref="treeCollection" /> 
+	</bean>  
+	
+	<bean id="sys_Report" class="com.novacloud.novaone.dao.system.impl.Sys_ReportImpl" scope="prototype"> 
+		<property name="reportCollection" ref="reportCollection" />  
+	</bean> 
+	
+	<bean id="sys_Menu" class="com.novacloud.novaone.dao.system.impl.Sys_MenuImpl" scope="prototype">  
+		<property name="pagePurviewHash" ref="pagePurviewHash" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+	</bean>
+	
+	<bean id="d_RoleMenu" class="com.novacloud.novaone.dao.system.impl.D_RoleMenuImpl" scope="prototype">  
+		<property name="pagePurviewHash" ref="pagePurviewHash" />  
+	</bean>
+	
+	<bean id="d_Role" class="com.novacloud.novaone.dao.system.impl.D_RoleImpl" scope="prototype">  
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+		<property name="pagePurviewHash" ref="pagePurviewHash" /> 
+	</bean>  
+	
+	<bean id="sys_DownList" class="com.novacloud.novaone.dao.system.impl.Sys_DownListImpl" scope="prototype">
+		<property name="downListCollection" ref="downListCollection" />    
+	</bean>  
+	
+	<bean id="sys_ParamWin" class="com.novacloud.novaone.dao.system.impl.Sys_ParamWinImpl" scope="prototype">  
+		<property name="paramWinCollection" ref="paramWinCollection" />    
+	</bean>  
+	
+	<bean id="wf_DocType" class="com.novacloud.novaone.workflow.definition.Wf_DocTypeImpl" scope="prototype">  
+		<property name="docTypeCollection" ref="docTypeCollection" />    
+	</bean>  
+	
+	<bean id="data" class="com.novacloud.novaone.dao.sheet.impl.DataImpl" scope="prototype">  
+	</bean>  
+	
+	<bean id="org" class="com.novacloud.novaone.dao.tree.impl.OrgImpl" scope="prototype">  
+	</bean> 	
+	
+	<bean id="wf_CreateInstanceList" class="com.novacloud.novaone.workflow.Wf_CreateInstanceListImpl" scope="prototype">  
+	</bean>	
+	<bean id="wf_DriveInstanceList" class="com.novacloud.novaone.workflow.Wf_DriveInstanceListImpl" scope="prototype">  
+	</bean>	
+	<bean id="wf_ReviewInstanceList" class="com.novacloud.novaone.workflow.Wf_ReviewInstanceListImpl" scope="prototype">  
+	</bean> 	
+	<bean id="wf_InstanceLogList" class="com.novacloud.novaone.workflow.Wf_InstanceLogListImpl" scope="prototype">  
+	</bean> 	
+	<bean id="wf_InstanceStepForBackList" class="com.novacloud.novaone.workflow.Wf_InstanceStepForBackListImpl" scope="prototype">  
+	</bean> 	 
+		
+	<!-- 定时任务 -->
+	<bean id="skd_Job" class="com.novacloud.novaone.schedule.Skd_JobImpl" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="jobManager" ref="jobManager" /> 
+	</bean>   
+	
+	<!-- 调用异步服务，sheet数据 -->
+	<bean id="aisService" class="com.novacloud.novaone.asynService.AisServiceImpl" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>  
+	
+	<!-- 测试 -->
+	<bean id="test_SheetGrid" class="com.novacloud.novaone.test.Test_SheetGridImpl" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean>  
+	
+	<!-- excelGrid -->
+	<bean id="eg_Definition" class="com.novacloud.novaone.excelGrid.impl.Eg_DefinitionImpl" scope="prototype"> 
+	</bean>	
+	<bean id="driveToNextUserSelector" class="com.novacloud.novaone.excelGrid.impl.DriveToNextUserSelectorImpl" scope="prototype"> 
+	</bean>	
+	<bean id="tm_teamMemberSelector" class="com.novacloud.novaone.excelGrid.impl.Tm_teamMemberSelectorImpl" scope="prototype"> 
+	</bean>
+	
+	<!-- importExport -->
+	<bean id="dm_ImportExportDefinition" class="com.novacloud.novaone.importExport.definition.impl.Dm_ImportExportDefinitionImpl" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>	
+	
+	<!-- dm_ImportInstance -->
+	<bean id="dm_ImportInstance" class="com.novacloud.novaone.importExport.impl.Dm_ImportInstanceImpl" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>	
+	
+	<!-- 团队 -->
+	<bean id="tm_JoinProcess" class="com.novacloud.novaone.excelGrid.team.impl.Tm_JoinProcess" scope="prototype">  
+	</bean> 
+	<bean id="tm_MyTeam" class="com.novacloud.novaone.excelGrid.team.impl.Tm_MyTeam" scope="prototype">  
+	</bean> 
+	
+	<!-- 测试单据 -->
+	<bean id="test_doc1" class="com.novacloud.novaone.test.Test_Doc1" scope="prototype">  
+	</bean> 
+	
+	<!-- 数说 added by lixin 20180703 -->
+	<bean id="ss_Play" class="com.novacloud.shuShuo.SS_PlayImpl" scope="prototype">  
+		<property name="dBParserAccess" ref="dBParserAccess" />  
+	</bean>  
+</beans>

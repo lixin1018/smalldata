@@ -1,0 +1,43 @@
+viewModels.ltsys_ProdType_PropertyType = {
+  id:"10f236f0-f72d-4658-8eee-ad62e336e37d",
+  name:"ltsys_ProdType_PropertyType",
+  dataName:"ltsys_ProdType_PropertyType",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, edittype:"checkbox", dispunitType:"checkbox"},    {name:"id", label:"Id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", dispunitType:"text"},
+    {name:"property_name", label:"属性名", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, edittype:"text", dispunitType:"text"},
+    {name:"field_name", label:"字段名", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, edittype:"text", dispunitType:"text"},
+    {name:"valuetype_name", label:"值编辑类型", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, edittype:"text", dispunitType:"list"},
+    {name:"sortindex", label:"排序", width:60, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, edittype:"text", dispunitType:"decimal"},
+    {name:"description", label:"描述", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, edittype:"text", dispunitType:"text"},
+    {name:"create_time", label:"创建时间", width:140, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"create_user_id", label:"创建人Id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", dispunitType:"text"},
+    {name:"create_user_name", label:"创建人", width:70, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", dispunitType:"text"},
+    {name:"ltsys_prodtype_id", label:"商品类型Id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, edittype:"text", dispunitType:"text"},
+    {name:"ltsys_valuetype_id", label:"值编辑类型Id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", dispunitType:"text"},
+    {name:"modify_time", label:"修改时间", width:140, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"modify_user_id", label:"修改人Id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", dispunitType:"text"},
+    {name:"modify_user_name", label:"修改人", width:70, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", dispunitType:"text"},
+    {name:"prodtype_name", label:"商品类型", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, edittype:"text", dispunitType:"text"},
+    {name:"field_view", label:"属性位置显示", width:100, hidden:false, sortable:false, search:false, resizable:false, editable:true, canEdit:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"field_detail", label:"明细位置展示", width:100, hidden:false, sortable:false, search:false, resizable:false, editable:true, canEdit:true, edittype:"checkbox", dispunitType:"checkbox"}
+  ],
+  dispUnitModel:[
+    {name:"id", label:"Id", editable:false,dispunitType:"text", },
+    {name:"property_name", label:"属性名", editable:true,dispunitType:"text", },
+    {name:"field_name", label:"字段名", editable:true,dispunitType:"text", },
+    {name:"valuetype_name", label:"值编辑类型", editable:true,dispunitType:"list", },
+    {name:"sortindex", label:"排序", editable:true,dispunitType:"decimal", },
+    {name:"description", label:"描述", editable:true,dispunitType:"text", },
+    {name:"create_time", label:"创建时间", editable:false,dispunitType:"time", },
+    {name:"create_user_id", label:"创建人Id", editable:false,dispunitType:"text", },
+    {name:"create_user_name", label:"创建人", editable:false,dispunitType:"text", },
+    {name:"ltsys_prodtype_id", label:"商品类型Id", editable:true,dispunitType:"text", },
+    {name:"ltsys_valuetype_id", label:"值编辑类型Id", editable:false,dispunitType:"text", },
+    {name:"modify_time", label:"修改时间", editable:false,dispunitType:"time", },
+    {name:"modify_user_id", label:"修改人Id", editable:false,dispunitType:"text", },
+    {name:"modify_user_name", label:"修改人", editable:false,dispunitType:"text", },
+    {name:"prodtype_name", label:"商品类型", editable:false,dispunitType:"text", },
+    {name:"field_view", label:"属性位置显示", editable:true,dispunitType:"checkbox", },
+    {name:"field_detail", label:"明细位置展示", editable:true,dispunitType:"checkbox", }
+  ]
+}

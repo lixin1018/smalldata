@@ -1,0 +1,95 @@
+@CHARSET "UTF-8"; 
+.grzxPageContent{ height:320px;width:100%;background-color:#dddddd;text-align:center;}
+.grzxMainDiv{width:100%;position:relative;height:100%;margin:1px auto;} 
+.grzxInputDiv{position:relative;width:360px;height:100%;margin:0 auto;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.grzxPhoto{position:absolute;right:0px;top:65px;height:130px;left:35px;width:130px;text-align:center;color: #5B9BD5;font-size:14px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;text-align:left;}
+.grzxPhotoImage{border-radius: 150px;border: 1px solid #e0e0e0; padding: 4px;}
+.grzxUserName{position:absolute;top:60px;height:40px;left:195px;right:0px;width:100%;text-align:left;color: #616161;font-size:24px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;text-align:left;}
+.grzxCodeTitle{position:absolute;top:105px;height:40px;left:195px;right:0px;width:100%;text-align:left;color: #616161;font-size:15px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;text-align:left;}
+.grzxUserCode{color: #616161;font-size:15px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+.grzxChangeUserInfo{text-decoration:none;position:absolute;left:195px;width:100%;top:140px;right:0px;text-align:left;height:20px;line-height:20px;padding:0px;display: block;color:#ff6700;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;cursor:pointer;}
+.grzxChangePwd{text-decoration:none;position:absolute;left:195px;top:175px;width:100%;height:20px;text-align:left;line-height:20px;padding:0px;display: block;color:#ff6700;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;cursor:pointer;}
+	
+@media all and (min-width: 240px) and (max-width: 359px){  
+	.grzxPageContent{ height:320px;}
+	.grzxMainDiv{width:100%;}
+	.grzxInputDiv{width:240px;height:100%;font-size:15px;}
+	.grzxPhoto{top:20px;height:130px;left:55px;width:130px;} 
+	.grzxPhotoImage{border-radius: 150px;padding: 4px;}
+	.grzxUserName{top:150px;height:40px;left:0px;right:0px;width:100%;text-align:center;}
+	.grzxCodeTitle{top:195px;height:40px;left:0px;right:0px;width:100%;text-align:center;} 
+	.grzxChangeUserInfo{top:230px;height:20px;width:100%;line-height:20px;height:20px;left:0px;right:0px;text-align:center;}
+	.grzxChangePwd{top:265px;height:20px;width:100%;line-height:20px;height:20px;left:0px;right:0px;text-align:center;}
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){  
+	.grzxPageContent{ height:320px;}
+	.grzxMainDiv{width:100%;}
+	.grzxInputDiv{width:360px;height:100%;font-size:15px;}
+	.grzxPhoto{top:20px;height:130px;left:115px;width:130px;} 
+	.grzxPhotoImage{border-radius: 150px;padding: 4px;}
+	.grzxUserName{top:150px;height:40px;left:0px;right:0px;width:100%;text-align:center;}
+	.grzxCodeTitle{top:195px;height:40px;left:0px;right:0px;width:100%;text-align:center;} 
+	.grzxChangeUserInfo{top:230px;height:20px;width:100%;line-height:20px;height:20px;left:0px;right:0px;text-align:center;}	
+	.grzxChangePwd{top:265px;height:20px;width:100%;line-height:20px;height:20px;left:0px;right:0px;text-align:center;}
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){ 
+	.grzxPageContent{ height:320px;}
+	.grzxMainDiv{width:100%;}
+	.grzxInputDiv{width:360px;height:100%;font-size:15px;}
+	.grzxPhoto{top:20px;height:130px;left:115px;width:130px;} 
+	.grzxPhotoImage{border-radius: 150px;padding: 4px;}
+	.grzxUserName{top:150px;height:40px;left:0px;right:0px;width:100%;text-align:center;}
+	.grzxCodeTitle{top:195px;height:40px;left:0px;right:0px;width:100%;text-align:center;} 
+	.grzxChangeUserInfo{top:230px;height:20px;width:100%;line-height:20px;height:20px;left:0px;right:0px;text-align:center;}
+	.grzxChangePwd{top:265px;height:20px;width:100%;line-height:20px;height:20px;left:0px;right:0px;text-align:center;}	
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){ 
+	.grzxPageContent{ height:320px;}
+	.grzxMainDiv{width:100%;}
+	.grzxInputDiv{width:360px;height:100%;font-size:15px;}
+	.grzxPhoto{top:65px;height:130px;left:35px;width:130px;} 
+	.grzxPhotoImage{border-radius: 150px;padding: 4px;}
+	.grzxUserName{top:60px;height:40px;left:195px;right:0px;width:100%;text-align:left;}
+	.grzxCodeTitle{top:105px;height:40px;left:195px;right:0px;width:100%;text-align:left;} 
+	.grzxChangeUserInfo{top:140px;height:20px;width:100%;line-height:20px;height:20px;left:195px;right:0px;text-align:left;}	
+	.grzxChangePwd{top:175px;height:20px;width:100%;line-height:20px;height:20px;left:195px;right:0px;text-align:left;} 
+} 
+
+@media all and (min-width: 768px) and (max-width: 999px){  
+	.grzxPageContent{ height:320px;}
+	.grzxMainDiv{width:100%;}
+	.grzxInputDiv{width:360px;height:100%;font-size:15px;}
+	.grzxPhoto{top:65px;height:130px;left:35px;width:130px;} 
+	.grzxPhotoImage{border-radius: 150px;padding: 4px;}
+	.grzxUserName{top:60px;height:40px;left:195px;right:0px;width:100%;text-align:left;}
+	.grzxCodeTitle{top:105px;height:40px;left:195px;right:0px;width:100%;text-align:left;} 
+	.grzxChangeUserInfo{top:140px;height:20px;width:100%;line-height:20px;height:20px;left:195px;right:0px;text-align:left;}	
+	.grzxChangePwd{top:175px;height:20px;width:100%;line-height:20px;height:20px;left:195px;right:0px;text-align:left;} 
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){ 
+	.grzxPageContent{ height:320px;}
+	.grzxMainDiv{width:100%;}
+	.grzxInputDiv{width:360px;height:100%;font-size:15px;}
+	.grzxPhoto{top:65px;height:130px;left:35px;width:130px;} 
+	.grzxPhotoImage{border-radius: 150px;padding: 4px;}
+	.grzxUserName{top:60px;height:40px;left:195px;right:0px;width:100%;text-align:left;}
+	.grzxCodeTitle{top:105px;height:40px;left:195px;right:0px;width:100%;text-align:left;} 
+	.grzxChangeUserInfo{top:140px;height:20px;width:100%;line-height:20px;height:20px;left:195px;right:0px;text-align:left;}	
+	.grzxChangePwd{top:175px;height:20px;width:100%;line-height:20px;height:20px;left:195px;right:0px;text-align:left;} 
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){  
+	.grzxPageContent{ height:320px;}
+	.grzxMainDiv{width:100%;}
+	.grzxInputDiv{width:360px;height:100%;font-size:15px;}
+	.grzxPhoto{top:65px;height:130px;left:35px;width:130px;} 
+	.grzxPhotoImage{border-radius: 150px;padding: 4px;}
+	.grzxUserName{top:60px;height:40px;left:195px;right:0px;width:100%;text-align:left;}
+	.grzxCodeTitle{top:105px;height:40px;left:195px;right:0px;width:100%;text-align:left;} 
+	.grzxChangeUserInfo{top:140px;height:20px;width:100%;line-height:20px;height:20px;left:195px;right:0px;text-align:left;}	
+	.grzxChangePwd{top:175px;height:20px;width:100%;line-height:20px;height:20px;left:195px;right:0px;text-align:left;} 
+}

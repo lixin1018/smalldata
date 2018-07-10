@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd 
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd"> 	
+	<bean id="sqlCollection" class="com.novacloud.novaone.dao.db.SqlCollection">
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>
+	<bean id="sequenceGenerator" class="com.novacloud.novaone.dao.db.SequenceGenerator">
+		<property name="transactionManager" ref="transactionManager" />  
+	</bean>  
+	
+	<bean id="dBParserAccess" class="com.novacloud.novaone.dao.db.DBParserAccess" scope="prototype">  
+		<property name="sequenceGenerator" ref="sequenceGenerator" /> 	  	 
+	</bean>
+			
+	<bean id="dataBaseDao" class="com.novacloud.novaone.dao.sys.DataBaseDao" scope="prototype">  
+	</bean>
+	
+	<bean id="sheetBaseDao" class="com.novacloud.novaone.dao.sys.SheetBaseDao" scope="prototype">  
+	</bean>
+	
+	<bean id="treeBaseDao" class="com.novacloud.novaone.dao.sys.TreeBaseDao" scope="prototype">  
+	</bean>
+	
+	<bean id="paramWinBaseDao" class="com.novacloud.novaone.dao.sys.ParamWinBaseDao" scope="prototype"> 
+	</bean> 
+	 	
+	<bean id="dataCollection" class="com.novacloud.novaone.model.sysmodel.DataCollection"> 
+		<property name="transactionManager" ref="transactionManager" />  
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean>
+	 	 
+	<bean id="eventCollection" class="com.novacloud.novaone.model.sysmodel.EventCollection"> 
+		<property name="transactionManager" ref="transactionManager" />  
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean>
+	 	
+	<bean id="downListCollection" class="com.novacloud.novaone.model.sysmodel.DownListCollection">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />  
+	</bean> 
+	 	
+	<bean id="viewCollection" class="com.novacloud.novaone.model.sysmodel.ViewCollection">
+		<property name="transactionManager" ref="transactionManager" />   
+		<property name="dBParserAccess" ref="dBParserAccess" />   	 
+	</bean> 
+	 	
+	<bean id="sheetCollection" class="com.novacloud.novaone.model.sysmodel.SheetCollection">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />  	 
+	</bean> 
+	 	
+	<bean id="treeCollection" class="com.novacloud.novaone.model.sysmodel.TreeCollection">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />    	 
+	</bean> 
+	 	
+	<bean id="docTypeCollection" class="com.novacloud.novaone.model.sysmodel.DocTypeCollection">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />    	 
+	</bean> 
+	 	
+	<bean id="paramWinCollection" class="com.novacloud.novaone.model.sysmodel.ParamWinCollection">  
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="dBParserAccess" ref="dBParserAccess" />  	 
+	</bean>
+	 	
+	<bean id="reportCollection" class="com.novacloud.novaone.model.sysmodel.ReportCollection">  
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="dBParserAccess" ref="dBParserAccess" />    	 
+	</bean>
+	 	
+	<bean id="pagePurviewHash" class="com.novacloud.novaone.model.sysmodel.PagePurviewHash"> 
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>
+	
+	<bean id="accessoryDao" class="com.novacloud.novaone.dao.sys.AccessoryDao" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+		
+		<!-- 上传的文件放置在服务器的位置 modified by lixin 20170310 -->
+		<property name="uploadFileDir" value="D:/SmallData/UploadFiles/" /> 
+		<property name="fileOperate" ref="fileOperate" /> 
+	</bean>
+	  
+	<bean id="accessoryServiceBean" class="com.novacloud.novaone.service.AccessoryService" scope="prototype"> 
+		<property name="accessoryDao" ref="accessoryDao" /> 	
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dBParserAccess" ref="dBParserAccess" />	 	
+	</bean> 
+	  
+	<bean id="sheetServiceBean" class="com.novacloud.novaone.service.SheetService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	  
+	  
+	<bean id="dataServiceBean" class="com.novacloud.novaone.service.DataService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	  
+	  
+	
+	<bean id="userDefinedFeatureDao" class="com.novacloud.novaone.dao.sys.UserDefinedFeatureDao" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+	</bean>
+	
+	<bean id="viewGridServiceBean" class="com.novacloud.novaone.service.ViewGridService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="userDefinedFeatureDao" ref="userDefinedFeatureDao" />		
+	</bean>	  
+	
+	<bean id="documentBaseDao" class="com.novacloud.novaone.dao.sys.DocumentBaseDao" scope="prototype">  
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="expRunner" ref="expRunner" />
+		<property name="expValidator" ref="expValidator" />
+		<property name="asynInvokeServiceProcessor" ref="asynInvokeServiceProcessor" />  
+	</bean>
+	<bean id="documentServiceBean" class="com.novacloud.novaone.service.DocumentService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" />   
+	</bean>	  
+	
+	<bean id="workflowServiceBean" class="com.novacloud.novaone.service.WorkflowService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" />  
+		<property name="workflowDefineDao" ref="workflowDefineDao" />			
+	</bean>	  
+	<bean id="workflowDefineDao" class="com.novacloud.novaone.workflow.definition.WorkflowDefineDao">
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+		<property name="expValidator" ref="expValidator" />		 	
+	</bean>	 
+	  
+	<bean id="treeServiceBean" class="com.novacloud.novaone.service.TreeService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	 
+	  
+	<bean id="paramWinServiceBean" class="com.novacloud.novaone.service.ParamWinService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	 
+	  
+	<bean id="dataPurviewServiceBean" class="com.novacloud.novaone.service.DataPurviewService" scope="prototype">
+		<property name="transactionManager" ref="transactionManager" />    
+		<property name="dBParserAccess" ref="dBParserAccess" />  
+	</bean>	 
+	  
+	<bean id="systemUserProcessor" class="com.novacloud.novaone.user.SystemUserProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>	
+	<bean id="userServiceBean" class="com.novacloud.novaone.service.UserService" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" /> 	 
+		<property name="systemUserProcessor" ref="systemUserProcessor" /> 	
+	</bean>	 
+	
+	<!-- excelGrid -->
+	<bean id="excelGridServiceBean" class="com.novacloud.novaone.service.ExcelGridService" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="excelGridProcessor" ref="excelGridProcessor" />
+	</bean>	
+	<bean id="excelGridProcessor" class="com.novacloud.novaone.excelGrid.definition.ExcelGridProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 	   
+		<property name="accessoryDao" ref="accessoryDao" /> 
+		<property name="convertExcelToExcelGridProcessor" ref="convertExcelToExcelGridProcessor" />	   
+		<property name="accessoryFilterType" value="excelGrid_UploadExcelFileDefinition" />	   
+	</bean>	
+	<bean id="convertExcelToExcelGridProcessor" class="com.novacloud.novaone.excelGrid.definition.ConvertExcelToExcelGridProcessor" scope="prototype"> 
+		<property name="maxRowCount" value="50000" />	   
+		<property name="maxColCount" value="200" />	   
+	</bean>  
+	
+	<!-- excelGridInstance -->
+	<bean id="excelGridInstanceServiceBean" class="com.novacloud.novaone.service.ExcelGridInstanceService" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="excelGridInstanceProcessor" ref="excelGridInstanceProcessor" />
+	</bean>	
+	<bean id="excelGridInstanceProcessor" class="com.novacloud.novaone.excelGrid.egInstance.ExcelGridInstanceProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="excelGridProcessor" ref="excelGridProcessor" />     
+		<property name="bingBackLimitMinutes" value="3" />	   
+	</bean>	
+	<bean id="excelGridInstanceControl" class="com.novacloud.novaone.excelGrid.control.ExcelGridInstanceControl" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="excelGridInstanceProcessor" ref="excelGridInstanceProcessor" />
+	</bean>	
+	
+	<!-- team -->
+	<bean id="teamServiceBean" class="com.novacloud.novaone.service.TeamService" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="teamProcessor" ref="teamProcessor" />
+	</bean>	
+	<bean id="teamProcessor" class="com.novacloud.novaone.excelGrid.team.TeamProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 	   
+		<property name="systemUserProcessor" ref="systemUserProcessor" />	   
+		<property name="userMaxOwnGroupCount" value="10" />	   
+	</bean>	
+	<bean id="teamControl" class="com.novacloud.novaone.excelGrid.control.TeamControl" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="teamProcessor" ref="teamProcessor" />
+	</bean>	
+		
+	<!-- importExport -->
+	<bean id="importExportServiceBean" class="com.novacloud.novaone.service.ImportExportService" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="importExportProcessor" ref="importExportProcessor" />
+	</bean>	
+	<bean id="importExportProcessor" class="com.novacloud.novaone.importExport.definition.ImportExportProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 	   
+		<property name="dataCollection" ref="dataCollection" /> 	   
+		<property name="viewCollection" ref="viewCollection" /> 	   
+	</bean>  
+    
+    <!-- 表达式 -->			
+	<bean id="expressionServiceBean" class="com.novacloud.novaone.service.ExpressionService" scope="prototype">
+		<property name="expValidator" ref="expValidator" />		 
+		<property name="expRunner" ref="expRunner" />		 
+	</bean>	   
+	<bean id="expEnvironment" class="com.novacloud.novaone.expression.definition.Environment"> 	 
+	</bean>	    
+	<bean id="expValidator" class="com.novacloud.novaone.expression.definition.Validator">  
+		<property name="expEnvironment" ref="expEnvironment" />		 
+	</bean>	    
+	<bean id="expRunner" class="com.novacloud.novaone.expression.run.Runner">  
+		<property name="expEnvironment" ref="expEnvironment" />		 
+	</bean>
+    
+    <!-- ExcelGrid表达式 -->
+	<bean id="egExpEnvironment" class="com.novacloud.novaone.excelGrid.expression.definition.Environment"> 	 
+	</bean>	    
+	<bean id="egExpValidator" class="com.novacloud.novaone.excelGrid.expression.definition.Validator">  
+		<property name="expEnvironment" ref="egExpEnvironment" />		 
+	</bean>	
+	<bean id="egExpRunner" class="com.novacloud.novaone.excelGrid.expression.run.Runner">  
+		<property name="expEnvironment" ref="egExpEnvironment" />		 
+	</bean>
+		 
+	<!-- 表达式执行，为表达式内执行的函数提供调用系统功能的接口 -->
+	<bean id="databaseAccess" class="com.novacloud.novaone.expression.run.DatabaseAccess" scope="prototype">  
+	    <property name="transactionManager" ref="transactionManager" /> 
+	    <property name="dBParserAccess" ref="dBParserAccess" />   
+	    <property name="sequenceGenerator" ref="sequenceGenerator" />   
+	</bean> 
+	
+	<bean id="documentAccess" class="com.novacloud.novaone.expression.run.DocumentAccess" scope="singleton">   
+	</bean> 
+	
+	<bean id="systemModelAccess" class="com.novacloud.novaone.expression.run.SystemModelAccess" scope="singleton">   
+	</bean>  
+	
+    <!-- 文件操作 -->			
+	<bean id="fileOperate" class="com.novacloud.novaone.common.FileOperate" scope="singleton">
+	</bean>	  
+	
+    <!-- Excel读取 -->			
+	<bean id="excelReader" class="com.novacloud.novaone.importExport.commonFunction.ExcelReader" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>	  
+	
+    <!-- Excel写入 -->			
+	<bean id="excelWriter" class="com.novacloud.novaone.importExport.commonFunction.ExcelWriter" scope="prototype">
+	</bean>	  
+	
+    <!-- 文件转换 -->			
+	<bean id="fileConverter" class="com.novacloud.novaone.importExport.commonFunction.FileConverter" scope="prototype"> 
+	</bean>	   
+	
+    <!-- 文本处理 -->			
+	<bean id="textProcessor" class="com.novacloud.novaone.importExport.commonFunction.TextProcessor" scope="prototype"> 
+	</bean>	   
+	
+    <!-- 数据抓取
+	<bean id="grabServiceBean" class="com.novacloud.novaone.service.GrabService" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" />    
+		<property name="grabProcessor" ref="grabProcessor" />		 
+	</bean>	
+	<bean id="grabProcessor" class="com.novacloud.novaone.grab.GrabProcessor">
+		<property name="dBParserAccess" ref="dBParserAccess" /> 	
+	</bean>	
+	--> 
+	
+    <!-- 文本分析 -->
+	<bean id="textAnalyzerServiceBean" class="com.novacloud.novaone.analyzer.TextAnalyzerService" scope="prototype">  
+	</bean>   
+	
+    <!-- test -->
+	<bean id="testServiceBean" class="com.novacloud.novaone.test.TestService" scope="prototype">  
+		<property name="dBParserAccess" ref="dBParserAccess" /> 	
+	</bean>    
+	
+	<!-- 定时任务 -->
+	<bean id="springScheduleExecutorTask" class="org.springframework.scheduling.concurrent.ScheduledExecutorTask">  
+		<property name="runnable" ref="jobRunner" />  
+		<!-- 容器加载10秒后开始执行 -->  
+		<property name="delay" value="1" />  
+		<!-- 每次任务间隔10秒-->  
+		<property name="period" value="10000" />  
+	</bean>      
+    <bean id="springScheduledExecutorFactoryBean" class="org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean">  
+	    <property name="scheduledExecutorTasks">  
+			<list>  
+				<ref bean="springScheduleExecutorTask" />  
+			</list>  
+	    </property>
+	</bean>  
+	<bean id="jobRunner" class="com.novacloud.novaone.schedule.JobRunner">  
+	    <property name="jobManager" ref="jobManager" />   
+	</bean> 
+	<bean id="jobManager" class="com.novacloud.novaone.schedule.JobManager">  
+	    <property name="jobThreadPool" ref="jobThreadPool" />
+	    <property name="transactionManager" ref="transactionManager" />
+	    <property name="dBParserAccess" ref="dBParserAccess" />   
+	    <property name="autoStart" value="true" />  
+	</bean> 
+	<bean id="jobThreadPool" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">  
+		<!-- 核心线程数  -->  
+	    <property name="corePoolSize" value="4" />  
+	    <!-- 最大线程数 -->  
+	    <property name="maxPoolSize" value="10" />  
+	    <!-- 队列最大长度 >=mainExecutor.maxSize -->  
+	    <property name="queueCapacity" value="1000" />  
+	    <!-- 线程池维护线程所允许的空闲时间 -->  
+	    <property name="keepAliveSeconds" value="300" />  
+	    <!-- 线程池对拒绝任务(无线程可用)的处理策略 -->  
+	    <property name="rejectedExecutionHandler">  
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />  
+    	</property>  
+ 	</bean>	
+ 	
+	<!-- 数据文件 -->
+	<bean id="dataFileServiceBean" class="com.novacloud.novaone.service.DataFileService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dataFileProcessor" ref="dataFileProcessor" />		 
+	</bean>	 
+	<bean id="dataFileControl" class="com.novacloud.novaone.dataFile.control.DataFileControl" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="dataFileProcessor" ref="dataFileProcessor" />		 
+	</bean>	  
+	<bean id="dataFileProcessor" class="com.novacloud.novaone.dataFile.DataFileProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	    <property name="fileRootDirAbsolutePath" value="D:/SmallData/DataFile" /> 
+	    <property name="onePageRowCount" value="20" /> 
+	    <property name="inviteCodeLength" value="6" /> 
+	    <property name="commonUserRoleId" value="3" /> 
+	    <property name="emailFormatWhenSendFile" value="{{toUserName}}\\r\\n\\r\\n    您好！您的朋友{{fromUserName}}给您发送了文件，请查收！\\r\\n    留言：{{message}}\\r\\n    文件名：{{fileNameStr}}\\r\\n    receiveFileInfoId={{receiveFileInfoId}}\\r\\n\\r\\n数据助手\\r\\n{{currentTime}}" /> 
+	    <property name="emailFormatWhenInvite" value="{{toUserName}}{{toUserEmail}}：\\r\\n\\r\\n    您好！您的朋友 {{fromUserName}} 邀请您使用数据助手，谢谢您的支持！\\r\\n\\r\\n数据助手\\r\\n{{currentTime}}" />
+		<property name="exeFileRegConfig" ref="exeFileRegConfig" />
+	</bean>	
+ 	
+	<!-- webExcel操作 -->
+	<bean id="webExcelFileServiceBean" class="com.novacloud.novaone.dataFile.webExcel.service.WebExcelFileService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="fileBaseProcessor" ref="webExcelFileProcessor" />
+	</bean>	 
+	<bean id="webExcelFileProcessor" class="com.novacloud.novaone.dataFile.webExcel.WebExcelFileProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="dataFileProcessor" ref="dataFileProcessor" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="accessoryFilterType" value="ImportWebExcel" />
+		<property name="convertExcelToExcelGridProcessor" ref="convertExcelToExcelGridProcessor" />
+	</bean>	
+ 	
+	<!-- text操作 -->
+	<bean id="textFileServiceBean" class="com.novacloud.novaone.dataFile.text.service.TextFileService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="fileBaseProcessor" ref="textFileProcessor" />
+	</bean>	 
+	<bean id="textFileProcessor" class="com.novacloud.novaone.dataFile.text.TextFileProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="dataFileProcessor" ref="dataFileProcessor" />
+	</bean>	
+	 	
+	<bean id="exeFileRegConfig" class="com.novacloud.novaone.dataFile.ExeFileRegConfig"> 
+		<property name="transactionManager" ref="transactionManager" />  
+		<property name="dBParserAccess" ref="dBParserAccess" />   
+	</bean>
+	
+	<!-- exe -->	
+	<bean id="exeControl" class="com.novacloud.novaone.dataFile.exe.control.ExeControl" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="exeProcessor" ref="exeProcessor" />		 
+	</bean>	  
+	<bean id="exeProcessor" class="com.novacloud.novaone.dataFile.exe.ExeProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="dataFileProcessor" ref="dataFileProcessor" />
+	</bean>	
+	
+	<!-- nlp -->	
+	<bean id="nlpServiceBean" class="com.novacloud.novaone.nlp.service.NlpService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="nlpProcessor" ref="nlpProcessor" />
+	</bean>	 
+	<bean id="nlpProcessor" class="com.novacloud.novaone.nlp.NlpProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+	</bean>	
+	 
+	 <!-- 文字识别 added by lixin 20180328 -->
+	<bean id="ocrControl" class="com.novacloud.novaone.ocr.control.OcrControl">  
+		<property name="ocrProcessor" ref="ocrProcessor"></property> 
+ 	 	<property name="transactionManager" ref="transactionManager"></property>
+	</bean>	
+	<bean id="ocrProcessor" class="com.novacloud.novaone.ocr.OcrProcessor">  
+		<property name="dBParserAccess" ref="dBParserAccess"></property>  
+	</bean>	  
+	<bean id="ocrServiceBean" class="com.novacloud.novaone.ocr.service.OcrService" scope="prototype"> 
+		<property name="ocrProcessor" ref="ocrProcessor" /> 	
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean> 
+	 
+	<!-- sougou字库转文本 added by lixin 20180415 -->
+	<bean id="sougouScelServiceBean" class="com.novacloud.science.service.SougouScelService">
+	</bean>	
+	 
+	<!-- 匹配飞行员列表 umassd added by lixin 20180501 -->
+	<bean id="dbDataProcessServiceBean" class="com.novacloud.novaone.dbDataProcess.DbDataProcessService">
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="fileBaseProcessor" ref="dbDataProcessor" />
+	</bean>	 
+	<bean id="dbDataProcessor" class="com.novacloud.novaone.dbDataProcess.DbDataProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>	
+	 
+	<!-- 数说服务  added by lixin 20180612 -->
+	<bean id="shuShuoControl" class="com.novacloud.shuShuo.control.ShuShuoControl" scope="prototype"> 
+		<property name="transactionManager" ref="transactionManager" />    
+		<property name="shuShuoProcessor" ref="shuShuoProcessor" />
+	</bean>	
+	<bean id="shuShuoServiceBean" class="com.novacloud.shuShuo.ShuShuoService">
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="shuShuoProcessor" ref="shuShuoProcessor" />
+	</bean>	 
+	<bean id="shuShuoProcessor" class="com.novacloud.shuShuo.ShuShuoProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="imageDir" value="D:/SmallData/Images/" /> 
+		<property name="audioDir" value="D:/SmallData/Audios/" /> 
+	</bean>	
+</beans>

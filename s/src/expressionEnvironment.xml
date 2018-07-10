@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExpressionEnvironment>
+	<!-- 函数分类 -->
+	<AllCategories>
+		<Category Name="Common" Description="通用函数集" ></Category>
+		<Category Name="ValueConvert" Description="值类型转换" ></Category>
+		<Category Name="UserCustom" Description="自定义函数集" ></Category>
+		<Category Name="Workflow" Description="工作流" ></Category>
+		<Category Name="AsynInvoke" Description="异步调用" ></Category>
+		<Category Name="DocumentAnalysis" Description="文献分析" ></Category>
+		<Category Name="ExcelText" Description="Excel文本" ></Category>
+		<Category Name="TestWorkflow" Description="流程扩展测试" ></Category>
+	</AllCategories>
+	
+	<!-- 类型名称 -->
+	<AllValueTypeDeses>
+		<ValueTypeDes Name="java.lang.String" Description="字符串"></ValueTypeDes>
+		<ValueTypeDes Name="java.lang.Boolean" Description="布尔类型"></ValueTypeDes>
+		<ValueTypeDes Name="java.util.Date" Description="日期时间"></ValueTypeDes>
+		<ValueTypeDes Name="java.math.BigDecimal" Description="数值(BigDecimal)"></ValueTypeDes>
+		<ValueTypeDes Name="void" Description="无类型"></ValueTypeDes>
+		<ValueTypeDes Name="net.sf.json.JSONObject" Description="Json对象"></ValueTypeDes>
+		<ValueTypeDes Name="net.sf.json.JSONArray" Description="Json数组"></ValueTypeDes>
+		<ValueTypeDes Name="HashMap&lt;String, Object&gt;" Description="字符串对对象的键值对"></ValueTypeDes>
+		<ValueTypeDes Name="INcpSession" Description="应用服务器会话"></ValueTypeDes>
+		<ValueTypeDes Name="js.DataTable" Description="DataTable(js)"></ValueTypeDes>
+		<ValueTypeDes Name="org.hibernate.Session" Description="数据库会话"></ValueTypeDes>		
+		<ValueTypeDes Name="js.NcpView" Description="前端View窗口"></ValueTypeDes>			
+		<ValueTypeDes Name="js.NcpSheet" Description="前端Sheet窗口"></ValueTypeDes>			
+		<ValueTypeDes Name="js.NcpTree" Description="前端Tree窗口"></ValueTypeDes>			
+		<ValueTypeDes Name="js.Array" Description="数组(js)"></ValueTypeDes>		
+	</AllValueTypeDeses>
+	
+	<!-- 函数 -->
+	<AllFunctions>
+		<Function Name="add" Description="加" BeanName="expCommon" MethodName="add" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="正数">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="加法">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.lang.String" Description="拼接字符串">
+				<Parameter Name="字符串1" Description="" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="字符串2" Description="" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting>
+		</Function>
+		<Function Name="subtract" Description="减" BeanName="expCommon" MethodName="subtract" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="">
+				<Parameter Name="数值1" Description="负数" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting>
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="减法">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="multiply" Description="乘" BeanName="expCommon" MethodName="multiply" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="乘法">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="divide" Description="除" BeanName="expCommon" MethodName="divide" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="除法">
+				<Parameter Name="数值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="数值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="equal" Description="相等" BeanName="expCommon" MethodName="equal" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.util.Date" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.util.Date" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.util.Date" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.util.Date" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="moreThan" Description="大于" BeanName="expCommon" MethodName="moreThan" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="lessThan" Description="小于" BeanName="expCommon" MethodName="lessThan" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="moreThanOrEqual" Description="大于等于" BeanName="expCommon" MethodName="moreThanOrEqual" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="lessThanOrEqual" Description="小于等于" BeanName="expCommon" MethodName="lessThanOrEqual" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="值1" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="值2" Description="" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="jsonToString" Description="Json转字符串" BeanName="expCommon" MethodName="jsonToString" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.String" Description="Json转字符串">
+				<Parameter Name="Json对象" Description="" ValueType="net.sf.json.JSONObject" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="stringToJson" Description="字符串转Json" BeanName="expCommon" MethodName="stringToJson" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="net.sf.json.JSONObject" Description="Json转字符串">
+				<Parameter Name="字符串" Description="" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="iif" Description="IIF判断" BeanName="expCommon" MethodName="iif" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="net.sf.json.JSONObject" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="net.sf.json.JSONObject" ></Parameter> 
+				<Parameter Name="returnValue2" Description="" ValueType="net.sf.json.JSONObject" ></Parameter> 
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.util.Date" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="java.util.Date" ></Parameter> 
+				<Parameter Name="returnValue2" Description="" ValueType="java.util.Date" ></Parameter> 
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.util.Date" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="java.util.Date" ></Parameter> 
+				<Parameter Name="returnValue2" Description="" ValueType="java.util.Date" ></Parameter> 
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.String" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="java.lang.String" ></Parameter> 
+				<Parameter Name="returnValue2" Description="" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="">
+				<Parameter Name="check" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="returnValue1" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+				<Parameter Name="returnValue2" Description="" ValueType="java.math.BigDecimal" ></Parameter> 
+			</FunctionSetting> 
+		</Function> 
+		<Function Name="and" Description="而且，并且" BeanName="expCommon" MethodName="and" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="而且, 并">
+				<Parameter Name="条件1" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="条件2" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="or" Description="或者" BeanName="expCommon" MethodName="and" RunAt="All" Category="Common">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="或者">
+				<Parameter Name="条件1" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+				<Parameter Name="条件2" Description="" ValueType="java.lang.Boolean" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<!-- 值类型转换 -->
+		<Function Name="timeToString" Description="时间转换为字符串" BeanName="expValueConverter" MethodName="timeToString" RunAt="Server" Category="ValueConvert">
+			<FunctionSetting ResultType="java.lang.String" Description="时间转换为字符串">
+				<Parameter Name="timeValue" Description="时间类型值" ValueType="java.util.Date" ></Parameter>
+				<Parameter Name="format" Description="格式" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.String" Description="时间转换为字符串">
+				<Parameter Name="timeValue" Description="时间类型值" ValueType="java.util.Date" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="dateToString" Description="日期转换为字符串" BeanName="expValueConverter" MethodName="dateToString" RunAt="Server" Category="ValueConvert">
+			<FunctionSetting ResultType="java.lang.String" Description="日期转换为字符串">
+				<Parameter Name="dateValue" Description="日期类型值" ValueType="java.util.Date" ></Parameter>
+				<Parameter Name="format" Description="格式" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.String" Description="日期转换为字符串">
+				<Parameter Name="dateValue" Description="日期类型值" ValueType="java.util.Date" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		<Function Name="decimalToString" Description="数值转换为字符串" BeanName="expValueConverter" MethodName="decimalToString" RunAt="Server" Category="ValueConvert">
+			<FunctionSetting ResultType="java.lang.String" Description="数值转换为字符串">
+				<Parameter Name="decimalValue" Description="数值类型值" ValueType="java.math.BigDecimal" ></Parameter>
+				<Parameter Name="format" Description="格式" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.lang.String" Description="数值转换为字符串">
+				<Parameter Name="decimalValue" Description="数值类型值" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="stringToTime" Description="字符串转换为时间" BeanName="expValueConverter" MethodName="stringToTime" RunAt="Server" Category="ValueConvert">
+			<FunctionSetting ResultType="java.util.Date" Description="字符串转换为时间">
+				<Parameter Name="stringValue" Description="字符串类型值" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="format" Description="格式" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.util.Date" Description="字符串转换为时间">
+				<Parameter Name="stringValue" Description="字符串类型值" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="stringToDate" Description="字符串转换为日期" BeanName="expValueConverter" MethodName="stringToDate" RunAt="Server" Category="ValueConvert">
+			<FunctionSetting ResultType="java.util.Date" Description="字符串转换为日期">
+				<Parameter Name="stringValue" Description="字符串类型值" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="format" Description="格式" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.util.Date" Description="字符串转换为日期">
+				<Parameter Name="stringValue" Description="字符串类型值" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="stringToDecimal" Description="字符串转换为数值" BeanName="expValueConverter" MethodName="stringToDecimal" RunAt="Server" Category="ValueConvert">
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="字符串转换为数值">
+				<Parameter Name="stringValue" Description="字符串类型值" ValueType="java.lang.String" ></Parameter>
+				<Parameter Name="format" Description="格式" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+			<FunctionSetting ResultType="java.math.BigDecimal" Description="字符串转换为数值">
+				<Parameter Name="stringValue" Description="字符串类型值" ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting>  
+		</Function>
+		
+		<!-- 流程相关 -->
+		<Function Name="timingDriveDocument" Description="执行定时流转单据" BeanName="workflowProcessor" MethodName="timingDriveDocument" RunAt="Server" Category="Workflow">
+			<FunctionSetting ResultType="void" Description="执行定时流转单据">
+				<Parameter Name="processCount" Description="本次计划处理单据个数" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="driveEndAsynDocument" Description="执行流转单据，针对异步处理结束的单据" BeanName="workflowProcessor" MethodName="driveEndAsynDocument" RunAt="Server" Category="Workflow">
+			<FunctionSetting ResultType="void" Description="执行流转单据，针对异步处理结束的单据">
+				<Parameter Name="processCount" Description="本次计划处理单据个数" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		
+		<!-- 异步调用 -->
+		<Function Name="asynInvoke" Description="执行异步操作，用于轮询获取待执行操作，并执行之" BeanName="asynInvokeServiceProcessor" MethodName="asynInvoke" RunAt="Server" Category="AsynInvoke">
+			<FunctionSetting ResultType="void" Description="执行定时流转单据"> 
+				<Parameter Name="serviceName" Description="服务名称" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+		</Function>
+		<Function Name="checkAsynInvokeStatus" Description="检测异步调用状态" BeanName="asynInvokeServiceProcessor" MethodName="checkAsynInvokeStatus" RunAt="Server" Category="AsynInvoke">
+			<FunctionSetting ResultType="void" Description="检测异步调用状态">
+				<Parameter Name="checkCount" Description="本次计划检测个数" ValueType="java.math.BigDecimal" ></Parameter>
+			</FunctionSetting>
+		</Function>	
+		
+		<!-- Celloud文献分析 -->
+		<Function Name="createOalibListExcelFile" Description="创建爬取Oalib文献所需的Excel文档" BeanName="oalibProcessor" MethodName="createOalibListExcelFile" RunAt="Server" Category="DocumentAnalysis">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="创建爬取Oalib文献所需的Excel文档">
+				<Parameter Name="cda_GrabOalibId" Description="cda_GrabOalib表记录Id" ValueType="java.lang.String" ></Parameter>
+			</FunctionSetting> 
+		</Function> 
+		
+		<!-- 监控导入文件夹 -->
+		<Function Name="monitorImportFolder" Description="监控导入文件夹 ，发现新文件时，新建导入任务" BeanName="importFolderMonitor" MethodName="monitorImportFolder" RunAt="Server" Category="AsynInvoke">
+			<FunctionSetting ResultType="void" Description="监控导入文件夹 ，发现新文件时，新建导入任务">
+				<Parameter Name="folder" Description="被监控的文件夹 " ValueType="java.lang.String" ></Parameter> 
+			</FunctionSetting> 
+		</Function>
+		
+		<!-- Excel支持的函数 - 文本 -->
+		<Function Name="concatenate" Description="将多个文本字符串合并成一个" BeanName="excelText" MethodName="concatenate" RunAt="Server" Category="ExcelText">
+			<FunctionSetting ResultType="java.lang.String" Description="将多个文本字符串合并成一个">
+				<Parameter Name="str" Description="字符串" ValueType="java.lang.String" Repeatable="true" ></Parameter>
+			</FunctionSetting> 
+			<!-- 测试一下定义多个Repeatable参数是否成功
+			<FunctionSetting ResultType="java.lang.String" Description="将多个文本字符串合并成一个">
+				<Parameter Name="Decimal1" Description="Decimal" ValueType="java.math.BigDecimal"></Parameter>
+				<Parameter Name="Decimal2" Description="Decimal" ValueType="java.math.BigDecimal"></Parameter>
+				<Parameter Name="Decimal3" Description="Decimal" ValueType="java.math.BigDecimal"></Parameter>
+				<Parameter Name="str1" Description="字符串1" ValueType="java.lang.String" Repeatable="true" ></Parameter>
+				<Parameter Name="str2" Description="字符串2" ValueType="java.lang.String" Repeatable="true" ></Parameter>
+			</FunctionSetting> 
+			-->
+		</Function>
+		
+		<!-- Excel支持的函数 - 文本 -->
+		<Function Name="更新TestDoc表" Description="更新test_doc1表记录" BeanName="testDoc1Workflow" MethodName="updateTestDoc1Table" RunAt="Server" Category="TestWorkflow">
+			<FunctionSetting ResultType="java.lang.Boolean" Description="">
+				<Parameter Name="id" Description="单据记录ID" ValueType="java.lang.String" Repeatable="false" ></Parameter>
+			</FunctionSetting> 
+		</Function> 
+		
+			
+	</AllFunctions>
+	
+	<!-- 操作符 -->
+	<AllOperators>
+		<Operator Name="+" Description="加" FunctionName="add" Level="1"></Operator>
+		<Operator Name="-" Description="减" FunctionName="subtract" Level="1"></Operator>
+		<Operator Name="*" Description="乘" FunctionName="multiply" Level="2"></Operator>
+		<Operator Name="/" Description="除" FunctionName="divide" Level="2"></Operator>
+		<Operator Name="=" Description="等于" FunctionName="equal" Level="2"></Operator>
+		<Operator Name="&gt;" Description="大于" FunctionName="moreThan" Level="2"></Operator>
+		<Operator Name="&lt;" Description="小于" FunctionName="lessThan" Level="2"></Operator>
+		<Operator Name="&gt;=" Description="大于等于" FunctionName="moreThanOrEqual" Level="2"></Operator>
+		<Operator Name="&lt;=" Description="小于等于" FunctionName="lessThanOrEqual" Level="2"></Operator>
+		<Operator Name="&amp;&amp;" Description="而且" FunctionName="and" Level="1"></Operator>
+		<Operator Name="||" Description="或者" FunctionName="or" Level="1"></Operator>
+	</AllOperators>
+	
+	<!-- 保留字 -->
+	<AllKeyWords>
+		<KeyWord Name="+" Description="加"></KeyWord>
+		<KeyWord Name="-" Description="减"></KeyWord>
+		<KeyWord Name="*" Description="乘"></KeyWord>
+		<KeyWord Name="/" Description="除"></KeyWord>
+		<KeyWord Name="(" Description="前括号"></KeyWord>
+		<KeyWord Name=")" Description="后括号"></KeyWord>
+		<KeyWord Name="&quot;" Description="双引号"></KeyWord>
+		<KeyWord Name=" " Description="空格"></KeyWord>
+		<KeyWord Name="," Description="逗号"></KeyWord>
+		<KeyWord Name="=" Description="等于"></KeyWord>
+		<KeyWord Name="&gt;" Description="大于"></KeyWord>
+		<KeyWord Name="&lt;" Description="小于"></KeyWord>
+		<KeyWord Name="&gt;=" Description="大于等于"></KeyWord>
+		<KeyWord Name="&lt;=" Description="小于等于"></KeyWord>
+		<KeyWord Name="&amp;&amp;" Description="而且"></KeyWord>
+		<KeyWord Name="||" Description="或者"></KeyWord>
+	</AllKeyWords>
+</ExpressionEnvironment>

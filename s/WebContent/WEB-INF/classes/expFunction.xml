@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:jaxws="http://cxf.apache.org/jaxws"  
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+	<!-- 常用方法 -->
+	<bean id="expCommon" class="com.novacloud.novaone.expression.expFunction.ExpCommon" scope="singleton">  
+	</bean>
+	
+	<!-- 流程处理，定时推动单据流转 -->
+	<bean id="workflowProcessor" class="com.novacloud.novaone.workflow.WorkflowProcessor" scope="prototype">  
+		<property name="databaseAccess" ref="databaseAccess" />		 
+		<property name="documentAccess" ref="documentAccess" />		 
+		<property name="systemModelAccess" ref="systemModelAccess" />		 
+	</bean>
+ 	
+ 	<!-- 提供异步调用服务内核服务-->
+	<bean id="asynInvokeServiceProcessor" class="com.novacloud.novaone.asynService.AsynInvokeServiceProcessor" scope="prototype">  
+		<property name="databaseAccess" ref="databaseAccess" />
+		<property name="systemModelAccess" ref="systemModelAccess" />		 
+	</bean>
+ 	
+ 	<!-- 异步调用服务，测试-->
+	<bean id="testMyAsynInvokeService" class="com.novacloud.novaone.asynService.custom.TestMyAsynInvokeService" scope="prototype">  
+	</bean>
+ 	
+ 	<!-- 异步调用服务，调用爬取服务-->
+	<bean id="grabDataByNetDataAccess" class="com.novacloud.novaone.grab.GrabDataByNetDataAccess" scope="prototype">  
+		<property name="dBParserAccess" ref="dBParserAccess" /> 	  
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="grabServiceUrl" value="http://192.168.5.160:8081/" />
+		<property name="fileRootFolder" value="F:/Test/celloud/" />
+		<property name="createTaskMethodName" value="createtask" />
+		<property name="deleteTaskMethodName" value="deletetask" />
+		<property name="getTaskListMethodName" value="gettasklist" />
+		<property name="getDetailInfoByTaskIdMethodName" value="getdetailinfobytaskid" />
+		<property name="changeTaskLevelMethodName" value="changetasklevel" />
+	</bean>
+ 	
+ 	<!-- 提供轮询监控放置爬取结果的文件夹，并创建新的爬取任务-->
+	<bean id="importFolderMonitor" class="com.novacloud.novaone.importExport.ImportFolderMonitor" scope="prototype">  
+		<property name="databaseAccess" ref="databaseAccess" />
+		<property name="systemModelAccess" ref="systemModelAccess" />	
+		<property name="serviceId" value="e17fe299-dbf8-4bff-88cf-79c0d6b241b2" />		 
+	</bean>
+ 	
+ 	<!-- 异步调用服务，调用导入任务-->
+	<bean id="importProcessor" class="com.novacloud.novaone.importExport.ImportProcessor" scope="prototype">  
+		<property name="dBParserAccess" ref="dBParserAccess" /> 	  
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+	  		
+	<!-- 值类型转换 -->
+	<bean id="expValueConverter" class="com.novacloud.novaone.expression.expFunction.ExpValueConverter" scope="singleton">  
+	</bean> 
+	
+	<!-- Excel文本 -->
+	<bean id="excelText" class="com.novacloud.novaone.expression.expFunction.excelFunction.ExcelText" scope="prototype">   
+	</bean>
+	
+	<!-- TestDoc1Workflow流程测试 -->
+	<bean id="testDoc1Workflow" class="com.test.workflow.TestDoc1Workflow" scope="prototype">   
+		<property name="databaseAccess" ref="databaseAccess" />		 
+		<property name="documentAccess" ref="documentAccess" />		 
+		<property name="systemModelAccess" ref="systemModelAccess" />		 
+	</bean>
+	
+</beans>

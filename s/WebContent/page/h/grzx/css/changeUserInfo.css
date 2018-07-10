@@ -1,0 +1,148 @@
+@CHARSET "UTF-8"; 
+.changeUserInfoPageContent{ height:400px;width:100%;background-color:#dddddd;text-align:center;}
+.changeUserInfoMainDiv{width:100%;position:relative;height:100%;margin:1px auto;} 
+.changeUserInfoInputDiv{position:relative;width:360px;height:100%;margin:0 auto;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.changeUserInfoTitle{position:absolute;right:0px;top:40px;height:40px;left:0px;text-align:center;color: #5B9BD5;font-size:24px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+.changeUserInfoInputNewCode{position:absolute;left:5px;top:110px;width:328px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.changeUserInfoAlertInputNewCode{position:absolute;text-align:left;left:365px;top:110px;width:150px;height:45px;line-height:45px;padding:0px;display: block;color:#5B9BD5;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.changeUserInfoInputNewEmail{position:absolute;left:5px;top:170px;width:328px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.changeUserInfoAlertInputNewEmail{position:absolute;text-align:left;left:365px;top:170px;width:150px;height:45px;line-height:45px;padding:0px;display: block;color:#5B9BD5;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.changeUserInfoInputPassword{position:absolute;left:5px;top:230px;width:328px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.changeUserInfoAlertInputPassword{position:absolute;text-align:left;left:365px;top:230px;width:150px;height:45px;line-height:45px;padding:0px;display: block;color:#5B9BD5;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.changeUserInfoBtn{position:absolute;left:5px;top:300px;width:350px;height:42px;line-height:42px;padding:0px;display: block;font-size:16px;color:#333333;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;background-color: #5B9BD5;color:#ffffff;cursor:pointer;}
+
+.pageHeader{height:78px;}
+.headerMain{height:78px;}
+.headerBottom{top:0px;}
+
+@media all and (min-width: 240px) and (max-width: 359px){ 
+	.pageHeader{height:68px;}
+	.headerMain{height:68px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:10px;}
+	.headerSysSubName{font-size:12px;left:130px;top:40px;} 
+	.changeUserInfoPageContent{ height:330px;}
+	.changeUserInfoMainDiv{width:100%;}
+	.changeUserInfoInputDiv{width:240px;height:100%;font-size:15px;}
+	.changeUserInfoTitle{top:20px;height:40px;font-size:24px;} 
+	.changeUserInfoInputNewCode{left:5px;top:70px;width:218px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputNewCode{left:5px;top:105px;width:218px;height:22px;line-height:22px;}
+	.changeUserInfoInputNewEmail{left:5px;top:130px;width:218px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputNewEmail{left:5px;top:165px;width:218px;height:22px;line-height:22px;}
+	.changeUserInfoInputPassword{left:5px;top:190px;width:218px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputPassword{left:5px;top:225px;width:218px;height:22px;line-height:22px;}
+	.changeUserInfoBtn{left:5px;top:250px;width:230px;height:42px;line-height:42px;padding:0px;font-size:16px;}	
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:20px;}
+	.headerSysSubName{font-size:12px;left:130px;top:50px;} 
+	.changeUserInfoPageContent{ height:330px;}
+	.changeUserInfoMainDiv{width:100%;}
+	.changeUserInfoInputDiv{width:360px;height:100%;font-size:15px;}
+	.changeUserInfoTitle{top:20px;height:40px;font-size:24px;} 
+	.changeUserInfoInputNewCode{left:5px;top:70px;width:338px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputNewCode{left:5px;top:105px;width:338px;height:22px;line-height:22px;}
+	.changeUserInfoInputNewEmail{left:5px;top:130px;width:338px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputNewEmail{left:5px;top:165px;width:338px;height:22px;line-height:22px;}
+	.changeUserInfoInputPassword{left:5px;top:190px;width:338px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputPassword{left:5px;top:225px;width:338px;height:22px;line-height:22px;}
+	.changeUserInfoBtn{left:5px;top:250px;width:350px;height:42px;line-height:42px;padding:0px;font-size:16px;}		
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:20px;}
+	.headerSysSubName{font-size:12px;left:130px;top:50px;} 
+	.changeUserInfoPageContent{ height:330px;}
+	.changeUserInfoMainDiv{width:100%;}
+	.changeUserInfoInputDiv{width:360px;height:100%;font-size:15px;}
+	.changeUserInfoTitle{top:20px;height:40px;font-size:24px;} 
+	.changeUserInfoInputNewCode{left:5px;top:70px;width:338px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputNewCode{left:5px;top:105px;width:338px;height:22px;line-height:22px;}
+	.changeUserInfoInputNewEmail{left:5px;top:130px;width:338px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputNewEmail{left:5px;top:165px;width:338px;height:22px;line-height:22px;}
+	.changeUserInfoInputPassword{left:5px;top:190px;width:338px;height:22px;line-height:22px;padding:5px;}
+	.changeUserInfoAlertInputPassword{left:5px;top:225px;width:338px;height:22px;line-height:22px;}
+	.changeUserInfoBtn{left:5px;top:250px;width:350px;height:42px;line-height:42px;padding:0px;font-size:16px;}	
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.changeUserInfoPageContent{ height:400px;}
+	.changeUserInfoMainDiv{width:100%;}
+	.changeUserInfoInputDiv{width:360px;height:100%;font-size:15px;}
+	.changeUserInfoTitle{top:40px;height:40px;font-size:24px;} 
+	.changeUserInfoInputNewCode{left:5px;top:110px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputNewCode{left:365px;top:110px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoInputNewEmail{left:5px;top:170px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputNewEmail{left:365px;top:170px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoInputPassword{left:5px;top:230px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputPassword{left:365px;top:230px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoBtn{left:5px;top:300px;width:350px;height:42px;line-height:42px;padding:0px;font-size:16px;}
+} 
+
+@media all and (min-width: 768px) and (max-width: 999px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.changeUserInfoPageContent{ height:400px;}
+	.changeUserInfoMainDiv{width:100%;}
+	.changeUserInfoInputDiv{width:360px;height:100%;font-size:15px;}
+	.changeUserInfoTitle{top:40px;height:40px;font-size:24px;} 
+	.changeUserInfoInputNewCode{left:5px;top:110px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputNewCode{left:365px;top:110px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoInputNewEmail{left:5px;top:170px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputNewEmail{left:365px;top:170px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoInputPassword{left:5px;top:230px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputPassword{left:365px;top:230px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoBtn{left:5px;top:300px;width:350px;height:42px;line-height:42px;padding:0px;font-size:16px;}
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){	 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;}
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.changeUserInfoPageContent{ height:400px;}
+	.changeUserInfoMainDiv{width:100%;}
+	.changeUserInfoInputDiv{width:360px;height:100%;font-size:15px;}
+	.changeUserInfoTitle{top:40px;height:40px;font-size:24px;} 
+	.changeUserInfoInputNewCode{left:5px;top:110px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputNewCode{left:365px;top:110px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoInputNewEmail{left:5px;top:170px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputNewEmail{left:365px;top:170px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoInputPassword{left:5px;top:230px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputPassword{left:365px;top:230px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoBtn{left:5px;top:300px;width:350px;height:42px;line-height:42px;padding:0px;font-size:16px;}
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.changeUserInfoPageContent{ height:400px;}
+	.changeUserInfoMainDiv{width:100%;}
+	.changeUserInfoInputDiv{width:360px;height:100%;font-size:15px;}
+	.changeUserInfoTitle{top:40px;height:40px;font-size:24px;} 
+	.changeUserInfoInputNewCode{left:5px;top:110px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputNewCode{left:365px;top:110px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoInputNewEmail{left:5px;top:170px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputNewEmail{left:365px;top:170px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoInputPassword{left:5px;top:230px;width:328px;height:22px;line-height:22px;padding:10px;}
+	.changeUserInfoAlertInputPassword{left:365px;top:230px;width:150px;height:45px;line-height:45px;}
+	.changeUserInfoBtn{left:5px;top:300px;width:350px;height:42px;line-height:42px;padding:0px;font-size:16px;}
+}

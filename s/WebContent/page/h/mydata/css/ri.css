@@ -1,0 +1,302 @@
+body{width:100%;height:100%;}
+.ncpGridDiv{padding:0px;}
+.headerMain{height:30px;}
+.riAllContainer{position:relative;width:100%;height:100%;}
+.riInfoContainer{position:relative;padding-left:10px;padding-right:10px;width:100%;height:auto;}
+.riFromUser{position:relative;width:100%;height:auto;line-height:25px;font-size:15px;}
+.riToUser{position:relative;width:100%;height:auto;line-height:25px;font-size:15px;}
+.riReceiveTime{position:relative;width:100%;height:auto;line-height:25px;font-size:15px;}
+.riStatus{position:relative;width:100%;height:auto;line-height:25px;font-size:15px;}
+.riError{position:relative;width:100%;height:auto;line-height:25px;font-size:15px;}
+.riMessage{position:relative;width:100%;height:auto;line-height:25px;font-size:15px;}
+.riFileNames{position:relative;width:100%;height:auto;line-height:25px;font-size:15px;}
+.fileLinkImage{width:16px;height:16px;}
+.fileLink{position:relative;cursor:pointer;} 
+.fileLinkSelected{font-weight:600;} 
+.fileTitleContainer{position:relative;width:100%;height:30px;line-height:30px;font-size:15px;text-align:center;border-top:solid 1px #dddddd;background-color:#ffffff;}
+.fileTitle{}
+.fileSaveAsBtn{float:right;}
+.riFileContainer{width:100%;height:600px;text-align:center;font-size:18px;}
+.fileFrame{width:100%;height:100%;border:0px;min-height:800px;}
+
+.saveAndDirSelect{display:none;position:absolute;width:600px;height:350px;}
+.sadsTitleBar{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+.sadsTitle{position:absolute;left:0px;top:0px;right:0px;height:20px;}
+.sadsClose{position:absolute;right:2px;top:2px;width:16px;height:16px;}
+.sadsCloseImage{width:16px;height:16px;}
+.sadsNavigateBar{position:absolute;left:0px;top:25px;right:0px;height:30px;}
+.sadsNavigateBarInner{position:absolute;left:0px;bottom:0px;width:100%;height:30px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+.sadsDirPathInfo{position:absolute;left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+.sadsPathPart{cursor:pointer;}
+.sadsPathPart:hover{text-decoration:underline;}
+.sadsColumnContainer{position:absolute;left:0px;top:60px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+.sadsPopColumnTitleName{position:absolute;left:0px;width:160px;top:0px;height:20px;}
+.sadsPopColumnTitleName span{width:50px;}
+.sadsPopColumnTitleFileType{position:absolute;left:160px;width:80px;top:0px;height:20px;}
+.sadsDirAndFileList{position:absolute;left:0px;top:80px;right:0px;bottom:40px;overflow-x:hidden;overflow-y:auto;}
+.sadsPopItemLineDiv{position:relative;width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+.sadsPopItemIconDiv{position:absolute;left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+.sadsPopItemNameDiv{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:24px;top:0px;width:136px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.sadsPopItemFileTypeDiv{position:absolute;left:160px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;} 
+.sadsOperateContainer{position:absolute;left:0px;height:35px;right:0px;bottom:0px;}
+.sadsInputFileNameContainer{position:absolute;left:0px;bottom:0px;right:80px;height:35px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+.sadsInputFileName{position:absolute;left:0px;width:100%;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+.sadsBtnContainer{position:absolute;width:80px;bottom:0px;right:0px;height:35px;line-height:35px;text-align:center;}
+.sadsSelectDirBtn{width:70px;height:35px;}
+
+@media all and (min-width: 240px) and (max-width: 359px){
+	.headerMain{height:20px;}
+	.riAllContainer{overflow-y:auto;}
+	.riInfoContainer{position:relative;width:95%;}
+	.riFromUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riToUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riReceiveTime{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riStatus{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riError{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riMessage{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riFileNames{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.fileLinkImage{width:16px;height:16px;}
+	.fileTitleContainer{position:relative;}
+	.riFileContainer{position:relative;width:100%;height:600px;text-align:center;font-size:18px;}
+	
+	.saveAndDirSelect{display:none;position:absolute;width:240px;height:350px;}
+	.sadsTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sadsTitle{left:0px;top:0px;right:0px;height:20px;}
+	.sadsClose{right:2px;top:2px;width:16px;height:16px;}
+	.sadsNavigateBar{left:0px;top:25px;right:0px;height:50px;}
+	.sadsNavigateBarInner{left:0px;bottom:0px;width:100%;height:50px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsDirPathInfo{left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+	.sadsColumnContainer{left:0px;top:80px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.sadsPopColumnTitleName{left:0px;width:160px;top:0px;height:20px;}
+	.sadsPopColumnTitleFileType{left:160px;width:80px;top:0px;height:20px;}
+	.sadsDirAndFileList{left:0px;top:100px;right:0px;bottom:30px;overflow-x:hidden;overflow-y:auto;}
+	.sadsPopItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.sadsPopItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.sadsPopItemNameDiv{left:24px;top:0px;width:136px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.sadsPopItemFileTypeDiv{left:160px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;} 
+	.sadsOperateContainer{left:0px;height:25px;right:0px;bottom:0px;}
+	.sadsInputFileNameContainer{left:0px;bottom:0px;right:80px;height:25px;line-height:25px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsInputFileName{left:0px;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.sadsBtnContainer{width:80px;bottom:0px;right:0px;height:25px;line-height:25px;text-align:center;}
+	.sadsSelectDirBtn{width:70px;height:25px;}
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){
+	.headerMain{height:30px;}
+	.riAllContainer{overflow-y:auto;}
+	.riInfoContainer{position:relative;width:95%;}
+	.riFromUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riToUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riReceiveTime{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riStatus{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riError{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riMessage{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riFileNames{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.fileLinkImage{width:16px;height:16px;}
+	.fileTitleContainer{position:relative;}
+	.riFileContainer{position:relative;width:100%;height:600px;text-align:center;font-size:18px;}
+	
+	.saveAndDirSelect{display:none;position:absolute;width:350px;height:350px;}
+	.sadsTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sadsTitle{left:0px;top:0px;right:0px;height:20px;}
+	.sadsClose{right:2px;top:2px;width:16px;height:16px;}
+	.sadsNavigateBar{left:0px;top:25px;right:0px;height:50px;}
+	.sadsNavigateBarInner{left:0px;bottom:0px;width:100%;height:50px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsDirPathInfo{left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+	.sadsColumnContainer{left:0px;top:80px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.sadsPopColumnTitleName{left:0px;width:260px;top:0px;height:20px;}
+	.sadsPopColumnTitleFileType{left:260px;width:80px;top:0px;height:20px;}
+	.sadsDirAndFileList{left:0px;top:100px;right:0px;bottom:30px;overflow-x:hidden;overflow-y:auto;}
+	.sadsPopItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.sadsPopItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.sadsPopItemNameDiv{left:24px;top:0px;width:236px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.sadsPopItemFileTypeDiv{left:260px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;} 
+	.sadsOperateContainer{left:0px;height:25px;right:0px;bottom:0px;}
+	.sadsInputFileNameContainer{left:0px;bottom:0px;right:80px;height:25px;line-height:25px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsInputFileName{left:0px;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.sadsBtnContainer{width:80px;bottom:0px;right:0px;height:25px;line-height:25px;text-align:center;}
+	.sadsSelectDirBtn{width:70px;height:25px;}
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){
+	.headerMain{height:30px;}
+	.riAllContainer{overflow-y:auto;}
+	.riInfoContainer{position:relative;width:95%;}
+	.riFromUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riToUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riReceiveTime{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riStatus{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riError{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riMessage{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riFileNames{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.fileLinkImage{width:16px;height:16px;}
+	.fileTitleContainer{position:relative;}
+	.riFileContainer{position:relative;width:100%;height:600px;text-align:center;font-size:18px;}
+	
+	.saveAndDirSelect{display:none;position:absolute;width:470px;height:350px;}
+	.sadsTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sadsTitle{left:0px;top:0px;right:0px;height:20px;}
+	.sadsClose{right:2px;top:2px;width:16px;height:16px;}
+	.sadsNavigateBar{left:0px;top:25px;right:0px;height:50px;}
+	.sadsNavigateBarInner{left:0px;bottom:0px;width:100%;height:50px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsDirPathInfo{left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+	.sadsColumnContainer{left:0px;top:80px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.sadsPopColumnTitleName{left:0px;width:360px;top:0px;height:20px;}
+	.sadsPopColumnTitleFileType{left:360px;width:80px;top:0px;height:20px;}
+	.sadsDirAndFileList{left:0px;top:100px;right:0px;bottom:30px;overflow-x:hidden;overflow-y:auto;}
+	.sadsPopItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.sadsPopItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.sadsPopItemNameDiv{left:24px;top:0px;width:336px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.sadsPopItemFileTypeDiv{left:360px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;} 
+	.sadsOperateContainer{left:0px;height:25px;right:0px;bottom:0px;}
+	.sadsInputFileNameContainer{left:0px;bottom:0px;right:80px;height:25px;line-height:25px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsInputFileName{left:0px;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.sadsBtnContainer{width:80px;bottom:0px;right:0px;height:25px;line-height:25px;text-align:center;}
+	.sadsSelectDirBtn{width:70px;height:25px;}
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){
+	.headerMain{height:30px;}
+	.riAllContainer{overflow-y:auto;}
+	.riInfoContainer{position:relative;width:95%;}
+	.riFromUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riToUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riReceiveTime{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riStatus{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riError{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riMessage{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riFileNames{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.fileLinkImage{width:16px;height:16px;}
+	.fileTitleContainer{position:relative;}
+	.riFileContainer{position:relative;width:100%;height:600px;text-align:center;font-size:18px;}
+	
+	.saveAndDirSelect{display:none;position:absolute;width:470px;height:350px;}
+	.sadsTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sadsTitle{left:0px;top:0px;right:0px;height:20px;}
+	.sadsClose{right:2px;top:2px;width:16px;height:16px;}
+	.sadsNavigateBar{left:0px;top:25px;right:0px;height:50px;}
+	.sadsNavigateBarInner{left:0px;bottom:0px;width:100%;height:50px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsDirPathInfo{left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+	.sadsColumnContainer{left:0px;top:80px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.sadsPopColumnTitleName{left:0px;width:360px;top:0px;height:20px;}
+	.sadsPopColumnTitleFileType{left:360px;width:80px;top:0px;height:20px;}
+	.sadsDirAndFileList{left:0px;top:100px;right:0px;bottom:30px;overflow-x:hidden;overflow-y:auto;}
+	.sadsPopItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.sadsPopItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.sadsPopItemNameDiv{left:24px;top:0px;width:336px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.sadsPopItemFileTypeDiv{left:360px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;} 
+	.sadsOperateContainer{left:0px;height:25px;right:0px;bottom:0px;}
+	.sadsInputFileNameContainer{left:0px;bottom:0px;right:80px;height:25px;line-height:25px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsInputFileName{left:0px;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.sadsBtnContainer{width:80px;bottom:0px;right:0px;height:25px;line-height:25px;text-align:center;}
+	.sadsSelectDirBtn{width:70px;height:25px;}
+} 
+
+@media all and (min-width: 768px) and (max-width: 999px){ 
+	.headerMain{height:30px;}
+	.riAllContainer{overflow-y:auto;}
+	.riInfoContainer{position:relative;width:95%;}
+	.riFromUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riToUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riReceiveTime{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riStatus{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riError{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riMessage{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riFileNames{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.fileLinkImage{width:16px;height:16px;}
+	.fileTitleContainer{height:30px;left:0px;right:0px;}
+	.riFileContainer{width:100%;min-height:800px;height:auto;text-align:center;font-size:18px;}
+	
+	.saveAndDirSelect{display:none;position:absolute;width:470px;height:350px;}
+	.sadsTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sadsTitle{left:0px;top:0px;right:0px;height:20px;}
+	.sadsClose{right:2px;top:2px;width:16px;height:16px;}
+	.sadsNavigateBar{left:0px;top:25px;right:0px;height:50px;}
+	.sadsNavigateBarInner{left:0px;bottom:0px;width:100%;height:50px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsDirPathInfo{left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+	.sadsColumnContainer{left:0px;top:80px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.sadsPopColumnTitleName{left:0px;width:360px;top:0px;height:20px;}
+	.sadsPopColumnTitleFileType{left:360px;width:80px;top:0px;height:20px;}
+	.sadsDirAndFileList{left:0px;top:100px;right:0px;bottom:30px;overflow-x:hidden;overflow-y:auto;}
+	.sadsPopItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.sadsPopItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.sadsPopItemNameDiv{left:24px;top:0px;width:336px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.sadsPopItemFileTypeDiv{left:360px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;} 
+	.sadsOperateContainer{left:0px;height:25px;right:0px;bottom:0px;}
+	.sadsInputFileNameContainer{left:0px;bottom:0px;right:80px;height:25px;line-height:25px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsInputFileName{left:0px;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.sadsBtnContainer{width:80px;bottom:0px;right:0px;height:25px;line-height:25px;text-align:center;}
+	.sadsSelectDirBtn{width:70px;height:25px;}
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){
+	.headerMain{height:30px;}
+	.riInfoContainer{position:absolute;padding-left:0px;padding-right:0px;left:10px;right:10px;top:0px;height:140px;width:auto;overflow:auto;}
+	.riFromUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riToUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riReceiveTime{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riStatus{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riError{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riMessage{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riFileNames{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.fileLinkImage{width:16px;height:16px;}
+	.fileTitleContainer{position:absolute;top:140px;left:0px;right:0px;}
+	.riFileContainer{position:absolute;width:100%;top:170px;bottom:0px;height:auto;	text-align:center;font-size:18px;}
+	
+	.saveAndDirSelect{display:none;position:absolute;width:470px;height:350px;}
+	.sadsTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sadsTitle{left:0px;top:0px;right:0px;height:20px;}
+	.sadsClose{right:2px;top:2px;width:16px;height:16px;}
+	.sadsNavigateBar{left:0px;top:25px;right:0px;height:50px;}
+	.sadsNavigateBarInner{left:0px;bottom:0px;width:100%;height:50px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsDirPathInfo{left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+	.sadsColumnContainer{left:0px;top:80px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.sadsPopColumnTitleName{left:0px;width:360px;top:0px;height:20px;}
+	.sadsPopColumnTitleFileType{left:360px;width:80px;top:0px;height:20px;}
+	.sadsDirAndFileList{left:0px;top:100px;right:0px;bottom:30px;overflow-x:hidden;overflow-y:auto;}
+	.sadsPopItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.sadsPopItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.sadsPopItemNameDiv{left:24px;top:0px;width:336px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.sadsPopItemFileTypeDiv{left:360px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;} 
+	.sadsOperateContainer{left:0px;height:25px;right:0px;bottom:0px;}
+	.sadsInputFileNameContainer{left:0px;bottom:0px;right:80px;height:25px;line-height:25px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsInputFileName{left:0px;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.sadsBtnContainer{width:80px;bottom:0px;right:0px;height:25px;line-height:25px;text-align:center;}
+	.sadsSelectDirBtn{width:70px;height:25px;}
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){
+	.headerMain{height:30px;}
+	.riInfoContainer{position:absolute;padding-left:0px;padding-right:0px;left:10px;right:10px;top:0px;height:140px;width:auto;overflow:auto;}
+	.riFromUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riToUser{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riReceiveTime{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riStatus{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riError{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riMessage{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.riFileNames{position:relative;width:100%;height:auto;line-height:23px;font-size:13px;}
+	.fileLinkImage{width:16px;height:16px;}
+	.fileTitleContainer{position:absolute;top:140px;left:0px;right:0px;}
+	.riFileContainer{position:absolute;width:100%;top:170px;bottom:0px;height:auto;	text-align:center;font-size:18px;}
+	
+	.saveAndDirSelect{display:none;position:absolute;width:470px;height:350px;}
+	.sadsTitleBar{left:0px;top:0px;right:0px;height:20px;}
+	.sadsTitle{left:0px;top:0px;right:0px;height:20px;}
+	.sadsClose{right:2px;top:2px;width:16px;height:16px;}
+	.sadsNavigateBar{left:0px;top:25px;right:0px;height:50px;}
+	.sadsNavigateBarInner{left:0px;bottom:0px;width:100%;height:50px;line-height:30px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsDirPathInfo{left:3px;width:100%;top:0px;bottom:0px;text-align:left;}
+	.sadsColumnContainer{left:0px;top:80px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.sadsPopColumnTitleName{left:0px;width:360px;top:0px;height:20px;}
+	.sadsPopColumnTitleFileType{left:360px;width:80px;top:0px;height:20px;}
+	.sadsDirAndFileList{left:0px;top:100px;right:0px;bottom:30px;overflow-x:hidden;overflow-y:auto;}
+	.sadsPopItemLineDiv{width:100%;height:30px;border-bottom:dashed 0px #e9eaea;cursor:default;} 
+	.sadsPopItemIconDiv{left:0px;top:0px;width:24px;height:30px;line-height:30px;padding-top:3px;}
+	.sadsPopItemNameDiv{left:24px;top:0px;width:336px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.sadsPopItemFileTypeDiv{left:360px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;} 
+	.sadsOperateContainer{left:0px;height:25px;right:0px;bottom:0px;}
+	.sadsInputFileNameContainer{left:0px;bottom:0px;right:80px;height:25px;line-height:25px; border: solid 1px #E3E4E5;font-size:13px;color:#757575;}
+	.sadsInputFileName{left:0px;top:0px;bottom:0px;text-align:left;padding:0px;border:0px;resize:none;}
+	.sadsBtnContainer{width:80px;bottom:0px;right:0px;height:25px;line-height:25px;text-align:center;}
+	.sadsSelectDirBtn{width:70px;height:25px;}
+}

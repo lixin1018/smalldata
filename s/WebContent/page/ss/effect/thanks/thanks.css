@@ -1,0 +1,24 @@
+@CHARSET "UTF-8"; 
+
+.thanksMainDiv { 
+	display:none;
+	background-color:transparent;
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+	bottom:0px;
+	z-index: 1999;
+	text-align:center;
+}
+
+.thanksTable{
+	width:100%;
+	height:100%;
+}
+.thanksTd{
+	vertical-align:middle;
+	text-align:center;
+	color:#ffffff;
+	font-size:26px;
+}

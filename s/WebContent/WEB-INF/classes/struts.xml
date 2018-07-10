@@ -1,0 +1,1034 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>  
+	<include file="struts-default.xml" ></include>
+	
+	<package name="a" extends="struts-default">
+		<action name="helloworld_test1" class="com.novacloud.novaone.test.HelloWorldAction" method="test1">
+			<result name="success">/page/test/action_success.jsp</result>
+		</action>
+		<action name="helloworld_test2" class="com.novacloud.novaone.test.HelloWorldAction" method="test2">
+			<result name="error">/page/test/action_error.jsp</result>
+		</action> 
+	</package>
+	
+	<package name="treeNcpService" namespace="/treeNcpService" extends="struts-default">
+		<action name="save" class="treeServiceBean" method="save">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="delete" class="treeServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="sheetNcpService" namespace="/sheetNcpService" extends="struts-default">
+		<action name="save" class="sheetServiceBean" method="save">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="delete" class="sheetServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="paramWinNcpService" namespace="/paramWinNcpService" extends="struts-default">
+		<action name="getList" class="paramWinServiceBean" method="getList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="doOtherAction" class="paramWinServiceBean" method="doOtherAction">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="doOtherAction" class="paramWinServiceBean" method="doOtherAction">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="dataNcpService" namespace="/dataNcpService" extends="struts-default">
+		<action name="getInputStatus" class="dataServiceBean" method="getInputStatus">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getList" class="dataServiceBean" method="getList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="add" class="dataServiceBean" method="add">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="select" class="dataServiceBean" method="select">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="save" class="dataServiceBean" method="save">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="delete" class="dataServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="doOtherAction" class="dataServiceBean" method="doOtherAction">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="documentNcpService" namespace="/documentNcpService" extends="struts-default">   
+		<action name="select" class="documentServiceBean" method="select">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="save" class="documentServiceBean" method="save">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="delete" class="documentServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>  
+		<action name="submit" class="documentServiceBean" method="submit">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>  
+		<action name="getBack" class="documentServiceBean" method="getBack">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>  
+		<action name="drive" class="documentServiceBean" method="drive">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>  
+		<action name="sendBack" class="documentServiceBean" method="sendBack">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="getDetailStatus" class="documentServiceBean" method="getDetailStatus">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>  
+	</package>
+	
+	<package name="viewGridNcpService" namespace="/viewGridNcpService" extends="struts-default">
+		<action name="saveComplexQuery" class="viewGridServiceBean" method="saveComplexQuery">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getComplexQuery" class="viewGridServiceBean" method="getComplexQuery">   
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="workflowNcpService" namespace="/workflowNcpService" extends="struts-default">
+		<action name="saveWorkflow" class="workflowServiceBean" method="saveWorkflow">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getWorkflow" class="workflowServiceBean" method="getWorkflow">   
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="deleteWorkflow" class="workflowServiceBean" method="deleteWorkflow">   
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getDocFields" class="workflowServiceBean" method="getDocFields">   
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="dataPurviewNcpService" namespace="/dataPurviewNcpService" extends="struts-default">
+		<action name="getRoleAndDataPurviewFactor" class="dataPurviewServiceBean" method="getRoleAndDataPurviewFactor">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="accessoryNcpService" namespace="/accessoryNcpService" extends="struts-default">
+		<action name="getFileCountByFilter" class="accessoryServiceBean" method="getFileCountByFilter">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getAccessoryIds" class="accessoryServiceBean" method="getAccessoryIds">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="deleteAccessory" class="accessoryServiceBean" method="deleteAccessory">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="userNcpService" namespace="/userNcpService" extends="struts-default">
+		<action name="login" class="userServiceBean" method="login">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getSysParam" class="userServiceBean" method="getSysParam">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="logout" class="userServiceBean" method="logout">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getMenu" class="userServiceBean" method="getMenu">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="changePassword" class="userServiceBean" method="changePassword">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="markUserMessage" class="userServiceBean" method="markUserMessage">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getUserInfo" class="userServiceBean" method="getUserInfo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="changeUserInfo" class="userServiceBean" method="changeUserInfo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<!-- 表达式服务 -->
+	<package name="expressionNcpService" namespace="/expressionNcpService" extends="struts-default">
+		<action name="validateExp" class="expressionServiceBean" method="validateExp">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		
+		<action name="validateJsExp" class="expressionServiceBean" method="validateJsExp">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>   
+		
+		<action name="runExp" class="expressionServiceBean" method="runExp">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>   
+		<!-- 生成所有函数列表的js脚本文件，编辑表达式时用到此js脚本文件 -->
+		<action name="generateFunctionListJs" class="expressionServiceBean" method="generateFunctionListJs">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>   
+	</package>
+		
+	<!-- 数据抓取服务
+	<package name="grabNcpService" namespace="/grabnNcpService" extends="struts-default">
+		<action name="saveMapResult" class="grabServiceBean" method="validateExp">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	 -->
+		
+	<!-- 文本分析服务 -->
+	<package name="textAnalyzerNcpService" namespace="/textAnalyzerNcpService" extends="struts-default">
+		<action name="position" class="textAnalyzerServiceBean" method="position">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getTF" class="textAnalyzerServiceBean" method="getTF">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="getIDF" class="textAnalyzerServiceBean" method="getIDF">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 测试流程 -->
+	<package name="testActivitiNcpService" namespace="/testActivitiNcpService" extends="struts-default">
+		<action name="startProcessWithTx" class="testActivitiServiceBean" method="startProcessWithTx">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="completeTask" class="testActivitiServiceBean" method="completeTask">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getMyPersonalTask" class="testActivitiServiceBean" method="getMyPersonalTask">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="startProcess" class="testActivitiServiceBean" method="startProcess">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="deployment" class="testActivitiServiceBean" method="deployment">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+		
+	
+	<!-- excelGridNcpService -->
+	<package name="excelGridNcpService" namespace="/excelGridNcpService" extends="struts-default">
+		<action name="deleteDefinition" class="excelGridServiceBean" method="deleteDefinition">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getIsEnableVersion" class="excelGridServiceBean" method="getIsEnableVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="activateVersion" class="excelGridServiceBean" method="activateVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="inactivateVersion" class="excelGridServiceBean" method="inactivateVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="createVersion" class="excelGridServiceBean" method="createVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="copyVersion" class="excelGridServiceBean" method="copyVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="updateVersion" class="excelGridServiceBean" method="updateVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="readVersion" class="excelGridServiceBean" method="readVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="deleteVersion" class="excelGridServiceBean" method="deleteVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="getDefinitionCount" class="excelGridServiceBean" method="getDefinitionCount">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="getExcelSheetNames" class="excelGridServiceBean" method="getExcelSheetNames">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="validateAndGenerateByUploadExcel" class="excelGridServiceBean" method="validateAndGenerateByUploadExcel">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action> 
+		<action name="createNewBlankExcelGrid" class="excelGridServiceBean" method="createNewBlankExcelGrid">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<!-- excelGridInstanceNcpService -->
+	<package name="excelGridInstanceNcpService" namespace="/excelGridInstanceNcpService" extends="struts-default">
+		<action name="getWaitingProcessInstanceStepCount" class="excelGridInstanceServiceBean" method="getWaitingProcessInstanceStepCount">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="driveToNext" class="excelGridInstanceServiceBean" method="driveToNext">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="converge" class="excelGridInstanceServiceBean" method="converge">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="end" class="excelGridInstanceServiceBean" method="end">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="bringBack" class="excelGridInstanceServiceBean" method="bringBack">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="sendBack" class="excelGridInstanceServiceBean" method="sendBack">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="createInstance" class="excelGridInstanceServiceBean" method="createInstance">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="deleteInstance" class="excelGridInstanceServiceBean" method="deleteInstance">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="readStep" class="excelGridInstanceServiceBean" method="readStep">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="updateStep" class="excelGridInstanceServiceBean" method="updateStep">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getInstanceStepsAndLinks" class="excelGridInstanceServiceBean" method="getInstanceStepsAndLinks">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<!-- TeamService -->
+	<package name="teamNcpService" namespace="/teamNcpService" extends="struts-default">
+		<action name="addTeam" class="teamServiceBean" method="addTeam">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="deleteTeam" class="teamServiceBean" method="deleteTeam">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="getTeamInfo" class="teamServiceBean" method="getTeamInfo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="updateTeamInfo" class="teamServiceBean" method="updateTeamInfo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="requestJoinTeam" class="teamServiceBean" method="requestJoinTeam">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="processJoinTeam" class="teamServiceBean" method="processJoinTeam">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="deleteFromTeam" class="teamServiceBean" method="deleteFromTeam">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="leaveFromTeam" class="teamServiceBean" method="leaveFromTeam">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getMemberTeams" class="teamServiceBean" method="getMemberTeams">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getTeamDefinitions" class="teamServiceBean" method="getTeamDefinitions">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<!-- importExportNcpService -->
+	<package name="importExportNcpService" namespace="/importExportNcpService" extends="struts-default">
+		<action name="activateVersion" class="importExportServiceBean" method="activateVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="createVersion" class="importExportServiceBean" method="createVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="copyVersion" class="importExportServiceBean" method="copyVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="updateVersion" class="importExportServiceBean" method="updateVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="readVersion" class="importExportServiceBean" method="readVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="validateVersion" class="importExportServiceBean" method="validateVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="deleteVersion" class="importExportServiceBean" method="deleteVersion">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<package name="shareDataGridNcpService" namespace="/shareDataGridNcpService" extends="struts-default">
+		<action name="getInputStatus" class="shareDataGridServiceBean" method="getInputStatus">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getList" class="shareDataGridServiceBean" method="getList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="select" class="shareDataGridServiceBean" method="select">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="doOtherAction" class="shareDataGridServiceBean" method="doOtherAction">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="editShareDataGridNcpService" namespace="/editShareDataGridNcpService" extends="struts-default">
+		<action name="getInputStatus" class="editShareDataGridServiceBean" method="getInputStatus">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getList" class="editShareDataGridServiceBean" method="getList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="add" class="editShareDataGridServiceBean" method="add">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="select" class="editShareDataGridServiceBean" method="select">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="save" class="editShareDataGridServiceBean" method="save">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="delete" class="editShareDataGridServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="doOtherAction" class="editShareDataGridServiceBean" method="doOtherAction">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="dataHelperUserNcpService" namespace="/dataHelperUserNcpService" extends="struts-default">
+		<action name="regUser" class="dataHelperUserServiceBean" method="regUser">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="forgetPwd" class="dataHelperUserServiceBean" method="forgetPwd">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="forgetChangePwd" class="dataHelperUserServiceBean" method="forgetChangePwd">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="changePwd" class="dataHelperUserServiceBean" method="changePwd">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<package name="dataFileNcpService" namespace="/dataFileNcpService" extends="struts-default">
+		<action name="createDir" class="dataFileServiceBean" method="createDir">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="createFile" class="dataFileServiceBean" method="createFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="moveTo" class="dataFileServiceBean" method="moveTo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="copyTo" class="dataFileServiceBean" method="copyTo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="delete" class="dataFileServiceBean" method="delete">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="rename" class="dataFileServiceBean" method="rename">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+		<action name="getChildren" class="dataFileServiceBean" method="getChildren">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getPath" class="dataFileServiceBean" method="getPath">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getDirAndFileInfo" class="dataFileServiceBean" method="getDirAndFileInfo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="sendTo" class="dataFileServiceBean" method="sendTo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getUserInfoByEmail" class="dataFileServiceBean" method="getUserInfoByEmail">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="bringBack" class="dataFileServiceBean" method="bringBack">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="inviteAndCreateUser" class="dataFileServiceBean" method="inviteAndCreateUser">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="markRead" class="dataFileServiceBean" method="markRead">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getSendInfos" class="dataFileServiceBean" method="getSendInfos">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getReceiveInfos" class="dataFileServiceBean" method="getReceiveInfos">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="saveAs" class="dataFileServiceBean" method="saveAs">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="webExcelFileNcpService" namespace="/webExcelFileNcpService" extends="struts-default">
+		<action name="readFile" class="webExcelFileServiceBean" method="readFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="saveFile" class="webExcelFileServiceBean" method="saveFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getExcelSheetNames" class="webExcelFileServiceBean" method="getExcelSheetNames">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="validateAndGenerateByUploadExcel" class="webExcelFileServiceBean" method="validateAndGenerateByUploadExcel">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="textFileNcpService" namespace="/textFileNcpService" extends="struts-default">
+		<action name="readFile" class="textFileServiceBean" method="readFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="saveFile" class="textFileServiceBean" method="saveFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<package name="dataHelperBuyNcpService" namespace="/dataHelperBuyNcpService" extends="struts-default">
+		<action name="addToCart" class="dataHelperBuyServiceBean" method="addToCart">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="removeFromCart" class="dataHelperBuyServiceBean" method="removeFromCart">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="generateOrder" class="dataHelperBuyServiceBean" method="generateOrder">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="closeOrder" class="dataHelperBuyServiceBean" method="closeOrder">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getOrderDetail" class="dataHelperBuyServiceBean" method="getOrderDetail">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getOrderList" class="dataHelperBuyServiceBean" method="getOrderList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getCartList" class="dataHelperBuyServiceBean" method="getCartList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getCartLineCount" class="dataHelperBuyServiceBean" method="getCartLineCount">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+		<action name="getUnitPrice" class="dataHelperBuyServiceBean" method="getUnitPrice">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	<!-- test 
+	<package name="testService" namespace="/testService" extends="struts-default">
+		<action name="testRegex" class="testServiceBean" method="testRegex">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
+		</action>
+	</package>-->
+    
+	<!-- 文字识别 added by lixin 20180328 -->
+	<package name="ocrNcpService" namespace="/ocrNcpService" extends="struts-default">
+		<action name="getStringFromImage" class="ocrServiceBean" method="getStringFromImage">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<!-- test -->
+	<package name="nlpNcpService" namespace="/nlpNcpService" extends="struts-default">
+		<action name="segment" class="nlpServiceBean" method="segment">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
+	
+    
+	<!-- sougou字库转文本 added by lixin 20180415 -->
+	<package name="sougouScelNcpService" namespace="/sougouScelNcpService" extends="struts-default">
+		<action name="convertToTxt" class="sougouScelServiceBean" method="convertToTxt">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
+	</package>
+	
+	<!-- dbDataProcessNcpService -->
+	<package name="dbDataProcessNcpService" namespace="/dbDataProcessNcpService" extends="struts-default">
+		<action name="matchedPerson" class="dbDataProcessServiceBean" method="matchedPerson">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<!-- shareViewService 更新数据共享的分类信息，这样编辑好的分类，就会更新到数据分享首页里 added by lixin 20180607 -->
+	<package name="shareViewNcpService" namespace="/shareViewNcpService" extends="struts-default">
+		<action name="refreshShareDataCategory" class="shareViewServiceBean" method="refreshShareDataCategory">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
+	<!-- shuShuoervice 数说服务 added by lixin 20180612 -->
+	<package name="shuShuoNcpService" namespace="/shuShuoNcpService" extends="struts-default">
+		<action name="getData" class="shuShuoServiceBean" method="getData">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="getSSPlayInfo" class="shuShuoServiceBean" method="getSSPlayInfo">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+		<action name="refreshPlayList" class="shuShuoServiceBean" method="refreshPlayList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+</struts>

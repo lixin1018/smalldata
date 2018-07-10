@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+.gridToolbar{
+    width: 100%;
+    height:27px;
+}
+.gridEditbar{
+       font-size: 13px; 
+    width: 100%;
+    height:29px;
+}
+.gridEditor{
+       font-size: 13px;
+    width: 100%; 
+    height: 100%;  
+} 
+	.gridCellDiv {
+	}
+	.gridCellInnerDiv {
+		padding:1px;
+		width:100%;
+		height:100%;
+	}
+	.gridCellInnerDivCurrent {
+	background-color:#68C5FF;
+	}
+	.gridCellInnerDivEditing {
+		padding:0px; 
+	}
+.cellEditor { 
+	width:100%;
+	height:100%;
+	border-width:2px;
+	padding:0px;
+	resize:none;
+	border-color:#217346;
+	font-size: 15px;
+	overflow-x:auto;
+	overflow-y:auto;
+}
+.normalTable { 
+	border-collapse:collapse;
+	border-left-width:0px;
+	border-top-width:0px; 
+	border-bottom-width:0px;
+	border-right-width:0px;
+	border-style:solid;
+	border-color:#000000; 
+	font-size: 11px;
+	font-family:SimSun;
+	padding:0px;
+}
+
+.titleCell {
+	border-style:solid;
+	border-color:#cccccc;
+	border-left-width:0px;
+	border-top-width:0px; 
+	border-bottom-width:1px;
+	border-right-width:1px;
+	overflow:hidden;  
+	padding:0px;
+	background-color:#F4F4F4;
+	text-align:center;
+	display:table-cell;
+	font-size: 12px;
+}		
+.selectedCell {
+	background-color: #BFE5FF;
+}		
+.gridSelectedCell {
+	background-color: #cccccc;
+}		
+.rowSelectedCell {
+	background-color: #dddddd;
+}		
+.colSelectedCell {
+	background-color: #dddddd;
+}		
+.normalCell {
+	border-style:solid;
+	border-color:#cccccc;
+	border-left-width:0px;
+	border-top-width:0px; 
+	border-bottom-width:1px;
+	border-right-width:1px;
+	overflow:hidden;  
+	padding:0px;
+	font-size: 15px;
+}

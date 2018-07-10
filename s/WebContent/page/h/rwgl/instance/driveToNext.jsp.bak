@@ -1,0 +1,16 @@
+<div id="driveToNextSelectUserDivId" class="easyui-layout" style="display:none;height:100%;width:100%;">
+	<div data-options="region:'north',border:false" style="height:30px;">  
+		<table style="width:100%;height:100%;font-size:12px;">
+			<tr>
+				<td style="width:50px;text-align:right;padding-left:3px;">团队</td>
+				<td style="width:200px;"><input name="teamName" style="width:100%;height:100%;" /></td>
+				<td style="width:50px;text-align:right;padding-left:3px;">姓名</td>
+				<td style="width:100px;"><input name="userName" style="width:100%;height:100%;" /></td>
+				<td style="width:100px;text-align:center;"><a name="queryUserBtn" style="width:50px;color:#333333;" >查询</a></td>
+			</tr>
+		</table>
+	</div>
+	<div class="driveToNextUserGrid" data-options="region:'center',border:false">
+		
+	</div>	 
+</div>

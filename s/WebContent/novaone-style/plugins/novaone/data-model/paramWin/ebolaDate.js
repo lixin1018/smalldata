@@ -1,0 +1,20 @@
+paramWinModels.ebolaDate = {
+  id:18,
+  name:"ebolaDate",
+  units:{
+    reportdate:{
+      id:141,
+      name:"reportdate",
+      label:"日期",
+      valueType:valueType.date,
+      inputHelpType:"",
+      inputHelpName:"",
+      decimalNum:"0",
+      valueLength:10,
+      isMultiValue:false,
+      isNullable:false,
+      unitType:"date",
+      defaultValue:"2014-10-28",
+    }
+  }
+}

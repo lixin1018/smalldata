@@ -1,0 +1,214 @@
+@CHARSET "UTF-8";
+.headerBottom{top:21px;}
+.regPageContent{height:480px;width:100%;background-color:#dddddd;text-align:center;}
+.regMainDiv{width:100%;;position:relative;height:100%;margin:1px auto;}
+.regInputDiv{position:relative;height:480px;width:360px;background-color:transparent;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.regInputTitle{position:absolute;right:0px;top:15px;height:30px;left:0px;width:100%;text-align:center;color: #5B9BD5;font-size:24px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;text-align:center;}
+.regInputCode{position:absolute;left:5px;top:65px;width:326px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.regAlertInputCode{position:absolute;left:360px;top:65px;width:270px;height:45px;line-height:45px;padding:0px;display: block;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;text-align:left;color: #5B9BD5;}
+.regInputPassword{position:absolute;left:5px;top:125px;width:326px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.regAlertInputPassword{position:absolute;left:360px;top:125px;width:150px;height:45px;line-height:45px;padding:0px;display: block;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;text-align:left;color: #5B9BD5;}
+.regInputConfirmPassword{position:absolute;left:5px;top:185px;width:326px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.regAlertInputConfirmPassword{position:absolute;left:360px;top:185px;width:150px;height:45px;line-height:45px;padding:0px;display: block;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;text-align:left;color: #5B9BD5;}
+.regInputEmail{position:absolute;left:5px;top:245px;width:245px;height:45px;line-height:45px;padding:10px;display: block;color:#333333;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.regAlertInputEmail{position:absolute;left:360px;top:260px;width:270px;height:22px;line-height:22px;padding:0px;display: block;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;text-align:left;color: #5B9BD5;}
+.regInputImgCode{position:absolute;left:5px;top:305px;width:220px;height:22px;line-height:22px;padding:10px;display: block;color:#333333;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;}
+.regCodeImage{position:absolute;left:265px;top:305px;width:80px;height:45px;display: block;color:#333333;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;cursor:pointer;}
+.regAlertCodeImage{position:absolute;left:360px;top:305px;width:150px;height:45px;line-height:45px;padding:0px;display: block;font-size:15px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;text-align:left;color: #5B9BD5;}
+.regBtn{position:absolute;left:5px;top:365px;width:345px;height:42px;line-height:42px;padding:0px;display: block;color:#333333;font-size:18px;font-family: arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif;background-color: #5B9BD5;color:#ffffff;cursor:pointer;}
+.regInfoDiv{position:absolute;left:5px;top:425px;width:345px;height:42px;line-height:42px;padding:0px;display: block;font-size:15px;color: #999999;text-align:right;}
+.regToLogin{color: #999999;text-decoration: none;} 
+.pageHeader{height:78px;}
+.headerMain{height:78px;}
+.headerBottom{top:0px;}
+	.regMainDiv{width:100%;}
+	.regPageContent{height:480px;} 
+	.regInputDiv{width:360px;position:relative;margin:0 auto;height:480px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;font-size:15px;}
+	.regInputTitle{right:0px;top:15px;height:30px;left:0px;font-size:22px;width:100%;}
+	.regInputCode{left:5px;top:65px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputCode{left:360px;top:65px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputPassword{left:5px;top:125px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputPassword{left:360px;top:125px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputConfirmPassword{left:5px;top:185px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputConfirmPassword{left:360px;top:185px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputEmail{left:5px;top:245px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputEmail{left:360px;top:245px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputImgCode{left:5px;top:305px;width:220px;height:22px;line-height:22px;padding:10px;}
+	.regCodeImage{left:265px;top:305px;width:80px;height:45px;}
+	.regAlertCodeImage{left:360px;top:305px;width:150px;height:45px;line-height:45px;padding:0px;} 
+	.regBtn{left:5px;top:365px;width:345px;height:42px;line-height:42px;padding:0px;}
+	.regInfoDiv{left:5px;top:425px;width:345px;height:42px;line-height:42px;padding:0px;}
+
+@media all and (min-width: 240px) and (max-width: 359px){ 
+	.pageHeader{height:68px;}
+	.headerMain{height:68px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:10px;}
+	.headerSysSubName{font-size:12px;left:130px;top:40px;}
+	.regMainDiv{width:100%;}
+	.regPageContent{height:480px;} 
+	.regInputDiv{width:240px;position:relative;margin:0 auto;height:480px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;font-size:15px;}
+	.regInputTitle{right:0px;top:5px;height:30px;left:0px;font-size:22px;width:100%;}
+	.regInputCode{left:5px;top:55px;width:206px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputCode{left:5px;top:90px;width:206px;height:22px;line-height:22px;padding:0px;}
+	.regInputPassword{left:5px;top:115px;width:206px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputPassword{left:5px;top:150px;width:206px;height:22px;line-height:22px;padding:0px;}
+	.regInputConfirmPassword{left:5px;top:175px;width:206px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputConfirmPassword{left:5px;top:210px;width:206px;height:22px;line-height:22px;padding:0px;}
+	.regInputEmail{left:5px;top:235px;width:206px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputEmail{left:5px;top:270px;width:206px;height:22px;line-height:22px;padding:0px;}
+	.regInputImgCode{left:5px;top:295px;width:120px;height:22px;line-height:22px;padding:5px;}
+	.regCodeImage{left:145px;top:295px;width:80px;height:35px;}
+	.regAlertCodeImage{left:5px;top:330px;width:206px;height:22px;line-height:22px;padding:0px;} 
+	.regBtn{left:5px;top:355px;width:230px;height:42px;line-height:42px;padding:0px;}
+	.regInfoDiv{left:5px;top:415px;width:230px;height:42px;line-height:42px;padding:0px;}
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:20px;}
+	.headerSysSubName{font-size:12px;left:130px;top:50px;}
+	.regMainDiv{width:100%;}
+	.regPageContent{height:480px;} 
+	.regInputDiv{width:360px;position:relative;margin:0 auto;height:480px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;font-size:15px;}
+	.regInputTitle{right:0px;top:15px;height:30px;left:0px;font-size:22px;width:100%;}
+	.regInputCode{left:5px;top:65px;width:326px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputCode{left:5px;top:100px;width:326px;height:22px;line-height:22px;padding:0px;}
+	.regInputPassword{left:5px;top:125px;width:326px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputPassword{left:5px;top:160px;width:326px;height:22px;line-height:22px;padding:0px;}
+	.regInputConfirmPassword{left:5px;top:185px;width:326px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputConfirmPassword{left:5px;top:220px;width:326px;height:22px;line-height:22px;padding:0px;}
+	.regInputEmail{left:5px;top:245px;width:326px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputEmail{left:5px;top:280px;width:326px;height:22px;line-height:22px;padding:0px;}
+	.regInputImgCode{left:5px;top:305px;width:240px;height:22px;line-height:22px;padding:5px;}
+	.regCodeImage{left:265px;top:305px;width:80px;height:35px;}
+	.regAlertCodeImage{left:5px;top:340px;width:326px;height:22px;line-height:22px;padding:0px;} 
+	.regBtn{left:5px;top:365px;width:345px;height:42px;line-height:42px;padding:0px;}
+	.regInfoDiv{left:5px;top:425px;width:345px;height:42px;line-height:42px;padding:0px;}
+} 
+
+@media all and (min-width: 480px) and (max-width: 639px){
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.headerSysName{font-size:22px;left:130px;top:20px;}
+	.headerSysSubName{font-size:12px;left:130px;top:50px;}
+	.regMainDiv{width:100%;}
+	.regPageContent{height:480px;} 
+	.regInputDiv{width:360px;position:relative;margin:0 auto;height:480px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;font-size:15px;}
+	.regInputTitle{right:0px;top:15px;height:30px;left:0px;font-size:22px;width:100%;}
+	.regInputCode{left:5px;top:65px;width:326px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputCode{left:5px;top:100px;width:326px;height:22px;line-height:22px;padding:0px;}
+	.regInputPassword{left:5px;top:125px;width:326px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputPassword{left:5px;top:160px;width:326px;height:22px;line-height:22px;padding:0px;}
+	.regInputConfirmPassword{left:5px;top:185px;width:326px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputConfirmPassword{left:5px;top:220px;width:326px;height:22px;line-height:22px;padding:0px;}
+	.regInputEmail{left:5px;top:245px;width:326px;height:22px;line-height:22px;padding:5px;}
+	.regAlertInputEmail{left:5px;top:280px;width:326px;height:22px;line-height:22px;padding:0px;}
+	.regInputImgCode{left:5px;top:305px;width:240px;height:22px;line-height:22px;padding:5px;}
+	.regCodeImage{left:265px;top:305px;width:80px;height:35px;}
+	.regAlertCodeImage{left:5px;top:340px;width:326px;height:22px;line-height:22px;padding:0px;} 
+	.regBtn{left:5px;top:365px;width:345px;height:42px;line-height:42px;padding:0px;}
+	.regInfoDiv{left:5px;top:425px;width:345px;height:42px;line-height:42px;padding:0px;}
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.regMainDiv{width:100%;}
+	.regPageContent{height:480px;} 
+	.regInputDiv{width:360px;position:relative;margin:0 auto;height:480px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;font-size:15px;}
+	.regInputTitle{right:0px;top:15px;height:30px;left:0px;font-size:22px;width:100%;}
+	.regInputCode{left:5px;top:65px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputCode{left:360px;top:65px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputPassword{left:5px;top:125px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputPassword{left:360px;top:125px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputConfirmPassword{left:5px;top:185px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputConfirmPassword{left:360px;top:185px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputEmail{left:5px;top:245px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputEmail{left:360px;top:245px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputImgCode{left:5px;top:305px;width:220px;height:22px;line-height:22px;padding:10px;}
+	.regCodeImage{left:265px;top:305px;width:80px;height:45px;}
+	.regAlertCodeImage{left:360px;top:305px;width:150px;height:45px;line-height:45px;padding:0px;} 
+	.regBtn{left:5px;top:365px;width:345px;height:42px;line-height:42px;padding:0px;}
+	.regInfoDiv{left:5px;top:425px;width:345px;height:42px;line-height:42px;padding:0px;}
+} 
+
+@media all and (min-width: 768px) and (max-width: 999px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.regMainDiv{width:100%;}
+	.regPageContent{height:480px;} 
+	.regInputDiv{width:360px;position:relative;margin:0 auto;height:480px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;font-size:15px;}
+	.regInputTitle{right:0px;top:15px;height:30px;left:0px;font-size:22px;width:100%;}
+	.regInputCode{left:5px;top:65px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputCode{left:360px;top:65px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputPassword{left:5px;top:125px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputPassword{left:360px;top:125px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputConfirmPassword{left:5px;top:185px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputConfirmPassword{left:360px;top:185px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputEmail{left:5px;top:245px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputEmail{left:360px;top:245px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputImgCode{left:5px;top:305px;width:220px;height:22px;line-height:22px;padding:10px;}
+	.regCodeImage{left:265px;top:305px;width:80px;height:45px;}
+	.regAlertCodeImage{left:360px;top:305px;width:150px;height:45px;line-height:45px;padding:0px;} 
+	.regBtn{left:5px;top:365px;width:345px;height:42px;line-height:42px;padding:0px;}
+	.regInfoDiv{left:5px;top:425px;width:345px;height:42px;line-height:42px;padding:0px;}
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){	
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.regMainDiv{width:100%;}
+	.regPageContent{height:480px;} 
+	.regInputDiv{width:360px;position:relative;margin:0 auto;height:480px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;font-size:15px;}
+	.regInputTitle{right:0px;top:15px;height:30px;left:0px;font-size:22px;width:100%;}
+	.regInputCode{left:5px;top:65px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputCode{left:360px;top:65px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputPassword{left:5px;top:125px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputPassword{left:360px;top:125px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputConfirmPassword{left:5px;top:185px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputConfirmPassword{left:360px;top:185px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputEmail{left:5px;top:245px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputEmail{left:360px;top:245px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputImgCode{left:5px;top:305px;width:220px;height:22px;line-height:22px;padding:10px;}
+	.regCodeImage{left:265px;top:305px;width:80px;height:45px;}
+	.regAlertCodeImage{left:360px;top:305px;width:150px;height:45px;line-height:45px;padding:0px;} 
+	.regBtn{left:5px;top:365px;width:345px;height:42px;line-height:42px;padding:0px;}
+	.regInfoDiv{left:5px;top:425px;width:345px;height:42px;line-height:42px;padding:0px;}
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){ 
+	.pageHeader{height:78px;}
+	.headerMain{height:78px;}
+	.headerBottom{top:0px;} 
+	.headerLogo{width:130px;left:30px;top:15px;}
+	.regMainDiv{width:100%;}
+	.regPageContent{height:480px;} 
+	.regInputDiv{width:360px;position:relative;margin:0 auto;height:480px;top:0px;left:0px;right:0px;bottom:0px;background-color:transparent;font-size:15px;}
+	.regInputTitle{right:0px;top:15px;height:30px;left:0px;font-size:22px;width:100%;}
+	.regInputCode{left:5px;top:65px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputCode{left:360px;top:65px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputPassword{left:5px;top:125px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputPassword{left:360px;top:125px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputConfirmPassword{left:5px;top:185px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputConfirmPassword{left:360px;top:185px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputEmail{left:5px;top:245px;width:326px;height:22px;line-height:22px;padding:10px;}
+	.regAlertInputEmail{left:360px;top:245px;width:150px;height:45px;line-height:45px;padding:0px;}
+	.regInputImgCode{left:5px;top:305px;width:220px;height:22px;line-height:22px;padding:10px;}
+	.regCodeImage{left:265px;top:305px;width:80px;height:45px;}
+	.regAlertCodeImage{left:360px;top:305px;width:150px;height:45px;line-height:45px;padding:0px;} 
+	.regBtn{left:5px;top:365px;width:345px;height:42px;line-height:42px;padding:0px;}
+	.regInfoDiv{left:5px;top:425px;width:345px;height:42px;line-height:42px;padding:0px;}
+}

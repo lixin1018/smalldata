@@ -1,0 +1,40 @@
+viewModels.ST_DispUnitField = {
+  id:"63203289-7f89-457e-b8a4-8beb38168918",
+  name:"ST_DispUnitField",
+  dataName:"ST_DispUnitField",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"id", label:"id", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"viewTable_Id", label:"viewTable_Id", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"code", label:"编码", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"name", label:"名称", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"description", label:"描述", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"infoType_Id", label:"字段类型Id", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"infoTypeCode", label:"字段类型编码", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"infoTypeName", label:"字段类型", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"list"},
+    {name:"maxLength", label:"最大长度", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"inputHelpXml", label:"输入帮助Xml", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"excelColumnIndex", label:"对应的Excel列序号", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"decimal"},
+    {name:"excelColumnName", label:"对应的Excel列名称", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"defaultValueXml", label:"默认值Xml", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"isHidden", label:"是否隐藏", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"isSummaryField", label:"是否摘要字段", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"checkbox", dispunitType:"checkbox"}
+  ],
+  dispUnitModel:[
+    {name:"id", label:"id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"viewTable_Id", label:"viewTable_Id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"code", label:"编码", editable:true,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"name", label:"名称", editable:true,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"description", label:"描述", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"infoType_Id", label:"字段类型Id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"infoTypeCode", label:"字段类型编码", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"infoTypeName", label:"字段类型", editable:true,nullable:false, hidden:false, dispunitType:"list", },
+    {name:"maxLength", label:"最大长度", editable:true,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"inputHelpXml", label:"输入帮助Xml", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"excelColumnIndex", label:"对应的Excel列序号", editable:true,nullable:true, hidden:false, dispunitType:"decimal", },
+    {name:"excelColumnName", label:"对应的Excel列名称", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"defaultValueXml", label:"默认值Xml", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"isHidden", label:"是否隐藏", editable:true,nullable:false, hidden:false, dispunitType:"checkbox", },
+    {name:"isSummaryField", label:"是否摘要字段", editable:true,nullable:false, hidden:false, dispunitType:"checkbox", }
+  ]
+}

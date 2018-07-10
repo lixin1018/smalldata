@@ -1,0 +1,443 @@
+.rPageContent{height:710px;width:100%;background-color:#ffffff;text-align:center;}
+.rMain{width:1200px;position:relative;height:100%;margin:1px auto;}
+.rInnerDiv{position:absolute;left:200px;top:0px;bottom:50px;width:1000px;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+.rInfoContainer{position:absolute;left:0px;top:0px;bottom:0px;width:100%;height:540px;}
+.rTitleContainer{position:absolute;left:0px;top:0px;right:0px;height:40px;border-bottom:solid 1px #E3E4E5;}
+.rTitle{position:absolute;left:0px;top:0px;width:150px;height:40px;line-height:45px;font-size:15px;font-weight:600;text-align:left;color:#ff6700;}
+.rTitle span{color:#757575;text-decoration:none;font-size:13px;}
+.rTitle a{color:#757575;text-decoration:none;font-size:13px;}
+.rFilterContainer{position:absolute;right:0px;bottom:0px;width:900px;height:35px;text-align:right}
+.rFilterTable{width:100%;height:30px;font-size:12px;}
+.rFilterTitleFromUser{width:60px;text-align:right;padding-right:3px;}
+.rFilterInputFromUserDiv{width:100px;}
+.rFilterInputFromUser{width:100px;height:28px;}
+.rFilterTitleToUser{width:60px;text-align:right;padding-right:3px;}
+.rFilterInputToUserDiv{width:100px;}
+.rFilterInputToUser{width:100px;height:28px;}
+.rFilterTitleFileName{width:60px;text-align:right;padding-right:3px;}
+.rFilterInputFileNameDiv{width:100px;}
+.rFilterInputFileName{width:100px;height:28px;}
+.rFilterTitleMessage{width:50px;text-align:right;padding-right:3px;}
+.rFilterInputMessageDiv{width:100px;}
+.rFilterInputMessage{width:100px;height:28px;}
+.rFilterTitleReceiveDate{width:50px;text-align:right;padding-right:3px;}
+.rFilterInputReceiveDateDiv{width:100px;}
+.rFilterInputReceiveDate{width:100px;height:28px;}
+.rFilterBtnContainer{width:50px;text-align:center;}
+.rFilterQueryBtn{width:50px;color:#333333;cursor:pointer;}
+
+.rColumnTitleContainer{position:absolute;left:0px;top:40px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+.rColumnTitleFromUser{position:absolute;left:0px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.rColumnTitleToUser{position:absolute;left:100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.rColumnTitleFileName{position:absolute;left:200px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.rColumnTitleReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.rColumnTitleMessage{position:absolute;left:600px;top:0px;width:200px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.rColumnTitleStatus{position:absolute;left:800px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.rColumnTitleOperate{position:absolute;left:900px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+.rItemListContainer{position:absolute;left:0px;top:60px;right:0px;}
+.detailLine{position:relative;width:100%;height:30px;border-bottom:dashed 0px #e9eaea;}
+.detailLineFromUserName{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.detailLineFromUserName span{display:none;float:left;}
+.detailLineToUserNames{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:100px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.detailLineToUserNames span{display:none;float:left;}
+.detailLineFileNames{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:200px;top:0px;width:250px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.detailLineFileNames span{display:none;float:left;}
+.detailLineReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.detailLineReceiveTime span{display:none;float:left;}
+.detailLineMessage{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:600px;top:0px;width:200px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.detailLineMessage span{display:none;float:left;}
+.detailLineStatus{position:absolute;left:800px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.detailLineStatus span{display:none;float:left;}
+.detailLineOperate{position:absolute;left:900px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+.detailLineOperate a{color:#757575;text-decoration:none;word-break: break-all;}
+.detailLineOperate a:hover{text-decoration:underline;}
+.navigatorContainer{position:relative;left:0px;right:0px;height:50px;border-top:solid 1px #E3E4E5;}
+.rNoneItem{position:absolute;left:0px;top:40px;right:0px;height:200px;line-height:200px;font-size:16px;font-weight:600;color:#757575;}
+
+
+@media all and (min-width: 240px) and (max-width: 359px){
+	.rPageContent{height:1900px;width:100%;background-color:#ffffff;text-align:center;}
+	.rMain{width:240px;height:100%;margin:1px auto;}
+	.rInnerDiv{left:0px;top:0px;bottom:50px;right:0px;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+	.rInfoContainer{left:0px;top:0px;bottom:0px;width:240px;height:540px;}
+	.rTitleContainer{left:0px;top:0px;right:0px;width:240px;height:30px;border-bottom:solid 1px #E3E4E5;}
+	.rTitle{left:10px;top:0px;width:200px;height:30px;line-height:30px;font-size:18px;font-weight:600;text-align:left;color:#ff6700;}
+	.rFilterContainer{display:none;}
+	.rFilterTable{width:100%;height:30px;font-size:12px;}
+	.rFilterTitleFromUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFromUserDiv{width:100px;}
+	.rFilterInputFromUser{width:100px;height:28px;}
+	.rFilterTitleToUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputToUserDiv{width:100px;}
+	.rFilterInputToUser{width:100px;height:28px;}
+	.rFilterTitleFileName{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFileNameDiv{width:100px;}
+	.rFilterInputFileName{width:100px;height:28px;}
+	.rFilterTitleMessage{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputMessageDiv{width:100px;}
+	.rFilterInputMessage{width:100px;height:28px;}
+	.rFilterTitleReceiveDate{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputReceiveDateDiv{width:100px;}
+	.rFilterInputReceiveDate{width:100px;height:28px;}
+	.rFilterBtnContainer{width:50px;text-align:center;}
+	.rFilterQueryBtn{width:50px;color:#333333;cursor:pointer;}
+	
+	.rColumnTitleContainer{display:none;position:absolute;left:0px;top:40px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.rColumnTitleFromUser{position:absolute;left:0px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleToUser{position:absolute;left:100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleFileName{position:absolute;left:200px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleMessage{position:absolute;left:600px;top:0px;width:200px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleStatus{position:absolute;left:800px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleOperate{position:absolute;left:900px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rItemListContainer{position:absolute;left:0px;top:30px;right:0px;}
+	.detailLine{width:100%;height:90px;border-bottom:dashed 1px #e9eaea;}
+	.detailLineFromUserName{left:0px;top:60px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFromUserName span{display:block;}
+	.detailLineToUserNames{display:none;left:0px;top:60px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineToUserNames span{display:block;}
+	.detailLineFileNames{left:0px;top:30px;width:240px;height:30px;line-height:30px;font-size:13px;font-weight:600;text-align:left;color:#757575;}
+	.detailLineFileNames span{display:block;}
+	.detailLineReceiveTime{left:0px;top:0px;width:170px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineReceiveTime span{display:block;}
+	.detailLineMessage{display:none;left:600px;top:0px;width:200px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineMessage span{display:block;}
+	.detailLineStatus{left:180px;top:0px;width:60px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineStatus span{display:block;}
+	.detailLineOperate{left:180px;right:10px;top:60px;width:60px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.navigatorContainer{left:0px;right:0px;height:50px;border-top:solid 1px #E3E4E5;}
+	.rNoneItem{left:0px;top:40px;right:0px;height:200px;line-height:200px;font-size:16px;font-weight:600;color:#757575;}
+	.pageIndexContainer{width:auto;}
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){ 
+	.rPageContent{height:1900px;width:100%;background-color:#ffffff;text-align:center;}
+	.rMain{width:360px;height:100%;margin:1px auto;}
+	.rInnerDiv{left:0px;top:0px;bottom:50px;right:0px;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+	.rInfoContainer{left:0px;top:0px;bottom:0px;width:360px;height:540px;}
+	.rTitleContainer{left:0px;top:0px;right:0px;width:360px;height:30px;border-bottom:solid 1px #E3E4E5;}
+	.rTitle{left:10px;top:0px;width:200px;height:30px;line-height:30px;font-size:18px;font-weight:600;text-align:left;color:#ff6700;}
+	.rFilterContainer{display:none;}
+	.rFilterTable{width:100%;height:30px;font-size:12px;}
+	.rFilterTitleFromUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFromUserDiv{width:100px;}
+	.rFilterInputFromUser{width:100px;height:28px;}
+	.rFilterTitleToUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputToUserDiv{width:100px;}
+	.rFilterInputToUser{width:100px;height:28px;}
+	.rFilterTitleFileName{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFileNameDiv{width:100px;}
+	.rFilterInputFileName{width:100px;height:28px;}
+	.rFilterTitleMessage{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputMessageDiv{width:100px;}
+	.rFilterInputMessage{width:100px;height:28px;}
+	.rFilterTitleReceiveDate{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputReceiveDateDiv{width:100px;}
+	.rFilterInputReceiveDate{width:100px;height:28px;}
+	.rFilterBtnContainer{width:50px;text-align:center;}
+	.rFilterQueryBtn{width:50px;color:#333333;cursor:pointer;}
+	
+	.rColumnTitleContainer{display:none;position:absolute;left:0px;top:40px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.rColumnTitleFromUser{position:absolute;left:0px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleToUser{position:absolute;left:100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleFileName{position:absolute;left:200px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleMessage{position:absolute;left:600px;top:0px;width:200px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleStatus{position:absolute;left:800px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleOperate{position:absolute;left:900px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rItemListContainer{position:absolute;left:0px;top:30px;right:0px;}
+	.detailLine{width:100%;height:90px;border-bottom:dashed 1px #e9eaea;}
+	.detailLineFromUserName{left:0px;top:60px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFromUserName span{display:block;}
+	.detailLineToUserNames{display:none;left:0px;top:60px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineToUserNames span{display:block;}
+	.detailLineFileNames{left:0px;top:30px;width:360px;height:30px;line-height:30px;font-size:13px;font-weight:600;text-align:left;color:#757575;}
+	.detailLineFileNames span{display:block;}
+	.detailLineReceiveTime{left:0px;top:0px;width:170px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineReceiveTime span{display:block;}
+	.detailLineMessage{display:none;left:600px;top:0px;width:200px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineMessage span{display:block;}
+	.detailLineStatus{left:280px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineStatus span{display:block;}
+	.detailLineOperate{left:280px;right:10px;top:60px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.navigatorContainer{left:0px;right:0px;height:50px;border-top:solid 1px #E3E4E5;}
+	.rNoneItem{left:0px;top:40px;right:0px;height:200px;line-height:200px;font-size:16px;font-weight:600;color:#757575;}
+	.pageIndexContainer{width:auto;}
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){ 
+	.rPageContent{height:1900px;width:100%;background-color:#ffffff;text-align:center;}
+	.rMain{width:480px;height:100%;margin:1px auto;}
+	.rInnerDiv{left:0px;top:0px;bottom:50px;right:0px;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+	.rInfoContainer{left:0px;top:0px;bottom:0px;width:480px;height:540px;}
+	.rTitleContainer{left:0px;top:0px;right:0px;width:480px;height:30px;border-bottom:solid 1px #E3E4E5;}
+	.rTitle{left:10px;top:0px;width:200px;height:30px;line-height:30px;font-size:18px;font-weight:600;text-align:left;color:#ff6700;}
+	.rFilterContainer{display:none;}
+	.rFilterTable{width:100%;height:30px;font-size:12px;}
+	.rFilterTitleFromUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFromUserDiv{width:100px;}
+	.rFilterInputFromUser{width:100px;height:28px;}
+	.rFilterTitleToUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputToUserDiv{width:100px;}
+	.rFilterInputToUser{width:100px;height:28px;}
+	.rFilterTitleFileName{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFileNameDiv{width:100px;}
+	.rFilterInputFileName{width:100px;height:28px;}
+	.rFilterTitleMessage{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputMessageDiv{width:100px;}
+	.rFilterInputMessage{width:100px;height:28px;}
+	.rFilterTitleReceiveDate{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputReceiveDateDiv{width:100px;}
+	.rFilterInputReceiveDate{width:100px;height:28px;}
+	.rFilterBtnContainer{width:50px;text-align:center;}
+	.rFilterQueryBtn{width:50px;color:#333333;cursor:pointer;}
+	
+	.rColumnTitleContainer{display:none;position:absolute;left:0px;top:40px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.rColumnTitleFromUser{position:absolute;left:0px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleToUser{position:absolute;left:100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleFileName{position:absolute;left:200px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleMessage{position:absolute;left:600px;top:0px;width:200px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleStatus{position:absolute;left:800px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleOperate{position:absolute;left:900px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rItemListContainer{position:absolute;left:0px;top:30px;right:0px;}
+	.detailLine{width:100%;height:90px;border-bottom:dashed 1px #e9eaea;}
+	.detailLineFromUserName{left:0px;top:60px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFromUserName span{display:block;}
+	.detailLineToUserNames{display:none;left:0px;top:60px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineToUserNames span{display:block;}
+	.detailLineFileNames{left:0px;top:30px;width:480px;height:30px;line-height:30px;font-size:13px;font-weight:600;text-align:left;color:#757575;}
+	.detailLineFileNames span{display:block;}
+	.detailLineReceiveTime{left:0px;top:0px;width:170px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineReceiveTime span{display:block;}
+	.detailLineMessage{display:none;left:600px;top:0px;width:200px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineMessage span{display:block;}
+	.detailLineStatus{left:380px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineStatus span{display:block;}
+	.detailLineOperate{left:380px;right:10px;top:60px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.navigatorContainer{left:0px;right:0px;height:50px;border-top:solid 1px #E3E4E5;}
+	.rNoneItem{left:0px;top:40px;right:0px;height:200px;line-height:200px;font-size:16px;font-weight:600;color:#757575;}
+	.pageIndexContainer{width:auto;}
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){ 
+	.rPageContent{height:1900px;width:100%;background-color:#ffffff;text-align:center;}
+	.rMain{width:630px;height:100%;margin:1px auto;}
+	.rInnerDiv{left:0px;top:0px;bottom:50px;right:0px;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+	.rInfoContainer{left:0px;top:0px;bottom:0px;width:630px;height:540px;}
+	.rTitleContainer{left:0px;top:0px;right:0px;width:630px;height:30px;border-bottom:solid 1px #E3E4E5;}
+	.rTitle{left:10px;top:0px;width:200px;height:30px;line-height:30px;font-size:18px;font-weight:600;text-align:left;color:#ff6700;}
+	.rFilterContainer{display:none;}
+	.rFilterTable{width:100%;height:30px;font-size:12px;}
+	.rFilterTitleFromUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFromUserDiv{width:100px;}
+	.rFilterInputFromUser{width:100px;height:28px;}
+	.rFilterTitleToUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputToUserDiv{width:100px;}
+	.rFilterInputToUser{width:100px;height:28px;}
+	.rFilterTitleFileName{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFileNameDiv{width:100px;}
+	.rFilterInputFileName{width:100px;height:28px;}
+	.rFilterTitleMessage{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputMessageDiv{width:100px;}
+	.rFilterInputMessage{width:100px;height:28px;}
+	.rFilterTitleReceiveDate{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputReceiveDateDiv{width:100px;}
+	.rFilterInputReceiveDate{width:100px;height:28px;}
+	.rFilterBtnContainer{width:50px;text-align:center;}
+	.rFilterQueryBtn{width:50px;color:#333333;cursor:pointer;}
+	
+	.rColumnTitleContainer{display:none;position:absolute;left:0px;top:40px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.rColumnTitleFromUser{position:absolute;left:0px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleToUser{position:absolute;left:100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleFileName{position:absolute;left:200px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleMessage{position:absolute;left:600px;top:0px;width:200px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleStatus{position:absolute;left:800px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleOperate{position:absolute;left:900px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rItemListContainer{position:absolute;left:0px;top:30px;right:0px;}
+	.detailLine{width:100%;height:90px;border-bottom:dashed 1px #e9eaea;}
+	.detailLineFromUserName{left:0px;top:60px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFromUserName span{display:block;}
+	.detailLineToUserNames{display:none;left:0px;top:60px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineToUserNames span{display:block;}
+	.detailLineFileNames{left:0px;top:30px;width:640px;height:30px;line-height:30px;font-size:13px;font-weight:600;text-align:left;color:#757575;}
+	.detailLineFileNames span{display:block;}
+	.detailLineReceiveTime{left:0px;top:0px;width:170px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineReceiveTime span{display:block;}
+	.detailLineMessage{display:none;left:600px;top:0px;width:200px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineMessage span{display:block;}
+	.detailLineStatus{left:480px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineStatus span{display:block;}
+	.detailLineOperate{left:480px;right:10px;top:60px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.navigatorContainer{left:0px;right:0px;height:50px;border-top:solid 1px #E3E4E5;}
+	.rNoneItem{left:0px;top:40px;right:0px;height:200px;line-height:200px;font-size:16px;font-weight:600;color:#757575;}
+	.pageIndexContainer{width:auto;}
+} 
+
+@media all and (min-width: 768px) and (max-width: 999px){ 
+	.rPageContent{height:1300px;width:100%;background-color:#ffffff;text-align:center;}
+	.rMain{width:760px;height:100%;margin:1px auto;}
+	.rInnerDiv{left:0px;top:0px;bottom:50px;right:0px;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+	.rInfoContainer{left:0px;top:0px;bottom:0px;width:760px;height:540px;}
+	.rTitleContainer{left:0px;top:0px;right:0px;width:760px;height:30px;border-bottom:solid 1px #E3E4E5;}
+	.rTitle{left:10px;top:0px;width:200px;height:30px;line-height:30px;font-size:18px;font-weight:600;text-align:left;color:#ff6700;}
+	.rFilterContainer{display:none;}
+	.rFilterTable{width:100%;height:30px;font-size:12px;}
+	.rFilterTitleFromUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFromUserDiv{width:100px;}
+	.rFilterInputFromUser{width:100px;height:28px;}
+	.rFilterTitleToUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputToUserDiv{width:100px;}
+	.rFilterInputToUser{width:100px;height:28px;}
+	.rFilterTitleFileName{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFileNameDiv{width:100px;}
+	.rFilterInputFileName{width:100px;height:28px;}
+	.rFilterTitleMessage{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputMessageDiv{width:100px;}
+	.rFilterInputMessage{width:100px;height:28px;}
+	.rFilterTitleReceiveDate{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputReceiveDateDiv{width:100px;}
+	.rFilterInputReceiveDate{width:100px;height:28px;}
+	.rFilterBtnContainer{width:50px;text-align:center;}
+	.rFilterQueryBtn{width:50px;color:#333333;cursor:pointer;}
+	
+	.rColumnTitleContainer{display:none;position:absolute;left:0px;top:40px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.rColumnTitleFromUser{position:absolute;left:0px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleToUser{position:absolute;left:100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleFileName{position:absolute;left:200px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleMessage{position:absolute;left:600px;top:0px;width:200px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleStatus{position:absolute;left:800px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleOperate{position:absolute;left:900px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rItemListContainer{position:absolute;left:0px;top:30px;right:0px;}
+	.detailLine{width:100%;height:60px;border-bottom:dashed 1px #e9eaea;}
+	.detailLineFromUserName{left:220px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFromUserName span{display:block;}
+	.detailLineToUserNames{left:380px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineToUserNames span{display:block;}
+	.detailLineFileNames{left:0px;top:30px;width:768px;height:30px;line-height:30px;font-size:13px;font-weight:600;text-align:left;color:#757575;}
+	.detailLineFileNames span{display:block;}
+	.detailLineReceiveTime{left:0px;top:0px;width:170px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineReceiveTime span{display:block;}
+	.detailLineMessage{display:none;left:600px;top:0px;width:200px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineMessage span{display:block;}
+	.detailLineStatus{left:580px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineStatus span{display:block;}
+	.detailLineOperate{left:680px;right:10px;top:0px;width:80px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.navigatorContainer{left:0px;right:0px;height:50px;border-top:solid 1px #E3E4E5;}
+	.rNoneItem{left:0px;top:40px;right:0px;height:200px;line-height:200px;font-size:16px;font-weight:600;color:#757575;}
+	.pageIndexContainer{width:auto;}
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){
+	.rPageContent{height:710px;width:100%;background-color:#ffffff;text-align:center;}
+	.rMain{width:1000px;position:relative;height:100%;margin:1px auto;}
+	.rInnerDiv{position:absolute;left:0px;top:0px;bottom:50px;width:1000px;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+	.rInfoContainer{position:absolute;left:0px;top:0px;bottom:0px;width:100%;height:540px;}
+	.rTitleContainer{position:absolute;left:0px;top:0px;right:0px;height:40px;border-bottom:solid 1px #E3E4E5;}
+	.rTitle{position:absolute;left:0px;top:0px;width:150px;height:40px;line-height:45px;font-size:15px;font-weight:600;text-align:left;color:#ff6700;}
+	.rFilterContainer{position:absolute;right:0px;bottom:0px;width:850px;height:35px;text-align:right}
+	.rFilterTable{width:100%;height:30px;font-size:12px;}
+	.rFilterTitleFromUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFromUserDiv{width:100px;}
+	.rFilterInputFromUser{width:100px;height:28px;}
+	.rFilterTitleToUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputToUserDiv{width:100px;}
+	.rFilterInputToUser{width:100px;height:28px;}
+	.rFilterTitleFileName{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFileNameDiv{width:100px;}
+	.rFilterInputFileName{width:100px;height:28px;}
+	.rFilterTitleMessage{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputMessageDiv{width:100px;}
+	.rFilterInputMessage{width:100px;height:28px;}
+	.rFilterTitleReceiveDate{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputReceiveDateDiv{width:100px;}
+	.rFilterInputReceiveDate{width:100px;height:28px;}
+	.rFilterBtnContainer{width:50px;text-align:center;}
+	.rFilterQueryBtn{width:50px;color:#333333;cursor:pointer;}
+	
+	.rColumnTitleContainer{position:absolute;left:0px;top:40px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.rColumnTitleFromUser{position:absolute;left:0px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleToUser{position:absolute;left:100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleFileName{position:absolute;left:200px;top:0px;width:250px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleMessage{position:absolute;left:600px;top:0px;width:200px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleStatus{position:absolute;left:800px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleOperate{position:absolute;left:900px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rItemListContainer{position:absolute;left:0px;top:60px;right:0px;}
+	.detailLine{position:relative;width:100%;height:30px;border-bottom:dashed 0px #e9eaea;}
+	.detailLineFromUserName{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFromUserName span{display:none;float:left;}
+	.detailLineToUserNames{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:100px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineToUserNames span{display:none;float:left;}
+	.detailLineFileNames{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:200px;top:0px;width:250px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFileNames span{display:none;float:left;}
+	.detailLineReceiveTime{position:absolute;left:450px;top:0px;width:150px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineReceiveTime span{display:none;float:left;}
+	.detailLineMessage{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:600px;top:0px;width:200px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineMessage span{display:none;float:left;}
+	.detailLineStatus{position:absolute;left:800px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineStatus span{display:none;float:left;}
+	.detailLineOperate{position:absolute;left:900px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineOperate a{color:#757575;text-decoration:none;word-break: break-all;}
+	.detailLineOperate a:hover{text-decoration:underline;}
+	.navigatorContainer{position:relative;left:0px;right:0px;height:50px;border-top:solid 1px #E3E4E5;}
+	.rNoneItem{position:absolute;left:0px;top:40px;right:0px;height:200px;line-height:200px;font-size:16px;font-weight:600;color:#757575;}
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){ 
+	.rPageContent{height:710px;width:100%;background-color:#ffffff;text-align:center;}
+	.rMain{width:1200px;position:relative;height:100%;margin:1px auto;}
+	.rInnerDiv{position:absolute;left:0px;top:0px;bottom:50px;width:1200px;background-color:#ffffff;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;}
+	.rInfoContainer{position:absolute;left:0px;top:0px;bottom:0px;width:100%;height:540px;}
+	.rTitleContainer{position:absolute;left:0px;top:0px;right:0px;height:40px;border-bottom:solid 1px #E3E4E5;}
+	.rTitle{position:absolute;left:0px;top:0px;width:150px;height:40px;line-height:45px;font-size:15px;font-weight:600;text-align:left;color:#ff6700;}
+	.rFilterContainer{position:absolute;right:0px;bottom:0px;width:850px;height:35px;text-align:right}
+	.rFilterTable{width:100%;height:30px;font-size:12px;}
+	.rFilterTitleFromUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFromUserDiv{width:100px;}
+	.rFilterInputFromUser{width:100px;height:28px;}
+	.rFilterTitleToUser{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputToUserDiv{width:100px;}
+	.rFilterInputToUser{width:100px;height:28px;}
+	.rFilterTitleFileName{width:60px;text-align:right;padding-right:3px;}
+	.rFilterInputFileNameDiv{width:100px;}
+	.rFilterInputFileName{width:100px;height:28px;}
+	.rFilterTitleMessage{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputMessageDiv{width:100px;}
+	.rFilterInputMessage{width:100px;height:28px;}
+	.rFilterTitleReceiveDate{width:50px;text-align:right;padding-right:3px;}
+	.rFilterInputReceiveDateDiv{width:100px;}
+	.rFilterInputReceiveDate{width:100px;height:28px;}
+	.rFilterBtnContainer{width:50px;text-align:center;}
+	.rFilterQueryBtn{width:50px;color:#333333;cursor:pointer;}
+	
+	.rColumnTitleContainer{position:absolute;left:0px;top:40px;right:0px;height:20px;border-bottom:dashed 1px #e9eaea;}
+	.rColumnTitleFromUser{position:absolute;left:0px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleToUser{position:absolute;left:100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleFileName{position:absolute;left:200px;top:0px;width:450px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleReceiveTime{position:absolute;left:650px;top:0px;width:150px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleMessage{position:absolute;left:800px;top:0px;width:200px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleStatus{position:absolute;left:1000px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rColumnTitleOperate{position:absolute;left:1100px;top:0px;width:100px;height:20px;line-height:20px;font-size:13px;text-align:left;color:#757575;}
+	.rItemListContainer{position:absolute;left:0px;top:60px;right:0px;}
+	.detailLine{position:relative;width:100%;height:30px;border-bottom:dashed 0px #e9eaea;}
+	.detailLineFromUserName{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:0px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFromUserName span{display:none;float:left;}
+	.detailLineToUserNames{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:100px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineToUserNames span{display:none;float:left;}
+	.detailLineFileNames{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:200px;top:0px;width:450px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineFileNames span{display:none;float:left;}
+	.detailLineReceiveTime{position:absolute;left:650px;top:0px;width:150px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineReceiveTime span{display:none;float:left;}
+	.detailLineMessage{position:absolute;overflow:hidden;text-overflow:ellipsis;white-space: nowrap;left:800px;top:0px;width:200px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineMessage span{display:none;float:left;}
+	.detailLineStatus{position:absolute;left:1000px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineStatus span{display:none;float:left;}
+	.detailLineOperate{position:absolute;left:1100px;top:0px;width:100px;height:30px;line-height:30px;font-size:13px;text-align:left;color:#757575;}
+	.detailLineOperate a{color:#757575;text-decoration:none;word-break: break-all;}
+	.detailLineOperate a:hover{text-decoration:underline;}
+	.navigatorContainer{position:relative;left:0px;right:0px;height:50px;border-top:solid 1px #E3E4E5;}
+	.rNoneItem{position:absolute;left:0px;top:40px;right:0px;height:200px;line-height:200px;font-size:16px;font-weight:600;color:#757575;}
+}

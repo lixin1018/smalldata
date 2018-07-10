@@ -1,0 +1,47 @@
+@CHARSET "UTF-8"; 
+.pptSlider_main_div { 
+	position:relative;
+	overflow:hidden;
+	background-image: url(senlin.jpg);
+	background-size:100% 100%;
+  	width:100%;
+  	height:100%; 
+}
+
+.pptSlider_page { 
+  	display: none;
+  	position:absolute;
+  	width:100%;
+  	height:100%; 
+  	top:0px;
+} 
+
+.pptSlider_show { 
+  	display: block;
+} 
+
+.pptSlider_pageInner{
+	z-index: 15;
+	filter:alpha(opacity=20);  /*支持 IE 浏览器*/
+	-moz-opacity:0.20; /*支持 FireFox 浏览器*/
+	opacity:0.20;  /*支持 Chrome, Opera, Safari 等浏览器*/
+	border:0px solid;
+	background-color:#ffffff;
+	border-radius:25px;
+	-moz-border-radius:25px; /* Old Firefox */
+	position:absolute;
+	left:20px;
+	right:20px;
+	bottom:20px;
+	top:20px;
+}
+.pptSlider_pageContent{
+	z-index: 16;
+	position:absolute;
+	left:40px;
+	right:40px; 
+	top:40px;
+	height:200px;
+	color:#ffffff; 
+	
+}

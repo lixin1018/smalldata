@@ -1,0 +1,4 @@
+components  :各种js组件包
+fonts       :此包用于html5
+jquery      :jquery框架文件
+novaone     :快速开发工具组件包
