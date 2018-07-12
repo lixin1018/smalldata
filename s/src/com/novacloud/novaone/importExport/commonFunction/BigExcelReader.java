@@ -89,7 +89,7 @@ public class BigExcelReader implements IFileReader{
 				}
 			}
 			f2vs.put("parentid", importInstanceId);
-			f2vs.put("isdeleted", false);
+			f2vs.put("isdeleted", "N");
 			f2vs.put("createtime", new Date());
 			batchRowObjects.add(f2vs);  
 	    } 

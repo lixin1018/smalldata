@@ -412,7 +412,7 @@
 		<property name="transactionManager" ref="transactionManager" /> 
 		<property name="fileBaseProcessor" ref="dbDataProcessor" />
 	</bean>	 
-	<bean id="dbDataProcessor" class="com.novacloud.novaone.dbDataProcess.DbDataProcessor" scope="prototype"> 
+	<bean id="dbDataProcessor" class="com.novacloud.novaone.dbDataProcess.DbDataProcessor20180711" scope="prototype"> 
 		<property name="dBParserAccess" ref="dBParserAccess" />
 	</bean>	
 	 

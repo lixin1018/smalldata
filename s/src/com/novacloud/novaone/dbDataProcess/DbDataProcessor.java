@@ -36,7 +36,7 @@ import com.novacloud.novaone.excelGrid.definition.ExcelGridValidateResult;
 
 import net.sf.json.JSONObject;  
 
-public class DbDataProcessor extends FileBaseProcessor{
+public class DbDataProcessor extends FileBaseProcessor implements IDbDataProcessor{
 	
 	class MyThread extends Thread{
 		public List<DataRow> nameListRows = null;

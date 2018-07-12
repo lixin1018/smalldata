@@ -13,8 +13,8 @@ import com.opensymphony.xwork2.ActionSupport;
 public class DbDataProcessService extends FileBaseService implements IDbDataProcessService {
 
 	 
-	public DbDataProcessor getDbDataProcessor(){
-		return (DbDataProcessor)this.getFileBaseProcessor();
+	public IDbDataProcessor getDbDataProcessor(){
+		return (IDbDataProcessor)this.getFileBaseProcessor();
 	}
 	
 	public String matchedPerson(){
