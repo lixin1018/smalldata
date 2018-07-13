@@ -27,3 +27,6 @@ hs_err_pid*
 
 #Servers
 Servers/
+
+#.recommenders
+.recommenders/

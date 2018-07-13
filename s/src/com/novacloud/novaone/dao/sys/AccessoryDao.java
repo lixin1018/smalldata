@@ -122,7 +122,7 @@ public class AccessoryDao implements IAccessoryDao{
 	
 	public DataRow getAccessoryDataRow(String id, String filterType, String filterValue, String uploadUserId) throws Exception{
 		IDBParserAccess dbAccess = this.getDBParserAccess();
-		String sql = "select a.id as id, a.name as name, a.uploadtime as uploadtime, a.millisecond as millisecond from d_accessory a where a.id = " + SysConfig.getParamPrefix()+"id"
+		String sql = "select a.id as id, a.name as name, a.uploadtime as uploadtime, a.millisecond as millisecond, a.filetype as filetype from d_accessory a where a.id = " + SysConfig.getParamPrefix()+"id"
 				+ " and a.filtertype = " + SysConfig.getParamPrefix()+"filtertype"
 				+ " and a.filtervalue = " + SysConfig.getParamPrefix()+"filtervalue"
 				+ " and a.uploaduserid = " + SysConfig.getParamPrefix()+"uploaduserid";
@@ -131,7 +131,7 @@ public class AccessoryDao implements IAccessoryDao{
 		p2vs.put("filtertype", filterType);
 		p2vs.put("filtervalue", filterValue);
 		p2vs.put("uploaduserid", uploadUserId);
-		DataTable accessoryDt = dbAccess.getMultiLineValues(this.getDBSession(), sql, p2vs, new String[]{"id", "name", "uploadtime", "millisecond"}, new ValueType[]{ValueType.String, ValueType.String, ValueType.Time, ValueType.String});
+		DataTable accessoryDt = dbAccess.getMultiLineValues(this.getDBSession(), sql, p2vs, new String[]{"id", "name", "uploadtime", "millisecond", "filetype"}, new ValueType[]{ValueType.String, ValueType.String, ValueType.Time, ValueType.String, ValueType.String});
 		List<DataRow> rows = accessoryDt.getRows();
 		if(rows.size() == 0){
 			throw new Exception("none accessory。 id="+id);

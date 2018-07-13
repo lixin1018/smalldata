@@ -24,6 +24,7 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -89,13 +90,22 @@ public class ExcelGridProcessor {
 	}
 	
 	//excel转换为excelgrid
-	private ConvertExcelToExcelGridProcessor convertExcelToExcelGridProcessor;
-	public ConvertExcelToExcelGridProcessor getConvertExcelToExcelGridProcessor() {
+	private ConvertExcelToExcelGridProcessor convertExcelToExcelGridProcessor; 
+	public ConvertExcelToExcelGridProcessor getConvertExcelToExcelGridProcessor(String fileType) throws Exception {
+		if(convertExcelToExcelGridProcessor == null){
+			switch(fileType){
+				case "xls":
+					convertExcelToExcelGridProcessor = (ConvertExcelToExcelGridProcessor)ContextUtil.getBean("convertExcelXlsToExcelGridProcessor");
+				break;
+				case "xlsx":
+					convertExcelToExcelGridProcessor = (ConvertExcelToExcelGridProcessor)ContextUtil.getBean("convertExcelXlsxToExcelGridProcessor");
+				break;
+				default:
+					throw new Exception("无法为 " + fileType + " 类型的文件创建Excel读取实例"); 
+			}
+		}
 		return convertExcelToExcelGridProcessor;
-	}
-	public void setConvertExcelToExcelGridProcessor(ConvertExcelToExcelGridProcessor convertExcelToExcelGridProcessor) {
-		this.convertExcelToExcelGridProcessor = convertExcelToExcelGridProcessor;
-	}
+	} 
 	
 	
 	//数据库Session（需要Service类里的方法把dbSession传递过来）
@@ -623,9 +633,10 @@ public class ExcelGridProcessor {
 		String fileName = accessoryRow.getStringValue("name");
 		String millisecond = accessoryRow.getStringValue("millisecond");
 		Date uploadTime = accessoryRow.getDateTimeValue("uploadtime");
+		String fileType = accessoryRow.getStringValue("filetype");
 
 		String excelFilePath = this.getAccessoryDao().getFilePathByNameAndUploadTime(fileName, uploadTime, millisecond);
-		ExcelGrid excelGrid = this.getConvertExcelToExcelGridProcessor().createExcelGridFromExcelFile(session, excelFilePath, sheetNames);
+		ExcelGrid excelGrid = this.getConvertExcelToExcelGridProcessor(fileType).createExcelGridFromExcelFile(session, excelFilePath, sheetNames);
 		
 		//JSONObject excelGridJsonObj = excelGrid.toJson();		
 		
@@ -704,7 +715,7 @@ public class ExcelGridProcessor {
 	}
 	
 	public List<String> getExcelSheetNames(INcpSession session, String accessoryId) throws Exception {
-		XSSFWorkbook wb = this.getExcelWorkbookByAccessoryId(session, accessoryId);
+		Workbook wb = this.getExcelWorkbookByAccessoryId(session, accessoryId);
 		int sheetCount = wb.getNumberOfSheets();
 		List<String> allSheetNames = new ArrayList<String>();
 		for(int i = 0; i < sheetCount; i++){
@@ -714,10 +725,18 @@ public class ExcelGridProcessor {
 		return allSheetNames;
 	}
 	
-	private XSSFWorkbook getExcelWorkbookByAccessoryId(INcpSession session, String accessoryId) throws Exception{	
+	private Workbook getExcelWorkbookByAccessoryId(INcpSession session, String accessoryId) throws Exception{	
 		this.accessoryDao.setDBSession(dbSession);
-		String excelFilePath = this.accessoryDao.getFilePath(accessoryId, this.getAccessoryFilterType(), "", session.getUserId());			
-		return this.getConvertExcelToExcelGridProcessor().getExcelWorkbookByFilePath(session, excelFilePath);
+		String userId = session.getUserId();
+		DataRow accessoryRow = this.getAccessoryDao().getAccessoryDataRow(accessoryId, this.getAccessoryFilterType(), "", userId);
+		String fileName = accessoryRow.getStringValue("name");
+		String millisecond = accessoryRow.getStringValue("millisecond");
+		Date uploadTime = accessoryRow.getDateTimeValue("uploadtime");
+		String fileType = accessoryRow.getStringValue("filetype");
+
+		String excelFilePath = this.getAccessoryDao().getFilePathByNameAndUploadTime(fileName, uploadTime, millisecond);
+		//String excelFilePath = this.accessoryDao.getFilePath(accessoryId, this.getAccessoryFilterType(), "", session.getUserId());			
+		return this.getConvertExcelToExcelGridProcessor(fileType).getExcelWorkbookByFilePath(session, excelFilePath);
 	}
 	public JSONObject createNewBlankExcelGrid(NcpSession session, int defaultRowCount, int defaultColumnCount, int defaultRowHeight, int defaultColumnWidth) throws Exception {
 

@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.hssf.util.PaneInformation;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
@@ -22,7 +23,9 @@ import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.FontFamily;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
@@ -36,7 +39,7 @@ import com.novacloud.novaone.common.NcpException;
 import com.novacloud.novaone.common.util.CommonFunction;
 import com.novacloud.novaone.dao.db.ValueType;
 
-public class ConvertExcelToExcelGridProcessor {	
+public abstract class ConvertExcelToExcelGridProcessor {	
 	//允许导入的最大行数
 	private int maxRowCount = 50000;
 	public int getMaxRowCount() {
@@ -55,10 +58,10 @@ public class ConvertExcelToExcelGridProcessor {
 		this.maxColCount = maxColCount;
 	}
 
-	private List<String> validateExcelFile(XSSFSheet sheet){
+	private List<String> validateExcelFile(Sheet excelSheet){
 		List<String> errors = new ArrayList<String>();
-		int lastRowIndex = sheet.getLastRowNum();
-		int lastColIndex = this.getLastColIndex(sheet);// sheet.getRow(0).getPhysicalNumberOfCells(); 
+		int lastRowIndex = excelSheet.getLastRowNum();
+		int lastColIndex = this.getLastColIndex(excelSheet);// sheet.getRow(0).getPhysicalNumberOfCells(); 
 		if(lastRowIndex >= this.getMaxRowCount()){
 			errors.add("行过多, 允许的最大行数为" + this.getMaxRowCount());
 		}
@@ -70,13 +73,13 @@ public class ConvertExcelToExcelGridProcessor {
 	
 	//从Excel的sheet页中读取形成此值
 	public ExcelGrid createExcelGridFromExcelFile(INcpSession session, String excelFilePath, List<String> sheetNames) throws Exception{
-		XSSFWorkbook wb = this.getExcelWorkbookByFilePath(session, excelFilePath);
+		Workbook wb = this.getExcelWorkbookByFilePath(session, excelFilePath);
 		ExcelGrid eg = ExcelGrid.createBlankExcelGrid();
 		for(int i = 0; i < sheetNames.size(); i++){
 			int sheetIndex = i;
 			String sheetName = sheetNames.get(i);
 			String sheetId = UUID.randomUUID().toString();
-			XSSFSheet excelSheet = wb.getSheet(sheetName);		
+			Sheet excelSheet = wb.getSheet(sheetName);		
 			List<String> errors = this.validateExcelFile(excelSheet);
 			if(errors.size() == 0){
 				this.getExcelGridSheet(sheetId, sheetName, sheetIndex, wb, excelSheet, eg);
@@ -89,7 +92,7 @@ public class ConvertExcelToExcelGridProcessor {
 		return eg;
 	} 
 	
-	private int getLastColIndex(XSSFSheet sheet){
+	private int getLastColIndex(Sheet sheet){
 		int maxLastColIndex = -1;
 		int lastRowIndex = sheet.getLastRowNum();
 		for(int i = 0; i <= lastRowIndex; i++){
@@ -105,9 +108,9 @@ public class ConvertExcelToExcelGridProcessor {
 	}
 
 	
-	private ExcelGridSheet getExcelGridSheet(String sheetId, String sheetName, int sheetIndex, XSSFWorkbook wb, XSSFSheet sheet, ExcelGrid eg) throws Exception{
-		int lastRowIndex = sheet.getLastRowNum();
-		int lastColIndex = this.getLastColIndex(sheet); 
+	private ExcelGridSheet getExcelGridSheet(String sheetId, String sheetName, int sheetIndex, Workbook wb, Sheet excelSheet, ExcelGrid eg) throws Exception{
+		int lastRowIndex = excelSheet.getLastRowNum();
+		int lastColIndex = this.getLastColIndex(excelSheet); 
 		if(lastColIndex == -1){
 			//如果发现没有任何行列，那么默认10*10个空单元格
 			lastRowIndex = 9;
@@ -119,7 +122,7 @@ public class ConvertExcelToExcelGridProcessor {
 		int frozenColIndex = -1;
 		int frozenRowIndex = -1;
 		 
-        PaneInformation paneInformation = sheet.getPaneInformation();
+        PaneInformation paneInformation = excelSheet.getPaneInformation();
         if (paneInformation != null && paneInformation.isFreezePane()) {
             //冻结到第几列
         	frozenColIndex = paneInformation.getVerticalSplitPosition() - 1;
@@ -132,7 +135,7 @@ public class ConvertExcelToExcelGridProcessor {
 		for(int i = 0; i <= lastRowIndex; i++){
 			
 			//注意，当i<=lastRowIndex时，sheet.getRow(i)取得的值也可能是null
-			Row sheetRow = sheet.getRow(i);
+			Row sheetRow = excelSheet.getRow(i);
 			
 			ExcelGridRow egRow = new ExcelGridRow();
 			egRows.add(egRow);
@@ -158,7 +161,7 @@ public class ConvertExcelToExcelGridProcessor {
 			
 			egCol.setSheetId(sheetId);
 			 
-			int colWidth = 8 + (int)(sheet.getColumnWidth(i) / 32);
+			int colWidth = 8 + (int)(excelSheet.getColumnWidth(i) / 32);
 			egCol.setWidth(colWidth); 
 			egCol.setIsFrozen(i <= frozenColIndex);			
 		}
@@ -167,10 +170,10 @@ public class ConvertExcelToExcelGridProcessor {
 		HashMap<String, ExcelGridCell> egCells = eg.getAllCells();
 		
 	    //合并的单元格数量
-        int merged = sheet.getNumMergedRegions();
+        int merged = excelSheet.getNumMergedRegions();
         //预读合并的单元格
         for (int i = 0; i < merged; i++) {
-            CellRangeAddress range = sheet.getMergedRegion(i);
+            CellRangeAddress range = excelSheet.getMergedRegion(i);
             int y0 = range.getFirstRow();
             int x0 = range.getFirstColumn();
             int y1 = range.getLastRow();
@@ -198,7 +201,7 @@ public class ConvertExcelToExcelGridProcessor {
         }
 
 		for(int i = 0; i <= lastRowIndex; i++){
-			Row sheetRow = sheet.getRow(i);
+			Row sheetRow = excelSheet.getRow(i);
 			ExcelGridRow egRow = egRows.get(i);
 			String rowId = egRow.getId();
 			if(i % 100 == 0){ 
@@ -229,7 +232,7 @@ public class ConvertExcelToExcelGridProcessor {
 								this.getCellDataFromSheetToExcelGrid(sheetCell, egCell); 
 							}
 						}
-						this.getCellCssStyleFromSheetToExcelGrid(wb, sheet, sheetCell, egCell); 
+						this.getCellCssStyleFromSheetToExcelGrid(wb, excelSheet, sheetCell, egCell); 
 					}
 				}
 				catch(Exception ex){
@@ -324,112 +327,14 @@ public class ConvertExcelToExcelGridProcessor {
 				egCells.put(cellId, egCell);
 			}
 		}
-	} 
-    private void getCellCssStyleFromSheetToExcelGrid(XSSFWorkbook wb, XSSFSheet sheet, Cell cell, ExcelGridCell egCell) throws Exception { 
-		ExcelGridCssStyle egCellStyle = egCell.getCssStyle(); 
-    	if(cell != null){
-	    	XSSFCellStyle cellStyle = (XSSFCellStyle)cell.getCellStyle();
-	    	if(cellStyle != null){ 
-	    		if(cellStyle.getFillForegroundXSSFColor() != null){
-		    		String backgroundColor = this.getColorRgb(cellStyle.getFillForegroundXSSFColor());
-		    		egCellStyle.setBackgroundColor(backgroundColor);
-	    		}
-	    		
-	    		XSSFFont font = cellStyle.getFont(); 
-	    		if(font != null){ 
-		    		String fontStyle = ExcelGridFontStyleType.normal;
+	}
 	
-		    		if(font.getXSSFColor() != null){
-			    		String color = this.getColorRgb(font.getXSSFColor());
-			    		egCellStyle.setColor(color);
-		    		}
-		    		if(font.getBold()){
-		    			if(font.getItalic()){
-		    				fontStyle = ExcelGridFontStyleType.italicBold;
-		    			}
-		    			else{
-		    				fontStyle = ExcelGridFontStyleType.bold;
-		    			}
-		    		}
-		    		else{
-		    			if(font.getItalic()){
-		    				fontStyle = ExcelGridFontStyleType.italic;
-		    			}
-		    		}
-		    		egCellStyle.setFontStyle(fontStyle);
-		    		
-		    		int fontSize = font.getFontHeightInPoints();
-		    		egCellStyle.setFontSize(fontSize);
-				  
-		    		String fontName = font.getFontName();
-		    		String fontFamily = ExcelGridFontNames.getFontId(fontName);
-		    		egCellStyle.setFontFamily(fontFamily);
-
-		    		String textHAlign = ExcelGridTextAlignType.general;
-		    		String textVAlign = ExcelGridTextAlignType.middle;
-		    		HorizontalAlignment hAlign = cellStyle.getAlignmentEnum(); 
-		    		VerticalAlignment vAlign = cellStyle.getVerticalAlignmentEnum();
-		    		switch(hAlign){
-						case RIGHT: 
-							textHAlign = ExcelGridTextAlignType.right;
-							break;
-						case CENTER: 
-							textHAlign = ExcelGridTextAlignType.center;
-							break;
-						case LEFT:  
-							textHAlign = ExcelGridTextAlignType.left;
-							break;
-						case GENERAL:
-						default: 
-							textHAlign = ExcelGridTextAlignType.general;
-							break;
-		    		} 
-					switch(vAlign){
-						case BOTTOM:{
-							textVAlign = ExcelGridTextAlignType.bottom;
-						}
-						break;
-						case TOP:{
-							textVAlign = ExcelGridTextAlignType.top;
-						}
-						break;
-						case CENTER:
-						default:{
-							textVAlign = ExcelGridTextAlignType.middle;
-						}
-						break;
-					}
-		    		egCellStyle.setTextHAlign(textHAlign);
-		    		egCellStyle.setTextVAlign(textVAlign);
-	    		}
-	    		
-	    		XSSFColor borderLeftColor = cellStyle.getLeftBorderXSSFColor();
-	    		BorderStyle borderLeftStyle = cellStyle.getBorderLeftEnum(); 
-	    		egCellStyle.setBorderLeft(this.getBorderStyleFromExcel(borderLeftColor, borderLeftStyle));
-	    		
-	    		XSSFColor borderTopColor = cellStyle.getTopBorderXSSFColor();
-	    		BorderStyle borderTopStyle = cellStyle.getBorderTopEnum(); 
-	    		egCellStyle.setBorderTop(this.getBorderStyleFromExcel(borderTopColor, borderTopStyle));
-	    		
-	    		XSSFColor borderRightColor = cellStyle.getRightBorderXSSFColor();
-	    		BorderStyle borderRightStyle = cellStyle.getBorderRightEnum(); 
-	    		egCellStyle.setBorderRight(this.getBorderStyleFromExcel(borderRightColor, borderRightStyle));
-	    		
-	    		XSSFColor borderBottomColor = cellStyle.getBottomBorderXSSFColor();
-	    		BorderStyle borderBottomStyle = cellStyle.getBorderBottomEnum(); 
-	    		egCellStyle.setBorderBottom(this.getBorderStyleFromExcel(borderBottomColor, borderBottomStyle));
-	    		   		
-	    	}
-    	}
-	} 
+	
+    protected abstract void getCellCssStyleFromSheetToExcelGrid(Workbook wb, Sheet sheet, Cell cell, ExcelGridCell egCell) throws Exception; 
     
-    private String getColorRgb(XSSFColor color){
-    	String argb = color.getARGBHex();
-    	return argb == null || argb.isEmpty() ? "" : argb.substring(2); 
-    	
-    }
+    protected abstract String getColorRgb(Color color);
     
-    private ExcelGridBorderStyle getBorderStyleFromExcel(XSSFColor color, BorderStyle borderStyleType){
+    protected ExcelGridBorderStyle getBorderStyleFromExcel(Color color, BorderStyle borderStyleType){
     	if(borderStyleType == BorderStyle.NONE){
     		return null;
     	}
@@ -527,22 +432,5 @@ public class ConvertExcelToExcelGridProcessor {
         }
     }
 	
-	public XSSFWorkbook getExcelWorkbookByFilePath(INcpSession session, String excelFilePath) throws Exception{	 
-		InputStream fs= null;
-		try {
-			fs = new FileInputStream(excelFilePath); 
-			XSSFWorkbook wb = new XSSFWorkbook(fs); 
-			return wb;
-		}
-		catch(Exception ex){
-			ex.printStackTrace();
-			throw new Exception("读取Excel文件出错, 请确定上传的Excel文件可以正常打开");
-		}
-		finally{
-			if(fs != null){
-				fs.close();
-				fs = null;
-			}
-		}
-	}
+	public abstract Workbook getExcelWorkbookByFilePath(INcpSession session, String excelFilePath) throws Exception;
 }
