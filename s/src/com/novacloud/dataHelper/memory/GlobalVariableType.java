@@ -1,6 +1,6 @@
 package com.novacloud.dataHelper.memory;
 
 public enum GlobalVariableType {
-	shareCategoryList,
+	shareCategoryTypeList,
 	shuShuoPlayList
 }

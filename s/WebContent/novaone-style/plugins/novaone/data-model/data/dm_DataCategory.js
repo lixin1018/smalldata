@@ -3,10 +3,23 @@ dataModels.dm_DataCategory = {
   name:"dm_DataCategory",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"7595554e-fd4a-45f2-9387-39d1b7c76e2d",
-      name:"id",
-      displayName:"id",
+    showindex:{
+      id:"2016525a-3326-4105-9163-d4ec837f3559",
+      name:"showindex",
+      displayName:"显示顺序",
+      valueType:valueType.decimal,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:3,
+      decimalNum:0,
+      isReadonly:false
+    },
+    code:{
+      id:"7f9f6e90-f0e2-4fa8-9b47-141338ab0492",
+      name:"code",
+      displayName:"编码",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -29,19 +42,6 @@ dataModels.dm_DataCategory = {
       decimalNum:0,
       isReadonly:false
     },
-    description:{
-      id:"3223349d-e168-43e2-8382-b8f1ffb41524",
-      name:"description",
-      displayName:"描述",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:255,
-      decimalNum:0,
-      isReadonly:false
-    },
     name:{
       id:"b5ed1e40-b191-4062-aea8-d499a75527d2",
       name:"name",
@@ -55,10 +55,23 @@ dataModels.dm_DataCategory = {
       decimalNum:0,
       isReadonly:false
     },
-    code:{
-      id:"7f9f6e90-f0e2-4fa8-9b47-141338ab0492",
-      name:"code",
-      displayName:"编码",
+    description:{
+      id:"3223349d-e168-43e2-8382-b8f1ffb41524",
+      name:"description",
+      displayName:"描述",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:255,
+      decimalNum:0,
+      isReadonly:false
+    },
+    typeid:{
+      id:"7031f1cb-5b6e-4684-be89-b038dcd8454a",
+      name:"typeid",
+      displayName:"typeid",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -68,12 +81,47 @@ dataModels.dm_DataCategory = {
       decimalNum:0,
       isReadonly:false
     },
-    showindex:{
-      id:"2016525a-3326-4105-9163-d4ec837f3559",
-      name:"showindex",
-      displayName:"显示顺序",
-      valueType:valueType.decimal,
+    id:{
+      id:"7595554e-fd4a-45f2-9387-39d1b7c76e2d",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
       isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    typename:{
+      id:"3f1bf835-73d0-4947-ab14-b3cd63aa98e8",
+      name:"typename",
+      displayName:"分类方式",
+      valueType:valueType.string,
+      isSave:false,
+      inputHelpType:"list",
+      inputHelpName:"dm.dataCategoryType",
+      foreignKeyName:"typeid",
+      valueLength:40,
+      decimalNum:0,
+      maps:{"typename":"name","typeid":"id"},
+      list:{
+        name:"dm.dataCategoryType",
+        columns:[{field:"id",valueType:valueType.string,title:"id",width:0,hidden:true},
+{field:"code",valueType:valueType.string,title:"code",width:150,hidden:false},
+{field:"name",valueType:valueType.string,title:"name",width:150,hidden:false},
+{field:"showindex",valueType:valueType.decimal,title:"showindex",width:0,hidden:true}
+        ]
+      },
+      isReadonly:false
+    },
+    typeshowindex:{
+      id:"ab420eb7-91a4-46d0-bd30-2dc90dab5926",
+      name:"typeshowindex",
+      displayName:"typeshowindex",
+      valueType:valueType.decimal,
+      isSave:false,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",

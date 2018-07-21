@@ -114,27 +114,45 @@ public class BigCsvReader implements IFileReader{
     //根据一个文件名，读取完文件，干掉bom头
     private static void trimBom(String fileName) throws IOException {  
   
-        FileInputStream fin = new FileInputStream(fileName);  
-        // 开始写临时文件  
-        InputStream in = getInputStream(fin);  
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();  
-        byte b[] = new byte[4096];  
-  
-        int len = 0;  
-        while (in.available() > 0) {  
-            len = in.read(b, 0, 4096);  
-            //out.write(b, 0, len);  
-            bos.write(b, 0, len);  
-        }  
-  
-        in.close();  
-        fin.close();  
-        bos.close();  
-  
-        //临时文件写完，开始将临时文件写回本文件。  
-        FileOutputStream out = new FileOutputStream(fileName);  
-        out.write(bos.toByteArray());  
-        out.close();  
+        FileInputStream fin = null;
+        InputStream in = null;
+        ByteArrayOutputStream bos = null;
+        FileOutputStream out = null;
+		try{
+			fin = new FileInputStream(fileName);  
+	        // 开始写临时文件  
+	        in = getInputStream(fin);  
+	        bos = new ByteArrayOutputStream();  
+	        byte b[] = new byte[4096];  
+	  
+	        int len = 0;  
+	        while (in.available() > 0) {  
+	            len = in.read(b, 0, 4096);  
+	            //out.write(b, 0, len);  
+	            bos.write(b, 0, len);  
+	        }   
+	  
+	        //临时文件写完，开始将临时文件写回本文件。  
+	        out = new FileOutputStream(fileName);  
+	        out.write(bos.toByteArray());  
+		}
+		catch(Exception ex){
+			throw ex;
+		}
+		finally{
+			if(bos != null){
+		        bos.close(); 
+			}
+			if(in != null){
+				in.close(); 
+			}
+			if(fin != null){
+				fin.close(); 
+			}
+			if(out != null){
+				out.close(); 
+			}
+		}
     }  
 	
 	public List<String[]> getSourceData(String filePath, FileParser fileParser) throws Exception{

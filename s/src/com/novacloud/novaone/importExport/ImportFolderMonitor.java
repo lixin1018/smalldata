@@ -76,8 +76,9 @@ public class ImportFolderMonitor extends ExternalBase{
 			String sourceFilePath = oldestFile.getAbsolutePath();
 			String destFileName = fileName + "." + lastmodifyTimeStr;
 			String destFilePath = this.getDestFilePath(destFileName);
-			fo.copyFile(sourceFilePath, destFilePath);
-			fo.delFile(sourceFilePath);
+			//fo.copyFile(sourceFilePath, destFilePath);
+			//fo.delFile(sourceFilePath);
+			fo.moveFile(sourceFilePath, destFilePath);
 			
 			HashMap<String, ValueType> parameterValueTypes = new HashMap<String, ValueType>();
 			parameterValueTypes.put("fileName", ValueType.String);

@@ -44,7 +44,7 @@
 <body>
 	<div id="pageHeaderDiv" class="pageHeader">
 		<jsp:include  page="../home/headerA.jsp">
-			<jsp:param value="ss" name="menuName"/>
+			<jsp:param value="kpdh" name="menuName"/>
 		</jsp:include>
 	</div>
 	<div class="sectionBlankSpaceTopBorder"></div>	

@@ -54,15 +54,15 @@ public class DataShareControl{
 		} 
 	}
 	 
-	public JSONArray getCategoryList() throws Exception{
-		logger.info("getCategoryList");
+	public JSONArray getCategoryTypeList() throws Exception{
+		logger.info("getCategoryTypeList");
 		Session dbSession = null;
 		try{
 			ShareViewProcessor viewProcessor =  this.getViewProcessor();
 			dbSession = this.openDBSession();
 			viewProcessor.setDBSession(dbSession);
-			JSONArray categoryArray = viewProcessor.getCategoryList();  
-			return categoryArray;
+			JSONArray typeArray = viewProcessor.getCategoryTypeList();  
+			return typeArray;
 		}
 		catch(Exception ex){
 			throw ex;

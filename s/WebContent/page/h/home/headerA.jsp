@@ -45,7 +45,7 @@
 						</a>
 					</div>
 					<div name="cjcb" class="headerTitleItem<%=request.getParameter("menuName").equals("cjcb") ? " headerTitleItemActive" : "" %>">
-						<a href="<%=rootDir%>/page/h/ss/zmtdhlist.jsp" target="_self"> 
+						<a href="<%=rootDir%>/page/h/cjcb/cjcb.jsp" target="_self"> 
 							<span class="headerTitleItemText">超级传播</span>
 						</a>
 					</div> 

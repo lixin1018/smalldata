@@ -32,38 +32,49 @@
 	<div id="pageContentDiv" class="pageContent">
 		<%    
 			DataShareControl dataShareCtrl = (DataShareControl)ContextUtil.getBean("dataShareControl");
-			JSONArray categoryArray = dataShareCtrl.getCategoryList();
-			int categoryIndex = 0;
-			for(Object categoryObj : categoryArray){
-				JSONObject categoryJson = (JSONObject)categoryObj;
-				String categoryId = categoryJson.getString("id");
-				String categoryName = CommonFunction.decode(categoryJson.getString("name"));
-				String categoryCode = CommonFunction.decode(categoryJson.getString("code"));
-				String categoryUrl = "list.jsp?code=" + categoryCode;
-				JSONArray dataListArray = categoryJson.getJSONArray("dataList");
+			JSONArray typeArray = dataShareCtrl.getCategoryTypeList();
+			for(Object typeObj : typeArray){
+				JSONObject typeJson = (JSONObject)typeObj;
+				String typeTitle = typeJson.getString("name");
+				String typeCode = typeJson.getString("code");
+		%>
+		<div class="typeContainer" id="<%=typeCode%>">
+			<div class="typeTitleLine">
+				<div class="typeTitleDiv">&nbsp;按<span class="typeTitleSpan"><%=typeTitle%></span>分类&nbsp;</div>
+			</div>
+		<%
+				int categoryIndex = 0;
+				JSONArray categoryArray = typeJson.getJSONArray("categoryArray");
+				for(Object categoryObj : categoryArray){
+					JSONObject categoryJson = (JSONObject)categoryObj;
+					String categoryId = categoryJson.getString("id");
+					String categoryName = CommonFunction.decode(categoryJson.getString("name"));
+					String categoryCode = CommonFunction.decode(categoryJson.getString("code"));
+					String categoryUrl = "list.jsp?code=" + categoryCode;
+					JSONArray dataListArray = categoryJson.getJSONArray("dataList");
 		%>
 		<%
-			if(categoryIndex % 3 == 0){
+					if(categoryIndex % 3 == 0){
 		%>
-		<div class="sectionBlankSpace"></div>
+			<div class="sectionBlankSpace"></div>
 		<%
-			if(categoryIndex != 0){
+						if(categoryIndex != 0){
 		%>
-		<div class="sectionBlankSpace sectionBlankSpaceTopBorder"></div>
+			<div class="sectionBlankSpace sectionBlankSpaceTopBorder"></div>
 		<%
-			}
+						}
 		%>
-		<div id="categoryListDiv" class="categoryListContaienr">
+			<div id="categoryListDiv" class="categoryListContaienr">
 		<%
-			}
+					}
 		%>
-			<div class="categoryBlock">
-				<div class="categoryHeader" categoryCode="<%=categoryCode%>">
-				<a href="<%=categoryUrl%>" class="categoryNameLink" target="_self"><%=categoryName%></a>
-				<a href="<%=categoryUrl%>" class="categoryMoreLink" target="_self">More&gt;&gt;</a>
-				</div>
-				<ul class="categoryList">
-					<%
+				<div class="categoryBlock">
+					<div class="categoryHeader" categoryCode="<%=categoryCode%>">
+						<a href="<%=categoryUrl%>" class="categoryNameLink" target="_self"><%=categoryName%></a>
+						<a href="<%=categoryUrl%>" class="categoryMoreLink" target="_self">More&gt;&gt;</a>
+					</div>
+					<ul class="categoryList">
+		<%
 					int count = dataListArray.size() > 6 ? 6 : dataListArray.size();
 					for(int i = 0; i < count; i++){
 						Object dataObj = dataListArray.get(i);
@@ -73,29 +84,35 @@
 						String dataCode = CommonFunction.decode(dataJson.getString("code"));
 						String tableName = dataJson.getString("tableName");
 						String lastUpdateTime = CommonFunction.decode(dataJson.getString("lastUpdateTime"));
-					%>
-						<li class="categoryItem" dataCode="<%=dataCode%>"><a class="categoryLinkItem" href="../../ie/queryPages/<%=tableName%>.jsp" target="_blank"><%=dataName%></a><span class="serviceItemTime"><%=lastUpdateTime%></span></li>
-					<%
+		%>
+						<li class="categoryItem" dataCode="<%=dataCode %>"><a class="categoryLinkItem" href="../../ie/queryPages/<%=tableName %>.jsp" target="_blank"><%=dataName %></a><span class="serviceItemTime"><%=lastUpdateTime %></span></li>
+		<%
 					}
-					%>
-				</ul>
-			</div>
+		%>
+					</ul>
+				</div>
 		
 		<%
-			if(categoryIndex % 3 != 2){
+					if(categoryIndex % 3 != 2){
 		%>
-			<div class="serviceListBlockBorder"></div>			
+				<div class="serviceListBlockBorder"></div>			
 		<%
-			}
-			else{
+					}
+					if(categoryIndex % 3 == 2 || categoryIndex + 1 == categoryArray.size()){
+
+		%> 
+				<div class="categoryBlankBlock"></div>	
+			</div>
+		<%
+					}
 		%>
+		<%
+					categoryIndex++;
+				}
+		%> 
 		</div>
 		<%
-			}
-		%>
-		<%
-			categoryIndex++;
-		}
+			} 
        	%>     
 	</div>
 	<div class="sectionBlankSpace"></div>	

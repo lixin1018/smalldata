@@ -48,7 +48,7 @@ public class DataShareService extends NcpActionSupport implements IDataShareServ
 	}
 	
 	@Override
-	public String getCategoryList(){ 
+	public String getCategoryTypeList(){ 
 		Session dbSession = null;
 		try{
 			logger.info(requestParam);		
@@ -57,16 +57,16 @@ public class DataShareService extends NcpActionSupport implements IDataShareServ
 			ShareViewProcessor viewProcessor =  this.getViewProcessor();
 			dbSession = this.openDBSession();
 			viewProcessor.setDBSession(dbSession);
-			JSONArray categoryArray = viewProcessor.getCategoryList();  
+			JSONArray typeArray = viewProcessor.getCategoryTypeList();  
 			
 			HashMap<String, Object> resultHash = new HashMap<String, Object>();
-			resultHash.put("categories", categoryArray);
+			resultHash.put("categoryTypes", typeArray);
 			String resultString = ServiceResultProcessor.createJsonResultStr(resultHash);	
 			this.addResponse(resultString); 	 	 
 		}
 		catch(Exception ex) {
         	ex.printStackTrace();
-			NcpException ncpEx = new NcpException("getCategoryList", "获取数据共享分类失败", ex);
+			NcpException ncpEx = new NcpException("getCategoryTypeList", "获取数据共享分类失败", ex);
 			this.addResponse(ncpEx.toJsonString()); 	 	 
 		} 
 		finally{

@@ -1,64 +1,12 @@
 dataModels.d_Accessory = {
-  id:155,
+  id:"155",
   name:"d_Accessory",
   idFieldName:"id",
   fields:{
-    id:{
-      id:530,
-      name:"id",
-      displayName:"ID",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:10,
-      decimalNum:0,
-      isReadonly:false
-    },
-    filtervalue:{
-      id:534,
-      name:"filtervalue",
-      displayName:"过滤值",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:255,
-      decimalNum:0,
-      isReadonly:false
-    },
-    millisecond:{
-      id:539,
-      name:"millisecond",
-      displayName:"毫秒",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:3,
-      decimalNum:0,
-      isReadonly:false
-    },
-    isdeleted:{
-      id:535,
-      name:"isdeleted",
-      displayName:"已删除",
-      valueType:valueType.boolean,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    name:{
-      id:531,
-      name:"name",
-      displayName:"名称",
+    filetype:{
+      id:"532",
+      name:"filetype",
+      displayName:"文件类型",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -68,21 +16,8 @@ dataModels.d_Accessory = {
       decimalNum:0,
       isReadonly:false
     },
-    uploadtime:{
-      id:536,
-      name:"uploadtime",
-      displayName:"上传时间",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
     uploaduserid:{
-      id:537,
+      id:"537",
       name:"uploaduserid",
       displayName:"上传人ID",
       valueType:valueType.string,
@@ -94,8 +29,73 @@ dataModels.d_Accessory = {
       decimalNum:0,
       isReadonly:false
     },
+    millisecond:{
+      id:"539",
+      name:"millisecond",
+      displayName:"毫秒",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:3,
+      decimalNum:0,
+      isReadonly:false
+    },
+    name:{
+      id:"531",
+      name:"name",
+      displayName:"名称",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:255,
+      decimalNum:0,
+      isReadonly:false
+    },
+    filtervalue:{
+      id:"534",
+      name:"filtervalue",
+      displayName:"过滤值",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:255,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"530",
+      name:"id",
+      displayName:"ID",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    isdeleted:{
+      id:"535",
+      name:"isdeleted",
+      displayName:"已删除",
+      valueType:valueType.boolean,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1,
+      decimalNum:0,
+      isReadonly:false
+    },
     filtertype:{
-      id:533,
+      id:"533",
       name:"filtertype",
       displayName:"过滤类型",
       valueType:valueType.string,
@@ -107,17 +107,17 @@ dataModels.d_Accessory = {
       decimalNum:0,
       isReadonly:false
     },
-    filetype:{
-      id:532,
-      name:"filetype",
-      displayName:"文件类型",
-      valueType:valueType.string,
+    uploadtime:{
+      id:"536",
+      name:"uploadtime",
+      displayName:"上传时间",
+      valueType:valueType.time,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
+      valueLength:20,
+      decimalNum:3,
       isReadonly:false
     }
   }

@@ -39,8 +39,8 @@ String imageServer = SystemContext.getSysProperties().get("imageServer").toStrin
 <c:set var="validform" value="${components}/validform" />
 <c:set var="swfupload" value="${components}/swfupload" />
 <c:set var="uploadify" value="${components}/accessory" />
-<c:set var="ajaxupload" value="${components}/ajaxFileUpload" /><!-- 上传 -->
-<c:set var="editor" value="${components}/kindeditor-4.1.10" /><!-- 富文本编辑 -->
+<!--<c:set var="ajaxupload" value="${components}/ajaxFileUpload" />-->
+<!--<c:set var="editor" value="${components}/kindeditor-4.1.10" /> -->
 
 <!-- 页面 -->
 <c:set var="pagePath" value="${base}/page" />
@@ -54,11 +54,12 @@ String imageServer = SystemContext.getSysProperties().get("imageServer").toStrin
 <c:set var="gray" value="${themes}/gray" />
 -->
 
-<!-- zTree控件目录 -->
+<!-- zTree控件目录
 <c:set var="ztree" value="${components}/zTree" />
 <c:set var="ztreecss" value="${ztree}/css/zTreeStyle" />
 <c:set var="ztreejs" value="${ztree}/js" />
-
+ -->
+ 
 <!-- easyui-1.3.2 -->
 <c:set var="easyui" value="${components}/easyui" />
 <c:set var="easyuicss" value="${easyui}/themes" />
@@ -144,35 +145,40 @@ function stop(){
 <!-- 加载扩展库 -->
 <!-- 
 <script type="text/javascript" src="${expansion}/w3util.js"></script>
- -->
 <script type="text/javascript" src="${expansion}/w3scripts.js"></script>
 <script type="text/javascript" src="${expansion}/w3ajax_v3.0.2_min.js"></script>
 <script type="text/javascript" src="${expansion}/w3base_v3.0.2_min.js"></script>
-<!-- 密码强度验证 -->
+ -->
+ 
+<!-- 密码强度验证
 <script type="text/javascript" src="${expansion}/passwordStrength-min.js"></script>
 <link rel="stylesheet" type="text/css" href="${expansion}/passwordStrength.css">
+ -->
 
-<!-- ztree -->
+<!-- ztree
 <script type="text/javascript" src="${ztreejs}/jquery.ztree.core-3.5.min.js"></script>
 <script type="text/javascript" src="${ztreejs}/jquery.ztree.excheck-3.5.js"></script>
-
-<!-- 富文本编辑 -->
+ --> 
 <link rel="stylesheet" type="text/css" href="${editor}/themes/default/default.css">
-<link rel="stylesheet" type="text/css" href="${editor}/plugins/code/prettify.css">
+<!-- 
+<link rel="stylesheet" type="text/css" href="${editor}/plugins/code/prettify.css"> 
 <script type="text/javascript" charset="utf-8" src="${editor}/kindeditor.js"></script>
 <script type="text/javascript" charset="utf-8" src="${editor}/lang/zh_CN.js"></script>
 <script type="text/javascript" charset="utf-8" src="${editor}/plugins/code/prettify.js"></script>
 <script type="text/javascript" src="${editor}/novaone-keditor.min.js"></script>
+ -->
 
-<!-- 上传 -->
+<!-- 上传
 <script type="text/javascript" src="${ajaxupload}/ajaxfileupload.js"></script>
 <script type="text/javascript" src="${ajaxupload}/novaone-upload.min.js"></script>
+ -->
 
-<!-- jquery form表单验证 -->
+<!-- jquery form表单验证
 <script type="text/javascript" src="${validform}/Validform_v5.3.2_min.js"></script>
 <link rel="stylesheet" type="text/css" href="${validform}/validform.css">
 <script type="text/javascript" src="${swfupload}/swfuploadv2.2-min.js"></script>
 <script type="text/javascript" src="${swfupload}/Validform.swfupload.handler-min.js"></script>
+ -->
 
 <!-- jquery提示 -->
 <script src="${jquery}/jquery.noty.packaged.min.js"></script>

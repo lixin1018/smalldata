@@ -52,8 +52,11 @@
 						<td>&nbsp;</td>
 					</tr>
 					<tr style="height:22px;">
+						<td style="width:75px;height:22px;text-align:right;">分类方式</td>
+						<td style="width:150px;height:22px;"><input type="text" name="typename" class="easyui-validatebox" style="width:130px;height:22px;" cardCtrl="true"></input></td>
 						<td style="width:100px;text-align:right;">描述</td>
-						<td style="width:800px;height:22px;" colspan="8"><input type="text" name="description" style="width:800px;height:22px;" cardCtrl="true"></input></td> 
+						<td style="width:800px;height:22px;" colspan="6"><input type="text" name="description" style="width:800px;height:22px;" cardCtrl="true"></input></td>
+						<td>&nbsp;</td> 
 					</tr>  
 				</table>
 			</div>

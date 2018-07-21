@@ -9,7 +9,9 @@ viewModels.dm_DataCategory = {
     {name:"name", label:"名称", width:200, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
     {name:"isactive", label:"启用", width:50, hidden:false, sortable:false, search:false, resizable:false, editable:true, canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
     {name:"showindex", label:"显示顺序", width:60, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"decimal"},
-    {name:"description", label:"描述", width:400, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"}
+    {name:"description", label:"描述", width:400, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"typeid", label:"typeid", width:0, hidden:true, sortable:false, search:true, resizable:false, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"typename", label:"分类方式", width:200, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"list"}
   ],
   dispUnitModel:[
     {name:"id", label:"id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
@@ -17,6 +19,8 @@ viewModels.dm_DataCategory = {
     {name:"name", label:"名称", editable:true,nullable:false, hidden:false, dispunitType:"text", },
     {name:"isactive", label:"启用", editable:true,nullable:true, hidden:false, dispunitType:"checkbox", },
     {name:"showindex", label:"显示顺序", editable:true,nullable:false, hidden:false, dispunitType:"decimal", },
-    {name:"description", label:"描述", editable:true,nullable:true, hidden:false, dispunitType:"text", }
+    {name:"description", label:"描述", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"typeid", label:"typeid", editable:true,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"typename", label:"分类方式", editable:true,nullable:false, hidden:false, dispunitType:"list", }
   ]
 }

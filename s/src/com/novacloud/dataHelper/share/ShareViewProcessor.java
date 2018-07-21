@@ -45,34 +45,37 @@ public class ShareViewProcessor {
 		this.dbSession = dbSession;
 	} 
 	
-	public JSONArray getCategoryList() throws UnsupportedEncodingException, SQLException, ParseException{
-		JSONArray categoryListArray = (JSONArray)GlobalVariables.getValue(GlobalVariableType.shareCategoryList);
+	public JSONArray getCategoryTypeList() throws UnsupportedEncodingException, SQLException, ParseException{
+		JSONArray categoryTypeListArray = (JSONArray)GlobalVariables.getValue(GlobalVariableType.shareCategoryTypeList);
 		
-		if(categoryListArray == null){
+		if(categoryTypeListArray == null){
 			synchronized(this){
 				refreshCategoryInfo();
-				categoryListArray = (JSONArray)GlobalVariables.getValue(GlobalVariableType.shareCategoryList); 
-				return categoryListArray;
+				categoryTypeListArray = (JSONArray)GlobalVariables.getValue(GlobalVariableType.shareCategoryTypeList); 
+				return categoryTypeListArray;
 			}
 		}
 		else{
-			return categoryListArray;
+			return categoryTypeListArray;
 		}		
 	}
 	
 	//更新数据共享的分类信息，这样编辑好的分类，就会更新到数据分享首页里 added by lixin 20180607
 	public void refreshCategoryInfo() throws UnsupportedEncodingException, SQLException, ParseException{
-		JSONArray categoryListArray = this.getCategoryListJSONArray();
+		JSONArray categoryTypeListArray = this.getCategoryTypeListJSONArray();
 		Date nextDate =  this.getNextDay();
-		GlobalVariables.setValue(GlobalVariableType.shareCategoryList, categoryListArray, nextDate);   
+		GlobalVariables.setValue(GlobalVariableType.shareCategoryTypeList, categoryTypeListArray, nextDate);   
 	}
 	
 	public JSONObject getCategory(String code) throws UnsupportedEncodingException, SQLException, ParseException{
-		JSONArray categoryListArray = this.getCategoryList();
-		for(int i = 0; i < categoryListArray.size(); i++){
-			JSONObject categoryObject = categoryListArray.getJSONObject(i);
-			if(categoryObject.getString("code").equals(code)){
-				return categoryObject;
+		JSONArray categoryTypeListArray = this.getCategoryTypeList();
+		for(int i = 0; i < categoryTypeListArray.size(); i++){
+			JSONArray categoryArray = categoryTypeListArray.getJSONObject(i).getJSONArray("categoryArray");
+			for(int j = 0; j < categoryArray.size(); j++){
+				JSONObject categoryObject = categoryArray.getJSONObject(j);
+				if(categoryObject.getString("code").equals(code)){
+					return categoryObject;
+				}
 			}
 		}
 		return null;
@@ -91,12 +94,36 @@ public class ShareViewProcessor {
         return cal.getTime();
 	}
 	
-	private JSONArray getCategoryListJSONArray() throws SQLException, UnsupportedEncodingException{
+	private JSONArray getCategoryTypeListJSONArray() throws SQLException, UnsupportedEncodingException{
+		List<String> typeIdList = new ArrayList<String>();
+		HashMap<String, JSONObject> typeId2TypeJson = new HashMap<String, JSONObject>();
+		
 		DataTable categoryDt = this.getCategoriesFromDB(null);
-		JSONArray categoryArray = new JSONArray();
+		JSONArray categoryArray = null;
+		JSONObject typeJson = null;
 		List<DataRow> categoryRows = categoryDt.getRows();
 		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-MM-dd"); 
 		for(DataRow categoryRow : categoryRows){
+
+			String typeId = categoryRow.getStringValue("typeid");
+			String typeName = categoryRow.getStringValue("typename");
+			String typeCode = categoryRow.getStringValue("typecode");
+			BigDecimal typeIndex = categoryRow.getBigDecimalValue("typeshowindex");
+			
+			if(!typeId2TypeJson.containsKey(typeId)){
+				categoryArray = new JSONArray();
+				typeJson = new JSONObject();
+				typeJson.put("id", typeId);
+				typeJson.put("name", typeName);
+				typeJson.put("code", typeCode);
+				typeJson.put("showIndex", typeIndex);
+				typeJson.put("categoryArray", categoryArray);
+			}
+			else{
+				typeJson = typeId2TypeJson.get(typeId);
+				categoryArray = typeJson.getJSONArray("categoryArray");				
+			}
+			
 			String categoryId = categoryRow.getStringValue("id");
 			String categoryName = categoryRow.getStringValue("name");
 			String categoryCode = categoryRow.getStringValue("code");
@@ -136,12 +163,34 @@ public class ShareViewProcessor {
 			}
 			categoryJson.put("dataList", dataListArray);
 			categoryArray.add(categoryJson);
+			typeJson.put("categoryArray", categoryArray);
+
+			if(!typeId2TypeJson.containsKey(typeId)){
+				typeIdList.add(typeId);
+				typeId2TypeJson.put(typeId, typeJson);
+			}
+		}		
+
+		JSONArray typeArray = new JSONArray();
+		for(String typeId : typeIdList){
+			typeArray.add(typeId2TypeJson.get(typeId));
 		}
-		return categoryArray;
+		
+		return typeArray;
 	}
 
 	private DataTable getCategoriesFromDB(Integer count) throws SQLException{
-		String getCategroySql = "select c.id as id, c.name as name, c.code as code, c.showindex as showindex from dm_datacategory c where c.isactive = 'Y' order by c.showindex asc";
+		String getCategroySql = "select c.id as id, "
+				+ "c.name as name, "
+				+ "c.code as code, "
+				+ "c.showindex as showindex, "
+				+ "c.typeid as typeid, "
+				+ "ct.showindex as typeshowindex, "
+				+ "ct.name as typename, "
+				+ "ct.code as typecode "
+				+ "from dm_datacategory c "
+				+ "left outer join dm_datacategorytype ct on ct.id = c.typeid "
+				+ "where c.isactive = 'Y' and ct.isactive = 'Y' order by ct.showindex asc, c.showindex asc";
 		Session dbSession = this.getDBSession();
 		
 		List<String> alias = new ArrayList<String>();
@@ -149,12 +198,20 @@ public class ShareViewProcessor {
 		alias.add("name");
 		alias.add("code");
 		alias.add("showindex"); 
+		alias.add("typeid"); 
+		alias.add("typeshowindex"); 
+		alias.add("typename"); 
+		alias.add("typecode"); 
 		
 		Map<String, ValueType> fieldValueTypes = new HashMap<String, ValueType>();
 		fieldValueTypes.put("id", ValueType.String);
 		fieldValueTypes.put("name", ValueType.String);
 		fieldValueTypes.put("code", ValueType.String);
 		fieldValueTypes.put("showindex", ValueType.Decimal);
+		fieldValueTypes.put("typeid", ValueType.String);
+		fieldValueTypes.put("typename", ValueType.String);
+		fieldValueTypes.put("typecode", ValueType.String);
+		fieldValueTypes.put("typeshowindex", ValueType.Decimal);
 		
 		DataTable categoryDt = null;
 		if(count == null){

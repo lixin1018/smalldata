@@ -68,9 +68,9 @@ $(document).ready(function(){
 	 
 	queryData(pageNumber);
 	
-	getUnitPrice();
+	//getUnitPrice();
 	
-	getCartLineCount();
+	//getCartLineCount();
 	
 	//设置查询按钮事件
 	$("#queryButton").click(function(){
