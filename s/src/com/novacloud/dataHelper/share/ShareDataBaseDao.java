@@ -41,7 +41,7 @@ public class ShareDataBaseDao extends DataBaseDao {
 
 		synchronized(this){
 			if(userLastRequestTimes.containsKey(userId)){
-				Date lastTime = userLastRequestTimes.get(userId);
+				Date lastTime = userLastRequestTimes.get(userId);	
 				long spanMillisecond = nowTime.getTime() - lastTime.getTime();
 				if(minRequestSpanMillisecond > spanMillisecond){
 					return false;

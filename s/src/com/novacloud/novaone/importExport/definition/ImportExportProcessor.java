@@ -114,10 +114,10 @@ public class ImportExportProcessor {
 					
 					Sys_DataImpl.generateJsByData(dataModel);
 					Sys_ViewImpl.generateJsByView(viewModel);
-					
-					//生成查询页面
-					this.generateQueryPage(definitionId);
 				}
+				
+				//生成查询页面
+				this.generateQueryPage(definitionId);
 				
 				//将当前version设置为启用状态
 				this.activateVersionInDB(definitionId, versionId, enable);

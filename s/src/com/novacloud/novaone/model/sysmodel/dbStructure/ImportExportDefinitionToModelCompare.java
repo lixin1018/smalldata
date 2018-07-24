@@ -580,8 +580,8 @@ public class ImportExportDefinitionToModelCompare extends TableCompare {
 		dataFieldValues.put("name", "isdeleted");
 		dataFieldValues.put("label", "已删除");
 		dataFieldValues.put("colwidth", 0);
-		dataFieldValues.put("colsearch", "Y" );
-		dataFieldValues.put("colvisible", "Y" ); 
+		dataFieldValues.put("colsearch", "N" );
+		dataFieldValues.put("colvisible", "N" ); 
 		dataFieldValues.put("colsortable", "N" );
 		dataFieldValues.put("colindex", 103); 
 		return dataFieldValues;
