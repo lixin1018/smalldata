@@ -34,14 +34,15 @@
 							<div class="mainServiceTypeTitle"><a href="../sjgx/sjgx.jsp#hangye">按行业分类</a></div>
 							<a href="../sjgx/list.jsp?code=academia" target="_blank">教育/行政</a>
 							<a href="../sjgx/list.jsp?code=vehicle" target="_blank">汽车销售/维修站</a>
-							<a href="../sjgx/list.jsp?code=environment" target="_blank">环境/天气/空气质量</a>
 							<a href="../sjgx/list.jsp?code=bioinformatics" target="_blank">医疗/生物信息</a>
 							<a href="../sjgx/list.jsp?code=construction" target="_blank">建筑</a>
-							<a href="../sjgx/list.jsp?code=company" target="_blank">股票/上市公司</a>
+							<a href="../sjgx/list.jsp?code=common" target="_blank">常用字典</a>
 						</li>
 						<li class="mainServiceItem">
 							<div class="mainServiceTypeTitle"><a href="../sjgx/sjgx.jsp#zhuanye">按专业分类</a></div>
 							<a href="../sjgx/list.jsp?code=geographic" target="_blank">地理信息</a>
+							<a href="../sjgx/list.jsp?code=environment" target="_blank">环境/空气质量</a>
+							<a href="../sjgx/list.jsp?code=company" target="_blank">金融/财务</a>
 						</li>
 						<li class="mainServiceItem">
 							<div class="mainServiceTypeTitle"><a href="../sjgx/sjgx.jsp#shenghuosuoxu">按生活所需分类</a></div>
@@ -120,7 +121,7 @@
 			<a class="linkItem" href="http://www.cnki.net" target="_blank">中国知网</a>		
 			<a class="linkItem" href="http://www.oalib.com" target="_blank">Oalib(Open Access Library)</a> 
 			<a class="linkItem" href="http://wenku.baidu.com" target="_blank">百度文库</a>
-			<a class="linkItem" href="http://novacloud.com" target="_blank">易贸创想</a>
+			<a class="linkItem" href="http://www.novacloud.com" target="_blank">易贸创想</a>
 			<a class="linkItem" href="http://www.novadata.cn" target="_blank">NovaData</a>
 			<a class="linkItem" href="http://www.yiguo.com" target="_blank">易果生鲜</a>	
 			<a class="linkItem" href="http://www.celloud.cn" target="_blank">Celloud</a>

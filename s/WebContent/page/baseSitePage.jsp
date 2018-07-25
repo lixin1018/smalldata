@@ -66,6 +66,8 @@ var pagePath = "${pagePath}";
 var _user_win = true; 
 </script>
 
+<link rel="shortcut icon" href="${style}/images/logo.ico" type="image/x-icon" />
+
 <!-- 加载框架运行库 -->
 <script type="text/javascript" src="${jquery}/jquery-1.8.0.min.js"></script>
 <script type="text/javascript" src="${jquery}/jquery.simplemodal.1.4.4.min.js"></script>  
@@ -78,3 +80,4 @@ var _user_win = true;
 <script type="text/javascript" src="${basejs}/static.js"></script>
 <link rel="stylesheet" type="text/css" href="${css}/common.css"> 
 <link rel="stylesheet" type="text/css" href="${pagePath}/h/css/siteCommon.css"> 
+

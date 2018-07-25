@@ -180,13 +180,15 @@ function stop(){
 <script type="text/javascript" src="${swfupload}/Validform.swfupload.handler-min.js"></script>
  -->
 
-<!-- jquery提示 -->
+<!-- jquery提示
 <script src="${jquery}/jquery.noty.packaged.min.js"></script>
-
+ -->
 <%--
 <script type="text/javascript" src="${themes}/login.js"></script>
 <script type="text/javascript" src="${themes}/main.js"></script>
 --%>
+
+<link rel="shortcut icon" href="${style}/images/logo.ico" type="image/x-icon" />
 
 <link rel="stylesheet" type="text/css" href="${css}/common.css">
 <link rel="stylesheet" type="text/css" href="${css}/jquery-ui-custom.css">
