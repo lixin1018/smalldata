@@ -14,5 +14,9 @@
 	<classpathentry kind="lib" path="D:/Download/opencsv-4.1.jar"/>
 	<classpathentry kind="lib" path="D:/Download/mongo-java-driver-3.2.0.jar"/>
 	<classpathentry kind="lib" path="D:/Download/Tess4J-3.4.6-src/Tess4J/dist/tess4j-3.4.6.jar"/>
+	<classpathentry kind="lib" path="D:/Download/itext-2.1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Download/org.apache.poi.xwpf.converter.pdf-1.0.5.jar"/>
+	<classpathentry kind="lib" path="D:/Download/ooxml-schemas-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Download/org.apache.poi.xwpf.converter.core-1.0.5.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

@@ -28,35 +28,41 @@
 	}
 %> 
 <head> 
-	<title><%=exeName %>-第二步:选择Sheet页</title>
+	<title><%=exeName%>-第一步:上传Word文档</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="homepage"> 
 	
-	<link rel="stylesheet" type="text/css" href="${css}/common.css">
-	<link rel="stylesheet" type="text/css" href="../../css/siteCommon.css">  
-	<link rel="stylesheet" type="text/css" href="../../css/subMenu.css"> 
-	<script type="text/javascript" src="../../js/siteCommon.js"></script> 
+	<link rel="stylesheet" type="text/css" href="${css}/common.css">  
+	<link rel="stylesheet" type="text/css" href="${uploadify}/uploadify.css">
+	<link rel="stylesheet" type="text/css" href="${uploadify}/uploadifive.css">
+	<script type="text/javascript" src="${uploadify}/swfobject.js"></script>
+	<script type="text/javascript" src="${uploadify}/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" src="${uploadify}/jquery.uploadifive.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/create.css">
-	<script type="text/javascript" src="js/validateExcel.js"></script> 
-
+	<script type="text/javascript" src="js/uploadWord.js"></script> 
 </head>
 <body>  
+	<input type="hidden" id="exeId" value="<%=exeId %>" />
 	<div id="pageContentDiv" class="pageContent" style="height:100%;width:100%;background-color:#ffffff;text-align:center;"> 
-		<div style="width:100%;position:relative;height:100%;margin:1px auto;"> 
-			<div style="position:absolute;left:100px;right:100px;height:100%;" id = "testGridContainer">
-				<div class="createExcelGridNavigator" id="createExcelGridNavigatorId">
-					<div class="createExcelGridTitleDiv">
-						<span class="createExcelGridTitle">第二步: 请选择要导入的Sheet页</span>
-						<a class="createExcelGridBackToBegin" href="importWebExcel.jsp">返回到第一步</a>
+		<div style="width:100%;position:relative;height:100%;margin:1px auto;">
+ 			<div style="position:absolute;left:100px;right:100px;height:100%;" id = "testGridContainer">
+				<div class="createWordNavigator" id="createWordNavigatorId">
+					<div class="createWordTitleDiv">
+						<span class="createWordTitle">第一步: 上传Word文档</span>
 					</div>
-					<div class="sheetNameContainerDiv" id="sheetNameContainerDivId">
-						<div class="sheetNameItem">正在读取Excel中包含的所有Sheet页名称</div> 
-					</div>
-					<div class="validateExcelSheetBtnDiv" id="validateExcelSheetBtnDivId">生成WebExcel文件</div>		
-				</div>  
+					<div class="createWordStyleUpload">			
+				        <div class="selectWordDiv">
+				        	<input type="file" name="uploadify" id="selectWordBtnId" />
+			        		<span class="selectWordPromptDiv">请选择要上传的Word文件(文件大小不能超过20M)</span>
+			        	</div>		       	
+						<div id="fileQueueDivId"></div>
+						<div class="selectErrorDiv" id="selectErrorDivId"></div>
+						<div class="uploadWordBtnDiv" id="uploadWordBtnDivId">执行上传</div>		        
+					</div> 
+				</div> 
 			</div> 
 		</div> 
 	</div>  

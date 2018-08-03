@@ -358,6 +358,19 @@
 		<property name="accessoryFilterType" value="ImportWebExcel" /> 
 	</bean>	
  	
+	<!-- webWord操作 -->
+	<bean id="webWordFileServiceBean" class="com.novacloud.novaone.dataFile.webWord.service.WebWordFileService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="fileBaseProcessor" ref="webWordFileProcessor" />
+	</bean>	 
+	<bean id="webWordFileProcessor" class="com.novacloud.novaone.dataFile.webWord.WebWordFileProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="dataFileProcessor" ref="dataFileProcessor" />
+		<property name="accessoryDao" ref="accessoryDao" />
+		<property name="accessoryFilterType" value="ImportWebWord" /> 
+		<property name="officeHome" value="C:/Program Files (x86)/OpenOffice 4" /> 
+	</bean>	
+ 	
 	<!-- text操作 -->
 	<bean id="textFileServiceBean" class="com.novacloud.novaone.dataFile.text.service.TextFileService" scope="prototype">  
 		<property name="transactionManager" ref="transactionManager" /> 

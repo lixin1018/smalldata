@@ -48,8 +48,7 @@
 						<a href="<%=rootDir%>/page/h/cjcb/cjcb.jsp" target="_self"> 
 							<span class="headerTitleItemText">超级传播</span>
 						</a>
-					</div> 
-					<!-- 
+					</div>  
 					<div name="mydocument" class="headerTitleItem<%=request.getParameter("menuName").equals("mydocument") ? " headerTitleItemActive" : "" %>">
 						<a href="<%=rootDir%>/page/h/mydata/mydocument.jsp" target="_self"> 
 							<span class="headerTitleItemText">我的文件</span>
@@ -64,8 +63,7 @@
 						<a href="<%=rootDir%>/page/h/mydata/r.jsp" target="_self"> 
 							<span class="headerTitleItemText">文件快递</span>
 						</a>
-					</div>
-					 -->
+					</div> 
 					<div name="grzx" class="headerTitleItem<%=request.getParameter("menuName").equals("grzx") ? " headerTitleItemActive" : "" %>">
 						<a href="<%=rootDir%>/page/h/grzx/grzx.jsp" target="_self"> 
 							<span class="headerTitleItemText">个人中心</span>

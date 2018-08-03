@@ -261,4 +261,22 @@
     	<servlet-name>getSSAudio</servlet-name>
     	<url-pattern>/shuShuo/getAudio</url-pattern>
   	</servlet-mapping>
+  	
+  	<!-- WebWord -->
+  	<servlet>
+    	<servlet-name>getWebWordPreviewFile</servlet-name>
+    	<servlet-class>com.novacloud.novaone.dataFile.webWord.service.GetWebWordPreviewFile</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getWebWordPreviewFile</servlet-name>
+    	<url-pattern>/fe/getWebWordPreviewFile</url-pattern>
+  	</servlet-mapping>
+  	<servlet>
+    	<servlet-name>getWebWordFile</servlet-name>
+    	<servlet-class>com.novacloud.novaone.dataFile.webWord.service.GetWebWordFile</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>getWebWordFile</servlet-name>
+    	<url-pattern>/fe/getWebWordFile</url-pattern>
+  	</servlet-mapping>
 </web-app>

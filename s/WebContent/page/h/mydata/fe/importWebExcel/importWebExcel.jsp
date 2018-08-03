@@ -54,8 +54,7 @@
  			<div style="position:absolute;left:100px;right:100px;height:100%;" id = "testGridContainer">
 				<div class="createExcelGridNavigator" id="createExcelGridNavigatorId">
 					<div class="createExcelGridTitleDiv">
-						<span class="createExcelGridTitle">第一步: 上传Excel文档</span>
-						<a class="createExcelGridBackToBegin" href="selectStyle.jsp">返回到第一步</a>
+						<span class="createExcelGridTitle">第一步: 上传Excel文档</span> 
 					</div>
 					<div class="createExcelGridStyleUpload">			
 				        <div class="selectExcelDiv">

@@ -824,39 +824,39 @@
 			</result>  
 		</action>
 		<action name="markRead" class="dataFileServiceBean" method="markRead">    
-			<result  name="success" type="plainText">       
-				<param name="charSet">UTF-8</param>       
-				<param name="location">/page/ajaxResponse.jsp</param>     
-			</result>  
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
 		</action>
-		<action name="getSendInfos" class="dataFileServiceBean" method="getSendInfos">    
-			<result  name="success" type="plainText">       
-				<param name="charSet">UTF-8</param>       
-				<param name="location">/page/ajaxResponse.jsp</param>     
-			</result>  
+		<action name="getSendInfos" class="dataFileServiceBean" method="getSendInfos">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
 		</action>
-		<action name="getReceiveInfos" class="dataFileServiceBean" method="getReceiveInfos">    
-			<result  name="success" type="plainText">       
-				<param name="charSet">UTF-8</param>       
-				<param name="location">/page/ajaxResponse.jsp</param>     
-			</result>  
+		<action name="getReceiveInfos" class="dataFileServiceBean" method="getReceiveInfos">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
 		</action>
-		<action name="saveAs" class="dataFileServiceBean" method="saveAs">    
-			<result  name="success" type="plainText">       
-				<param name="charSet">UTF-8</param>       
-				<param name="location">/page/ajaxResponse.jsp</param>     
-			</result>  
+		<action name="saveAs" class="dataFileServiceBean" method="saveAs">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
 		</action>
 	</package>
 	
 	<package name="webExcelFileNcpService" namespace="/webExcelFileNcpService" extends="struts-default">
-		<action name="readFile" class="webExcelFileServiceBean" method="readFile">    
-			<result  name="success" type="plainText">       
-				<param name="charSet">UTF-8</param>       
-				<param name="location">/page/ajaxResponse.jsp</param>     
-			</result>  
+		<action name="readFile" class="webExcelFileServiceBean" method="readFile">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
 		</action>
-		<action name="saveFile" class="webExcelFileServiceBean" method="saveFile">    
+		<action name="saveFile" class="webExcelFileServiceBean" method="saveFile">
 			<result  name="success" type="plainText">       
 				<param name="charSet">UTF-8</param>       
 				<param name="location">/page/ajaxResponse.jsp</param>     
@@ -874,6 +874,21 @@
 				<param name="location">/page/ajaxResponse.jsp</param>     
 			</result>  
 		</action>
+	</package>
+	
+	<package name="webWordFileNcpService" namespace="/webWordFileNcpService" extends="struts-default">
+		<action name="readFile" class="webWordFileServiceBean" method="readFile">
+			<result  name="success" type="plainText">
+				<param name="charSet">UTF-8</param>
+				<param name="location">/page/ajaxResponse.jsp</param>
+			</result>
+		</action>
+		<action name="createPreviewFile" class="webWordFileServiceBean" method="createPreviewFile">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action> 
 	</package>
 	
 	<package name="textFileNcpService" namespace="/textFileNcpService" extends="struts-default">

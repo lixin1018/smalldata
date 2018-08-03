@@ -3,13 +3,13 @@ body{
 	width:100%;
 	height:100%;
 }
-.createExcelGridNavigator{
+.createWordNavigator{
 	width:500px;
 	height:280px;
 	border: solid 0px #cccccc;
 	margin:0 auto; 
 }
-.createExcelGridTitleDiv{
+.createWordTitleDiv{
 	position:relative;
 	width:100%;
 	height:50px;
@@ -17,14 +17,14 @@ body{
 	padding-left:10px;
 	border-bottom:solid 1px #dddddd;
 }
-.createExcelGridTitle{
+.createWordTitle{
 	position:absolute;
 	left:10px;
 	bottom:10px;
 	font-size:15px; 
 	font-weight:600;
 }
-.createExcelGridBackToBegin{
+.createWordBackToBegin{
 	position:absolute;
 	right:10px;
 	bottom:5px;
@@ -33,10 +33,10 @@ body{
 	text-decoration:none;
 	color:#888888;
 }
-.createExcelGridBackToBegin:hover{
+.createWordBackToBegin:hover{
 	text-decoration:underline;
 }
-.createExcelGridStyleItem{
+.createWordStyleItem{
 	width:400px;
 	height:80px;
 	cursor:pointer;
@@ -45,13 +45,13 @@ body{
 	margin-top:10px;
 	margin-bottom:10px;
 }
-.createExcelGridStyleItem:hover{
+.createWordStyleItem:hover{
 	background-color:#F56600; 
 	border: solid 0px #dddddd;
 	color:#ffffff;
 }
 
-.createExcelGridStyleItem h3{ 
+.createWordStyleItem h3{ 
 	height:40px;
 	margin:0px;
 	line-height:40px;
@@ -59,14 +59,14 @@ body{
 	padding-left:10px;
 }
 
-.createExcelGridStyleItem span{ 
+.createWordStyleItem span{ 
 	height:40px; 
 	font-size:10px;
 	padding-left:10px;
 	text-decoration:none;
 }
 
-.createExcelGridStyleUpload{
+.createWordStyleUpload{
 	margin:0 auto;
 	margin-top:10px;
 	margin-bottom:10px;
@@ -76,7 +76,7 @@ body{
 	padding:10px;
 	font-size:15px;
 }
-.selectExcelDiv{
+.selectWordDiv{
 	width:100%;
 	height:40px;
 	margin:0 auto;
@@ -84,14 +84,14 @@ body{
 	position:relative;
 	text-align:left;
 }
-.createExcelGridStyleUpload input{
+.createWordStyleUpload input{
 	position:absolute;
 	top:5px; 
 	cursor:pointer;
 	margin:10px;
 	text-align:center;
 }
-.selectExcelPromptDiv{
+.selectWordPromptDiv{
 	position:absolute;
 	top:0px;
 	left:105px;
@@ -107,7 +107,7 @@ body{
 	color: #FF4300;
 	display:none;
 }
-.uploadExcelBtnDiv{
+.uploadWordBtnDiv{
 	width:100%;
 	margin-top:10px; 
 	height:40px;
@@ -118,7 +118,7 @@ body{
 	background-color:#F56600; 
 }
 
-.waitingValidateExcelDiv{
+.waitingValidateWordDiv{
 	margin:0 auto;
 	margin-top:10px;
 	margin-bottom:10px;
@@ -129,7 +129,7 @@ body{
 	font-size:15px;
 }
 
-.sheetNameContainerDiv{
+.wordContainerDiv{
 	margin:0 auto;
 	margin-top:10px;
 	margin-bottom:10px;
@@ -139,33 +139,8 @@ body{
 	padding:10px;
 	font-size:15px;
 	overflow: auto;
-}
-.sheetNameItem{
-	width:400px;
-	height:40px;
-	line-height:40px;
-	cursor:pointer;
-	padding-left: 10px;
-	border: solid 1px #dddddd;
-	margin:0 auto;
-	margin-top:5px;
-	margin-bottom:5px;
-	font-size:13px;
-}
-.sheetNameItemSelected{ 
-	background-color:#888888; 
-	font-weight:600; 
-	color:#ffffff;
-}
-.sheetNameItem:hover{
-	background-color:#dddddd; 
-}
-.sheetNameItemSelected:hover{
-	background-color:#888888; 
-	font-weight:600; 
-	color:#ffffff;
-}
-.validateExcelSheetBtnDiv{
+} 
+.validateWordBtnDiv{
 	width:100%;
 	margin-top:10px; 
 	height:40px;
