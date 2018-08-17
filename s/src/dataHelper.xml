@@ -19,6 +19,12 @@
 		<property name="transactionManager" ref="transactionManager" /> 
 		<property name="shareViewProcessor" ref="viewProcessor" /> 
 	</bean>	
+	  
+	<!-- dataShareService 获取数据共享的分类信息 added by lixin 20180817 -->
+	<bean id="dataShareServiceBean" class="com.novacloud.dataHelper.service.DataShareService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+		<property name="viewProcessor" ref="viewProcessor" /> 
+	</bean>	
 	
 	<!-- data模型dh_GobalVariableType -->
 	<bean id="dh_GobalVariableType" class="com.novacloud.dataHelper.memory.impl.Dh_GobalVariableTypeImpl" scope="prototype">

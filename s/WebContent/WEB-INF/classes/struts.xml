@@ -1025,6 +1025,16 @@
 		</action>
 	</package>
 	
+	<!-- dataShareNcpService 获取数据共享的分类信息  added by lixin 20180817 -->
+	<package name="dataShareNcpService" namespace="/dataShareNcpService" extends="struts-default">
+		<action name="getCategoryTypeList" class="dataShareServiceBean" method="getCategoryTypeList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>
+		</action>
+	</package>
+	
 	<!-- shuShuoervice 数说服务 added by lixin 20180612 -->
 	<package name="shuShuoNcpService" namespace="/shuShuoNcpService" extends="struts-default">
 		<action name="getData" class="shuShuoServiceBean" method="getData">    
