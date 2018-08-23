@@ -3,16 +3,16 @@ dataModels.ie_jz_xlzdb = {
   name:"ie_jz_xlzdb",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"8f2e36c0-0957-4b1c-a83d-3d8a8c7a0f17",
-      name:"id",
-      displayName:"id",
+    xh:{
+      id:"7d491aa2-28a8-4dda-8cae-178e74d89ed3",
+      name:"xh",
+      displayName:"序号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,19 +29,6 @@ dataModels.ie_jz_xlzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"7d491aa2-28a8-4dda-8cae-178e74d89ed3",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
-      decimalNum:0,
-      isReadonly:false
-    },
     xl:{
       id:"97bba9f0-c556-4d61-bc98-538084842e9d",
       name:"xl",
@@ -55,19 +42,6 @@ dataModels.ie_jz_xlzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    isdeleted:{
-      id:"967fbd45-5e22-470d-b699-7e1c977dcdbb_1",
-      name:"isdeleted",
-      displayName:"isdeleted",
-      valueType:valueType.boolean,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
     bm:{
       id:"27fc893d-94e9-4ab0-b9db-f458d786bcaa",
       name:"bm",
@@ -78,6 +52,32 @@ dataModels.ie_jz_xlzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"8f2e36c0-0957-4b1c-a83d-3d8a8c7a0f17",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    isdeleted:{
+      id:"967fbd45-5e22-470d-b699-7e1c977dcdbb_1",
+      name:"isdeleted",
+      displayName:"isdeleted",
+      valueType:valueType.boolean,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1,
       decimalNum:0,
       isReadonly:false
     },

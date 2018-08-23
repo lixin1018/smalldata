@@ -3,6 +3,19 @@ dataModels.ie_jz_zzztzdb = {
   name:"ie_jz_zzztzdb",
   idFieldName:"id",
   fields:{
+    xh:{
+      id:"f4620d7c-9f2d-4f14-951e-482b4a818363",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
+      decimalNum:0,
+      isReadonly:false
+    },
     createtime:{
       id:"463ebb4f-1809-46ef-ae0d-24761136282a",
       name:"createtime",
@@ -16,6 +29,19 @@ dataModels.ie_jz_zzztzdb = {
       decimalNum:3,
       isReadonly:false
     },
+    zzzt:{
+      id:"dee1d8a6-a920-4c25-8aec-36ad2aca745e",
+      name:"zzzt",
+      displayName:"资质状态",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
     id:{
       id:"0dcfb1d3-efb4-42b9-8448-7ef8f8e83885",
       name:"id",
@@ -26,19 +52,6 @@ dataModels.ie_jz_zzztzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    xh:{
-      id:"f4620d7c-9f2d-4f14-951e-482b4a818363",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -65,19 +78,6 @@ dataModels.ie_jz_zzztzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zzzt:{
-      id:"dee1d8a6-a920-4c25-8aec-36ad2aca745e",
-      name:"zzzt",
-      displayName:"资质状态",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },

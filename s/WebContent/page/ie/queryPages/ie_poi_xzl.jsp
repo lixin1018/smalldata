@@ -18,37 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/sjgxTablePage.css">
 	
 	<script>
-		var paramWinModelUnits = {title: {
-id: "1c0b3213-5d2c-477d-b576-fa777f91c29f",
-name: "title",
-label: "title",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 200,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-province: {
-id: "c6796a35-e971-4ba2-9b67-7a7d0dc2bb7e",
-name: "province",
-label: "province",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 30,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-city: {
+		var paramWinModelUnits = {city: {
 id: "5d9d3521-5425-43b4-8bab-aa889a3b4327",
 name: "city",
 label: "city",
@@ -62,51 +32,6 @@ isNullable: true,
 isEditable: true,
 unitType:"text",
 defaultValue: null
-},
-address: {
-id: "cea7c211-7b3b-4a06-8fa5-eb983250b2aa",
-name: "address",
-label: "address",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 200,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-phonenumber: {
-id: "8e459bab-6dcd-4fa0-a6f2-b3b9dc490320",
-name: "phonenumber",
-label: "phoneNumber",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 100,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-isdeleted: {
-id: "01e64506-c025-4dd2-870b-6c51a1cbf74d_1",
-name: "isdeleted",
-label: "&#24050;&#21024;&#38500;",
-valueType: valueType.boolean,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 1,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"checkbox",
-defaultValue: null
 }};
 		var dataModel = dataModels.ie_poi_xzl;
 		var viewModel = viewModels.ie_poi_xzl;
@@ -116,23 +41,8 @@ defaultValue: null
 			var result = paramWin.getParamResult();			
 			if(result.verified){
 				gridWin.sysWhere = new Array();  
-				if(result.values.title.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"title", title:"title", operator:"like", value: result.values.title });
-}
-if(result.values.province.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"province", title:"province", operator:"like", value: result.values.province });
-}
-if(result.values.city.length != 0){
+				if(result.values.city.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"city", title:"city", operator:"like", value: result.values.city });
-}
-if(result.values.address.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"address", title:"address", operator:"like", value: result.values.address });
-}
-if(result.values.phonenumber.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"phonenumber", title:"phoneNumber", operator:"like", value: result.values.phonenumber });
-}
-if(result.values.isdeleted != null){
-gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#21024;&#38500;", operator:"=", value:  cmnPcr.objectToStr(result.values.isdeleted, valueType.boolean) });
 }
  
 				gridWin.doPage({ pageNumber:pageNumber});
@@ -142,18 +52,8 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 </head>
 <body class="easyui-layout" style="width:100%;height:100%;" id="dataGridContainer"> 
 	<div id="queryControlContainerId" class="tableQueryContainer"> 
-		<div class="tableQueryLine"><div class="tableQueryItemName">title:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="title" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">province:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="province" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">city:&nbsp;</div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemName">city:&nbsp;</div></div>
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="city" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">address:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="address" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">phoneNumber:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="phonenumber" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInputCheck" type="checkbox" name="isdeleted" paramCtrl="true"/>
-<div class="tableQueryItemName">&#24050;&#21024;&#38500;:&nbsp;</div></div></div>
 	 
 		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">

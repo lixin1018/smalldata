@@ -3,16 +3,16 @@ dataModels.ie_jz_qy_zzzg = {
   name:"ie_jz_qy_zzzg",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"d43b9356-00d6-4279-bb51-b7cce03a5a8e",
-      name:"id",
-      displayName:"id",
+    fzjg:{
+      id:"0ff0d07f-f889-46ce-86e8-54e182d8bd99",
+      name:"fzjg",
+      displayName:"发证机关",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:200,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,16 +29,16 @@ dataModels.ie_jz_qy_zzzg = {
       decimalNum:3,
       isReadonly:false
     },
-    zzzsh:{
-      id:"3a99bcc7-c255-40c2-953d-c4ed69a2d432",
-      name:"zzzsh",
-      displayName:"资质证书号",
+    fzrq:{
+      id:"f0376b84-1d58-4007-9fd5-fa0cd6df7c97",
+      name:"fzrq",
+      displayName:"发证日期",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:30,
+      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },
@@ -55,6 +55,32 @@ dataModels.ie_jz_qy_zzzg = {
       decimalNum:0,
       isReadonly:false
     },
+    zjyxq:{
+      id:"058cf31a-78a1-48aa-83e8-09b8cace3b6c",
+      name:"zjyxq",
+      displayName:"证件有效期",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"d43b9356-00d6-4279-bb51-b7cce03a5a8e",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
     isdeleted:{
       id:"f456f8e6-9888-4f17-9442-be96f92487b5",
       name:"isdeleted",
@@ -65,19 +91,6 @@ dataModels.ie_jz_qy_zzzg = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    fzrq:{
-      id:"f0376b84-1d58-4007-9fd5-fa0cd6df7c97",
-      name:"fzrq",
-      displayName:"发证日期",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },
@@ -94,6 +107,19 @@ dataModels.ie_jz_qy_zzzg = {
       decimalNum:0,
       isReadonly:false
     },
+    zzzsh:{
+      id:"3a99bcc7-c255-40c2-953d-c4ed69a2d432",
+      name:"zzzsh",
+      displayName:"资质证书号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:30,
+      decimalNum:0,
+      isReadonly:false
+    },
     zzmc:{
       id:"c0d6dd74-91cb-493c-a657-c41d550b2e20",
       name:"zzmc",
@@ -107,36 +133,10 @@ dataModels.ie_jz_qy_zzzg = {
       decimalNum:0,
       isReadonly:false
     },
-    fzjg:{
-      id:"0ff0d07f-f889-46ce-86e8-54e182d8bd99",
-      name:"fzjg",
-      displayName:"发证机关",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:200,
-      decimalNum:0,
-      isReadonly:false
-    },
     zzlb:{
       id:"e3e3afe2-f339-4eb1-95a3-6bb1e8c7d3a5",
       name:"zzlb",
       displayName:"资质类别",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zjyxq:{
-      id:"058cf31a-78a1-48aa-83e8-09b8cace3b6c",
-      name:"zjyxq",
-      displayName:"证件有效期",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",

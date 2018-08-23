@@ -18,66 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/sjgxTablePage.css">
 	
 	<script>
-		var paramWinModelUnits = {xh: {
-id: "b30ece6e-a5e4-4c77-8cbb-66f9bfd79188",
-name: "xh",
-label: "&#24207;&#21495;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 5,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-bm: {
-id: "4324b1d4-c0b1-4417-b61d-f9ce3bd6b827",
-name: "bm",
-label: "&#32534;&#30721;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 10,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-xmfl: {
-id: "5f2e3c6a-6494-4655-ae84-0fdca0da6008",
-name: "xmfl",
-label: "&#39033;&#30446;&#20998;&#31867;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 20,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-isdeleted: {
-id: "f71fec73-b3eb-45d5-9c25-255acd4ec5fe_1",
-name: "isdeleted",
-label: "&#24050;&#21024;&#38500;",
-valueType: valueType.boolean,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 1,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"checkbox",
-defaultValue: null
-}};
+		var paramWinModelUnits = {};
 		var dataModel = dataModels.ie_jz_xmflzdb;
 		var viewModel = viewModels.ie_jz_xmflzdb;
 		var definitionId = "38fa244f-6f5e-4c96-8ac5-bf52585361f4";
@@ -86,19 +27,7 @@ defaultValue: null
 			var result = paramWin.getParamResult();			
 			if(result.verified){
 				gridWin.sysWhere = new Array();  
-				if(result.values.xh.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"xh", title:"&#24207;&#21495;", operator:"like", value: result.values.xh });
-}
-if(result.values.bm.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"bm", title:"&#32534;&#30721;", operator:"like", value: result.values.bm });
-}
-if(result.values.xmfl.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"xmfl", title:"&#39033;&#30446;&#20998;&#31867;", operator:"like", value: result.values.xmfl });
-}
-if(result.values.isdeleted != null){
-gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#21024;&#38500;", operator:"=", value:  cmnPcr.objectToStr(result.values.isdeleted, valueType.boolean) });
-}
- 
+				 
 				gridWin.doPage({ pageNumber:pageNumber});
 			}			
 		}	
@@ -106,15 +35,7 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 </head>
 <body class="easyui-layout" style="width:100%;height:100%;" id="dataGridContainer"> 
 	<div id="queryControlContainerId" class="tableQueryContainer"> 
-		<div class="tableQueryLine"><div class="tableQueryItemName">&#24207;&#21495;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xh" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#32534;&#30721;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="bm" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#39033;&#30446;&#20998;&#31867;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xmfl" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInputCheck" type="checkbox" name="isdeleted" paramCtrl="true"/>
-<div class="tableQueryItemName">&#24050;&#21024;&#38500;:&nbsp;</div></div></div>
-	 
+			 
 		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">
 			<div class="tableQueryButtonLineInner">

@@ -36,6 +36,10 @@ public class ImportExportDefinition {
 			String fileTypeStr = rootNode.attribute("FileType").getValue();
 			FileType fileType = Enum.valueOf(FileType.class, fileTypeStr);
 			this.setFileType(fileType);
+
+			//Orderby
+			String orderby = rootNode.attribute("Orderby") == null ? "" : rootNode.attribute("Orderby").getValue(); 
+			this.setOrderby(orderby);
 			
 			//FileParser
 			switch(fileType){
@@ -266,6 +270,9 @@ public class ImportExportDefinition {
 
 		//FileType
 		rootNode.addAttribute("FileType", this.getFileType().toString()); 
+
+		//Orderby
+		rootNode.addAttribute("Orderby", this.getOrderby()); 
 		
 		//FileParser
 		switch(this.getFileType()){
@@ -710,6 +717,15 @@ public class ImportExportDefinition {
 		}
 		return vr;
 	} 
+	
+	//排序方式
+	private String orderby = null;
+	public String getOrderby(){
+		return this.orderby;
+	}
+	public void setOrderby(String orderby){
+		this.orderby = orderby;
+	}
 	
 	//数据更新方式
 	private UpdateType updateType = null;

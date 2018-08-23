@@ -3,29 +3,16 @@ dataModels.ie_jz_qydjzclxzdb = {
   name:"ie_jz_qydjzclxzdb",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"c648d059-ae53-44dd-b353-37af19638dc5",
-      name:"id",
-      displayName:"id",
+    xh:{
+      id:"716271d2-1635-47f2-b484-1a3ad5e1777c",
+      name:"xh",
+      displayName:"序号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    qydjzclx:{
-      id:"32929819-fd33-4d88-b160-f60286925ec2",
-      name:"qydjzclx",
-      displayName:"企业登记注册类型",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:100,
+      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -42,16 +29,29 @@ dataModels.ie_jz_qydjzclxzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"716271d2-1635-47f2-b484-1a3ad5e1777c",
-      name:"xh",
-      displayName:"序号",
+    qydjzclx:{
+      id:"32929819-fd33-4d88-b160-f60286925ec2",
+      name:"qydjzclx",
+      displayName:"企业登记注册类型",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:5,
+      valueLength:100,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"c648d059-ae53-44dd-b353-37af19638dc5",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },

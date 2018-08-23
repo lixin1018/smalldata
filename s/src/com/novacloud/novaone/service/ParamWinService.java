@@ -34,7 +34,7 @@ public class ParamWinService  extends NcpActionSupport implements IParamWinServi
 		return this.transactionManager.getSessionFactory().openSession(); 
 	}
 		
-	private IParamWinBaseDao getParamWinDao(JSONObject requestObj){
+	protected IParamWinBaseDao getParamWinDao(JSONObject requestObj){
 		//如果没有定义名为dataName的bean，那么使用其基类 
 		IParamWinBaseDao paramWinDao = null;
 		if(requestObj.containsKey("paramWinName")){

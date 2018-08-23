@@ -3,32 +3,6 @@ dataModels.ie_poi_gw = {
   name:"ie_poi_gw",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"a1416d5a-a060-4900-b8e0-a3d6f55943e8",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    uid:{
-      id:"658cf284-99cd-4ce8-bc30-58d2b9d2a1c3",
-      name:"uid",
-      displayName:"uid",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:30,
-      decimalNum:0,
-      isReadonly:false
-    },
     createtime:{
       id:"239491c0-2925-4189-a30d-b937477288b1",
       name:"createtime",
@@ -40,6 +14,58 @@ dataModels.ie_poi_gw = {
       foreignKeyName:"",
       valueLength:20,
       decimalNum:3,
+      isReadonly:false
+    },
+    address:{
+      id:"76f06806-604b-4db1-85cb-4ffe52f96246",
+      name:"address",
+      displayName:"address",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:200,
+      decimalNum:0,
+      isReadonly:false
+    },
+    lng:{
+      id:"8ad0aa1a-7496-4fa5-83ed-08775225c91f",
+      name:"lng",
+      displayName:"lng",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    city:{
+      id:"a9993603-d14f-49e7-b503-632f6e5cd10b",
+      name:"city",
+      displayName:"city",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:30,
+      decimalNum:0,
+      isReadonly:false
+    },
+    postcode:{
+      id:"1a3276fe-e224-4d4a-8c0d-1a1322a24572",
+      name:"postcode",
+      displayName:"postcode",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:30,
+      decimalNum:0,
       isReadonly:false
     },
     phonenumber:{
@@ -68,19 +94,6 @@ dataModels.ie_poi_gw = {
       decimalNum:0,
       isReadonly:false
     },
-    address:{
-      id:"76f06806-604b-4db1-85cb-4ffe52f96246",
-      name:"address",
-      displayName:"address",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:200,
-      decimalNum:0,
-      isReadonly:false
-    },
     isdeleted:{
       id:"c1269d0d-f9df-4fc7-9af8-625d7882d06e_1",
       name:"isdeleted",
@@ -91,32 +104,6 @@ dataModels.ie_poi_gw = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    province:{
-      id:"93bf2d83-79b8-41aa-84a7-953463cd20a7",
-      name:"province",
-      displayName:"province",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:30,
-      decimalNum:0,
-      isReadonly:false
-    },
-    lng:{
-      id:"8ad0aa1a-7496-4fa5-83ed-08775225c91f",
-      name:"lng",
-      displayName:"lng",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },
@@ -133,32 +120,6 @@ dataModels.ie_poi_gw = {
       decimalNum:0,
       isReadonly:false
     },
-    postcode:{
-      id:"1a3276fe-e224-4d4a-8c0d-1a1322a24572",
-      name:"postcode",
-      displayName:"postcode",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:30,
-      decimalNum:0,
-      isReadonly:false
-    },
-    lat:{
-      id:"bdf03038-0508-4caf-a960-43114aa1a332",
-      name:"lat",
-      displayName:"lat",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
     url:{
       id:"ac19e17c-2be1-49d5-8b27-d3dd57a8616b",
       name:"url",
@@ -172,16 +133,55 @@ dataModels.ie_poi_gw = {
       decimalNum:0,
       isReadonly:false
     },
-    city:{
-      id:"a9993603-d14f-49e7-b503-632f6e5cd10b",
-      name:"city",
-      displayName:"city",
+    uid:{
+      id:"658cf284-99cd-4ce8-bc30-58d2b9d2a1c3",
+      name:"uid",
+      displayName:"uid",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:30,
+      decimalNum:0,
+      isReadonly:false
+    },
+    province:{
+      id:"93bf2d83-79b8-41aa-84a7-953463cd20a7",
+      name:"province",
+      displayName:"province",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:30,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"a1416d5a-a060-4900-b8e0-a3d6f55943e8",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    lat:{
+      id:"bdf03038-0508-4caf-a960-43114aa1a332",
+      name:"lat",
+      displayName:"lat",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
       decimalNum:0,
       isReadonly:false
     }

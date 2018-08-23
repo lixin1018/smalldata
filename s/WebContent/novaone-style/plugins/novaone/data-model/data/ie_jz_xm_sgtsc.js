@@ -3,19 +3,6 @@ dataModels.ie_jz_xm_sgtsc = {
   name:"ie_jz_xm_sgtsc",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"895aff0b-c050-4195-b69f-6921d2626818",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
     createtime:{
       id:"0ce439a8-ece0-43bd-ab51-4ecacd16c841",
       name:"createtime",
@@ -29,19 +16,6 @@ dataModels.ie_jz_xm_sgtsc = {
       decimalNum:3,
       isReadonly:false
     },
-    kcdwmc:{
-      id:"541278a3-bb8a-42a1-b4fe-85972206b2fb",
-      name:"kcdwmc",
-      displayName:"勘察单位名称",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:200,
-      decimalNum:0,
-      isReadonly:false
-    },
     sjdwmc:{
       id:"73cc91f5-f370-417c-ba50-bf2714780390",
       name:"sjdwmc",
@@ -52,19 +26,6 @@ dataModels.ie_jz_xm_sgtsc = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:200,
-      decimalNum:0,
-      isReadonly:false
-    },
-    sjsgtschgsbh:{
-      id:"6b093bbd-1def-4ea8-b72e-9f4edadfc0bd",
-      name:"sjsgtschgsbh",
-      displayName:"省级施工图审查合格书编号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:80,
       decimalNum:0,
       isReadonly:false
     },
@@ -81,42 +42,29 @@ dataModels.ie_jz_xm_sgtsc = {
       decimalNum:0,
       isReadonly:false
     },
-    isdeleted:{
-      id:"2712041b-7c49-49d8-bb8c-3813a5eca57a_1",
-      name:"isdeleted",
-      displayName:"isdeleted",
-      valueType:valueType.boolean,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    sgtschgsbh:{
-      id:"59a03eb6-6c27-4427-bb19-6f4cc6505a46",
-      name:"sgtschgsbh",
-      displayName:"施工图审查合格书编号",
+    sjsgtschgsbh:{
+      id:"6b093bbd-1def-4ea8-b72e-9f4edadfc0bd",
+      name:"sjsgtschgsbh",
+      displayName:"省级施工图审查合格书编号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:50,
+      valueLength:80,
       decimalNum:0,
       isReadonly:false
     },
-    parentid:{
-      id:"e7134d37-3573-4b67-8bab-2e2230fb4cde",
-      name:"parentid",
-      displayName:"parentid",
+    sgtscjgmc:{
+      id:"4c2334a9-5e47-4390-a3ba-78d5d279cc2c",
+      name:"sgtscjgmc",
+      displayName:"施工图审查机构名称",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:200,
       decimalNum:0,
       isReadonly:false
     },
@@ -133,16 +81,68 @@ dataModels.ie_jz_xm_sgtsc = {
       decimalNum:0,
       isReadonly:false
     },
-    sgtscjgmc:{
-      id:"4c2334a9-5e47-4390-a3ba-78d5d279cc2c",
-      name:"sgtscjgmc",
-      displayName:"施工图审查机构名称",
+    kcdwmc:{
+      id:"541278a3-bb8a-42a1-b4fe-85972206b2fb",
+      name:"kcdwmc",
+      displayName:"勘察单位名称",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:200,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"895aff0b-c050-4195-b69f-6921d2626818",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    isdeleted:{
+      id:"2712041b-7c49-49d8-bb8c-3813a5eca57a_1",
+      name:"isdeleted",
+      displayName:"isdeleted",
+      valueType:valueType.boolean,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1,
+      decimalNum:0,
+      isReadonly:false
+    },
+    parentid:{
+      id:"e7134d37-3573-4b67-8bab-2e2230fb4cde",
+      name:"parentid",
+      displayName:"parentid",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    sgtschgsbh:{
+      id:"59a03eb6-6c27-4427-bb19-6f4cc6505a46",
+      name:"sgtschgsbh",
+      displayName:"施工图审查合格书编号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:50,
       decimalNum:0,
       isReadonly:false
     }

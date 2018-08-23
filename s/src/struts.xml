@@ -672,6 +672,15 @@
 		</action> 
 	</package>
 	
+	<package name="shareDataParamWinNcpService" namespace="/shareDataParamWinNcpService" extends="struts-default">
+		<action name="getList" class="shareDataParamWinServiceBean" method="getList">    
+			<result  name="success" type="plainText">       
+				<param name="charSet">UTF-8</param>       
+				<param name="location">/page/ajaxResponse.jsp</param>     
+			</result>  
+		</action>
+	</package>
+	
 	<package name="editShareDataGridNcpService" namespace="/editShareDataGridNcpService" extends="struts-default">
 		<action name="getInputStatus" class="editShareDataGridServiceBean" method="getInputStatus">    
 			<result  name="success" type="plainText">       

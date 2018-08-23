@@ -5,7 +5,7 @@ viewModels.ie_dxbkzyxx = {
   colModel:[
     {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
     {name:"xw", label:"学位", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
-    {name:"xkfl", label:"学科分类", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"xkfl", label:"学科分类", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"pop"},
     {name:"yjxk", label:"一级学科", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"zy", label:"专业", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"zydm", label:"专业代码", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
@@ -21,11 +21,11 @@ viewModels.ie_dxbkzyxx = {
     {name:"id", label:"ID", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"parentid", label:"parentid", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"createtime", label:"记录创建时间", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
-    {name:"isdeleted", label:"已删除", width:50, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"}
+    {name:"isdeleted", label:"已删除", width:50, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"}
   ],
   dispUnitModel:[
     {name:"xw", label:"学位", editable:true,nullable:true, hidden:false, dispunitType:"text", },
-    {name:"xkfl", label:"学科分类", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"xkfl", label:"学科分类", editable:true,nullable:true, hidden:false, dispunitType:"pop", },
     {name:"yjxk", label:"一级学科", editable:true,nullable:true, hidden:false, dispunitType:"text", },
     {name:"zy", label:"专业", editable:true,nullable:true, hidden:false, dispunitType:"text", },
     {name:"zydm", label:"专业代码", editable:true,nullable:true, hidden:false, dispunitType:"text", },
@@ -41,6 +41,6 @@ viewModels.ie_dxbkzyxx = {
     {name:"id", label:"ID", editable:true,nullable:true, hidden:true, dispunitType:"text", },
     {name:"parentid", label:"parentid", editable:true,nullable:true, hidden:true, dispunitType:"text", },
     {name:"createtime", label:"记录创建时间", editable:true,nullable:true, hidden:true, dispunitType:"time", },
-    {name:"isdeleted", label:"已删除", editable:true,nullable:true, hidden:false, dispunitType:"checkbox", }
+    {name:"isdeleted", label:"已删除", editable:true,nullable:true, hidden:true, dispunitType:"checkbox", }
   ]
 }

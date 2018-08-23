@@ -1,21 +1,18 @@
 ﻿<!DOCTYPE html>
 <%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ page import="com.novacloud.novaone.common.NcpSession" %>
-<%@ include file="../../basePage.jsp" %>
+<%@ include file="../../basePageShareData.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
 	<title><%importExportName%></title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
-	<meta http-equiv="keywords" content="数据助理,<%importExportName%>"> 
+	<meta http-equiv="keywords" content="数据助手,数据共享,数据工具,数据,数据抓取,<%importExportName%>"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
-	<meta http-equiv="description" content="<%importExportName%>">
-	<script type="text/javascript" src="../js/ncpShareDataGrid.js"></script>
+	<meta http-equiv="description" content="<%importExportName%>"> 
 	<script type="text/javascript" src="${dataModel}/<%dataName%>.js"></script>
-	<script type="text/javascript" src="${viewModel}/<%viewName%>.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../h/css/siteCommon.css">
-	<link rel="stylesheet" type="text/css" href="../css/sjgxTablePage.css">
+	<script type="text/javascript" src="${viewModel}/<%viewName%>.js"></script> 
 	
 	<script>
 		var paramWinModelUnits = {<%paramWinModel%>};

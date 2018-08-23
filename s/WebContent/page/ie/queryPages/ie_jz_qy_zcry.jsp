@@ -18,22 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/sjgxTablePage.css">
 	
 	<script>
-		var paramWinModelUnits = {qyid: {
-id: "b89369e1-31a4-48c1-bcc1-d60ca3ce4edc",
-name: "qyid",
-label: "CompanyId",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 30,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-xm: {
+		var paramWinModelUnits = {xm: {
 id: "168600a5-5039-4b56-9236-1187d866b80e",
 name: "xm",
 label: "&#22995;&#21517;",
@@ -47,81 +32,6 @@ isNullable: true,
 isEditable: true,
 unitType:"text",
 defaultValue: null
-},
-sfzh: {
-id: "8d0283e1-4e02-4551-950b-60287dfa09b5",
-name: "sfzh",
-label: "&#36523;&#20221;&#35777;&#21495;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 20,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-zclb: {
-id: "2e600c45-2304-46cc-90e3-ea93eb0ed00e",
-name: "zclb",
-label: "&#27880;&#20876;&#31867;&#21035;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 20,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-zch: {
-id: "6eddc0ac-f9bb-41fa-a969-b3306296ce90",
-name: "zch",
-label: "&#27880;&#20876;&#21495;&#65288;&#25191;&#19994;&#21360;&#31456;&#21495;&#65289;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 50,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-zczy: {
-id: "ee91f0ba-bfc0-419f-ab41-0a66f71e91ec",
-name: "zczy",
-label: "&#27880;&#20876;&#19987;&#19994;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 50,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-isdeleted: {
-id: "ca15cef6-c9f8-4a44-ac33-cba92a4b2b01_1",
-name: "isdeleted",
-label: "&#24050;&#21024;&#38500;",
-valueType: valueType.boolean,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 1,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"checkbox",
-defaultValue: null
 }};
 		var dataModel = dataModels.ie_jz_qy_zcry;
 		var viewModel = viewModels.ie_jz_qy_zcry;
@@ -131,26 +41,8 @@ defaultValue: null
 			var result = paramWin.getParamResult();			
 			if(result.verified){
 				gridWin.sysWhere = new Array();  
-				if(result.values.qyid.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"qyid", title:"CompanyId", operator:"like", value: result.values.qyid });
-}
-if(result.values.xm.length != 0){
+				if(result.values.xm.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"xm", title:"&#22995;&#21517;", operator:"like", value: result.values.xm });
-}
-if(result.values.sfzh.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"sfzh", title:"&#36523;&#20221;&#35777;&#21495;", operator:"like", value: result.values.sfzh });
-}
-if(result.values.zclb.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"zclb", title:"&#27880;&#20876;&#31867;&#21035;", operator:"like", value: result.values.zclb });
-}
-if(result.values.zch.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"zch", title:"&#27880;&#20876;&#21495;&#65288;&#25191;&#19994;&#21360;&#31456;&#21495;&#65289;", operator:"like", value: result.values.zch });
-}
-if(result.values.zczy.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"zczy", title:"&#27880;&#20876;&#19987;&#19994;", operator:"like", value: result.values.zczy });
-}
-if(result.values.isdeleted != null){
-gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#21024;&#38500;", operator:"=", value:  cmnPcr.objectToStr(result.values.isdeleted, valueType.boolean) });
 }
  
 				gridWin.doPage({ pageNumber:pageNumber});
@@ -160,20 +52,8 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 </head>
 <body class="easyui-layout" style="width:100%;height:100%;" id="dataGridContainer"> 
 	<div id="queryControlContainerId" class="tableQueryContainer"> 
-		<div class="tableQueryLine"><div class="tableQueryItemName">CompanyId:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="qyid" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#22995;&#21517;:&nbsp;</div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemName">&#22995;&#21517;:&nbsp;</div></div>
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xm" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#36523;&#20221;&#35777;&#21495;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="sfzh" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#27880;&#20876;&#31867;&#21035;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zclb" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#27880;&#20876;&#21495;&#65288;&#25191;&#19994;&#21360;&#31456;&#21495;&#65289;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zch" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#27880;&#20876;&#19987;&#19994;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zczy" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInputCheck" type="checkbox" name="isdeleted" paramCtrl="true"/></div>
-<div class="tableQueryItemInputContainer tableQueryItemCheckTitleContainer"><div class="tableQueryItemName tableQueryCheckItemName">&#24050;&#21024;&#38500;:&nbsp;</div></div></div>
 	 
 		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">

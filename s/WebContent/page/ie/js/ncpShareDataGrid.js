@@ -7,11 +7,21 @@ function NcpShareDataGrid(p) {
 	this.base(p);
 	
 	this.serviceName = "shareDataGridNcpService";
+	
+	this.getPopContainer = function(param){
+		var popContainer = new PopupContainer( {
+			width : 400,
+			height : 500,
+			top : 50
+		});
+		return popContainer;
+	}
 } 
 	
 var paramWin = null;
 var gridWin = null;
 var unitPrice = null;
+
 $(document).ready(function(){
 	var paramWinModel = {
 		  id:0,
@@ -40,7 +50,7 @@ $(document).ready(function(){
 		}
 	}
 	
-	paramWin = new NcpParamWin({
+	paramWin = new NcpShareDataParamWin({
 		containerId:"queryControlContainerId",
 		paramWinModel:paramWinModel
 	}); 

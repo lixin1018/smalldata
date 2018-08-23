@@ -3,23 +3,23 @@ dataModels.ie_poi_qcxs = {
   name:"ie_poi_qcxs",
   idFieldName:"id",
   fields:{
-    uid:{
-      id:"8eac66b8-0d5e-4957-8749-1890999125fc",
-      name:"uid",
-      displayName:"uid",
-      valueType:valueType.string,
+    createtime:{
+      id:"157a30e1-6d58-4dae-9a75-6cbce3a76f91",
+      name:"createtime",
+      displayName:"记录创建时间",
+      valueType:valueType.time,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:30,
-      decimalNum:0,
+      valueLength:20,
+      decimalNum:3,
       isReadonly:false
     },
-    phonenumber:{
-      id:"771d50e7-99d3-4464-b613-7e28dfdfd6bb",
-      name:"phonenumber",
-      displayName:"phoneNumber",
+    address:{
+      id:"be031db8-ba84-481c-b715-96c424ab7ee6",
+      name:"address",
+      displayName:"address",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -42,16 +42,16 @@ dataModels.ie_poi_qcxs = {
       decimalNum:0,
       isReadonly:false
     },
-    parentid:{
-      id:"c8326e13-81b0-48f7-bd13-7fe7b8a6e83f",
-      name:"parentid",
-      displayName:"parentid",
+    city:{
+      id:"cbc80c40-85ef-4756-ba54-69e0638b9697",
+      name:"city",
+      displayName:"city",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:30,
       decimalNum:0,
       isReadonly:false
     },
@@ -68,10 +68,10 @@ dataModels.ie_poi_qcxs = {
       decimalNum:0,
       isReadonly:false
     },
-    url:{
-      id:"9693eba1-a1d2-4629-abbf-07a558599c93",
-      name:"url",
-      displayName:"url",
+    phonenumber:{
+      id:"771d50e7-99d3-4464-b613-7e28dfdfd6bb",
+      name:"phonenumber",
+      displayName:"phoneNumber",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -79,64 +79,12 @@ dataModels.ie_poi_qcxs = {
       foreignKeyName:"",
       valueLength:200,
       decimalNum:0,
-      isReadonly:false
-    },
-    city:{
-      id:"cbc80c40-85ef-4756-ba54-69e0638b9697",
-      name:"city",
-      displayName:"city",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:30,
-      decimalNum:0,
-      isReadonly:false
-    },
-    id:{
-      id:"d79ab0a3-3e76-4b3b-a20c-c500fa786b07",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    createtime:{
-      id:"157a30e1-6d58-4dae-9a75-6cbce3a76f91",
-      name:"createtime",
-      displayName:"记录创建时间",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:3,
       isReadonly:false
     },
     title:{
       id:"40ced260-4480-4ee8-a6e2-733637c32ff5",
       name:"title",
       displayName:"title",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:200,
-      decimalNum:0,
-      isReadonly:false
-    },
-    address:{
-      id:"be031db8-ba84-481c-b715-96c424ab7ee6",
-      name:"address",
-      displayName:"address",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -159,6 +107,45 @@ dataModels.ie_poi_qcxs = {
       decimalNum:0,
       isReadonly:false
     },
+    url:{
+      id:"9693eba1-a1d2-4629-abbf-07a558599c93",
+      name:"url",
+      displayName:"url",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:200,
+      decimalNum:0,
+      isReadonly:false
+    },
+    parentid:{
+      id:"c8326e13-81b0-48f7-bd13-7fe7b8a6e83f",
+      name:"parentid",
+      displayName:"parentid",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    uid:{
+      id:"8eac66b8-0d5e-4957-8749-1890999125fc",
+      name:"uid",
+      displayName:"uid",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:30,
+      decimalNum:0,
+      isReadonly:false
+    },
     province:{
       id:"b545547a-eb51-400a-9999-4c498a87cdab",
       name:"province",
@@ -169,6 +156,19 @@ dataModels.ie_poi_qcxs = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:30,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"d79ab0a3-3e76-4b3b-a20c-c500fa786b07",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },

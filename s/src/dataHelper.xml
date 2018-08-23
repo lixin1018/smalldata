@@ -36,6 +36,10 @@
 	<bean id="shareDataGridServiceBean" class="com.novacloud.dataHelper.service.ShareDataGridService" scope="prototype">  
 		<property name="transactionManager" ref="transactionManager" /> 
 	</bean>	
+	  
+	<bean id="shareDataParamWinServiceBean" class="com.novacloud.dataHelper.service.ShareDataParamWinService" scope="prototype">  
+		<property name="transactionManager" ref="transactionManager" /> 
+	</bean>	
 	
 	<bean id="editShareDataBaseDao" class="com.novacloud.dataHelper.share.EditShareDataBaseDao" scope="prototype"> 
 		<property name="dBParserAccess" ref="dBParserAccess" />    

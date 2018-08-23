@@ -3,42 +3,16 @@ dataModels.ie_jz_xm_jgysba = {
   name:"ie_jz_xm_jgysba",
   idFieldName:"id",
   fields:{
-    createtime:{
-      id:"e9a576c6-8143-4461-ba62-82e860e8a336",
-      name:"createtime",
-      displayName:"记录创建时间",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:3,
-      isReadonly:false
-    },
-    id:{
-      id:"e45d1c78-97f9-4948-ba13-a4f009c7c86c",
-      name:"id",
-      displayName:"id",
+    sjmj:{
+      id:"39979e3a-3c2c-4f0a-bea8-44aeff3aea13",
+      name:"sjmj",
+      displayName:"实际面积（平方米）",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    sjjgbabh:{
-      id:"e788ffa6-95ea-4877-be7a-79e51df17a46",
-      name:"sjjgbabh",
-      displayName:"省级竣工备案编号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:50,
+      valueLength:30,
       decimalNum:0,
       isReadonly:false
     },
@@ -55,6 +29,19 @@ dataModels.ie_jz_xm_jgysba = {
       decimalNum:0,
       isReadonly:false
     },
+    createtime:{
+      id:"e9a576c6-8143-4461-ba62-82e860e8a336",
+      name:"createtime",
+      displayName:"记录创建时间",
+      valueType:valueType.time,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:3,
+      isReadonly:false
+    },
     sjkgrq:{
       id:"1e367902-5d58-44b0-84a1-438091026401",
       name:"sjkgrq",
@@ -68,6 +55,19 @@ dataModels.ie_jz_xm_jgysba = {
       decimalNum:0,
       isReadonly:false
     },
+    xmbm:{
+      id:"45473686-5d8f-4a54-b5c8-d19382a48c25",
+      name:"xmbm",
+      displayName:"项目编码",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:50,
+      decimalNum:0,
+      isReadonly:false
+    },
     jgbabh:{
       id:"035a1240-d96e-45a0-826d-6bf60a2bb918",
       name:"jgbabh",
@@ -78,6 +78,32 @@ dataModels.ie_jz_xm_jgysba = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:50,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"e45d1c78-97f9-4948-ba13-a4f009c7c86c",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    sjjgysrq:{
+      id:"8762b4ee-d311-4e0f-8e6d-34ed4eb034ca",
+      name:"sjjgysrq",
+      displayName:"实际竣工验收日期",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },
@@ -107,42 +133,16 @@ dataModels.ie_jz_xm_jgysba = {
       decimalNum:0,
       isReadonly:false
     },
-    sjjgysrq:{
-      id:"8762b4ee-d311-4e0f-8e6d-34ed4eb034ca",
-      name:"sjjgysrq",
-      displayName:"实际竣工验收日期",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    xmbm:{
-      id:"45473686-5d8f-4a54-b5c8-d19382a48c25",
-      name:"xmbm",
-      displayName:"项目编码",
+    sjjgbabh:{
+      id:"e788ffa6-95ea-4877-be7a-79e51df17a46",
+      name:"sjjgbabh",
+      displayName:"省级竣工备案编号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:50,
-      decimalNum:0,
-      isReadonly:false
-    },
-    sjmj:{
-      id:"39979e3a-3c2c-4f0a-bea8-44aeff3aea13",
-      name:"sjmj",
-      displayName:"实际面积（平方米）",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:30,
       decimalNum:0,
       isReadonly:false
     }

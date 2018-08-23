@@ -12,7 +12,7 @@
 .tableQueryItemName{position:relative;width:100px;height:25px;padding-left:10px;display:table-cell;vertical-align: bottom;}
 .tableQueryCheckItemName{vertical-align: middle;}
 .tableQueryItemInput{width:180px;height:25px;}
-.tableQueryItemInputContainer{position:absolute;height:25px;left:10px;right:10px;}
+.tableQueryItemInputContainer{position:absolute;height:25px;left:10px;right:10px;background-color:#ffffff;}
 .tableQueryItemCheckTitleContainer{ left:25px; }
 .tableQueryItemInputCheck{width:25px;height:25px;}
 .tableQueryButtonLine{height:25px;width:100%;text-align:right;}

@@ -62,21 +62,6 @@ isNullable: true,
 isEditable: true,
 unitType:"text",
 defaultValue: null
-},
-isdeleted: {
-id: "6b77390b-130d-4ab1-ab7b-b4b4a0fd6389_1",
-name: "isdeleted",
-label: "&#24050;&#21024;&#38500;",
-valueType: valueType.boolean,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 1,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"checkbox",
-defaultValue: null
 }};
 		var dataModel = dataModels.ie_swyycf;
 		var viewModel = viewModels.ie_swyycf;
@@ -95,9 +80,6 @@ gridWin.sysWhere.push({parttype:"field", field:"swmc", title:"&#39135;&#29289;&#
 if(result.values.yycf.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"yycf", title:"&#33829;&#20859;&#25104;&#20998;", operator:"like", value: result.values.yycf });
 }
-if(result.values.isdeleted != null){
-gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#21024;&#38500;", operator:"=", value:  cmnPcr.objectToStr(result.values.isdeleted, valueType.boolean) });
-}
  
 				gridWin.doPage({ pageNumber:pageNumber});
 			}			
@@ -112,8 +94,6 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="swmc" paramCtrl="true"/></div></div>
 <div class="tableQueryLine"><div class="tableQueryItemName">&#33829;&#20859;&#25104;&#20998;:&nbsp;</div></div>
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="yycf" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInputCheck" type="checkbox" name="isdeleted" paramCtrl="true"/>
-<div class="tableQueryItemName">&#24050;&#21024;&#38500;:&nbsp;</div></div></div>
 	 
 		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">

@@ -3,6 +3,19 @@ dataModels.ie_swyycf = {
   name:"ie_swyycf",
   idFieldName:"id",
   fields:{
+    sslb:{
+      id:"96c1609a-0f07-4d02-8418-cabe71643f8f",
+      name:"sslb",
+      displayName:"所属类别",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
     createtime:{
       id:"7f499d64-d338-49d7-83ad-ed7edfc1cfe2",
       name:"createtime",
@@ -14,6 +27,32 @@ dataModels.ie_swyycf = {
       foreignKeyName:"",
       valueLength:20,
       decimalNum:3,
+      isReadonly:false
+    },
+    dw:{
+      id:"6f73c8b3-3372-4dc9-8139-04eaaa1a687f",
+      name:"dw",
+      displayName:"单位",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    hl:{
+      id:"b0273f11-9ccf-444d-ac50-6851c5fb2651",
+      name:"hl",
+      displayName:"含量",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:10,
+      decimalNum:0,
       isReadonly:false
     },
     id:{
@@ -29,6 +68,19 @@ dataModels.ie_swyycf = {
       decimalNum:0,
       isReadonly:false
     },
+    yycf:{
+      id:"3f725a47-f3e5-477b-8162-39e868c9e0d5",
+      name:"yycf",
+      displayName:"营养成分",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:50,
+      decimalNum:0,
+      isReadonly:false
+    },
     swmc:{
       id:"2bd19a8e-ef53-48e4-96a5-7077a11c27d8",
       name:"swmc",
@@ -39,19 +91,6 @@ dataModels.ie_swyycf = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    dw:{
-      id:"6f73c8b3-3372-4dc9-8139-04eaaa1a687f",
-      name:"dw",
-      displayName:"单位",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:10,
       decimalNum:0,
       isReadonly:false
     },
@@ -78,45 +117,6 @@ dataModels.ie_swyycf = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    yycf:{
-      id:"3f725a47-f3e5-477b-8162-39e868c9e0d5",
-      name:"yycf",
-      displayName:"营养成分",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:50,
-      decimalNum:0,
-      isReadonly:false
-    },
-    hl:{
-      id:"b0273f11-9ccf-444d-ac50-6851c5fb2651",
-      name:"hl",
-      displayName:"含量",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:10,
-      decimalNum:0,
-      isReadonly:false
-    },
-    sslb:{
-      id:"96c1609a-0f07-4d02-8418-cabe71643f8f",
-      name:"sslb",
-      displayName:"所属类别",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     }

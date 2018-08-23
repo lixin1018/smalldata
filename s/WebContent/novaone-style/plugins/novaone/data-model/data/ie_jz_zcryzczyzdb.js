@@ -3,32 +3,6 @@ dataModels.ie_jz_zcryzczyzdb = {
   name:"ie_jz_zcryzczyzdb",
   idFieldName:"id",
   fields:{
-    createtime:{
-      id:"7048b6bd-df04-44e8-8bad-8a8cfdcdc7b4",
-      name:"createtime",
-      displayName:"记录创建时间",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:3,
-      isReadonly:false
-    },
-    id:{
-      id:"5c3f5f12-9a2f-4b94-bddf-74b792559f6b",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
     xh:{
       id:"6163fb89-4554-4072-b70a-16b5b05c8440",
       name:"xh",
@@ -42,16 +16,42 @@ dataModels.ie_jz_zcryzczyzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    zy:{
-      id:"38b55c94-d534-4335-9041-c38e474e6b9b",
-      name:"zy",
-      displayName:"专业",
+    createtime:{
+      id:"7048b6bd-df04-44e8-8bad-8a8cfdcdc7b4",
+      name:"createtime",
+      displayName:"记录创建时间",
+      valueType:valueType.time,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:3,
+      isReadonly:false
+    },
+    zclxjdj:{
+      id:"2638ec5b-a8dd-4204-8676-8d4525544a91",
+      name:"zclxjdj",
+      displayName:"注册类型及等级",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"5c3f5f12-9a2f-4b94-bddf-74b792559f6b",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -94,10 +94,10 @@ dataModels.ie_jz_zcryzczyzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    zclxjdj:{
-      id:"2638ec5b-a8dd-4204-8676-8d4525544a91",
-      name:"zclxjdj",
-      displayName:"注册类型及等级",
+    zy:{
+      id:"38b55c94-d534-4335-9041-c38e474e6b9b",
+      name:"zy",
+      displayName:"专业",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",

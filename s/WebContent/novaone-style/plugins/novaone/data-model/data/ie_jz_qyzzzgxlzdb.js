@@ -3,32 +3,6 @@ dataModels.ie_jz_qyzzzgxlzdb = {
   name:"ie_jz_qyzzzgxlzdb",
   idFieldName:"id",
   fields:{
-    createtime:{
-      id:"f685ac26-45fa-41f4-a884-a7fcd1237fe5",
-      name:"createtime",
-      displayName:"记录创建时间",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:3,
-      isReadonly:false
-    },
-    id:{
-      id:"4e98c6a5-42cb-42c2-ad52-f76ed55cfc73",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
     xh:{
       id:"bca8a7e5-8234-4d93-b7cb-913a361b4443",
       name:"xh",
@@ -42,6 +16,19 @@ dataModels.ie_jz_qyzzzgxlzdb = {
       decimalNum:0,
       isReadonly:false
     },
+    createtime:{
+      id:"f685ac26-45fa-41f4-a884-a7fcd1237fe5",
+      name:"createtime",
+      displayName:"记录创建时间",
+      valueType:valueType.time,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:3,
+      isReadonly:false
+    },
     xlmc:{
       id:"fc397e0d-43bb-4a61-b41a-914273671488",
       name:"xlmc",
@@ -52,6 +39,19 @@ dataModels.ie_jz_qyzzzgxlzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:50,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"4e98c6a5-42cb-42c2-ad52-f76ed55cfc73",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },

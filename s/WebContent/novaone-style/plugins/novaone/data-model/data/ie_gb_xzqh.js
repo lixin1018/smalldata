@@ -16,16 +16,16 @@ dataModels.ie_gb_xzqh = {
       decimalNum:3,
       isReadonly:false
     },
-    id:{
-      id:"c6a5783f-a0c5-458c-9440-b4a004ac96de",
-      name:"id",
-      displayName:"id",
+    iscity:{
+      id:"d5fc5879-23b7-4b24-b7cd-3163bc1ba863",
+      name:"iscity",
+      displayName:"isCity",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:10,
       decimalNum:0,
       isReadonly:false
     },
@@ -42,24 +42,11 @@ dataModels.ie_gb_xzqh = {
       decimalNum:0,
       isReadonly:false
     },
-    isprovince:{
-      id:"26a143ee-9bff-4d28-a653-dbe2e6eb2302",
-      name:"isprovince",
-      displayName:"isProvince",
+    isshi:{
+      id:"b1fcfde0-2834-43cd-9369-047ab107e501",
+      name:"isshi",
+      displayName:"isShi",
       valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:10,
-      decimalNum:0,
-      isReadonly:false
-    },
-    isdeleted:{
-      id:"aa69f215-e87e-4149-8dc0-c3c2c769db6d_1",
-      name:"isdeleted",
-      displayName:"isdeleted",
-      valueType:valueType.boolean,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
@@ -68,16 +55,16 @@ dataModels.ie_gb_xzqh = {
       decimalNum:0,
       isReadonly:false
     },
-    bm:{
-      id:"10523d9a-8fc4-4aca-a38e-3ba993d7ec15",
-      name:"bm",
-      displayName:"别名",
+    isxianshi:{
+      id:"ce8544f1-4ccb-4b46-b1c9-c020c203412d",
+      name:"isxianshi",
+      displayName:"isXianShi",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:100,
+      valueLength:1,
       decimalNum:0,
       isReadonly:false
     },
@@ -94,6 +81,58 @@ dataModels.ie_gb_xzqh = {
       decimalNum:0,
       isReadonly:false
     },
+    bm:{
+      id:"10523d9a-8fc4-4aca-a38e-3ba993d7ec15",
+      name:"bm",
+      displayName:"别名",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:100,
+      decimalNum:0,
+      isReadonly:false
+    },
+    isprovince:{
+      id:"26a143ee-9bff-4d28-a653-dbe2e6eb2302",
+      name:"isprovince",
+      displayName:"isProvince",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"c6a5783f-a0c5-458c-9440-b4a004ac96de",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    isdeleted:{
+      id:"aa69f215-e87e-4149-8dc0-c3c2c769db6d_1",
+      name:"isdeleted",
+      displayName:"isdeleted",
+      valueType:valueType.boolean,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1,
+      decimalNum:0,
+      isReadonly:false
+    },
     parentid:{
       id:"34842c5a-1766-444c-a5bf-bb31bcfeb95f",
       name:"parentid",
@@ -107,16 +146,16 @@ dataModels.ie_gb_xzqh = {
       decimalNum:0,
       isReadonly:false
     },
-    iscity:{
-      id:"d5fc5879-23b7-4b24-b7cd-3163bc1ba863",
-      name:"iscity",
-      displayName:"isCity",
+    isqu:{
+      id:"c7ee669f-5035-49d6-bdd3-a3bc317fbee8",
+      name:"isqu",
+      displayName:"isQu",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:10,
+      valueLength:1,
       decimalNum:0,
       isReadonly:false
     }

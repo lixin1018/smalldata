@@ -3,16 +3,16 @@ dataModels.ie_jz_xmflzdb = {
   name:"ie_jz_xmflzdb",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"8187a36c-dac0-4f6a-861d-1fbb3e3e4ac3",
-      name:"id",
-      displayName:"id",
+    xh:{
+      id:"26e3d42d-d9e7-46df-928a-042d69088f1b",
+      name:"xh",
+      displayName:"序号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,16 +29,29 @@ dataModels.ie_jz_xmflzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"26e3d42d-d9e7-46df-928a-042d69088f1b",
-      name:"xh",
-      displayName:"序号",
+    xmfl:{
+      id:"2dc6a6df-ab08-4d6d-9847-5d3b97f8dfc3",
+      name:"xmfl",
+      displayName:"项目分类",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:5,
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"8187a36c-dac0-4f6a-861d-1fbb3e3e4ac3",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -65,19 +78,6 @@ dataModels.ie_jz_xmflzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    xmfl:{
-      id:"2dc6a6df-ab08-4d6d-9847-5d3b97f8dfc3",
-      name:"xmfl",
-      displayName:"项目分类",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },

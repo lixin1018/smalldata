@@ -131,13 +131,13 @@ html,body {
 }
 
 .ncpDispunitList {
-	background: url('images/common/dispunitList.png') no-repeat center
-		center;
+	background: url('images/common/dispunitList.png') no-repeat center center;
+	background-color:#ffffff;
 }
 
 .ncpDispunitPop {
-	background: url('images/common/dispunitPop.png') no-repeat center center
-		;
+	background: url('images/common/dispunitPop.png') no-repeat center center;
+	background-color:#ffffff;
 }
 
 .ncpDispunitDateTime {

@@ -18,52 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/sjgxTablePage.css">
 	
 	<script>
-		var paramWinModelUnits = {qyid: {
-id: "8767ffef-6c3c-4304-ac17-7ffa2dbb3b0c",
-name: "qyid",
-label: "CompanyId",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 30,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-xmbm: {
-id: "07aad73e-00e0-4ef5-ad7c-333410459c42",
-name: "xmbm",
-label: "&#39033;&#30446;&#32534;&#30721;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 30,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-xmmc: {
-id: "1bf4cb5b-b3c9-4b19-935e-e4148e9075e1",
-name: "xmmc",
-label: "&#39033;&#30446;&#21517;&#31216;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 400,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-xmsd: {
+		var paramWinModelUnits = {xmsd: {
 id: "10f1f164-5d5e-4d41-a473-ae60e99855ed",
 name: "xmsd",
 label: "&#39033;&#30446;&#23646;&#22320;",
@@ -77,51 +32,6 @@ isNullable: true,
 isEditable: true,
 unitType:"text",
 defaultValue: null
-},
-xmlb: {
-id: "ee069bfc-e82f-4059-85b0-de28aca17283",
-name: "xmlb",
-label: "&#39033;&#30446;&#31867;&#21035;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 20,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-jsdw: {
-id: "c85d9eb5-bd5b-4db1-a7e7-ae096f4c6d86",
-name: "jsdw",
-label: "&#24314;&#35774;&#21333;&#20301;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 200,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-isdeleted: {
-id: "58656268-a882-4ff0-b165-a9a91f771de4_1",
-name: "isdeleted",
-label: "&#24050;&#21024;&#38500;",
-valueType: valueType.boolean,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 1,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"checkbox",
-defaultValue: null
 }};
 		var dataModel = dataModels.ie_jz_qy_xm;
 		var viewModel = viewModels.ie_jz_qy_xm;
@@ -131,26 +41,8 @@ defaultValue: null
 			var result = paramWin.getParamResult();			
 			if(result.verified){
 				gridWin.sysWhere = new Array();  
-				if(result.values.qyid.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"qyid", title:"CompanyId", operator:"like", value: result.values.qyid });
-}
-if(result.values.xmbm.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"xmbm", title:"&#39033;&#30446;&#32534;&#30721;", operator:"like", value: result.values.xmbm });
-}
-if(result.values.xmmc.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"xmmc", title:"&#39033;&#30446;&#21517;&#31216;", operator:"like", value: result.values.xmmc });
-}
-if(result.values.xmsd.length != 0){
+				if(result.values.xmsd.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"xmsd", title:"&#39033;&#30446;&#23646;&#22320;", operator:"like", value: result.values.xmsd });
-}
-if(result.values.xmlb.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"xmlb", title:"&#39033;&#30446;&#31867;&#21035;", operator:"like", value: result.values.xmlb });
-}
-if(result.values.jsdw.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"jsdw", title:"&#24314;&#35774;&#21333;&#20301;", operator:"like", value: result.values.jsdw });
-}
-if(result.values.isdeleted != null){
-gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#21024;&#38500;", operator:"=", value:  cmnPcr.objectToStr(result.values.isdeleted, valueType.boolean) });
 }
  
 				gridWin.doPage({ pageNumber:pageNumber});
@@ -160,20 +52,8 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 </head>
 <body class="easyui-layout" style="width:100%;height:100%;" id="dataGridContainer"> 
 	<div id="queryControlContainerId" class="tableQueryContainer"> 
-		<div class="tableQueryLine"><div class="tableQueryItemName">CompanyId:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="qyid" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#39033;&#30446;&#32534;&#30721;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xmbm" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#39033;&#30446;&#21517;&#31216;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xmmc" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#39033;&#30446;&#23646;&#22320;:&nbsp;</div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemName">&#39033;&#30446;&#23646;&#22320;:&nbsp;</div></div>
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xmsd" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#39033;&#30446;&#31867;&#21035;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xmlb" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#24314;&#35774;&#21333;&#20301;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="jsdw" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInputCheck" type="checkbox" name="isdeleted" paramCtrl="true"/></div>
-<div class="tableQueryItemInputContainer tableQueryItemCheckTitleContainer"><div class="tableQueryItemName tableQueryCheckItemName">&#24050;&#21024;&#38500;:&nbsp;</div></div></div>
 	 
 		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">

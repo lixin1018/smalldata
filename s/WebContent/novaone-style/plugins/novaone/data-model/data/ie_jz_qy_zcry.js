@@ -3,16 +3,16 @@ dataModels.ie_jz_qy_zcry = {
   name:"ie_jz_qy_zcry",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"d58ccf3f-acf8-4191-ae72-3ba5ace5632b",
-      name:"id",
-      displayName:"id",
+    zczy:{
+      id:"5b4d1da9-1b6c-41ca-beae-877c078ccfbb",
+      name:"zczy",
+      displayName:"注册专业",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:50,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,10 +29,23 @@ dataModels.ie_jz_qy_zcry = {
       decimalNum:3,
       isReadonly:false
     },
-    zclb:{
-      id:"5098c5b2-5f45-48d5-b628-deb8285bccb2",
-      name:"zclb",
-      displayName:"注册类别",
+    sfzh:{
+      id:"99efb9c1-88c5-4214-8031-7f5cd0c981f8",
+      name:"sfzh",
+      displayName:"身份证号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    xm:{
+      id:"5b93634d-f0f9-44ad-adec-232f8bb5228b",
+      name:"xm",
+      displayName:"姓名",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -55,6 +68,32 @@ dataModels.ie_jz_qy_zcry = {
       decimalNum:0,
       isReadonly:false
     },
+    zclb:{
+      id:"5098c5b2-5f45-48d5-b628-deb8285bccb2",
+      name:"zclb",
+      displayName:"注册类别",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"d58ccf3f-acf8-4191-ae72-3ba5ace5632b",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
     isdeleted:{
       id:"f70b9a80-5d79-487c-948c-ea8f24392afe_1",
       name:"isdeleted",
@@ -68,42 +107,16 @@ dataModels.ie_jz_qy_zcry = {
       decimalNum:0,
       isReadonly:false
     },
-    xm:{
-      id:"5b93634d-f0f9-44ad-adec-232f8bb5228b",
-      name:"xm",
-      displayName:"姓名",
+    parentid:{
+      id:"4e61a6ff-30ad-4e92-b0f6-6e3f50f0272f",
+      name:"parentid",
+      displayName:"parentid",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    sfzh:{
-      id:"99efb9c1-88c5-4214-8031-7f5cd0c981f8",
-      name:"sfzh",
-      displayName:"身份证号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zczy:{
-      id:"5b4d1da9-1b6c-41ca-beae-877c078ccfbb",
-      name:"zczy",
-      displayName:"注册专业",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:50,
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -117,19 +130,6 @@ dataModels.ie_jz_qy_zcry = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:50,
-      decimalNum:0,
-      isReadonly:false
-    },
-    parentid:{
-      id:"4e61a6ff-30ad-4e92-b0f6-6e3f50f0272f",
-      name:"parentid",
-      displayName:"parentid",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
       decimalNum:0,
       isReadonly:false
     }

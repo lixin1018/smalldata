@@ -16,23 +16,36 @@ dataModels.ie_jz_xm_ztb = {
       decimalNum:3,
       isReadonly:false
     },
-    id:{
-      id:"ac9cf72e-5186-4e1a-ac85-fd50a7b562a8",
-      name:"id",
-      displayName:"id",
+    zbdwmc:{
+      id:"e95b1514-d21d-4360-80aa-910b05772758",
+      name:"zbdwmc",
+      displayName:"中标单位名称",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:200,
       decimalNum:0,
       isReadonly:false
     },
-    sjzbtzsbh:{
-      id:"e589aafe-b463-4d06-95fb-a11e2cdefc6c",
-      name:"sjzbtzsbh",
-      displayName:"省级中标通知书编号",
+    zbtzsbh:{
+      id:"98836172-f0d7-40fe-a3f4-ab414a2b0d07",
+      name:"zbtzsbh",
+      displayName:"中标通知书编号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:50,
+      decimalNum:0,
+      isReadonly:false
+    },
+    xmbm:{
+      id:"f92b2de8-f702-452d-981a-c225e16b00d0",
+      name:"xmbm",
+      displayName:"项目编码",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -55,10 +68,36 @@ dataModels.ie_jz_xm_ztb = {
       decimalNum:0,
       isReadonly:false
     },
-    zbrq:{
-      id:"20fe608d-0181-4aa8-b5b5-1a6d8cd1a6c6",
-      name:"zbrq",
-      displayName:"中标日期",
+    id:{
+      id:"ac9cf72e-5186-4e1a-ac85-fd50a7b562a8",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    zblx:{
+      id:"f74b0cb7-2195-4d25-bc4b-f1b2eb4e4c66",
+      name:"zblx",
+      displayName:"招标类型",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    zbfs:{
+      id:"1b989d1c-9257-4c0d-ac09-21a088bbb292",
+      name:"zbfs",
+      displayName:"招标方式",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -81,23 +120,10 @@ dataModels.ie_jz_xm_ztb = {
       decimalNum:0,
       isReadonly:false
     },
-    zblx:{
-      id:"f74b0cb7-2195-4d25-bc4b-f1b2eb4e4c66",
-      name:"zblx",
-      displayName:"招标类型",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zbtzsbh:{
-      id:"98836172-f0d7-40fe-a3f4-ab414a2b0d07",
-      name:"zbtzsbh",
-      displayName:"中标通知书编号",
+    sjzbtzsbh:{
+      id:"e589aafe-b463-4d06-95fb-a11e2cdefc6c",
+      name:"sjzbtzsbh",
+      displayName:"省级中标通知书编号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -120,42 +146,16 @@ dataModels.ie_jz_xm_ztb = {
       decimalNum:0,
       isReadonly:false
     },
-    zbfs:{
-      id:"1b989d1c-9257-4c0d-ac09-21a088bbb292",
-      name:"zbfs",
-      displayName:"招标方式",
+    zbrq:{
+      id:"20fe608d-0181-4aa8-b5b5-1a6d8cd1a6c6",
+      name:"zbrq",
+      displayName:"中标日期",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    xmbm:{
-      id:"f92b2de8-f702-452d-981a-c225e16b00d0",
-      name:"xmbm",
-      displayName:"项目编码",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:50,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zbdwmc:{
-      id:"e95b1514-d21d-4360-80aa-910b05772758",
-      name:"zbdwmc",
-      displayName:"中标单位名称",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:200,
       decimalNum:0,
       isReadonly:false
     }

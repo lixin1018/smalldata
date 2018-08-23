@@ -3,6 +3,19 @@ dataModels.ie_jz_zbfszdb = {
   name:"ie_jz_zbfszdb",
   idFieldName:"id",
   fields:{
+    xh:{
+      id:"2c5a63ca-fc5e-43ee-9291-1c299f59f052",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
+      decimalNum:0,
+      isReadonly:false
+    },
     createtime:{
       id:"6fa74770-b5d0-4195-82b6-6bca99368916",
       name:"createtime",
@@ -26,19 +39,6 @@ dataModels.ie_jz_zbfszdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    xh:{
-      id:"2c5a63ca-fc5e-43ee-9291-1c299f59f052",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },

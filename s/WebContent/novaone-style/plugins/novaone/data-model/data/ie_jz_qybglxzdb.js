@@ -3,6 +3,19 @@ dataModels.ie_jz_qybglxzdb = {
   name:"ie_jz_qybglxzdb",
   idFieldName:"id",
   fields:{
+    xh:{
+      id:"b1e9c261-4e3b-4c15-bb60-7d234b2c684e",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
+      decimalNum:0,
+      isReadonly:false
+    },
     createtime:{
       id:"f8461a2b-2dc7-49fd-8226-762bc3641e33",
       name:"createtime",
@@ -29,16 +42,16 @@ dataModels.ie_jz_qybglxzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    xh:{
-      id:"b1e9c261-4e3b-4c15-bb60-7d234b2c684e",
-      name:"xh",
-      displayName:"序号",
+    bm:{
+      id:"a1a64618-f114-4d55-92d7-9a082f6455b3",
+      name:"bm",
+      displayName:"编码",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:5,
+      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },
@@ -55,16 +68,16 @@ dataModels.ie_jz_qybglxzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    bm:{
-      id:"a1a64618-f114-4d55-92d7-9a082f6455b3",
-      name:"bm",
-      displayName:"编码",
+    parentid:{
+      id:"12317fc1-0729-4633-9a61-28e989c8fd5e",
+      name:"parentid",
+      displayName:"parentid",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:20,
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -78,19 +91,6 @@ dataModels.ie_jz_qybglxzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:50,
-      decimalNum:0,
-      isReadonly:false
-    },
-    parentid:{
-      id:"12317fc1-0729-4633-9a61-28e989c8fd5e",
-      name:"parentid",
-      displayName:"parentid",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
       decimalNum:0,
       isReadonly:false
     }

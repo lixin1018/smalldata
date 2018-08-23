@@ -54,6 +54,8 @@
 						<td style="width:150px;height:22px;"><input type="text" name="sourcedatafiletype" style="width:150px;height:22px;" cardCtrl="true"></input></td>
 						<td style="width:120px;text-align:right;">数据源包含标题行</td>
 						<td style="width:50px;height:22px;"><input type="checkbox" name="sourcedatahasheaderrow" style="width:50px;height:15px;"  cardCtrl="true"></input></td> 
+						<td style="width:120px;height:22px;text-align:right;">已启用</td>
+						<td style="width:50px;height:22px;"><input type="checkbox" name="isactive" style="width:50px;height:15px;" cardCtrl="true"></input></td>
 					</tr>
 					<tr style="height:22px;">
 						<td style="width:120px;height:22px;text-align:right;">创建人</td>
@@ -62,12 +64,8 @@
 						<td style="width:150px;height:22px;"><input type="text" name="createtime" style="width:150px;height:22px;" cardCtrl="true"></input></td> 
 						<td style="width:120px;height:22px;text-align:right;">修改时间</td>
 						<td style="width:150px;height:22px;"><input type="text" name="modifytime" style="width:150px;height:22px;" cardCtrl="true"></input></td> 
-						<td style="width:120px;height:22px;text-align:right;">已启用</td>
-						<td style="width:50px;height:22px;"><input type="checkbox" name="isactive" style="width:50px;height:15px;" cardCtrl="true"></input></td>
-					</tr>
-					<tr style="height:22px;">	
-						<td>&nbsp;</td>
-						<td><input id="getFieldInfosFromDataFileBtnId" type="button" style="width:150px;height:22px;" value="使用样本文件更新字段"></input></td>
+						<td style="width:120px;height:22px;text-align:right;">排序</td>
+						<td colspan="3" style="width:250px;height:22px;"><input type="text" name="orderby" style="width:250px;height:22px;" cardCtrl="true"></td>
 					</tr>   
 				</table>
 			</div>

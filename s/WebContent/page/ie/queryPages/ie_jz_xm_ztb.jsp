@@ -32,111 +32,6 @@ isNullable: true,
 isEditable: true,
 unitType:"text",
 defaultValue: null
-},
-zblx: {
-id: "040cc89a-b285-4e24-92c0-5bbfbb087e45",
-name: "zblx",
-label: "&#25307;&#26631;&#31867;&#22411;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 20,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-zbfs: {
-id: "681ce114-3ff2-4b53-8d42-ef76d3fca0b4",
-name: "zbfs",
-label: "&#25307;&#26631;&#26041;&#24335;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 20,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-zbdwmc: {
-id: "e9ecfd6d-0ab8-492e-a900-bea5dc1f1300",
-name: "zbdwmc",
-label: "&#20013;&#26631;&#21333;&#20301;&#21517;&#31216;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 200,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-zbrq: {
-id: "cd29f96d-1df8-4722-b586-babc094f6fd8",
-name: "zbrq",
-label: "&#20013;&#26631;&#26085;&#26399;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 20,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-zbtzsbh: {
-id: "508c5c16-5279-4277-93dc-998767b4969c",
-name: "zbtzsbh",
-label: "&#20013;&#26631;&#36890;&#30693;&#20070;&#32534;&#21495;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 50,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-sjzbtzsbh: {
-id: "a799b0ad-573b-4b38-a793-5304f34f4f33",
-name: "sjzbtzsbh",
-label: "&#30465;&#32423;&#20013;&#26631;&#36890;&#30693;&#20070;&#32534;&#21495;",
-valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 50,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"text",
-defaultValue: null
-},
-isdeleted: {
-id: "633b6f5c-c667-41f2-883f-8b70d0e1915b_1",
-name: "isdeleted",
-label: "&#24050;&#21024;&#38500;",
-valueType: valueType.boolean,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 1,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"checkbox",
-defaultValue: null
 }};
 		var dataModel = dataModels.ie_jz_xm_ztb;
 		var viewModel = viewModels.ie_jz_xm_ztb;
@@ -149,27 +44,6 @@ defaultValue: null
 				if(result.values.xmbm.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"xmbm", title:"&#39033;&#30446;&#32534;&#30721;", operator:"like", value: result.values.xmbm });
 }
-if(result.values.zblx.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"zblx", title:"&#25307;&#26631;&#31867;&#22411;", operator:"like", value: result.values.zblx });
-}
-if(result.values.zbfs.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"zbfs", title:"&#25307;&#26631;&#26041;&#24335;", operator:"like", value: result.values.zbfs });
-}
-if(result.values.zbdwmc.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"zbdwmc", title:"&#20013;&#26631;&#21333;&#20301;&#21517;&#31216;", operator:"like", value: result.values.zbdwmc });
-}
-if(result.values.zbrq.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"zbrq", title:"&#20013;&#26631;&#26085;&#26399;", operator:"like", value: result.values.zbrq });
-}
-if(result.values.zbtzsbh.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"zbtzsbh", title:"&#20013;&#26631;&#36890;&#30693;&#20070;&#32534;&#21495;", operator:"like", value: result.values.zbtzsbh });
-}
-if(result.values.sjzbtzsbh.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"sjzbtzsbh", title:"&#30465;&#32423;&#20013;&#26631;&#36890;&#30693;&#20070;&#32534;&#21495;", operator:"like", value: result.values.sjzbtzsbh });
-}
-if(result.values.isdeleted != null){
-gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#21024;&#38500;", operator:"=", value:  cmnPcr.objectToStr(result.values.isdeleted, valueType.boolean) });
-}
  
 				gridWin.doPage({ pageNumber:pageNumber});
 			}			
@@ -180,20 +54,6 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 	<div id="queryControlContainerId" class="tableQueryContainer"> 
 		<div class="tableQueryLine"><div class="tableQueryItemName">&#39033;&#30446;&#32534;&#30721;:&nbsp;</div></div>
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xmbm" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#25307;&#26631;&#31867;&#22411;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zblx" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#25307;&#26631;&#26041;&#24335;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zbfs" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#20013;&#26631;&#21333;&#20301;&#21517;&#31216;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zbdwmc" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#20013;&#26631;&#26085;&#26399;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zbrq" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#20013;&#26631;&#36890;&#30693;&#20070;&#32534;&#21495;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zbtzsbh" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#30465;&#32423;&#20013;&#26631;&#36890;&#30693;&#20070;&#32534;&#21495;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="sjzbtzsbh" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInputCheck" type="checkbox" name="isdeleted" paramCtrl="true"/>
-<div class="tableQueryItemName">&#24050;&#21024;&#38500;:&nbsp;</div></div></div>
 	 
 		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">

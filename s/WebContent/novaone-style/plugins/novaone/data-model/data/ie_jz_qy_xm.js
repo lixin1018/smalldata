@@ -3,19 +3,6 @@ dataModels.ie_jz_qy_xm = {
   name:"ie_jz_qy_xm",
   idFieldName:"id",
   fields:{
-    xmlb:{
-      id:"eaacd199-4044-47db-9ed7-4c96a70cd415",
-      name:"xmlb",
-      displayName:"项目类别",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
     createtime:{
       id:"99d4dfb8-7d38-4b66-83e3-c34adce0e73e",
       name:"createtime",
@@ -29,29 +16,29 @@ dataModels.ie_jz_qy_xm = {
       decimalNum:3,
       isReadonly:false
     },
-    id:{
-      id:"5d58d69c-56ad-4d76-979a-af20e44c51bf",
-      name:"id",
-      displayName:"id",
+    xmmc:{
+      id:"ade44669-4609-4779-b56c-dd71b0cd4982",
+      name:"xmmc",
+      displayName:"项目名称",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:400,
       decimalNum:0,
       isReadonly:false
     },
-    xmsd:{
-      id:"fd10bea3-1bec-4fff-9117-aac90d9e7ea8",
-      name:"xmsd",
-      displayName:"项目属地",
+    xmlb:{
+      id:"eaacd199-4044-47db-9ed7-4c96a70cd415",
+      name:"xmlb",
+      displayName:"项目类别",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:50,
+      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },
@@ -68,16 +55,29 @@ dataModels.ie_jz_qy_xm = {
       decimalNum:0,
       isReadonly:false
     },
-    xmmc:{
-      id:"ade44669-4609-4779-b56c-dd71b0cd4982",
-      name:"xmmc",
-      displayName:"项目名称",
+    xmbm:{
+      id:"941b6feb-c16e-4bed-b554-2c507902cd53",
+      name:"xmbm",
+      displayName:"项目编码",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:400,
+      valueLength:30,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"5d58d69c-56ad-4d76-979a-af20e44c51bf",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -120,16 +120,16 @@ dataModels.ie_jz_qy_xm = {
       decimalNum:0,
       isReadonly:false
     },
-    xmbm:{
-      id:"941b6feb-c16e-4bed-b554-2c507902cd53",
-      name:"xmbm",
-      displayName:"项目编码",
+    xmsd:{
+      id:"fd10bea3-1bec-4fff-9117-aac90d9e7ea8",
+      name:"xmsd",
+      displayName:"项目属地",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:30,
+      valueLength:50,
       decimalNum:0,
       isReadonly:false
     }

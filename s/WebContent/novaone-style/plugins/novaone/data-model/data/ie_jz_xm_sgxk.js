@@ -3,16 +3,42 @@ dataModels.ie_jz_xm_sgxk = {
   name:"ie_jz_xm_sgxk",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"f14aaef1-9271-4eda-b108-36a75abd4524",
-      name:"id",
-      displayName:"id",
+    createtime:{
+      id:"981c9e8a-3536-421c-94ee-d7776a60ff4b",
+      name:"createtime",
+      displayName:"记录创建时间",
+      valueType:valueType.time,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:3,
+      isReadonly:false
+    },
+    fzrq:{
+      id:"1b7af2ed-9f27-48f8-993d-7bf8737069a4",
+      name:"fzrq",
+      displayName:"发证日期",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    sgxkzbh:{
+      id:"9c24d6ee-f6b3-4edc-97b8-c156724b732e",
+      name:"sgxkzbh",
+      displayName:"施工许可证编号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:50,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,29 +55,42 @@ dataModels.ie_jz_xm_sgxk = {
       decimalNum:0,
       isReadonly:false
     },
-    createtime:{
-      id:"981c9e8a-3536-421c-94ee-d7776a60ff4b",
-      name:"createtime",
-      displayName:"记录创建时间",
-      valueType:valueType.time,
+    htje:{
+      id:"4c3687a6-aa0b-44df-9311-7ea45619269f",
+      name:"htje",
+      displayName:"合同金额（万元）",
+      valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
-      decimalNum:3,
+      decimalNum:0,
       isReadonly:false
     },
-    sgxkzbh:{
-      id:"9c24d6ee-f6b3-4edc-97b8-c156724b732e",
-      name:"sgxkzbh",
-      displayName:"施工许可证编号",
+    xmbm:{
+      id:"4ce1c512-8fc3-43dd-9a1e-4f82c09aab1b",
+      name:"xmbm",
+      displayName:"项目编码",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:50,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"f14aaef1-9271-4eda-b108-36a75abd4524",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -68,23 +107,10 @@ dataModels.ie_jz_xm_sgxk = {
       decimalNum:0,
       isReadonly:false
     },
-    fzrq:{
-      id:"1b7af2ed-9f27-48f8-993d-7bf8737069a4",
-      name:"fzrq",
-      displayName:"发证日期",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    htje:{
-      id:"4c3687a6-aa0b-44df-9311-7ea45619269f",
-      name:"htje",
-      displayName:"合同金额（万元）",
+    mj:{
+      id:"9367e82c-b0d5-46c2-8878-f09476b4750a",
+      name:"mj",
+      displayName:"面积（平方米）",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -104,32 +130,6 @@ dataModels.ie_jz_xm_sgxk = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    xmbm:{
-      id:"4ce1c512-8fc3-43dd-9a1e-4f82c09aab1b",
-      name:"xmbm",
-      displayName:"项目编码",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:50,
-      decimalNum:0,
-      isReadonly:false
-    },
-    mj:{
-      id:"9367e82c-b0d5-46c2-8878-f09476b4750a",
-      name:"mj",
-      displayName:"面积（平方米）",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     }

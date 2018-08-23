@@ -3,16 +3,16 @@ dataModels.ie_jz_zcryzclxjdjzdb = {
   name:"ie_jz_zcryzclxjdjzdb",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"cebea2d4-e904-4feb-b549-487cdd8cf481",
-      name:"id",
-      displayName:"id",
+    xh:{
+      id:"1850b8bc-83c0-4bce-af35-ef076377e79b",
+      name:"xh",
+      displayName:"序号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,16 +29,29 @@ dataModels.ie_jz_zcryzclxjdjzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"1850b8bc-83c0-4bce-af35-ef076377e79b",
-      name:"xh",
-      displayName:"序号",
+    bm:{
+      id:"2d52c695-2de7-414f-b8ba-a83226003301",
+      name:"bm",
+      displayName:"编码",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:5,
+      valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"cebea2d4-e904-4feb-b549-487cdd8cf481",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -55,16 +68,16 @@ dataModels.ie_jz_zcryzclxjdjzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    bm:{
-      id:"2d52c695-2de7-414f-b8ba-a83226003301",
-      name:"bm",
-      displayName:"编码",
+    parentid:{
+      id:"47f85223-e591-45b8-bf24-2f58fede3faf",
+      name:"parentid",
+      displayName:"parentid",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:10,
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -78,19 +91,6 @@ dataModels.ie_jz_zcryzclxjdjzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    parentid:{
-      id:"47f85223-e591-45b8-bf24-2f58fede3faf",
-      name:"parentid",
-      displayName:"parentid",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
       decimalNum:0,
       isReadonly:false
     }

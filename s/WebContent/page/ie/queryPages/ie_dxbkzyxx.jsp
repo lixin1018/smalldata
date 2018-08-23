@@ -11,11 +11,8 @@
 	<meta http-equiv="keywords" content="数据助手,数据共享,数据工具,数据,数据抓取,大学本科专业信息"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
 	<meta http-equiv="description" content="大学本科专业信息">
-	<script type="text/javascript" src="../js/ncpShareDataGrid.js"></script>
 	<script type="text/javascript" src="${dataModel}/ie_dxbkzyxx.js"></script>
 	<script type="text/javascript" src="${viewModel}/ie_dxbkzyxx.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../h/css/siteCommon.css">
-	<link rel="stylesheet" type="text/css" href="../css/sjgxTablePage.css">
 	
 	<script>
 		var paramWinModelUnits = {xw: {
@@ -23,13 +20,13 @@ id: "51f22729-3222-4c90-9cd8-8cdf0bc49003",
 name: "xw",
 label: "&#23398;&#20301;",
 valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
 decimalNum: 0,
 valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
+inputHelpType: "null",
+inputHelpName: "null",
 unitType:"text",
 defaultValue: null
 },
@@ -38,13 +35,13 @@ id: "bc396486-c26a-499e-9e69-f1284ee64687",
 name: "xkfl",
 label: "&#23398;&#31185;&#20998;&#31867;",
 valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
 decimalNum: 0,
 valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
+inputHelpType: "pop",
+inputHelpName: "pop/ie/popPages/dxbkxkfl.jsp",
 unitType:"text",
 defaultValue: null
 },
@@ -53,13 +50,13 @@ id: "a34b97d2-7827-4bd6-ad1d-2100a16cb32e",
 name: "yjxk",
 label: "&#19968;&#32423;&#23398;&#31185;",
 valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
 decimalNum: 0,
 valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
+inputHelpType: "null",
+inputHelpName: "null",
 unitType:"text",
 defaultValue: null
 },
@@ -68,13 +65,13 @@ id: "10ea3391-4d07-47d2-8bc3-a2da8233cc7a",
 name: "zy",
 label: "&#19987;&#19994;",
 valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
 decimalNum: 0,
 valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
+inputHelpType: "null",
+inputHelpName: "null",
 unitType:"text",
 defaultValue: null
 },
@@ -83,29 +80,14 @@ id: "8b7b86aa-c7c7-496c-a497-e8701eddecbf",
 name: "zydm",
 label: "&#19987;&#19994;&#20195;&#30721;",
 valueType: valueType.string,
-inputHelpType: "",
-inputHelpName: "",
 decimalNum: 0,
 valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
+inputHelpType: "null",
+inputHelpName: "null",
 unitType:"text",
-defaultValue: null
-},
-isdeleted: {
-id: "9f76dea0-7473-48a5-bd95-731d688371fa_1",
-name: "isdeleted",
-label: "&#24050;&#21024;&#38500;",
-valueType: valueType.boolean,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 1,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"checkbox",
 defaultValue: null
 }};
 		var dataModel = dataModels.ie_dxbkzyxx;
@@ -116,23 +98,20 @@ defaultValue: null
 			var result = paramWin.getParamResult();			
 			if(result.verified){
 				gridWin.sysWhere = new Array();  
-				if(result.values.xw.length != 0){
+				if(result.values.xw != null && result.values.xw.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"xw", title:"&#23398;&#20301;", operator:"like", value: result.values.xw });
 }
-if(result.values.xkfl.length != 0){
+if(result.values.xkfl != null && result.values.xkfl.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"xkfl", title:"&#23398;&#31185;&#20998;&#31867;", operator:"like", value: result.values.xkfl });
 }
-if(result.values.yjxk.length != 0){
+if(result.values.yjxk != null && result.values.yjxk.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"yjxk", title:"&#19968;&#32423;&#23398;&#31185;", operator:"like", value: result.values.yjxk });
 }
-if(result.values.zy.length != 0){
+if(result.values.zy != null && result.values.zy.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"zy", title:"&#19987;&#19994;", operator:"like", value: result.values.zy });
 }
-if(result.values.zydm.length != 0){
+if(result.values.zydm != null && result.values.zydm.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"zydm", title:"&#19987;&#19994;&#20195;&#30721;", operator:"like", value: result.values.zydm });
-}
-if(result.values.isdeleted != null){
-gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#21024;&#38500;", operator:"=", value:  cmnPcr.objectToStr(result.values.isdeleted, valueType.boolean) });
 }
  
 				gridWin.doPage({ pageNumber:pageNumber});
@@ -152,8 +131,6 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zy" paramCtrl="true"/></div></div>
 <div class="tableQueryLine"><div class="tableQueryItemName">&#19987;&#19994;&#20195;&#30721;:&nbsp;</div></div>
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zydm" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInputCheck" type="checkbox" name="isdeleted" paramCtrl="true"/>
-<div class="tableQueryItemName">&#24050;&#21024;&#38500;:&nbsp;</div></div></div>
 	 
 		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">

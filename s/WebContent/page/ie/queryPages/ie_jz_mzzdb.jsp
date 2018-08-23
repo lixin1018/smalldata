@@ -4,13 +4,13 @@
 <%@ include file="../../basePage.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
-	<title>建筑_民族字典表</title>
+	<title>民族</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
-	<meta http-equiv="keywords" content="数据助手,数据共享,数据工具,数据,数据抓取,建筑_民族字典表"> 
+	<meta http-equiv="keywords" content="数据助手,数据共享,数据工具,数据,数据抓取,民族"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
-	<meta http-equiv="description" content="建筑_民族字典表">
+	<meta http-equiv="description" content="民族">
 	<script type="text/javascript" src="../js/ncpShareDataGrid.js"></script>
 	<script type="text/javascript" src="${dataModel}/ie_jz_mzzdb.js"></script>
 	<script type="text/javascript" src="${viewModel}/ie_jz_mzzdb.js"></script>
@@ -62,21 +62,6 @@ isNullable: true,
 isEditable: true,
 unitType:"text",
 defaultValue: null
-},
-isdeleted: {
-id: "127f63f2-2f6e-4b3d-8f93-5a35919efad0_1",
-name: "isdeleted",
-label: "&#24050;&#21024;&#38500;",
-valueType: valueType.boolean,
-inputHelpType: "",
-inputHelpName: "",
-decimalNum: 0,
-valueLength: 1,
-isMultiValue: false,
-isNullable: true,
-isEditable: true,
-unitType:"checkbox",
-defaultValue: null
 }};
 		var dataModel = dataModels.ie_jz_mzzdb;
 		var viewModel = viewModels.ie_jz_mzzdb;
@@ -95,9 +80,6 @@ gridWin.sysWhere.push({parttype:"field", field:"bm", title:"&#32534;&#30721;", o
 if(result.values.mz.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"mz", title:"&#27665;&#26063;", operator:"like", value: result.values.mz });
 }
-if(result.values.isdeleted != null){
-gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#21024;&#38500;", operator:"=", value:  cmnPcr.objectToStr(result.values.isdeleted, valueType.boolean) });
-}
  
 				gridWin.doPage({ pageNumber:pageNumber});
 			}			
@@ -112,8 +94,6 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="bm" paramCtrl="true"/></div></div>
 <div class="tableQueryLine"><div class="tableQueryItemName">&#27665;&#26063;:&nbsp;</div></div>
 <div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="mz" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInputCheck" type="checkbox" name="isdeleted" paramCtrl="true"/>
-<div class="tableQueryItemName">&#24050;&#21024;&#38500;:&nbsp;</div></div></div>
 	 
 		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">
@@ -129,7 +109,7 @@ gridWin.sysWhere.push({parttype:"field", field:"isdeleted", title:"&#24050;&#210
 		</jsp:include>
 		<div class="tableHeader">
 			<div class="tableHeaderInner">  
-				<div class="tableTitle">建筑_民族字典表</div>	 
+				<div class="tableTitle">民族</div>	 
 				<div class="tablePagination">
 					<span name="paginationCtrl" class="easyui-pagination ncpGridPagination" data-options="showPageList: false,showRefresh: true,beforePageText:'第',afterPageText:'/{pages}页',displayMsg: '共{total}条'"></span>
 				</div>	   

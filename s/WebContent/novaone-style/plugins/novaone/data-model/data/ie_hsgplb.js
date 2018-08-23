@@ -3,6 +3,19 @@ dataModels.ie_hsgplb = {
   name:"ie_hsgplb",
   idFieldName:"id",
   fields:{
+    zzjgid:{
+      id:"c5c7feaa-9a62-495f-bf16-1087379d17f3",
+      name:"zzjgid",
+      displayName:"组织机构ID",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
     createtime:{
       id:"42187772-2937-46bd-858a-b3b91b6ced37",
       name:"createtime",
@@ -16,29 +29,16 @@ dataModels.ie_hsgplb = {
       decimalNum:3,
       isReadonly:false
     },
-    id:{
-      id:"035f406c-8e45-4a08-af39-be6a682dbed5",
-      name:"id",
-      displayName:"id",
+    jys:{
+      id:"94b7694d-5ac4-497d-8253-9b8ad94c2d3c",
+      name:"jys",
+      displayName:"交易所",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zzjgid:{
-      id:"c5c7feaa-9a62-495f-bf16-1087379d17f3",
-      name:"zzjgid",
-      displayName:"组织机构ID",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
+      valueLength:10,
       decimalNum:0,
       isReadonly:false
     },
@@ -55,10 +55,49 @@ dataModels.ie_hsgplb = {
       decimalNum:0,
       isReadonly:false
     },
-    jys:{
-      id:"94b7694d-5ac4-497d-8253-9b8ad94c2d3c",
-      name:"jys",
-      displayName:"交易所",
+    dm:{
+      id:"08f1c8b7-25a2-4b19-842a-0ed277114eee",
+      name:"dm",
+      displayName:"代码",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    pysx:{
+      id:"0973f1a9-8069-4337-b6bd-b1a8c4cbdb9b",
+      name:"pysx",
+      displayName:"拼音缩写",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"035f406c-8e45-4a08-af39-be6a682dbed5",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    lx:{
+      id:"e1ab2012-86c1-4c75-857b-dbc8a4da9ba3",
+      name:"lx",
+      displayName:"类型",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -81,19 +120,6 @@ dataModels.ie_hsgplb = {
       decimalNum:0,
       isReadonly:false
     },
-    dm:{
-      id:"08f1c8b7-25a2-4b19-842a-0ed277114eee",
-      name:"dm",
-      displayName:"代码",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:10,
-      decimalNum:0,
-      isReadonly:false
-    },
     parentid:{
       id:"6a5be2a5-e7d9-4f7a-bf52-9f54ea62ec92",
       name:"parentid",
@@ -104,32 +130,6 @@ dataModels.ie_hsgplb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    pysx:{
-      id:"0973f1a9-8069-4337-b6bd-b1a8c4cbdb9b",
-      name:"pysx",
-      displayName:"拼音缩写",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:10,
-      decimalNum:0,
-      isReadonly:false
-    },
-    lx:{
-      id:"e1ab2012-86c1-4c75-857b-dbc8a4da9ba3",
-      name:"lx",
-      displayName:"类型",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:10,
       decimalNum:0,
       isReadonly:false
     }

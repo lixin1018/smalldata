@@ -28,6 +28,23 @@ public class ShareDataBaseDao extends DataBaseDao {
 			orderByJsonArray.add(createTimeJson);
 			requestObj.put("orderby", orderByJsonArray);
 		}
+		JSONArray sysWhereJsonArray = requestObj.getJSONArray("sysWhere");
+		if(sysWhereJsonArray != null && sysWhereJsonArray.size() != 0){
+			for(int i = 0; i < sysWhereJsonArray.size(); i++){
+				JSONObject sysWhereJson = sysWhereJsonArray.getJSONObject(i);
+				String operator = sysWhereJson.getString("operator");
+				if(operator != null && operator.equals("like")){
+					String value = sysWhereJson.getString("value");
+					while(value.startsWith("%")){
+						value = value.substring(1);
+					}
+					if(!value.endsWith("%")){
+						value = value + "%";
+					}
+					sysWhereJson.put("value", value);
+				}
+			}
+		}
 		if(!this.checkLashResquest(session)){
 			throw new NcpException("selectData_tooManyRequest", "操作过于频繁, 请稍后再试.");
 		}

@@ -3,32 +3,6 @@ dataModels.ie_jz_zcryszqydhylxzdb = {
   name:"ie_jz_zcryszqydhylxzdb",
   idFieldName:"id",
   fields:{
-    createtime:{
-      id:"d99c15ac-a5ab-41bf-a12b-d9dcf93c867b",
-      name:"createtime",
-      displayName:"记录创建时间",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:3,
-      isReadonly:false
-    },
-    id:{
-      id:"214d02d0-5c84-4dfa-b89b-77d713623b1d",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
     xh:{
       id:"30a2c0a3-4c28-474c-9402-1dca916be4ae",
       name:"xh",
@@ -42,17 +16,17 @@ dataModels.ie_jz_zcryszqydhylxzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    isdeleted:{
-      id:"5c1b5594-9f4d-48ae-8686-73443f1f0cc3_1",
-      name:"isdeleted",
-      displayName:"isdeleted",
-      valueType:valueType.boolean,
+    createtime:{
+      id:"d99c15ac-a5ab-41bf-a12b-d9dcf93c867b",
+      name:"createtime",
+      displayName:"记录创建时间",
+      valueType:valueType.time,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:1,
-      decimalNum:0,
+      valueLength:20,
+      decimalNum:3,
       isReadonly:false
     },
     bm:{
@@ -68,6 +42,19 @@ dataModels.ie_jz_zcryszqydhylxzdb = {
       decimalNum:0,
       isReadonly:false
     },
+    id:{
+      id:"214d02d0-5c84-4dfa-b89b-77d713623b1d",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
     hylx:{
       id:"9a50b477-003a-496f-a499-b539e0e50480",
       name:"hylx",
@@ -78,6 +65,19 @@ dataModels.ie_jz_zcryszqydhylxzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    isdeleted:{
+      id:"5c1b5594-9f4d-48ae-8686-73443f1f0cc3_1",
+      name:"isdeleted",
+      displayName:"isdeleted",
+      valueType:valueType.boolean,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1,
       decimalNum:0,
       isReadonly:false
     },

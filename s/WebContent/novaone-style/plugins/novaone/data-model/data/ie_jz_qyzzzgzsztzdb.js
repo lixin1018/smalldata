@@ -3,16 +3,16 @@ dataModels.ie_jz_qyzzzgzsztzdb = {
   name:"ie_jz_qyzzzgzsztzdb",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"f13003d6-7783-4613-b372-133d432e8ac2",
-      name:"id",
-      displayName:"id",
+    xh:{
+      id:"b4a2de28-46ba-43d7-94d0-e214b47ac502",
+      name:"xh",
+      displayName:"序号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,23 +29,36 @@ dataModels.ie_jz_qyzzzgzsztzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"b4a2de28-46ba-43d7-94d0-e214b47ac502",
-      name:"xh",
-      displayName:"序号",
+    bm:{
+      id:"cdd5bc27-e49b-4d24-9d18-6867b8e723ee",
+      name:"bm",
+      displayName:"编码",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:5,
+      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },
-    bm:{
-      id:"cdd5bc27-e49b-4d24-9d18-6867b8e723ee",
-      name:"bm",
-      displayName:"编码",
+    id:{
+      id:"f13003d6-7783-4613-b372-133d432e8ac2",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    zzzszt:{
+      id:"ad10333e-c526-4582-a588-34e0b0389398",
+      name:"zzzszt",
+      displayName:"资质证书状态",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
@@ -65,19 +78,6 @@ dataModels.ie_jz_qyzzzgzsztzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zzzszt:{
-      id:"ad10333e-c526-4582-a588-34e0b0389398",
-      name:"zzzszt",
-      displayName:"资质证书状态",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },

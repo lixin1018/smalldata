@@ -52,6 +52,15 @@ public class ImportExportDefinitionToModelCompare extends TableCompare {
 		this.viewId = viewId;
 	}
 	
+	private String orderby = "";
+	public String getOrderby() {
+		return orderby;
+	}
+	private void setOrderby(String orderby) {
+		this.orderby = orderby;
+	}
+	
+	
 	//数据库Session（需要Service类里的方法把dbSession传递过来）
 	private Session dbSession = null;
 	protected Session getDBSession(){
@@ -69,6 +78,7 @@ public class ImportExportDefinitionToModelCompare extends TableCompare {
 		this.setTableName(dataName);
 		ImportExportDefinition ieDef = new ImportExportDefinition(versionXml);
 		List<Field> ieFields = ieDef.getFieldList();
+		this.setOrderby(ieDef.getOrderby());
 
 		DataRow dataRow = this.getDataStructure(dataName);
 		DataRow viewRow = this.getViewStructure(dataName); 
@@ -459,7 +469,9 @@ public class ImportExportDefinitionToModelCompare extends TableCompare {
 			fieldSqlParts.add("t." + fc.getFieldName() + " as " + fc.getFieldName()); 
 		}
 		
-		return "select t.id as id, t.createtime as createtime, t.isdeleted as isdeleted, " + ValueConverter.arrayToString(fieldSqlParts, ", ") + " from " + this.getTableName() + " t";
+		return "select t.id as id, t.createtime as createtime, t.isdeleted as isdeleted, " + ValueConverter.arrayToString(fieldSqlParts, ", ")
+		+ " from " + this.getTableName() + " t" 
+		+ (this.getOrderby().length() == 0 ? "" : " order by " + this.getOrderby());
 	}
 	private HashMap<String, Object> getDataFieldValues(FieldCompare fc) {
 		String ieDataType = fc.getPropertyCompare(FieldPropertyType.DataType).getSourceValue();

@@ -3,58 +3,6 @@ dataModels.fl_ReceiveFile = {
   name:"fl_ReceiveFile",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"ee1e6ac0-9d15-408a-b60a-551e56359e8a",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    receivetime:{
-      id:"fe179592-5d58-4a35-ad5f-3ee03ab6259e",
-      name:"receivetime",
-      displayName:"receivetime",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:22,
-      decimalNum:3,
-      isReadonly:false
-    },
-    hasread:{
-      id:"8c226352-4a96-4080-bcb8-5edf2d18c0c5",
-      name:"hasread",
-      displayName:"hasread",
-      valueType:valueType.boolean,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    userid:{
-      id:"74389ced-ec9c-4b3b-88bf-395074a2d527",
-      name:"userid",
-      displayName:"userid",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
     fileids:{
       id:"934eb0e4-6376-41e3-b2ab-0ea799916dfa",
       name:"fileids",
@@ -68,23 +16,10 @@ dataModels.fl_ReceiveFile = {
       decimalNum:0,
       isReadonly:false
     },
-    readtime:{
-      id:"da86480f-e354-4870-8fa1-cbf8d124f3ed",
-      name:"readtime",
-      displayName:"readtime",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:22,
-      decimalNum:3,
-      isReadonly:false
-    },
-    hasbringback:{
-      id:"cccf4c3d-94a8-40b4-b8ba-462bfe499f21",
-      name:"hasbringback",
-      displayName:"hasbringback",
+    hasread:{
+      id:"8c226352-4a96-4080-bcb8-5edf2d18c0c5",
+      name:"hasread",
+      displayName:"hasread",
       valueType:valueType.boolean,
       isSave:true,
       inputHelpType:"",
@@ -105,6 +40,71 @@ dataModels.fl_ReceiveFile = {
       foreignKeyName:"",
       valueLength:40,
       decimalNum:0,
+      isReadonly:false
+    },
+    hasbringback:{
+      id:"cccf4c3d-94a8-40b4-b8ba-462bfe499f21",
+      name:"hasbringback",
+      displayName:"hasbringback",
+      valueType:valueType.boolean,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1,
+      decimalNum:0,
+      isReadonly:false
+    },
+    readtime:{
+      id:"da86480f-e354-4870-8fa1-cbf8d124f3ed",
+      name:"readtime",
+      displayName:"readtime",
+      valueType:valueType.time,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:22,
+      decimalNum:3,
+      isReadonly:false
+    },
+    id:{
+      id:"ee1e6ac0-9d15-408a-b60a-551e56359e8a",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    userid:{
+      id:"74389ced-ec9c-4b3b-88bf-395074a2d527",
+      name:"userid",
+      displayName:"userid",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    receivetime:{
+      id:"fe179592-5d58-4a35-ad5f-3ee03ab6259e",
+      name:"receivetime",
+      displayName:"receivetime",
+      valueType:valueType.time,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:22,
+      decimalNum:3,
       isReadonly:false
     }
   }

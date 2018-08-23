@@ -3,16 +3,29 @@ dataModels.ie_jz_zyzgztzdb = {
   name:"ie_jz_zyzgztzdb",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"7d737a45-cece-4dc7-8979-258afabfee76",
-      name:"id",
-      displayName:"id",
+    zyzt:{
+      id:"08dd8f1c-18db-4772-9b94-2ebedb49dd18",
+      name:"zyzt",
+      displayName:"执业状态",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    xh:{
+      id:"f954c322-7e09-4d5f-bcc1-24f88d6008fb",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,19 +42,6 @@ dataModels.ie_jz_zyzgztzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"f954c322-7e09-4d5f-bcc1-24f88d6008fb",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
-      decimalNum:0,
-      isReadonly:false
-    },
     bm:{
       id:"1d8db4c1-5fbd-4dde-b957-e6ad1890ec39",
       name:"bm",
@@ -52,6 +52,19 @@ dataModels.ie_jz_zyzgztzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"7d737a45-cece-4dc7-8979-258afabfee76",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -78,19 +91,6 @@ dataModels.ie_jz_zyzgztzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zyzt:{
-      id:"08dd8f1c-18db-4772-9b94-2ebedb49dd18",
-      name:"zyzt",
-      displayName:"执业状态",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     }

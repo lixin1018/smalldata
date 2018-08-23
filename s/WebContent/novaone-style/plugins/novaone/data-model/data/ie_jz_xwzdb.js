@@ -3,6 +3,19 @@ dataModels.ie_jz_xwzdb = {
   name:"ie_jz_xwzdb",
   idFieldName:"id",
   fields:{
+    xh:{
+      id:"2ae84048-124b-4d98-b53d-f2aa9226cbb4",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
+      decimalNum:0,
+      isReadonly:false
+    },
     createtime:{
       id:"65f1fdb6-97ec-4437-90ff-5ca4f6a5c8d8",
       name:"createtime",
@@ -29,19 +42,6 @@ dataModels.ie_jz_xwzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    xh:{
-      id:"2ae84048-124b-4d98-b53d-f2aa9226cbb4",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
-      decimalNum:0,
-      isReadonly:false
-    },
     isdeleted:{
       id:"79738383-e5fb-484f-b7a7-75b10177eb7d_1",
       name:"isdeleted",
@@ -55,19 +55,6 @@ dataModels.ie_jz_xwzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    parentid:{
-      id:"b70cb24c-500e-4189-8716-90edb9bcb851",
-      name:"parentid",
-      displayName:"parentid",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
     xwbh:{
       id:"a272a358-ea57-477b-b325-81544db46371",
       name:"xwbh",
@@ -78,6 +65,19 @@ dataModels.ie_jz_xwzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    parentid:{
+      id:"b70cb24c-500e-4189-8716-90edb9bcb851",
+      name:"parentid",
+      displayName:"parentid",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },

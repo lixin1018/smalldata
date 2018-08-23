@@ -3,6 +3,32 @@ dataModels.ie_jz_qyzzzglxzdb = {
   name:"ie_jz_qyzzzglxzdb",
   idFieldName:"id",
   fields:{
+    xh:{
+      id:"9a2aa858-5330-46c1-bf45-421c24dac281",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
+      decimalNum:0,
+      isReadonly:false
+    },
+    createtime:{
+      id:"77200361-850f-49cc-b65e-65f7b86e4289",
+      name:"createtime",
+      displayName:"记录创建时间",
+      valueType:valueType.time,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:3,
+      isReadonly:false
+    },
     zzlx:{
       id:"fb05f425-fdf5-4faa-8f5c-57abc2434104",
       name:"zzlx",
@@ -26,32 +52,6 @@ dataModels.ie_jz_qyzzzglxzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    createtime:{
-      id:"77200361-850f-49cc-b65e-65f7b86e4289",
-      name:"createtime",
-      displayName:"记录创建时间",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:3,
-      isReadonly:false
-    },
-    xh:{
-      id:"9a2aa858-5330-46c1-bf45-421c24dac281",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },

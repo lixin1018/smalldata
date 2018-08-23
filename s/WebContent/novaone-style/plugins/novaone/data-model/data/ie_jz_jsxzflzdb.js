@@ -3,16 +3,16 @@ dataModels.ie_jz_jsxzflzdb = {
   name:"ie_jz_jsxzflzdb",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"08138f7c-0f7f-4217-b045-8df285884766",
-      name:"id",
-      displayName:"id",
+    xh:{
+      id:"f7806953-2073-49a5-97e4-f224a0de151d",
+      name:"xh",
+      displayName:"序号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,29 +29,16 @@ dataModels.ie_jz_jsxzflzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"f7806953-2073-49a5-97e4-f224a0de151d",
-      name:"xh",
-      displayName:"序号",
+    id:{
+      id:"08138f7c-0f7f-4217-b045-8df285884766",
+      name:"id",
+      displayName:"id",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:5,
-      decimalNum:0,
-      isReadonly:false
-    },
-    isdeleted:{
-      id:"e21587ac-1eca-4d46-9098-dbf313f47ca2_1",
-      name:"isdeleted",
-      displayName:"isdeleted",
-      valueType:valueType.boolean,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:1,
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -68,16 +55,16 @@ dataModels.ie_jz_jsxzflzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    parentid:{
-      id:"d7473faa-57dd-47db-b1f1-6685ecf8ea03",
-      name:"parentid",
-      displayName:"parentid",
-      valueType:valueType.string,
+    isdeleted:{
+      id:"e21587ac-1eca-4d46-9098-dbf313f47ca2_1",
+      name:"isdeleted",
+      displayName:"isdeleted",
+      valueType:valueType.boolean,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:1,
       decimalNum:0,
       isReadonly:false
     },
@@ -91,6 +78,19 @@ dataModels.ie_jz_jsxzflzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    parentid:{
+      id:"d7473faa-57dd-47db-b1f1-6685ecf8ea03",
+      name:"parentid",
+      displayName:"parentid",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     }

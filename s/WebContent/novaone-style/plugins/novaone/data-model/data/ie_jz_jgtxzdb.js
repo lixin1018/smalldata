@@ -3,6 +3,19 @@ dataModels.ie_jz_jgtxzdb = {
   name:"ie_jz_jgtxzdb",
   idFieldName:"id",
   fields:{
+    xh:{
+      id:"297df112-9a3b-4dfd-aea8-b22eefd7f60b",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
+      decimalNum:0,
+      isReadonly:false
+    },
     jgtx:{
       id:"e20c4149-1dca-4126-abd4-15e039d781dd",
       name:"jgtx",
@@ -13,19 +26,6 @@ dataModels.ie_jz_jgtxzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
-    id:{
-      id:"e0fe49f8-2aaa-4287-9b01-08a8cc1f8274",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -42,16 +42,29 @@ dataModels.ie_jz_jgtxzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"297df112-9a3b-4dfd-aea8-b22eefd7f60b",
-      name:"xh",
-      displayName:"序号",
+    bm:{
+      id:"167ed921-f4cf-4af1-adf6-1fd54aa3b48b",
+      name:"bm",
+      displayName:"编码",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:5,
+      valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"e0fe49f8-2aaa-4287-9b01-08a8cc1f8274",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -65,19 +78,6 @@ dataModels.ie_jz_jgtxzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    bm:{
-      id:"167ed921-f4cf-4af1-adf6-1fd54aa3b48b",
-      name:"bm",
-      displayName:"编码",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:10,
       decimalNum:0,
       isReadonly:false
     },

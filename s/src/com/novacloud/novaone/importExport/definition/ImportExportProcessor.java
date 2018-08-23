@@ -16,6 +16,7 @@ import com.novacloud.novaone.common.FileOperate;
 import com.novacloud.novaone.common.INcpSession; 
 import com.novacloud.novaone.common.SysConfig;
 import com.novacloud.novaone.common.ValueConverter;
+import com.novacloud.novaone.common.util.CommonFunction;
 import com.novacloud.novaone.constants.NovaCloudState;
 import com.novacloud.novaone.core.ConfigContext;
 import com.novacloud.novaone.dao.db.DataRow;
@@ -28,6 +29,10 @@ import com.novacloud.novaone.dao.system.impl.Sys_ViewImpl;
 import com.novacloud.novaone.model.sysmodel.Data;
 import com.novacloud.novaone.model.sysmodel.DataCollection;
 import com.novacloud.novaone.model.sysmodel.DataField;
+import com.novacloud.novaone.model.sysmodel.DataFieldMap;
+import com.novacloud.novaone.model.sysmodel.DownList;
+import com.novacloud.novaone.model.sysmodel.DownListCollection;
+import com.novacloud.novaone.model.sysmodel.DownListField;
 import com.novacloud.novaone.model.sysmodel.View;
 import com.novacloud.novaone.model.sysmodel.ViewCollection;
 import com.novacloud.novaone.model.sysmodel.ViewDispunit;
@@ -242,11 +247,13 @@ public class ImportExportProcessor {
 		DataRow versionRow = this.getVersionRow(versionId);
 		List<DataRow> fieldRows = this.getVersionFieldRows(versionId);	
 		String filePath = versionRow.getStringValue("filepath");
+		String orderby = versionRow.getStringValue("orderby");
 		String sourceDataFileType = versionRow.getStringValue("sourcedatafiletype");
 		FileType fileType = FileType.valueOf(sourceDataFileType);
 		boolean hasHeaderRow = versionRow.getBooleanValue("sourcedatahasheaderrow");
 
 		ImportExportDefinition ied = new ImportExportDefinition();
+		ied.setOrderby(orderby);
 		ied.setFileType(fileType);
 		ied.setUpdateType(UpdateType.UpdateExistRow);
 		 
@@ -566,37 +573,62 @@ public class ImportExportProcessor {
 				dispUnitParamString.append("name: \"" + dispUnitName + "\",\r\n");
 				dispUnitParamString.append("label: \"" + StringEscapeUtils.escapeHtml(dispUnit.getLabel()) + "\",\r\n");
 				dispUnitParamString.append("valueType: valueType." + field.getValueType().toString().toLowerCase() + ",\r\n");
-				dispUnitParamString.append("inputHelpType: \"\",\r\n");
-				dispUnitParamString.append("inputHelpName: \"\",\r\n");
 				dispUnitParamString.append("decimalNum: " + field.getDecimalNum() + ",\r\n");
 				dispUnitParamString.append("valueLength: " + field.getValueLength() + ",\r\n");
 				dispUnitParamString.append("isMultiValue: false,\r\n");
 				dispUnitParamString.append("isNullable: true,\r\n");
 				dispUnitParamString.append("isEditable: true,\r\n");
+
+				String inputHelpType = field.getInputHelpType();
+				String inputHelpName = field.getInputHelpName();
+				dispUnitParamString.append("inputHelpType: \"" + (inputHelpType == null ? "" : inputHelpType) + "\",\r\n");
+				dispUnitParamString.append("inputHelpName: \"" + (inputHelpName == null ? "" : inputHelpName) + "\",\r\n");
 				String unitTypeString = "";
-				switch(field.getValueType()){
-					case Decimal:{
-							unitTypeString = "decimal";
+				if(inputHelpType != null && (inputHelpType.equals("pop") || inputHelpType.equals("list")) ){
+					unitTypeString = inputHelpType;
+					List<DataFieldMap> fieldMaps = field.getDataFieldMap();
+					List<String> mapStrings = new ArrayList<String>();
+					for(DataFieldMap fMap : fieldMaps){
+						mapStrings.add("\"" + fMap.getDestField() + "\": \"" + fMap.getSourceField() + "\"");
+					}
+					dispUnitParamString.append("maps: {" + CommonFunction.listToString(mapStrings, ",") + "},\r\n");
+					if(inputHelpType.equals("list")) { 
+						dispUnitParamString.append("maps: {" + CommonFunction.listToString(mapStrings, ",") + "},\r\n");
+						List<String> columnStrings = new ArrayList<String>();
+						DownList dl = DownListCollection.getDownList(inputHelpName);
+						
+						List<DownListField> dlfs = dl.getDownListFields();
+						for(DownListField dlf : dlfs){
+							columnStrings.add("{field: \"" + dlf.getName() + "\", valueType: valueType." + dlf.getValueType().toString().toLowerCase() + ", title: \"" + dlf.getDisplayName() + "\", width: " + dlf.getShowWidth() + ", hidden: " + (dlf.getIsShow() ? "false" : "true") + " }");
 						}
-						break;
-					case String:{
-							unitTypeString = "text";
-						}
-						break;
-					case Time:{
-							unitTypeString = "time";
-						}
-						break;
-					case Date:{
-							unitTypeString = "date";
-						}
-						break;
-					case Boolean:{
-							unitTypeString = "checkbox";
-						}
-						break;
-					default:
-						break;
+						dispUnitParamString.append("list:{name: \"" + inputHelpName + "\",\r\ncolumns: [" + CommonFunction.listToString(columnStrings, ",") + "]},\r\n");
+					}
+				}
+				else{
+					switch(field.getValueType()){
+						case Decimal:{
+								unitTypeString = "decimal";
+							}
+							break;
+						case String:{
+								unitTypeString = "text";
+							}
+							break;
+						case Time:{
+								unitTypeString = "time";
+							}
+							break;
+						case Date:{
+								unitTypeString = "date";
+							}
+							break;
+						case Boolean:{
+								unitTypeString = "checkbox";
+							}
+							break;
+						default:
+							break;
+					}
 				}
 				dispUnitParamString.append("unitType:\"" + unitTypeString + "\",\r\n");
 				dispUnitParamString.append("defaultValue: null\r\n}");
@@ -610,6 +642,7 @@ public class ImportExportProcessor {
 		for(ViewDispunit dispUnit : dispunitList){
 			String dispUnitName = dispUnit.getName();
 			DataField field = dataModel.getDataField(dispUnitName);
+			String inputHelpType = field.getInputHelpType();
 			if(dispUnit.getColSearch()){
 				StringBuilder queryParamValueString = new StringBuilder(); 
 				switch(field.getValueType()){
@@ -623,9 +656,16 @@ public class ImportExportProcessor {
 						}
 						break;
 					case String:{
-							queryParamValueString.append("if(result.values." + dispUnitName + ".length != 0){\r\n");
-							queryParamValueString.append("gridWin.sysWhere.push({parttype:\"field\", field:\"" + dispUnitName + "\", title:\"" + StringEscapeUtils.escapeHtml(dispUnit.getLabel()) + "\", operator:\"like\", value: result.values." + dispUnitName + " });\r\n");
-							queryParamValueString.append("}\r\n");
+							if(inputHelpType != null && (inputHelpType.equals("list") || inputHelpType.equals("pop"))){
+								queryParamValueString.append("if(result.values." + dispUnitName + " != null && result.values." + dispUnitName + ".length != 0){\r\n");
+								queryParamValueString.append("gridWin.sysWhere.push({parttype:\"field\", field:\"" + dispUnitName + "\", title:\"" + StringEscapeUtils.escapeHtml(dispUnit.getLabel()) + "\", operator:\"=\", value: result.values." + dispUnitName + " });\r\n");
+								queryParamValueString.append("}\r\n");
+							}
+							else{
+								queryParamValueString.append("if(result.values." + dispUnitName + " != null && result.values." + dispUnitName + ".length != 0){\r\n");
+								queryParamValueString.append("gridWin.sysWhere.push({parttype:\"field\", field:\"" + dispUnitName + "\", title:\"" + StringEscapeUtils.escapeHtml(dispUnit.getLabel()) + "\", operator:\"like\", value: result.values." + dispUnitName + " });\r\n");
+								queryParamValueString.append("}\r\n");
+							}
 						}
 						break;
 					default:

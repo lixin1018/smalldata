@@ -3,16 +3,16 @@ dataModels.ie_jz_mzzdb = {
   name:"ie_jz_mzzdb",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"96464562-4e66-4339-84f8-de3b161f7e5b",
-      name:"id",
-      displayName:"id",
+    xh:{
+      id:"830dd25f-6fdf-4798-9259-ce14d44c63e4",
+      name:"xh",
+      displayName:"序号",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",
       inputHelpName:"",
       foreignKeyName:"",
-      valueLength:40,
+      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -29,19 +29,6 @@ dataModels.ie_jz_mzzdb = {
       decimalNum:3,
       isReadonly:false
     },
-    xh:{
-      id:"830dd25f-6fdf-4798-9259-ce14d44c63e4",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
-      decimalNum:0,
-      isReadonly:false
-    },
     bm:{
       id:"809437c1-e7e0-42f4-be8e-1ab99a3cc82d",
       name:"bm",
@@ -52,6 +39,19 @@ dataModels.ie_jz_mzzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:10,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"96464562-4e66-4339-84f8-de3b161f7e5b",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     },
@@ -68,19 +68,6 @@ dataModels.ie_jz_mzzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    parentid:{
-      id:"efb90420-7dc6-4d12-8b2b-e93e854bea2e",
-      name:"parentid",
-      displayName:"parentid",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
     mz:{
       id:"b2150329-8d7a-45b5-9215-57f936b2f064",
       name:"mz",
@@ -91,6 +78,19 @@ dataModels.ie_jz_mzzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    parentid:{
+      id:"efb90420-7dc6-4d12-8b2b-e93e854bea2e",
+      name:"parentid",
+      displayName:"parentid",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
       decimalNum:0,
       isReadonly:false
     }

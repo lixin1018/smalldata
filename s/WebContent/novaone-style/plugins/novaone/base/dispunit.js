@@ -484,7 +484,7 @@ $.fn.listDispunit.methods = {
 		return jq;
 	},
 	showList : function(jq, data) {
-		var height = 25 + 25 * (data.length > 6 ? 6 : data.length);
+		var height = 25 + 25 * (data.length > 10 ? 10 : data.length);
 		var listContainerId = $(jq).attr("listContainerId");
 		var listCtrlId = $(jq).attr("listCtrlId");
 		$("#" + listContainerId).height(height);

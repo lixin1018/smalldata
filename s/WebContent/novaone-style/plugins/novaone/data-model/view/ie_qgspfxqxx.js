@@ -21,7 +21,7 @@ viewModels.ie_qgspfxqxx = {
     {name:"id", label:"ID", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"parentid", label:"parentid", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"createtime", label:"记录创建时间", width:0, hidden:true, sortable:true, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
-    {name:"isdeleted", label:"已删除", width:50, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"}
+    {name:"isdeleted", label:"已删除", width:50, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"}
   ],
   dispUnitModel:[
     {name:"csbm", label:"城市编码", editable:true,nullable:true, hidden:false, dispunitType:"text", },
@@ -41,6 +41,6 @@ viewModels.ie_qgspfxqxx = {
     {name:"id", label:"ID", editable:true,nullable:true, hidden:true, dispunitType:"text", },
     {name:"parentid", label:"parentid", editable:true,nullable:true, hidden:true, dispunitType:"text", },
     {name:"createtime", label:"记录创建时间", editable:true,nullable:true, hidden:true, dispunitType:"time", },
-    {name:"isdeleted", label:"已删除", editable:true,nullable:true, hidden:false, dispunitType:"checkbox", }
+    {name:"isdeleted", label:"已删除", editable:true,nullable:true, hidden:true, dispunitType:"checkbox", }
   ]
 }

@@ -3,6 +3,19 @@ dataModels.ie_jz_zzqdfszdb = {
   name:"ie_jz_zzqdfszdb",
   idFieldName:"id",
   fields:{
+    xh:{
+      id:"1a04ebf3-ed65-45bb-8c14-cbf61687b152",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
+      decimalNum:0,
+      isReadonly:false
+    },
     createtime:{
       id:"72b25c23-5deb-4d23-8acc-1fbbed27d9dc",
       name:"createtime",
@@ -16,6 +29,19 @@ dataModels.ie_jz_zzqdfszdb = {
       decimalNum:3,
       isReadonly:false
     },
+    zzqdfsmc:{
+      id:"4daac670-a807-4592-b361-4fa02d78f719",
+      name:"zzqdfsmc",
+      displayName:"资质取得方式名称",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
     id:{
       id:"612d0ed6-987a-425f-9084-f7968bd9b781",
       name:"id",
@@ -26,19 +52,6 @@ dataModels.ie_jz_zzqdfszdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    xh:{
-      id:"1a04ebf3-ed65-45bb-8c14-cbf61687b152",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
       decimalNum:0,
       isReadonly:false
     },
@@ -78,19 +91,6 @@ dataModels.ie_jz_zzqdfszdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    zzqdfsmc:{
-      id:"4daac670-a807-4592-b361-4fa02d78f719",
-      name:"zzqdfsmc",
-      displayName:"资质取得方式名称",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     }

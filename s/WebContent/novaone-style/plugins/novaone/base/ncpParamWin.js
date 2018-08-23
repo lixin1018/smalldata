@@ -106,11 +106,17 @@
 		}
 	}
 	
-	//pop和list的区别就是，pop是模仿模态，弹出选择返回后，才调用after的方法们，list是下拉获取下拉列表的值后就执行after方法们
-	this.basePop = function(param){
-		var popContainer = new PopupContainer({width:700,
+	this.getPopContainer = function(param){
+		var popContainer = new PopupContainer({
+			width:700,
 			height:400,
 			top:50});
+		return popContainer;
+	}
+	
+	//pop和list的区别就是，pop是模仿模态，弹出选择返回后，才调用after的方法们，list是下拉获取下拉列表的值后就执行after方法们
+	this.basePop = function(param){
+		var popContainer = this.getPopContainer(param);
 		popContainer.show();
 		var initParam = {
 			closeWin : function(p){ 

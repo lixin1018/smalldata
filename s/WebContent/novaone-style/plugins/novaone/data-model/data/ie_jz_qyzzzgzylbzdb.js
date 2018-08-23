@@ -3,6 +3,19 @@ dataModels.ie_jz_qyzzzgzylbzdb = {
   name:"ie_jz_qyzzzgzylbzdb",
   idFieldName:"id",
   fields:{
+    xh:{
+      id:"7fca262d-e6f1-4a21-937b-b66b8ebe7b5e",
+      name:"xh",
+      displayName:"序号",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:5,
+      decimalNum:0,
+      isReadonly:false
+    },
     createtime:{
       id:"9c70c5e0-88ca-40b5-ac4a-e9da25f266a7",
       name:"createtime",
@@ -29,6 +42,19 @@ dataModels.ie_jz_qyzzzgzylbzdb = {
       decimalNum:0,
       isReadonly:false
     },
+    bm:{
+      id:"f275d0f9-f0b7-4b7b-bdbb-9c620582a77e",
+      name:"bm",
+      displayName:"编码",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
     zylb:{
       id:"d55d0510-a707-4e41-bb7d-0f3d5d74cafe",
       name:"zylb",
@@ -42,19 +68,6 @@ dataModels.ie_jz_qyzzzgzylbzdb = {
       decimalNum:0,
       isReadonly:false
     },
-    xh:{
-      id:"7fca262d-e6f1-4a21-937b-b66b8ebe7b5e",
-      name:"xh",
-      displayName:"序号",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:5,
-      decimalNum:0,
-      isReadonly:false
-    },
     isdeleted:{
       id:"f7dfe3e3-0e7a-48b3-aa1a-e11c416bcbde_1",
       name:"isdeleted",
@@ -65,19 +78,6 @@ dataModels.ie_jz_qyzzzgzylbzdb = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    bm:{
-      id:"f275d0f9-f0b7-4b7b-bdbb-9c620582a77e",
-      name:"bm",
-      displayName:"编码",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
       decimalNum:0,
       isReadonly:false
     },
