@@ -11,7 +11,7 @@
 	margin:1px auto;
 	width:1200px;
 	height:auto;
-	min-height:550px;	
+	min-height:550px;
 	min-height:530px;	
 	display: table;
 }   
@@ -273,7 +273,7 @@
 .orderItemBottom{ 
 	position: relative;
 	width:100%;
-	height:60px;
+	height:80px;
 	border-top:solid 1px #eeeeee;
 	/*background-color: #E3EEFF;*/
 }
@@ -284,7 +284,7 @@
 	top: 0px; 
 	right: 100px;
     width: 120px;
-	font-size: 15px;
+	font-size: 14px;
 	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
     color: #3c3c3c; 
     font-weight:600;
@@ -297,7 +297,7 @@
 	top: 30px; 
 	right: 100px;
     width: 120px;
-	font-size: 16px;
+	font-size: 14px;
 	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
     color: #FE6000; 
     font-weight:600;
@@ -307,20 +307,21 @@
 	position: absolute;
 	text-align: center;
 	top: 30px; 
-	right: 40px;
-    width: 60px;
-	font-size: 14px;
+	right: 10px;
+    width: 80px;
+	font-size: 16px;
 	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #3c3c3c; 
+    color: #ffffff; 
     font-weight:600;
     line-height: 30px;
 	text-decoration: none;
+	background-color:#5B9BD5;
+	cursor:pointer; 
 }
 
 .orderItemBottomToPayPage:hover{  
-	color: #000000;
-	cursor:pointer;
-	text-decoration: underline;
+	font-weight:
+	cursor:pointer; 
 }
 
 .alertOrderError{

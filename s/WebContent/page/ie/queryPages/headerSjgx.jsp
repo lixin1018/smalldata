@@ -19,6 +19,17 @@
 	%>				
 	</div>
 	<div id="headerRightTopDiv" class="headerRightTop">
-		<div class="tableQueryPopButtonDiv"><span id="popQueryBtnId">筛选条件</span></div> 
+		<div class="tableQueryPopButtonDiv">
+			<div class="showCartDiv" id="showCartDivId"><div class="showCartImage"></div><div class="cartCountSpan cartCountDiv" id="cartCountDivId"></div></div>
+			<div class="headerRightTopSpliter">&nbsp;|&nbsp;</div>
+			<div class="popQueryBtn" id="popQueryBtnId">数据筛选/购买</div>
+		</div>
+	</div>
+	<div class="addToCartSucceedDiv" id="addToCartSucceedDivId">
+		<div class="addToCartSuccceedHeaderDiv">
+			<div class="addToCartSuccceedTitleDiv">提示信息</div>
+			<div class="addToCartSucceedCloseImageDiv"></div>
+		</div>
+		<div class="addToCartSuccceedMessageDiv">已放入购物车.<br/><span class="goToCartLinkSpan"><a href="../../h/buy/cart.jsp" target="_blank">进入购物车结算</a></span>.</div>
 	</div>
 </div>

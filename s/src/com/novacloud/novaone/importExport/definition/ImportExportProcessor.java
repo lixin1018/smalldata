@@ -687,12 +687,12 @@ public class ImportExportProcessor {
 					case Time:
 					case Date:
 					case String:{
-							queryControlHtmlString.append("<div class=\"tableQueryLine\"><div class=\"tableQueryItemName\">" + StringEscapeUtils.escapeHtml(dispUnit.getLabel()) + ":&nbsp;</div></div>\r\n");
-							queryControlHtmlString.append("<div class=\"tableQueryLine\"><div class=\"tableQueryItemInputContainer\"><input class=\"tableQueryItemInput\" type=\"text\" name=\"" + dispUnitName + "\" paramCtrl=\"true\"/></div></div>\r\n");
+							queryControlHtmlString.append("<div class=\"tableQueryNameLine\"><div class=\"tableQueryItemName\">" + StringEscapeUtils.escapeHtml(dispUnit.getLabel()) + ":&nbsp;</div></div>\r\n");
+							queryControlHtmlString.append("<div class=\"tableQueryValueLine\"><div class=\"tableQueryItemInputContainer\"><input class=\"tableQueryItemInput\" type=\"text\" name=\"" + dispUnitName + "\" paramCtrl=\"true\"/></div></div>\r\n");
 						}
 						break;
 					case Boolean:{
-							queryControlHtmlString.append("<div class=\"tableQueryLine\"><div class=\"tableQueryItemInputContainer\"><input class=\"tableQueryItemInputCheck\" type=\"checkbox\" name=\"" + dispUnitName + "\" paramCtrl=\"true\"/></div>\r\n");
+							queryControlHtmlString.append("<div class=\"tableQueryNameLine\"><div class=\"tableQueryItemInputContainer\"><input class=\"tableQueryItemInputCheck\" type=\"checkbox\" name=\"" + dispUnitName + "\" paramCtrl=\"true\"/></div>\r\n");
 							queryControlHtmlString.append("<div class=\"tableQueryItemInputContainer tableQueryItemCheckTitleContainer\"><div class=\"tableQueryItemName tableQueryCheckItemName\">" + StringEscapeUtils.escapeHtml(dispUnit.getLabel()) + ":&nbsp;</div></div></div>\r\n");
 						}
 						break;

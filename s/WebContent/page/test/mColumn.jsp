@@ -41,6 +41,7 @@
 			}
 	
 			//从模型中增加操作按钮列
+			/*
 			viewModels.d_User.colModel.push({name:operateColumnName,
 				label:"操作",
 				width:100,
@@ -55,7 +56,7 @@
 					var containerId = getCellContainerId(rowObject.id);
 					return "<div id=\"" + containerId + "\" style=\"width:100%;height:100%;\">" + html + "</div>";
 				}
-			});
+			});*/
 			
 			$(document).ready(function() {
 			

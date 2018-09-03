@@ -22,6 +22,27 @@ var paramWin = null;
 var gridWin = null;
 var unitPrice = null;
 
+var selectedRowCount = 0;
+var rowSelectType = "allRows";//allRows、topRows、randomRows（暂不支持）
+
+//获取准备付款的记录数
+function getTargetRowCount(){
+	if(rowSelectedType == "allRows"){
+		return gridWin.totalRowCount;
+	}
+	else if(rowSelectedType == "topRows"){
+		if(selectedRowCount <= gridWin.totalRowCount){
+			return selectedRowCount;
+		}
+		else{
+			return gridWin.totalRowCount;
+		}
+	}
+	else {
+		return 0;
+	}
+}
+
 $(document).ready(function(){
 	var paramWinModel = {
 		  id:0,
@@ -70,36 +91,72 @@ $(document).ready(function(){
 	
 	var externalObject = {
 		afterDoPage:function(param){
-			 //showPrice();
-			 closeQueryWin();
+			 showPrice();
+			 //closeQueryWin();
 		} 
 	};
 	gridWin.addExternalObject(externalObject);
 	 
 	queryData(pageNumber);
 	
-	//getUnitPrice();
+	getUnitPrice();
 	
-	//getCartLineCount();
+	getCartLineCount();
 	
 	//设置查询按钮事件
-	$("#queryButton").click(function(){
+	$("#queryBtnId").click(function(){
 		queryData(1);
 	});
 	
 	//设置加入购物车
-	$("#addToCartBttonId").click(function(){
+	$("#addToCartBtnId").click(function(){
 		addToCart();
 	}); 
-	
+
 	$("#popQueryBtnId").click(function(){
 		popQueryWin();
 	});
 	
-	$("#queryButtonCloseBtnId").click(function(){
+	$("#showCartDivId").click(function(){
+		goToCartPage();
+	});
+	
+	$("#tableQueryCloseImageBtnDivId").click(function(){
+		closeQueryWin();
+	});
+	
+	$("#queryCloseBtnId").click(function(){
 		closeQueryWin();
 	});
 }); 
+
+var addToCartSucceedForm = null;
+
+function goToCartPage(){
+	window.open("../../h/buy/cart.jsp");
+}
+
+function showAddToCartSucceedForm(){
+	if(addToCartSucceedForm == null){
+		var popContainer = new PopupContainer( {
+			width : 260,
+			height : 180,
+			top : 50
+		});
+
+		addToCartSucceedForm = popContainer;
+		addToCartSucceedForm.show();
+		$("#addToCartSucceedDivId").appendTo($("#" + popContainer.containerId));
+		$("#addToCartSucceedDivId").css({display: "block"});	
+		
+		$("#addToCartSucceedDivId").click(function(){
+			addToCartSucceedForm.hide();
+		});
+	}
+	else{
+		addToCartSucceedForm.show();
+	}
+}
 
 function closeQueryWin(){
 	$("#queryControlContainerId").removeClass("tableQueryContainerShow");
@@ -142,26 +199,36 @@ function getCartLineCount(){
 }
 
 function showUnitPrice(){
-	$("#unitPriceSpanId").text("￥" + unitPrice);
+	var num = new Number(unitPrice);
+	var formattedUnitPrice = num.toFixed(4);
+	$("#unitPriceDivId").text(formattedUnitPrice);
 }
 
 function showCartLineCount(cartLineCount){
 	if(cartLineCount == null){
-		$("#cartLineCountSpanId").text("(?)");
+		$(".cartCountSpan").text("(-)");
 	}
 	else{			
-		$("#cartLineCountSpanId").text("(" + cartLineCount + ")");
+		$(".cartCountSpan").text("(" + cartLineCount + ")");
 	}
 }
 
 function showPrice(){
 	if(gridWin.totalRowCount != null && unitPrice != null){
 		var price = gridWin.totalRowCount * unitPrice;
-		var num = new Number(gridWin.totalRowCount * unitPrice);
-		var price= num.toFixed(2);
-		$("#priceSpanId").text("￥" + price);
+		var originalPrice = new Number(gridWin.totalRowCount * unitPrice);
+		var originalPriceStr = originalPrice.toFixed(4);
+		var price = Math.floor(originalPrice * 10000) / 10000;
+		var priceStr = price == 0 ? "0.01" : price.toFixed(2);	
+		
+		$("#dataRowCountDivId").text(gridWin.totalRowCount);
+		$("#originalPriceDivId").text(originalPriceStr);
+		$("#priceDivId").text(priceStr);
+		
 	}
 }
+
+
 
 function addToCart(){
 	if(gridWin.totalRowCount > 0){
@@ -171,17 +238,12 @@ function addToCart(){
 		};
 		
 		serverAccess.request({
-			serviceName:"dataHelperBuyNcpService", 
+			serviceName:"dataHelperBuyNcpService",
 			funcName:"addToCart", 
 			args:{requestParam: cmnPcr.jsonToStr(requestParam)}, 
 			successFunc:function(obj){
 				getCartLineCount();
-				msgBox.animationWindow({
-					message: "",
-					duration: 500,
-					fromElementId: "dataListContainerId",
-					toElementId: "cartButtonId"
-				});
+				showAddToCartSucceedForm();
 			}
 		});
 	}

@@ -1401,11 +1401,15 @@ Array.prototype.contains = function(element) {
 }
 
 function dateFormater(cellvalue, options, rowObject){
-	return cellvalue == null ? "" : cmnPcr.datetimeToStr(cellvalue, cmnPcr.getDateFormat());
+	//return cellvalue == null ? "" : cmnPcr.datetimeToStr(cellvalue, cmnPcr.getDateFormat());
+	//[2016-12-28]yucx:修复日期编辑时，点取消后，日期域不隐藏的bug
+	return cellvalue == null ? "" : Object.prototype.toString.call(cellvalue) === "[object String]"? cellvalue :cmnPcr.datetimeToStr(cellvalue, cmnPcr.getDateFormat());
 }
 
 function timeFormater(cellvalue, options, rowObject){
-	return cellvalue == null ? "" : cmnPcr.datetimeToStr(cellvalue, cmnPcr.getTimeFormat());
+	//return cellvalue == null ? "" : cmnPcr.datetimeToStr(cellvalue, cmnPcr.getTimeFormat()); 
+	//[2016-12-28]yucx:修复日期编辑时，点取消后，日期域不隐藏的bug
+	return cellvalue == null ? "" : Object.prototype.toString.call(cellvalue) === "[object String]"? cellvalue :cmnPcr.datetimeToStr(cellvalue, cmnPcr.getTimeFormat());
 }
 
 //单据编辑状态类型

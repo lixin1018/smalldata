@@ -185,7 +185,7 @@
 					<%
 						if(status == OrderStatusType.WaitingPay){
 					%>
-						<a href="<%=payPageUrl%>" class="orderItemBottomToPayPage" target="_self">支付</a>
+						<a href="<%=payPageUrl%>" class="orderItemBottomToPayPage" target="_self">支&nbsp;付</a>
 					<%
 						}
 					%>

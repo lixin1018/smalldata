@@ -122,17 +122,17 @@ gridWin.sysWhere.push({parttype:"field", field:"zydm", title:"&#19987;&#19994;&#
 <body class="easyui-layout" style="width:100%;height:100%;" id="dataGridContainer"> 
 	<div id="queryControlContainerId" class="tableQueryContainer"> 
 		<div class="tableQueryLine"><div class="tableQueryItemName">&#23398;&#20301;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xw" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#23398;&#31185;&#20998;&#31867;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xkfl" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#19968;&#32423;&#23398;&#31185;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="yjxk" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#19987;&#19994;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zy" paramCtrl="true"/></div></div>
-<div class="tableQueryLine"><div class="tableQueryItemName">&#19987;&#19994;&#20195;&#30721;:&nbsp;</div></div>
-<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zydm" paramCtrl="true"/></div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xw" paramCtrl="true"/></div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemName">&#23398;&#31185;&#20998;&#31867;:&nbsp;</div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xkfl" paramCtrl="true"/></div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemName">&#19968;&#32423;&#23398;&#31185;:&nbsp;</div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="yjxk" paramCtrl="true"/></div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemName">&#19987;&#19994;:&nbsp;</div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zy" paramCtrl="true"/></div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemName">&#19987;&#19994;&#20195;&#30721;:&nbsp;</div></div>
+		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zydm" paramCtrl="true"/></div></div>
 	 
-		<div class="tableQueryBlankCell">&nbsp;</div> 
+	<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">
 			<div class="tableQueryButtonLineInner">
 				<span id="queryButton" title="按照查询条件进行查询">查&nbsp;询</span>
