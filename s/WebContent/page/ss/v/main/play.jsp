@@ -4,7 +4,7 @@
 <%@ include file="../../../baseSitePage.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
-	<title>GoOnData.com</title>
+	<title>ShuJuZhuLi.com</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">

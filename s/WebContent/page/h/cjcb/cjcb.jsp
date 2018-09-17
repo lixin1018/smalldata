@@ -11,7 +11,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
-	<title>超级传播-GoOnData.com</title>
+	<title>超级传播-ShuJuZhuLi.com</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">

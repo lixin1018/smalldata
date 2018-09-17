@@ -15,7 +15,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
-	<title>登录-GoOnData.com</title>
+	<title>登录-ShuJuZhuLi.com</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
@@ -34,7 +34,7 @@
 				<div class="headerBottomInner">
 					<div class="headerLeftBottom">
 						<a href="../../../"><img class="headerLogo" src="../images/logo.png" /></a> 
-						<span class="headerSysName">GoOnData.com</span>
+						<span class="headerSysName">ShuJuZhuLi.com</span>
 						<span class="headerSysSubName">Power Data Helper</span>
 					</div> 
 				</div> 

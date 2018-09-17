@@ -20,9 +20,7 @@
 				+ tableId
 				+ "\" class=\"ncpDispunitTable\" ><div id=\""
 				+ contentTdId
-				+ "\" class=\"ncpDispunitCtrl\" style=\"width:"
-				+ thisw
-				+ "px\"></div><div class=\"ncpDispunitBtn ncpDispunitPop\">&nbsp;</div></div>";
+				+ "\" class=\"ncpDispunitCtrl ncpDispunitCtrlWithButton\" ></div><div class=\"ncpDispunitBtn ncpDispunitPop\">&nbsp;</div></div>";
 
 		var style = $(this).attr("style");
 		var ctrlHeight = Math.floor($(this).height()) - 2;
@@ -30,7 +28,7 @@
 		$(parent).append(html).height(ctrlHeight);	
 		$(this).appendTo("#" + contentTdId);
 		$(this).addClass("ncpDispunitContent");
-		$(this).css("width", thisw + "px");
+		$(this).css("width", "");
 		$(this).css("padding", "0px");
 		$(this).attr("disabled", "disabled");
 		$("#" + tableId).attr("style", style);
@@ -162,9 +160,7 @@ $.fn.popDispunit = function(options, value) {
 				+ tableId
 				+ "\" class=\"ncpDispunitTable\" ><div id=\""
 				+ contentTdId
-				+ "\" class=\"ncpDispunitCtrl\" style=\"width:"
-				+ thisw
-				+ "px\"></div><div class=\"ncpDispunitBtn ncpDispunitPop\">&nbsp;</div></div>";
+				+ "\" class=\"ncpDispunitCtrl ncpDispunitCtrlWithButton\" ></div><div class=\"ncpDispunitBtn ncpDispunitPop\">&nbsp;</div></div>";
 
 		var style = $(this).attr("style");
 		var ctrlHeight = Math.floor($(this).height()) - 2;
@@ -172,7 +168,7 @@ $.fn.popDispunit = function(options, value) {
 		$(parent).append(html).height(ctrlHeight);
 		$(this).appendTo("#" + contentTdId);
 		$(this).addClass("ncpDispunitContent");
-		$(this).css("width", thisw + "px");
+		$(this).css("width", "");
 		$(this).css("padding", "0px");
 		$("#" + tableId).attr("style", style);
 		$("#" + tableId).height(ctrlHeight);
@@ -318,9 +314,7 @@ $.fn.listDispunit = function(options, value) {
 				+ tableId
 				+ "\" class=\"ncpDispunitTable\" ><div id=\""
 				+ contentTdId
-				+ "\" class=\"ncpDispunitCtrl\" style=\"width:"
-				+ thisw
-				+ "px\"></div><div class=\"ncpDispunitBtn ncpDispunitList\">&nbsp;</div></div>";
+				+ "\" class=\"ncpDispunitCtrl ncpDispunitCtrlWithButton\" ></div><div class=\"ncpDispunitBtn ncpDispunitList\">&nbsp;</div></div>";
 
 		var style = $(this).attr("style");
 		var ctrlHeight = Math.floor($(this).height()) - 2;
@@ -328,7 +322,7 @@ $.fn.listDispunit = function(options, value) {
 		$(parent).append(html).height(ctrlHeight);
 		$(this).appendTo("#" + contentTdId);
 		$(this).addClass("ncpDispunitContent");
-		$(this).css("width", thisw + "px");
+		$(this).css("width", "");
 		$(this).css("padding", "0px");
 		$("#" + tableId).attr("style", style);
 		$("#" + tableId).height(ctrlHeight);
@@ -607,9 +601,7 @@ $.fn.timeDispunit = function(options, value) {
 				+ tableId
 				+ "\" class=\"ncpDispunitTable\" ><div id=\""
 				+ contentTdId
-				+ "\" class=\"ncpDispunitCtrl\" style=\"width:"
-				+ thisw
-				+ "px\"></div><div class=\"ncpDispunitBtn ncpDispunitDateTime\">&nbsp;</div></div>";
+				+ "\" class=\"ncpDispunitCtrl ncpDispunitCtrlWithButton\" ></div><div class=\"ncpDispunitBtn ncpDispunitDateTime\">&nbsp;</div></div>";
 
 		var style = $(this).attr("style");
 		var ctrlHeight = Math.floor($(this).height()) - 2;
@@ -618,7 +610,7 @@ $.fn.timeDispunit = function(options, value) {
 		var that = this;
 		$(this).appendTo("#" + contentTdId);
 		$(this).addClass("ncpDispunitContent");
-		$(this).css("width", thisw + "px");
+		$(this).css("width", "");
 		$(this).css("padding", "0px");
 		$("#" + tableId).attr("style", style);
 		$("#" + tableId).height(ctrlHeight);
@@ -787,9 +779,7 @@ $.fn.dateDispunit = function(options, value) {
 				+ tableId
 				+ "\" class=\"ncpDispunitTable\" ><div id=\""
 				+ contentTdId
-				+ "\" class=\"ncpDispunitCtrl\" style=\"width:"
-				+ thisw
-				+ "px\"></div><div class=\"ncpDispunitBtn ncpDispunitDateTime\">&nbsp;</div></div>";
+				+ "\" class=\"ncpDispunitCtrl ncpDispunitCtrlWithButton\" ></div><div class=\"ncpDispunitBtn ncpDispunitDateTime\">&nbsp;</div></div>";
 
 		var style = $(this).attr("style");
 		var ctrlHeight = Math.floor($(this).height()) - 2;
@@ -798,7 +788,7 @@ $.fn.dateDispunit = function(options, value) {
 		var that = this;
 		$(this).appendTo("#" + contentTdId);
 		$(this).addClass("ncpDispunitContent");
-		$(this).css("width", thisw + "px");
+		$(this).css("width", "");
 		$(this).css("padding", "0px");
 		$("#" + tableId).attr("style", style);
 		$("#" + tableId).height(ctrlHeight);

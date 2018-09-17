@@ -67,7 +67,8 @@
 	</bean>	
 	
 	<bean id="dataHelperBuyProcessor" class="com.novacloud.dataHelper.buy.BuyProcessor">
-		<property name="dBParserAccess" ref="dBParserAccess" />
+		<property name="dBParserAccess" ref="dBParserAccess" /> 
+		<property name="aliPayProcessor" ref="aliPayProcessor" />	
 	</bean>	
 	  
 	<bean id="dataHelperBuyServiceBean" class="com.novacloud.dataHelper.service.BuyService" scope="prototype">  
@@ -77,21 +78,16 @@
 	
 	<bean id="dataHelperBuyControl" class="com.novacloud.dataHelper.control.BuyControl" scope="prototype"> 
 		<property name="transactionManager" ref="transactionManager" />    
-		<property name="buyProcessor" ref="dataHelperBuyProcessor" />	 
-		<property name="weixinPayProcessor" ref="weixinPayProcessor" />		 
+		<property name="buyProcessor" ref="dataHelperBuyProcessor" />		 
 	</bean>	
 	
-	<bean id="weixinPayProcessor" class="com.novacloud.dataHelper.buy.WeixinPayProcessor">
-		<property name="dBParserAccess" ref="dBParserAccess" />
-	    <property name="connectTimeout" value="10000" />
-	    <property name="readTimeout" value="10000" />
-	    <property name="requestUrl" value="https://api.mch.weixin.qq.com/pay/unifiedorder" />
-	    <property name="appId" value="wx4582997ce0e636f6" />
-	    <property name="merchantId" value="1406057002" />
-	    <property name="deviceInfo" value="WEB" />
-	    <property name="orderName" value="购买数据" />
-	    <property name="spbillCreateIp" value="58.57.253.100" />
-	    <property name="notifyUrl" value="http://58.57.253.100/s/h/buy/wx.jsp" />
-	    <property name="tradeType" value="NATIVE" />
+	<bean id="aliPayProcessor" class="com.novacloud.dataHelper.buy.AliPayProcessor"> 
+	    <property name="alipayGetwayUrl" value="https://openapi.alipay.com/gateway.do" />  
+	    <property name="appId" value="2018090561284541" />  
+	    <property name="appPrivateKey" value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCi5lh5euMEeC9k/zDr6QTtugGnNXS3ozaAz3CJoK7B4oGGa39UUzkzylhSkh60Vr8vX36lHxaDN7MpsG8B3GduKzmO/JeMXNX3/J6Wllo2vcoXndfbVK4gweE7x39g1CV+I5/0F2Xx+7gutyrX22O2iSfYra6o1yPIzFuaJ9JY3jrTLMO51zz4zyMXrs+Qgb6pz7kicaM8FFt2gBbwTU4+kXBx4eQKPLvuvUnpYVzwWgwRXLlvhdpPgZmo+ZdN636pB3f1n9Ia0p2WJ2i0MucllIswyovf6++1lTx/UerLcNEqs/wFxqXJSBHoIWPsemPmd5Zo61HRUlLYDZPsTM8ZAgMBAAECggEASlZZm54ziO+bmThHR/C/WgjfBkIDsGWf0qpXTcbw2POXbhMSORX9bZ/yLEQYFO3dMy4d6hZEvL6nWOf10GCXJpQ9IP4t3lTjI9a5PDkClCaJ2bsjLSj4iWRQd2ozu6k0Ltrs/IPM9t+LDm5x861fVIZEk8G2icAbyV9QkgmIGRsbQWowVzwPJlJBia8M+S/RvVLWpFFf1i7zKlOVJ+T1OP500mwYsJuxPXwhWfbk9Df/zq7lxMsmuGUJRyfWqNvFRE8v/A34B2nsioH6DvkpUREaeB8qcJ9Hv0ib/kieqbJahVDCKznAeQBeLPWOPVMZJ1qhpuPzByK99JGfIiNJcQKBgQD02Xmd7jcVHIbheWvtRMHv368A32isRdMX+rAQYqvqLMDqAcjk5AO9ifdaElepss7dVbp5VH8VGOcucVSCd7lrQK5M6OdzfxqhJNJjcdmM7xmQw8Gbu0pBBAUp/TMSuANv9Rk0prFCrvZNWoQH0sz64YUb0nzjKKzI/oKHnyuKjQKBgQCqUXo6ApxcQr+8dh528/7IiiV6tw4q8yZHqJMGGqLcuKqQTvaNAYghifihO+EtrgeBgEPbW8qFiCElOL+B3cjW9zeaNvJI8KIMLAtKH63/mso2XDWXD/Y9/4Ozb0rGFJDKQBi7rcQ7zEn8P9vwc9GHXmZPmqM/UmzPutng4Q7ZvQKBgDpkBqHIJnCtbekleLyLsihPUr/Fh4PV3wKP8R7nORJOe+8SX+NeERpJZaigSTGaB8U25ZJ7uRbB6pfjxQCcJqbSNP74aAHeJO6bBmVayEPY3WLtnCVUY9/fYo/h5yUmpwMzE0DAI/PAH9LQrD3lYqbN012QM+JEV/hS4bQQHGUdAoGBAI4s/c83JreNsOjt4XiDLgjR6X+LF/SajTX8bt8FlTaToS5d/EqxIKZ+umI9zjeHsxRTslGHSoQ1oxWjTZpnPaTVMkE15QMmfN+UVMhHscRRvsOqLcIwvOn8RkCfgtffiw6KexsQb2NLoedEl6EdzacnElkZSXUupU6zN/YVaYQxAoGAPUsZIw/+g0hmH1m9pWtS2XgYN/hl5mqxMSdt1kaSNrkWth6rcGvJ4c+yWIroDA0x1XElgGL/NN0DXOnGWB22+ik2tT9Dic2OxV0q/Oy5AEmczSGlO3lh0mqPYw9yTWflS1O7RnUtge2IN1OXlzx1HzaGeYdudd5V17r/vkKGMuc=" />  
+	    <property name="format" value="json" />  
+	    <property name="charset" value="UTF-8" />  
+	    <property name="alipayPublicKey" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAouZYeXrjBHgvZP8w6+kE7boBpzV0t6M2gM9wiaCuweKBhmt/VFM5M8pYUpIetFa/L19+pR8WgzezKbBvAdxnbis5jvyXjFzV9/yelpZaNr3KF53X21SuIMHhO8d/YNQlfiOf9Bdl8fu4Lrcq19tjtokn2K2uqNcjyMxbmifSWN460yzDudc8+M8jF67PkIG+qc+5InGjPBRbdoAW8E1OPpFwceHkCjy77r1J6WFc8FoMEVy5b4XaT4GZqPmXTet+qQd39Z/SGtKdlidotDLnJZSLMMqL3+vvtZU8f1Hqy3DRKrP8BcalyUgR6CFj7Hpj5neWaOtR0VJS2A2T7EzPGQIDAQAB" />  
+	    <property name="signType" value="RSA2" />
 	</bean>	
 </beans>

@@ -25,7 +25,7 @@ function showSSPlayInfo(p){
 		ssDataAccess.getSSPlayInfo({
 			code: code,
 			afterGetSSPlayInfoFunc: function(ssPalyInfo){
-				$("title").text(ssPalyInfo.title + " - GoOnData.com");
+				$("title").text(ssPalyInfo.title + " - ShuJuZhuLi.com");
 			 	loadVideo({
 			 		containerId: p.containerId,
 			 		pageUrl: "../" + ssPalyInfo.code + "/p.html"

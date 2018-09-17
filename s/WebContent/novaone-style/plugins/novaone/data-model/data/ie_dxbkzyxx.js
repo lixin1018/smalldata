@@ -9,13 +9,17 @@ dataModels.ie_dxbkzyxx = {
       displayName:"学科分类",
       valueType:valueType.string,
       isSave:true,
-      inputHelpType:"pop",
-      inputHelpName:"pop/ie/popPages/dxbkxkfl.jsp",
+      inputHelpType:"list",
+      inputHelpName:"ie.dxbkxkfl",
       foreignKeyName:"xkfl",
       valueLength:20,
       decimalNum:0,
       maps:{"xkfl":"mc"},
-      view:{
+      list:{
+        name:"ie.dxbkxkfl",
+        columns:[{field:"xh",valueType:valueType.string,title:"序号",width:50,hidden:false},
+{field:"mc",valueType:valueType.string,title:"名称",width:100,hidden:false}
+        ]
       },
       isReadonly:false
     },
@@ -207,17 +211,20 @@ dataModels.ie_dxbkzyxx = {
       displayName:"一级学科",
       valueType:valueType.string,
       isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
+      inputHelpType:"pop",
+      inputHelpName:"page/ie/popPages/dxbkyjxk.jsp",
+      foreignKeyName:"yjxk",
       valueLength:20,
       decimalNum:0,
+      maps:{"yjxk":"yjxk"},
+      view:{
+      },
       isReadonly:false
     },
     xw:{
       id:"819cb0ab-9eaf-43a7-a1d4-f629ba9b5092",
       name:"xw",
-      displayName:"学位",
+      displayName:"学历",
       valueType:valueType.string,
       isSave:true,
       inputHelpType:"",

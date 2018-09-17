@@ -16,6 +16,7 @@ import net.sf.json.JSONObject;
 
 import com.novacloud.dataHelper.buy.BuyProcessor;
 import com.novacloud.dataHelper.user.UserProcessor;
+import com.novacloud.novaone.common.INcpSession;
 import com.novacloud.novaone.common.JSONProcessor;
 import com.novacloud.novaone.common.NcpActionSupport;
 import com.novacloud.novaone.common.NcpException;
@@ -390,7 +391,8 @@ public class BuyService extends NcpActionSupport implements IBuyService {
 				dbSession.close();
 			}
 		} 
-		return ActionSupport.SUCCESS;		
+		return ActionSupport.SUCCESS;	
 	}
+	
 	
 }

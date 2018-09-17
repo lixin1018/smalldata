@@ -4,9 +4,9 @@ viewModels.ie_dxbkzyxx = {
   dataName:"ie_dxbkzyxx",
   colModel:[
     {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
-    {name:"xw", label:"学位", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
-    {name:"xkfl", label:"学科分类", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"pop"},
-    {name:"yjxk", label:"一级学科", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"xw", label:"学历", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
+    {name:"xkfl", label:"学科分类", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"list"},
+    {name:"yjxk", label:"一级学科", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"pop"},
     {name:"zy", label:"专业", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"zydm", label:"专业代码", width:100, hidden:false, sortable:true, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"zypymb", label:"专业培养目标", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
@@ -24,9 +24,9 @@ viewModels.ie_dxbkzyxx = {
     {name:"isdeleted", label:"已删除", width:50, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"checkbox", dispunitType:"checkbox"}
   ],
   dispUnitModel:[
-    {name:"xw", label:"学位", editable:true,nullable:true, hidden:false, dispunitType:"text", },
-    {name:"xkfl", label:"学科分类", editable:true,nullable:true, hidden:false, dispunitType:"pop", },
-    {name:"yjxk", label:"一级学科", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"xw", label:"学历", editable:true,nullable:true, hidden:false, dispunitType:"text", },
+    {name:"xkfl", label:"学科分类", editable:true,nullable:true, hidden:false, dispunitType:"list", },
+    {name:"yjxk", label:"一级学科", editable:true,nullable:true, hidden:false, dispunitType:"pop", },
     {name:"zy", label:"专业", editable:true,nullable:true, hidden:false, dispunitType:"text", },
     {name:"zydm", label:"专业代码", editable:true,nullable:true, hidden:false, dispunitType:"text", },
     {name:"zypymb", label:"专业培养目标", editable:true,nullable:true, hidden:false, dispunitType:"text", },

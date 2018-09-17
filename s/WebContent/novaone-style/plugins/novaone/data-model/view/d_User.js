@@ -10,7 +10,7 @@ viewModels.d_User = {
     {name:"isusing", label:"可用", width:50, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"checkbox", dispunitType:"checkbox"},
     {name:"email", label:"邮箱", width:200, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"description", label:"描述", width:240, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"},
-    {name:"regtime", label:"注册时间", width:240, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:false, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"}
+    {name:"regtime", label:"注册时间", width:240, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"}
   ],
   dispUnitModel:[
     {name:"id", label:"id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
@@ -19,6 +19,6 @@ viewModels.d_User = {
     {name:"isusing", label:"可用", editable:true,nullable:false, hidden:false, dispunitType:"checkbox", },
     {name:"email", label:"邮箱", editable:true,nullable:true, hidden:false, dispunitType:"text", },
     {name:"description", label:"描述", editable:true,nullable:true, hidden:false, dispunitType:"text", },
-    {name:"regtime", label:"注册时间", editable:false,nullable:true, hidden:false, dispunitType:"time", }
+    {name:"regtime", label:"注册时间", editable:true,nullable:true, hidden:false, dispunitType:"time", }
   ]
 }

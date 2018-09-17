@@ -106,7 +106,7 @@ function reCalcTotalPrice(){
 			totalPrice100 += price * 100;
 		}
 	}
-	totalPrice = (totalPrice100 / 100).toFixed(2);
+	totalPrice = (totalPrice100 / 100).toFixed(4);
 	$("#totalPriceId").text("￥" + totalPrice);
 }
 

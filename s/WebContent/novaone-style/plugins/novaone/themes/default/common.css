@@ -99,6 +99,7 @@ html,body {
 }
 
 .ncpDispunitTable {
+	position:relative;
 	border: solid 1px #A6C9E2;
 	height: 100%;
 }
@@ -108,13 +109,16 @@ html,body {
 }
 
 .ncpDispunitCtrl {	
-	height: 100%;
-	float:left;
+	position:absolute; 
+	left:0px;
+	right:0px;
+	top:0px;
+	height: 100%; 
 }
 
-.ncpDispunitContent {
-	width: 100%;
-	height: 20px;
+.ncpDispunitContent { 
+	height: 100%;
+	width:100%;
 	min-height: 20px;
 	border: 0px;
 	margin: 0px;
@@ -123,10 +127,15 @@ html,body {
 	font-size: 13px;
 }
 
+.ncpDispunitCtrlWithButton {
+	right:20px;
+}
+
 .ncpDispunitBtn {
+	position:absolute; 
 	width: 20px;
-	height: 16px;
-	float:left;
+	right:0px;
+	height: 16px; 
 	cursor:default;
 }
 

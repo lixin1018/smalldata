@@ -216,13 +216,11 @@ function showCartLineCount(cartLineCount){
 function showPrice(){
 	if(gridWin.totalRowCount != null && unitPrice != null){
 		var price = gridWin.totalRowCount * unitPrice;
-		var originalPrice = new Number(gridWin.totalRowCount * unitPrice);
-		var originalPriceStr = originalPrice.toFixed(4);
-		var price = Math.floor(originalPrice * 10000) / 10000;
-		var priceStr = price == 0 ? "0.01" : price.toFixed(2);	
+		//var originalPrice = new Number(gridWin.totalRowCount * unitPrice);
+		//var originalPriceStr = originalPrice.toFixed(4); 
+		var priceStr = price.toFixed(4);	
 		
-		$("#dataRowCountDivId").text(gridWin.totalRowCount);
-		$("#originalPriceDivId").text(originalPriceStr);
+		$("#dataRowCountDivId").text(gridWin.totalRowCount); 
 		$("#priceDivId").text(priceStr);
 		
 	}

@@ -56,15 +56,24 @@ public class BuyProcessor {
 		this.dbSession = dbSession;
 	} 
 	
+	private AliPayProcessor aliPayProcessor ; 
+	public AliPayProcessor getAliPayProcessor() {
+		return aliPayProcessor;
+	}
+	public void setAliPayProcessor(AliPayProcessor aliPayProcessor) {
+		this.aliPayProcessor = aliPayProcessor;
+	} 
+	
+	
 	private static Random random = new Random(1000);
 
-  	private int maxCartLinePerUser = 10;
+  	private int maxCartLinePerUser = 20;
 
 
   	private int onePageRowCountWhenGetIds = 1000;
   	
   	//60天内的购买，数据出现重复的情况，不再重复计费
-  	private long historyOrderTimeoutDays = 30; 	
+  	private long historyOrderTimeoutDays = 365; 	
 	
 	private DataRow getDefinitionInfo(String definitionId) throws SQLException{
 
@@ -351,7 +360,7 @@ public class BuyProcessor {
 		String orderId = this.createOrderInDB(session.getUserId());
 		Date timeoutTime = new Date(System.currentTimeMillis() - historyOrderTimeoutDays * 24 * 60 * 60 * 1000);
 		BigDecimal originalTotalPrice = new BigDecimal(0);
-		BigDecimal actualTotalPrice = new BigDecimal(0);
+		BigDecimal actualTotalTempPrice = new BigDecimal(0);
 		
 		for(int i = 0; i < clRows.size(); i++){
 			DataRow clRow = clRows.get(i);
@@ -372,13 +381,15 @@ public class BuyProcessor {
 			originalTotalPrice = originalTotalPrice.add(originalPrice);
 			
 			BigDecimal actualPrice = this.calcPrice(newRowCount, unitPriceDouble);
-			actualTotalPrice = actualTotalPrice.add(actualPrice);
+			actualTotalTempPrice = actualTotalTempPrice.add(actualPrice);
 						
 			String orderLineId = this.createOrderLineInDB(orderId, definitionId, unitPrice, originalPrice, actualPrice, dataFilter, totalRowCount, newRowCount);
 			
 			//保存数据记录的id值到文件
 			this.saveOrderIdContentFile(session.getUserId(), orderId, orderLineId, unPaidIds);			
 		}
+		
+		BigDecimal actualTotalPrice = this.calcActualPrice(actualTotalTempPrice);
 		
 		this.updateOrderAfterCalcPrice(orderId, originalTotalPrice, actualTotalPrice);
 		
@@ -573,8 +584,16 @@ public class BuyProcessor {
 	
 	//取两位小数
 	private BigDecimal calcPrice(int rowCount, double unitPrice){
-		double price = Math.floor(Math.round(unitPrice * rowCount * 100)) / 100;
-		return BigDecimal.valueOf(price);
+		BigDecimal price = BigDecimal.valueOf(unitPrice * rowCount); 
+		return price;
+	}
+
+	
+	//取两位小数
+	private BigDecimal calcActualPrice(BigDecimal orignalPrice){
+		double priceTemp = Math.floor(orignalPrice.doubleValue() * 100) / 100;
+		BigDecimal price = priceTemp == 0 ? BigDecimal.valueOf(0.01) : BigDecimal.valueOf(priceTemp);
+		return price;
 	}
 
 	public JSONObject getOrderMainInfo(INcpSession session, String orderId) throws Exception {
@@ -1053,5 +1072,36 @@ public class BuyProcessor {
 			}
 			throw ex;
 		} 	
+	}
+
+	
+	public String getAliPayFormHtml(INcpSession session, String orderId) throws Exception{
+		String orderNumber = "";
+		BigDecimal payPrice = new BigDecimal(0);  
+		try{
+			JSONObject orderObj = this.getOrderMainInfo(session, orderId);
+			if(orderObj == null){
+				NcpException ncpEx = new NcpException("getAliPayFormHtml_NoneOrder", "不存在此订单, 可能的原因: 1.订单号不存在; 2.当前用户不是订单所有者; 3.订单不是未支付状态.");
+				throw ncpEx;
+			}
+			else{
+				orderNumber = orderObj.getString("orderNumber");
+				payPrice = BigDecimal.valueOf(Double.valueOf(orderObj.getString("payPrice")));		 
+			}
+			
+		}
+		catch(Exception ex){
+			throw ex;
+		} 
+ 
+		try{ 
+			AliPayProcessor payProcessor = this.getAliPayProcessor();	 
+			payProcessor.setDBSession(this.getDBSession());
+			String payFormHtml = payProcessor.GetPayFormHtml(orderId, orderNumber, payPrice);  
+			return payFormHtml;
+		}
+		catch(Exception ex){
+			throw ex;
+		} 
 	}
 }

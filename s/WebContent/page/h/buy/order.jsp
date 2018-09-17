@@ -106,7 +106,7 @@
 						OrderStatusType status = OrderStatusType.valueOf(orderObj.getString("status"));
 						String statusName = buyControl.getOrderStatusName(status);  				
 
-						String payPageUrl = "orderPay_Wx.jsp?id=" + orderId;			
+						String payPageUrl = "orderPay_Ali.jsp?id=" + orderId;			
 			%>
 				<div class="orderItem" orderId="<%=orderId%>"> 
 					<div class="orderItemTitle" orderId="<%=orderId%>"> 

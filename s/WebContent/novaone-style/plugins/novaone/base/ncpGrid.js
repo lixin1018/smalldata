@@ -785,7 +785,7 @@ function NcpGrid(p) {
 										if (that.isInitEditCtrl(cModel)) {
 											var fieldModel = that.dataModel.fields[cModel.name];
 											var ctrlId = rowId + "_" + cModel.name;
-											$("#" + ctrlId).width($("#" + ctrlId).parent().width());
+											//$("#" + ctrlId).width($("#" + ctrlId).parent().width());
 											that.initGridDispunitCtrl($("#" + ctrlId), cModel, fieldModel, rowId);
 											that.setEditValue($("#" + ctrlId), cModel, fieldModel, row);
 											that.doCtrlCoreMethod($("#" + ctrlId), cModel.dispunitType, cModel.name, "setReadonly", !cModel.canEdit);

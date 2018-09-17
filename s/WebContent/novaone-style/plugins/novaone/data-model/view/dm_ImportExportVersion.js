@@ -16,7 +16,8 @@ viewModels.dm_ImportExportVersion = {
     {name:"definitionid", label:"definitionid", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
     {name:"isactive", label:"已启用", width:50, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"checkbox", dispunitType:"checkbox"},
     {name:"sourcedatafiletype", label:"数据源文件类型", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"text"},
-    {name:"sourcedatahasheaderrow", label:"数据源文件是否包含标题行", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:true, nullable:false, edittype:"checkbox", dispunitType:"checkbox"}
+    {name:"sourcedatahasheaderrow", label:"数据源文件是否包含标题行", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:true, nullable:false, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"orderby", label:"排序", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:true, edittype:"text", dispunitType:"text"}
   ],
   dispUnitModel:[
     {name:"code", label:"版本编码", editable:true,nullable:false, hidden:false, dispunitType:"text", },
@@ -31,6 +32,7 @@ viewModels.dm_ImportExportVersion = {
     {name:"definitionid", label:"definitionid", editable:false,nullable:false, hidden:true, dispunitType:"text", },
     {name:"isactive", label:"已启用", editable:false,nullable:false, hidden:false, dispunitType:"checkbox", },
     {name:"sourcedatafiletype", label:"数据源文件类型", editable:true,nullable:false, hidden:true, dispunitType:"text", },
-    {name:"sourcedatahasheaderrow", label:"数据源文件是否包含标题行", editable:true,nullable:false, hidden:true, dispunitType:"checkbox", }
+    {name:"sourcedatahasheaderrow", label:"数据源文件是否包含标题行", editable:true,nullable:false, hidden:true, dispunitType:"checkbox", },
+    {name:"orderby", label:"排序", editable:true,nullable:true, hidden:false, dispunitType:"text", }
   ]
 }

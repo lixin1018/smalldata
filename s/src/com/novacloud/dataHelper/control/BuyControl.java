@@ -1,7 +1,8 @@
 package com.novacloud.dataHelper.control;
  
 import java.math.BigDecimal;
-import java.sql.SQLException; 
+import java.sql.SQLException;
+import java.util.HashMap;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -10,12 +11,17 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import com.novacloud.dataHelper.buy.AliPayProcessor;
 import com.novacloud.dataHelper.buy.BuyProcessor;
 import com.novacloud.dataHelper.buy.OrderStatusType;
 import com.novacloud.dataHelper.buy.PayType;
 import com.novacloud.dataHelper.buy.WeixinPayProcessor; 
 import com.novacloud.novaone.common.INcpSession;
-import com.novacloud.novaone.common.NcpException;  
+import com.novacloud.novaone.common.JSONProcessor;
+import com.novacloud.novaone.common.NcpException;
+import com.novacloud.novaone.common.NcpSession;
+import com.novacloud.novaone.common.ServiceResultProcessor;
+import com.opensymphony.xwork2.ActionSupport;  
  
 public class BuyControl{
 
@@ -38,14 +44,6 @@ public class BuyControl{
 	private BuyProcessor getBuyProcessor(){
 		return this.buyProcessor;
 	}
-	
-	private WeixinPayProcessor weixinPayProcessor ; 
-	public WeixinPayProcessor getWeixinPayProcessor() {
-		return weixinPayProcessor;
-	}
-	public void setWeixinPayProcessor(WeixinPayProcessor weixinPayProcessor) {
-		this.weixinPayProcessor = weixinPayProcessor;
-	} 
 	
 	public JSONObject getCartList(INcpSession ncpSession) throws Exception{
 		logger.info("getCartList");
@@ -173,55 +171,26 @@ public class BuyControl{
 			 throw new Exception("Unknown Order Status Type, status = " + status.toString());
 		 }
 	}
-	
-	public String getWeixinPayCodeUrl(INcpSession session, String orderId) throws Exception{
-		String orderNumber = "";
-		BigDecimal payPrice = new BigDecimal(0); 
-		Integer payPriceInt = 0; 
-		Session dbSessionBuy = null;
-		try{
-			BuyProcessor buyProcessor =  this.getBuyProcessor();
-			dbSessionBuy = this.openDBSession();
-			buyProcessor.setDBSession(dbSessionBuy);
-			JSONObject orderObj = buyProcessor.getOrderMainInfo(session, orderId);
-			if(orderObj == null){
-				NcpException ncpEx = new NcpException("getWeixinPayInfo_noneOrder", "不存在此订单, 可能的原因: 1.订单号不存在; 2.当前用户不是订单所有者; 3.订单不是未支付状态.");
-				throw ncpEx;
-			}
-			else{
-				orderNumber = orderObj.getString("orderNumber");
-				payPrice = BigDecimal.valueOf(Double.valueOf(orderObj.getString("payPrice")));		
-				payPriceInt = payPrice.multiply(BigDecimal.valueOf(100)).intValue();				
-			}
-			
-		}
-		catch(Exception ex){
-			throw ex;
-		}
-		finally{
-			if(dbSessionBuy != null){
-				dbSessionBuy.close();
-			}
-		} 
 
-		Session dbSessionPay = null;
-		try{ 
-			WeixinPayProcessor payProcessor = this.getWeixinPayProcessor();	
-			dbSessionPay = this.openDBSession();
-			payProcessor.setDBSession(dbSessionPay);
-			JSONObject prepayObj = payProcessor.generateUnifiedOrderFromWeixin(orderId, orderNumber, payPriceInt);
-			String payFlowId = prepayObj.getString("prepayId");
-			String payCodeUrl = prepayObj.getString("codeUrl");		
-			payProcessor.createPay(session, orderId, payPrice, payCodeUrl, payFlowId, PayType.Weixin);
-			return payCodeUrl;		
-		}
-		catch(Exception ex){
-			throw ex;
-		}
-		finally{
-			if(dbSessionPay != null){
-				dbSessionPay.close();
-			}
+	
+	public String getAliPayFormHtml(INcpSession ncpSession, String  orderId) throws NcpException	{
+		Session dbSession = null;
+		try{     
+			BuyProcessor buyProcessor =  this.getBuyProcessor();
+			dbSession = this.openDBSession();
+			buyProcessor.setDBSession(dbSession);
+			String payFormHtml = buyProcessor.getAliPayFormHtml(ncpSession, orderId);  
+			return payFormHtml;
 		} 
+		catch(Exception ex) {
+        	ex.printStackTrace();
+			NcpException ncpEx = new NcpException("getAliPayFormHtml", "获取支付宝支付页面Html失败", ex); 
+			throw ncpEx;
+		} 
+		finally{
+			if(dbSession != null){
+				dbSession.close();
+			}
+		}  
 	}
 }
