@@ -131,7 +131,7 @@
 							
 							JSONArray orderLineArray = buyControl.getOrderLines(ncpSession, orderId);		
 							String orderPageUrl = "order.jsp?id=" + orderId;
-							String payPageUrl = "orderPay_Wx.jsp?id=" + orderId;
+							String payPageUrl = "orderPay_Ali.jsp?id=" + orderId;
 							
 			%>
 				<div class="orderItem" orderId="<%=orderId%>"> 

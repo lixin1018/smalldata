@@ -11,6 +11,7 @@ import java.net.URLConnection;
 import java.util.Arrays; 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random; 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -24,8 +25,10 @@ import com.Ostermiller.util.MD5;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
+import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.novacloud.novaone.common.NcpException;
+import com.novacloud.novaone.common.util.CommonFunction;
 
 import net.sf.json.JSONObject; 
 
@@ -58,6 +61,15 @@ public class AliPayProcessor extends PayProcessor {
 		this.appId = appId;
 	}
 	
+	//系统商签约协议的PID
+	private String pId ="";
+	public String getPId() {
+		return pId;
+	}
+	public void setPId(String pId) {
+		this.pId = pId;
+	}
+	
 	//APP_PRIVATE_KEY	开发者私钥，由开发者自己生成	获取详见上面配置密钥
 	private String appPrivateKey = "";
 	public String getAppPrivateKey() {
@@ -85,6 +97,24 @@ public class AliPayProcessor extends PayProcessor {
 		this.charset = charset;
 	}
 	
+	//returnUrl 用户确认支付后，支付宝get请求returnUrl（商户入参传入），返回同步返回参数。
+	private String returnUrl ="";
+	public String getReturnUrl() {
+		return returnUrl;
+	}
+	public void setReturnUrl(String returnUrl) {
+		this.returnUrl = returnUrl;
+	}
+	
+	//notifyUrl 交易成功后，支付宝post请求notifyUrl（商户入参传入），返回异步通知参数。
+	private String notifyUrl ="";
+	public String getNotifyUrl() {
+		return notifyUrl;
+	}
+	public void setNotifyUrl(String notifyUrl) {
+		this.notifyUrl = notifyUrl;
+	}
+	
 	//ALIPAY_PUBLIC_KEY	支付宝公钥，由支付宝生成	获取详见上面配置密钥
 	private String alipayPublicKey = "";
 	public String getAlipayPublicKey() {
@@ -92,6 +122,15 @@ public class AliPayProcessor extends PayProcessor {
 	}
 	public void setAlipayPublicKey(String alipayPublicKey) {
 		this.alipayPublicKey = alipayPublicKey;
+	}
+	
+	//APP_PUBLIC_KEY	app公钥
+	private String appPublicKey = "";
+	public String getAppPublicKey() {
+		return appPublicKey;
+	}
+	public void setAppPublicKey(String appPublicKey) {
+		this.appPublicKey = appPublicKey;
 	}
 	
 	//SIGN_TYPE	商户生成签名字符串所使用的签名算法类型，目前支持RSA2和RSA，推荐使用RSA2	RSA2
@@ -103,27 +142,46 @@ public class AliPayProcessor extends PayProcessor {
 		this.signType = signType;
 	}
 	
-	public String GetPayFormHtml(String orderId, String orderNumber, BigDecimal payPrice) {
+	public String GetPayFormHtml(String orderId, String orderNumber, BigDecimal payPrice, String subjectInfo, String bodyInfo) {
+
+		String subject = subjectInfo.replaceAll("\"", "\\\"");
+		String body = bodyInfo.replaceAll("\"", "\\\"");
 		
 		AlipayClient alipayClient = new DefaultAlipayClient(this.getAlipayGetwayUrl(),
 				this.getAppId(),
 				this.getAppPrivateKey(),
 				this.getFormat(),
 				this.getCharset(),
-				this.getAlipayPublicKey(),
+				this.getAppPublicKey(),
 				this.getSignType());
 		AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest();//创建API对应的request
-	    alipayRequest.setReturnUrl("http://domain.com/CallBack/return_url.jsp");
-	    alipayRequest.setNotifyUrl("http://domain.com/CallBack/notify_url.jsp");//在公共参数中设置回跳和通知地址
+	    alipayRequest.setReturnUrl(this.getReturnUrl());
+	    alipayRequest.setNotifyUrl(this.getNotifyUrl());
+	    
 	    String bizJson = "{" +
 		        "    \"out_trade_no\":\"" + orderNumber + "\"," +
-		        "    \"product_code\":\"" + orderNumber + "\"," +
-		        "    \"total_amount\":" + payPrice.toString() + "," +
-		        "    \"subject\":\"" + orderNumber + "\"," +
-		        "    \"body\":\"" + orderNumber + "\"," +
+		        "    \"product_code\":\"FAST_INSTANT_TRADE_PAY\"," +
+		        "    \"total_amount\":" + String.format("%.2f", payPrice) + "," +
+		        "    \"subject\":\"" + subject + "\"," +
+		        "    \"body\":\"" + body + "\"," +
 		        "    \"passback_params\":\"orderNo%3d" + orderNumber + "\"," +
-		        "    \"extend_params\":{}" +
+		        "    \"extend_params\":{\"sys_service_provider_id\":\"" + this.getPId() + "\"}" +
 		        "  }";
+
+	    /*
+	    String bizJson = "{" +
+	            "    \"out_trade_no\":\"" + orderNumber + \"," +
+	            "    \"product_code\":\"FAST_INSTANT_TRADE_PAY\"," +
+	            "    \"total_amount\":88.88," +
+	            "    \"subject\":\"Iphone6 16G\"," +
+	            "    \"body\":\"Iphone6 16G\"," +
+	            "    \"passback_params\":\"merchantBizType%3d3C%26merchantBizNo%3d2016010101111\"," +
+	            "    \"extend_params\":{" +
+	            "    \"sys_service_provider_id\":\"2088511833207846\"" +
+	            "    }"+
+	            "  }";//填充业务参数
+	            
+        */
 	    
 	    alipayRequest.setBizContent(bizJson);//填充业务参数
 	    String form="";
@@ -134,4 +192,9 @@ public class AliPayProcessor extends PayProcessor {
 	    } 
 		return form;
 	}
-}
+	
+	public boolean rsaCheckV1(Map<String, String> returnParameters) throws AlipayApiException{ 
+		boolean signVerified = AlipaySignature.rsaCheckV1(returnParameters, this.getAlipayPublicKey(), this.getCharset(),this.getSignType()); //调用SDK验证签名
+		return signVerified;
+	}
+	}

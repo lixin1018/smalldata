@@ -49,37 +49,4 @@ public class PayProcessor {
 	public void setReadTimeout(int readTimeout) {
 		this.readTimeout = readTimeout;
 	} 
-	
-	public String createPay(INcpSession session, String orderId, BigDecimal payPrice, String payCodeUrl, String payFlowId, PayType payType) throws SQLException{
-		Session dbSession = this.getDBSession();
-		
-		String getPaySql = "select p.id as id from dm_pay p "
-				+ "where p.orderid = " + SysConfig.getParamPrefix() + "orderId "
-				+ "and payflowid = " + SysConfig.getParamPrefix() + "payFlowId"
-				+ "and paytype = " + SysConfig.getParamPrefix() + "payType";
-		
-		HashMap<String, Object> p2vs = new HashMap<String, Object>();
-		p2vs.put("orderId", orderId);
-		p2vs.put("payFlowId", payFlowId);
-		p2vs.put("payType", payType.toString());
-
-		Data payData = DataCollection.getData("dm_Pay");
-		String payId = (String)this.dBParserAccess.selectOne(dbSession, getPaySql, p2vs);
-		if(payId == null){			
-			HashMap<String, Object> payValues = new HashMap<String, Object>();
-			payValues.put("orderid", orderId);
-			payValues.put("beginpaytime", new Date()); 
-			payValues.put("payPrice", payPrice);
-			payValues.put("userid", session.getUserId());			
-			payId = this.dBParserAccess.insertByData(dbSession, payData, payValues);
-		}
-		else{
-			HashMap<String, Object> payValues = new HashMap<String, Object>(); 
-			payValues.put("payPrice", payPrice);			
-			this.dBParserAccess.updateByData(dbSession, payData, payValues, payId);
-		}
-		return payId;		
-		
-	}
-	 
 }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.apache.log4j.Logger;
@@ -51,10 +52,10 @@ public class BuyProcessor {
 			throw new RuntimeException("none db session.");
 		}
 		return this.dbSession;
-	} 
+	}
 	public void setDBSession(Session dbSession){
 		this.dbSession = dbSession;
-	} 
+	}
 	
 	private AliPayProcessor aliPayProcessor ; 
 	public AliPayProcessor getAliPayProcessor() {
@@ -62,22 +63,24 @@ public class BuyProcessor {
 	}
 	public void setAliPayProcessor(AliPayProcessor aliPayProcessor) {
 		this.aliPayProcessor = aliPayProcessor;
-	} 
-	
+	}	
 	
 	private static Random random = new Random(1000);
 
   	private int maxCartLinePerUser = 20;
 
-
   	private int onePageRowCountWhenGetIds = 1000;
   	
   	//60天内的购买，数据出现重复的情况，不再重复计费
-  	private long historyOrderTimeoutDays = 365; 	
+  	private long historyOrderTimeoutDays = 365;
+  	
+  	private int orderSubjectInfoMaxLength = 256;
+  	
+  	private int orderBodyInfoMaxLength = 128;
 	
 	private DataRow getDefinitionInfo(String definitionId) throws SQLException{
 
-		Session dbSession = this.getDBSession(); 
+		Session dbSession = this.getDBSession();
 		String unitPriceSql = "select d.id as id, d.dbtablename as dbtablename, d.unitprice as unitprice from dm_importexportdefinition d where d.id = " + SysConfig.getParamPrefix() + "definitionId";
 		HashMap<String, Object> uP2vs = new HashMap<String, Object>();
 		uP2vs.put("definitionId", definitionId);
@@ -229,7 +232,7 @@ public class BuyProcessor {
 	
 	public List<DataRow> getCartLineInfos(String userId, List<String> cartLineIds, boolean forUpdate) throws SQLException{
 		StringBuilder getCartLineSql = new StringBuilder();
-		getCartLineSql.append("select cl.id as cartlineid, cl.datafilter as datafilter, d.id as definitionid, d.unitprice as unitprice, d.dbtablename as dbtablename "
+		getCartLineSql.append("select cl.id as cartlineid, cl.datafilter as datafilter, d.id as definitionid, cl.unitprice as unitprice, cl.rowcount as rowcount, cl.price as price, d.dbtablename as dbtablename, d.name as dataname "
 				+ "from dm_exportcartline cl "
 				+ "left outer join dm_importexportdefinition d on d.id = cl.definitionid "
 				+ "where cl.createuserid = " + SysConfig.getParamPrefix() + "userId "
@@ -256,14 +259,20 @@ public class BuyProcessor {
 		alias.add("datafilter");
 		alias.add("definitionid");
 		alias.add("unitprice");
+		alias.add("rowcount");
+		alias.add("price");
 		alias.add("dbtablename");
+		alias.add("dataname");
 		
 		HashMap<String, ValueType> valueTypes = new HashMap<String, ValueType>();
 		valueTypes.put("cartlineid", ValueType.String);
 		valueTypes.put("datafilter", ValueType.String);
 		valueTypes.put("definitionid", ValueType.String);
 		valueTypes.put("unitprice", ValueType.Decimal);
+		valueTypes.put("rowcount", ValueType.Decimal);
+		valueTypes.put("price", ValueType.Decimal);
 		valueTypes.put("dbtablename", ValueType.String);
+		valueTypes.put("dataname", ValueType.String);
 		
 		DataTable clDt = this.dBParserAccess.selectList(dbSession, getCartLineSql.toString(), p2vs, alias, valueTypes);
 		return clDt.getRows();
@@ -346,6 +355,36 @@ public class BuyProcessor {
 		} 	
 	}
 	
+	private String generateOrderSubjectInfo(List<DataRow> cartLineRows){
+		StringBuilder subjectInfoBuilder = new StringBuilder();
+		for(int i = 0; i < cartLineRows.size(); i++){
+			DataRow cartRow = cartLineRows.get(i);
+			String dataName = cartRow.getStringValue("dataname");
+			BigDecimal unitPrice = cartRow.getBigDecimalValue("unitprice");
+			BigDecimal rowCount = cartRow.getBigDecimalValue("rowcount");
+			BigDecimal price = cartRow.getBigDecimalValue("price");
+			
+			subjectInfoBuilder.append((i == 0 ? "" : ", ") + dataName);
+		}
+		String subjectInfo = "数据订单: " + subjectInfoBuilder.toString();
+		return subjectInfo.length() > this.orderSubjectInfoMaxLength ? subjectInfo.substring(0, this.orderSubjectInfoMaxLength - 3) + "..." : subjectInfo;
+	}
+	
+	private String generateOrderBodyInfo(List<DataRow> cartLineRows){
+		StringBuilder bodyInfoBuilder = new StringBuilder();
+		for(int i = 0; i < cartLineRows.size(); i++){
+			DataRow cartRow = cartLineRows.get(i);
+			String dataName = cartRow.getStringValue("dataname");
+			BigDecimal unitPrice = cartRow.getBigDecimalValue("unitprice");
+			BigDecimal rowCount = cartRow.getBigDecimalValue("rowcount");
+			BigDecimal price = cartRow.getBigDecimalValue("price");
+			
+			bodyInfoBuilder.append((i == 0 ? "" : "; ") + dataName + ", 条数" + rowCount.toString() + ", 单价" + unitPrice.toString() + ", 价格" + price.toString());
+		}
+		String bodyInfo = bodyInfoBuilder.toString();
+		return bodyInfo.length() > this.orderBodyInfoMaxLength ? bodyInfo.substring(0, this.orderBodyInfoMaxLength - 3) + "..." : bodyInfo;
+	}
+	
 	private String generateOrder(INcpSession session, List<String> cartLineIds) throws Exception {
 		if(cartLineIds.size() == 0){
 			NcpException ncpEx = new NcpException("generateOrder_noneCartLine", "未选中任何商品");
@@ -361,6 +400,9 @@ public class BuyProcessor {
 		Date timeoutTime = new Date(System.currentTimeMillis() - historyOrderTimeoutDays * 24 * 60 * 60 * 1000);
 		BigDecimal originalTotalPrice = new BigDecimal(0);
 		BigDecimal actualTotalTempPrice = new BigDecimal(0);
+		
+		String subjectInfo = this.generateOrderSubjectInfo(clRows);
+		String bodyInfo = this.generateOrderBodyInfo(clRows);
 		
 		for(int i = 0; i < clRows.size(); i++){
 			DataRow clRow = clRows.get(i);
@@ -391,27 +433,30 @@ public class BuyProcessor {
 		
 		BigDecimal actualTotalPrice = this.calcActualPrice(actualTotalTempPrice);
 		
-		this.updateOrderAfterCalcPrice(orderId, originalTotalPrice, actualTotalPrice);
+		this.updateOrderAfterCalcPrice(orderId, originalTotalPrice, actualTotalPrice, subjectInfo, bodyInfo);
 		
 		this.removeCartLineAfterCreateOrder(cartLineIds);
 
 		return orderId;
 	}
 	
-	private void updateOrderAfterCalcPrice(String orderId, BigDecimal originalTotalPrice, BigDecimal actualTotalPrice){
+	private void updateOrderAfterCalcPrice(String orderId, BigDecimal originalTotalPrice, BigDecimal actualTotalPrice, String subjectInfo, String bodyInfo){
 		Data orderData = DataCollection.getData("dm_ExportOrder");
 		HashMap<String, Object> fieldValues = new HashMap<String, Object>();
 		fieldValues.put("originaltotalprice", originalTotalPrice);
 		fieldValues.put("actualtotalprice", actualTotalPrice);
 		fieldValues.put("payprice", actualTotalPrice);
 		fieldValues.put("status", OrderStatusType.WaitingPay.toString()); 
+		fieldValues.put("subjectinfo", subjectInfo);
+		fieldValues.put("bodyinfo", bodyInfo); 
 		this.dBParserAccess.updateByData(this.getDBSession(), orderData, fieldValues, orderId);
 	}
 	
-	private void updateOrderAfterPaid(String orderId){
+	private void updateOrderAfterPaid(String orderId, Date payTime){
 		Data orderData = DataCollection.getData("dm_ExportOrder");
 		HashMap<String, Object> fieldValues = new HashMap<String, Object>(); 
 		fieldValues.put("status", OrderStatusType.Paid.toString()); 
+		fieldValues.put("paytime", payTime); 
 		this.dBParserAccess.updateByData(this.getDBSession(), orderData, fieldValues, orderId);
 	}
 	
@@ -523,8 +568,10 @@ public class BuyProcessor {
 		fieldValues.put("unitprice", unitPrice); 
 		fieldValues.put("totalrowcount", BigDecimal.valueOf(totalRowCount)); 
 		fieldValues.put("newrowcount", BigDecimal.valueOf(newRowCount)); 
+		fieldValues.put("exportstatus", ExportStatusType.waitingExport); 
+		fieldValues.put("exportedrowcount", BigDecimal.valueOf(0));
 		String orderLineId = this.dBParserAccess.insertByData(this.getDBSession(), orderLineData, fieldValues);
-		return orderLineId;		
+		return orderLineId;
 	}
 	
 	private void saveOrderIdContentFile(String userId, String orderId, String orderLineId, List<String> ids) throws Exception{
@@ -599,6 +646,8 @@ public class BuyProcessor {
 	public JSONObject getOrderMainInfo(INcpSession session, String orderId) throws Exception {
 		String getOrderSql = "select eo.id as id, "
 			+ "eo.payprice as payprice, "
+			+ "eo.subjectinfo as subjectinfo, "
+			+ "eo.bodyinfo as bodyinfo, " 
 			+ "eo.ordernumber as ordernumber, "
 			+ "eo.paytime as paytime, "
 			+ "eo.status as status "
@@ -612,6 +661,8 @@ public class BuyProcessor {
 		List<String> oAlias = new ArrayList<String>();
 		oAlias.add("id"); 
 		oAlias.add("payprice");
+		oAlias.add("subjectinfo");
+		oAlias.add("bodyinfo");
 		oAlias.add("ordernumber");
 		oAlias.add("paytime");
 		oAlias.add("status");
@@ -619,6 +670,8 @@ public class BuyProcessor {
 		HashMap<String, ValueType> oValueTypes = new HashMap<String, ValueType>();
 		oValueTypes.put("id", ValueType.String); 
 		oValueTypes.put("payprice", ValueType.Decimal);
+		oValueTypes.put("subjectinfo", ValueType.String);
+		oValueTypes.put("bodyinfo", ValueType.String);
 		oValueTypes.put("ordernumber", ValueType.String); 
 		oValueTypes.put("paytime", ValueType.Time);
 		oValueTypes.put("status", ValueType.String);
@@ -636,6 +689,59 @@ public class BuyProcessor {
 			orderObj.put("payPrice",orderRow.isNull("payprice") ? "" :  ValueConverter.convertToString(orderRow.getBigDecimalValue("payprice"), ValueType.Decimal));
 			orderObj.put("payTime", orderRow.isNull("paytime") ? "" : ValueConverter.convertToString(orderRow.getDateTimeValue("paytime"), ValueType.Time).substring(0, 16));
 			orderObj.put("status", orderRow.getStringValue("status"));
+			orderObj.put("subjectInfo", orderRow.getStringValue("subjectinfo"));
+			orderObj.put("bodyInfo", orderRow.getStringValue("bodyinfo"));
+	
+			return orderObj;
+		}
+	}
+
+	public JSONObject getOrderMainInfoByOrderNumber(INcpSession session, String orderNumber) throws Exception {
+		String getOrderSql = "select eo.id as id, "
+			+ "eo.payprice as payprice, "
+			+ "eo.subjectinfo as subjectinfo, "
+			+ "eo.bodyinfo as bodyinfo, " 
+			+ "eo.ordernumber as ordernumber, "
+			+ "eo.paytime as paytime, "
+			+ "eo.status as status "
+			+ "from dm_exportorder eo "
+			+ "where eo.ordernumber = " +SysConfig.getParamPrefix() + "orderNumber ";
+		HashMap<String, Object> oP2vs = new HashMap<String, Object>();
+		oP2vs.put("orderNumber", orderNumber); 
+		
+		List<String> oAlias = new ArrayList<String>();
+		oAlias.add("id"); 
+		oAlias.add("payprice");
+		oAlias.add("subjectinfo");
+		oAlias.add("bodyinfo");
+		oAlias.add("ordernumber");
+		oAlias.add("paytime");
+		oAlias.add("status");
+		
+		HashMap<String, ValueType> oValueTypes = new HashMap<String, ValueType>();
+		oValueTypes.put("id", ValueType.String); 
+		oValueTypes.put("payprice", ValueType.Decimal);
+		oValueTypes.put("subjectinfo", ValueType.String);
+		oValueTypes.put("bodyinfo", ValueType.String);
+		oValueTypes.put("ordernumber", ValueType.String); 
+		oValueTypes.put("paytime", ValueType.Time);
+		oValueTypes.put("status", ValueType.String);
+		
+		DataTable orderDt = this.dBParserAccess.selectList(this.getDBSession(), getOrderSql, oP2vs, oAlias, oValueTypes);
+		List<DataRow> orderRows = orderDt.getRows();
+		if(orderRows.size() == 0){
+			return null;
+		} 
+		else{		
+			DataRow orderRow = orderRows.get(0);
+			JSONObject orderObj = new JSONObject();
+			orderObj.put("id", orderRow.getStringValue("id"));
+			orderObj.put("orderNumber", orderRow.getStringValue("ordernumber"));
+			orderObj.put("payPrice",orderRow.isNull("payprice") ? "" :  ValueConverter.convertToString(orderRow.getBigDecimalValue("payprice"), ValueType.Decimal));
+			orderObj.put("payTime", orderRow.isNull("paytime") ? "" : ValueConverter.convertToString(orderRow.getDateTimeValue("paytime"), ValueType.Time).substring(0, 16));
+			orderObj.put("status", orderRow.getStringValue("status"));
+			orderObj.put("subjectInfo", orderRow.getStringValue("subjectinfo"));
+			orderObj.put("bodyInfo", orderRow.getStringValue("bodyinfo"));
 	
 			return orderObj;
 		}
@@ -979,8 +1085,8 @@ public class BuyProcessor {
 		return  unitPrice;
 	}
 	
-	private Integer getRandomInteger(int maxValue){
-		return random.nextInt() % maxValue;
+	private Integer getRandomInteger(int maxValue){ 
+		return Math.abs(random.nextInt()) % maxValue;
 	}
 	
 	private String getRandomOrderNumber(){
@@ -990,33 +1096,30 @@ public class BuyProcessor {
 		return sdf.format(date) + randomStr;
 	} 
 	
-	private void updatePayAfterPaid(String orderId, BigDecimal payPrice, PayType payType){
-		String updatePaySql = "update dm_pay set status = " + SysConfig.getParamPrefix() + "status, "
-				+ "payprice = " + SysConfig.getParamPrefix() + "payPrice, " 
-				+ "endpaytime = " + SysConfig.getParamPrefix() + "endPayTime " 
-				+ "where orderid = " + SysConfig.getParamPrefix() + "orderId and paytype = " + SysConfig.getParamPrefix() + "payType";
+	private void createPayAfterPaid(String orderId, BigDecimal payPrice, PayType payType, Date payTime, String tradeNumber){
+		Data payData = DataCollection.getData("dm_Pay"); 
+		
 		HashMap<String, Object> p2vs = new HashMap<String, Object>();
 		p2vs.put("status", PayStatusType.Paid.toString());
-		p2vs.put("endPayTime", new Date());
-		p2vs.put("orderId", orderId);
-		p2vs.put("payPrice", payPrice);
-		p2vs.put("payType", payType.toString());
+		p2vs.put("tradenumber", tradeNumber);
+		p2vs.put("orderid", orderId);
+		p2vs.put("payprice", payPrice);
+		p2vs.put("paytime", payTime);
+		p2vs.put("paytype", payType.toString());
 		
 		Session dbSession = this.getDBSession();
-		this.dBParserAccess.update(dbSession, updatePaySql, p2vs);
+		this.dBParserAccess.insertByData(dbSession, payData, p2vs);
 	}
 	
-	private void updateOrderStatusAfterPaid(INcpSession session, String orderNumber, PayType payType, BigDecimal payPrice) throws NcpException, SQLException{
+	private void updateOrderStatusAfterPaid(INcpSession session, String orderNumber, PayType payType, BigDecimal payPrice, Date payTime, String tradeNumber) throws NcpException, SQLException{
 		String getOrderSql = "select eo.id as id, "
 				+ "eo.payprice as payprice, " 
 				+ "eo.paytime as paytime, "
 				+ "eo.status as status "
 				+ "from dm_exportorder eo "
-				+ "where eo.ordernumber = " +SysConfig.getParamPrefix() + "orderNumber "
-				+ "and eo.createuserid = " + SysConfig.getParamPrefix() + "userId for update";
+				+ "where eo.ordernumber = " +SysConfig.getParamPrefix() + "orderNumber for update";
 		HashMap<String, Object> oP2vs = new HashMap<String, Object>();
-		oP2vs.put("orderNumber", orderNumber);
-		oP2vs.put("userId", session.getUserId());
+		oP2vs.put("orderNumber", orderNumber); 
 		
 		List<String> oAlias = new ArrayList<String>();
 		oAlias.add("id");  
@@ -1033,7 +1136,7 @@ public class BuyProcessor {
 		DataTable orderDt = this.dBParserAccess.selectList(this.getDBSession(), getOrderSql, oP2vs, oAlias, oValueTypes);
 		List<DataRow> orderRows = orderDt.getRows();
 		if(orderRows.size() == 0){
-			NcpException ncpEx = new NcpException("updateOrderStatusAfterPaid_noneOrder", "不存在此订单或订单不属于当前用户, orderNumber = " + orderNumber);
+			NcpException ncpEx = new NcpException("updateOrderStatusAfterPaid_noneOrder", "不存在此订单, orderNumber = " + orderNumber);
 			throw ncpEx;
 		} 
 		else{		
@@ -1053,17 +1156,17 @@ public class BuyProcessor {
 				throw ncpEx;
 			}
 			
-			this.updateOrderAfterPaid(orderId);
-			this.updatePayAfterPaid(orderId, payPrice, payType);	
+			this.updateOrderAfterPaid(orderId, payTime);
+			this.createPayAfterPaid(orderId, payPrice, payType, payTime, tradeNumber);	
 		}	
 	}
 		
-	private void updateOrderStatusAfterPaidWithTx(INcpSession session, String orderId, PayType payType, BigDecimal payPrice) throws Exception{
+	private void updateOrderStatusAfterPaidWithTx(INcpSession session, String orderNumber, PayType payType, BigDecimal payPrice, Date payTime, String tradeNumber) throws Exception{
 		Session dbSession = this.getDBSession(); 
 		Transaction tx = null;
 		try{  
 			tx = dbSession.beginTransaction();
-			this.updateOrderStatusAfterPaid(session, orderId, payType, payPrice);
+			this.updateOrderStatusAfterPaid(session, orderNumber, payType, payPrice, payTime, tradeNumber);
 			tx.commit(); 
 		}
 		catch(Exception ex){ 
@@ -1077,7 +1180,9 @@ public class BuyProcessor {
 	
 	public String getAliPayFormHtml(INcpSession session, String orderId) throws Exception{
 		String orderNumber = "";
-		BigDecimal payPrice = new BigDecimal(0);  
+		BigDecimal payPrice = new BigDecimal(0);
+		String subjectInfo = "";
+		String bodyInfo = "";
 		try{
 			JSONObject orderObj = this.getOrderMainInfo(session, orderId);
 			if(orderObj == null){
@@ -1086,7 +1191,9 @@ public class BuyProcessor {
 			}
 			else{
 				orderNumber = orderObj.getString("orderNumber");
-				payPrice = BigDecimal.valueOf(Double.valueOf(orderObj.getString("payPrice")));		 
+				payPrice = BigDecimal.valueOf(Double.valueOf(orderObj.getString("payPrice")));		
+				subjectInfo = orderObj.getString("subjectInfo");	
+				bodyInfo = orderObj.getString("bodyInfo");
 			}
 			
 		}
@@ -1097,11 +1204,96 @@ public class BuyProcessor {
 		try{ 
 			AliPayProcessor payProcessor = this.getAliPayProcessor();	 
 			payProcessor.setDBSession(this.getDBSession());
-			String payFormHtml = payProcessor.GetPayFormHtml(orderId, orderNumber, payPrice);  
+			String payFormHtml = payProcessor.GetPayFormHtml(orderId, orderNumber, payPrice, subjectInfo, bodyInfo);  
 			return payFormHtml;
 		}
 		catch(Exception ex){
 			throw ex;
 		} 
+	}
+
+	
+	public void modifyOrderStatusAfterAliApid(INcpSession session, Map<String, String> returnParameters) throws Exception{
+		try{
+			AliPayProcessor payProcessor = this.getAliPayProcessor();	 
+			
+			//商户订单号
+			String orderNumber = returnParameters.get("out_trade_no");
+			
+			//支付宝交易号
+			String tradeNumber = returnParameters.get("trade_no");
+			
+			//付款金额
+			String totalAmount = returnParameters.get("total_amount");
+			BigDecimal paidAmount = new BigDecimal(totalAmount);
+			
+			Date payTime = new Date();
+			
+			this.updateOrderStatusAfterPaidWithTx(session, orderNumber, PayType.Alipay, paidAmount, payTime, tradeNumber);  
+		}
+		catch(Exception ex){
+			throw ex; 
+		}
+	}
+
+	
+	public void checkAlipayReturnInfo(INcpSession session, Map<String, String> returnParameters) throws Exception{
+		try{
+			AliPayProcessor payProcessor = this.getAliPayProcessor();	 
+			
+			//商户订单号
+			String orderNumber = returnParameters.get("out_trade_no");
+			
+			//支付宝交易号
+			String trade_no = returnParameters.get("trade_no");
+			
+			//付款金额
+			String total_amount = returnParameters.get("total_amount");
+			BigDecimal paidAmount = new BigDecimal(total_amount);
+			
+			JSONObject orderObj = this.getOrderMainInfoByOrderNumber(session, orderNumber);
+			BigDecimal payPrice = BigDecimal.valueOf(Double.valueOf(orderObj.getString("payPrice")));
+			if(paidAmount.compareTo(payPrice) == 0){
+				OrderStatusType orderStatus = OrderStatusType.valueOf(orderObj.getString("status"));
+				if(orderStatus != OrderStatusType.Paid){
+					throw new Exception("订单状态校验失败, 当前订单状态为'" + this.getOrderStatusName(orderStatus) + "'");
+				} 
+			}
+			else{
+				throw new Exception("付款失败, 待付款金额为￥" + total_amount + "，付款金额为￥" + payPrice.toString());
+			} 
+		}
+		catch(Exception ex){
+			throw ex; 
+		}
+	}
+	
+	public String getOrderStatusName(OrderStatusType status) throws Exception{
+		 switch(status){
+		 case Creating:
+			 return "正在创建";
+		 case WaitingPay:
+			 return "等待付款";
+		 case Paying:
+			 return "正在支付";
+		 case Paid:
+			 return "已付款";
+		 case Deleted:
+			 return "已取消";
+		 default:
+			 throw new Exception("Unknown Order Status Type, status = " + status.toString());
+		 }
+	}
+
+	
+	public boolean rsaCheckAliV1(INcpSession session, Map<String, String> returnParameters) throws Exception{
+		try{
+			AliPayProcessor payProcessor = this.getAliPayProcessor();	
+			boolean signVerified = payProcessor.rsaCheckV1(returnParameters); 
+			return signVerified;
+		}
+		catch(Exception ex){
+			throw ex; 
+		}
 	}
 }

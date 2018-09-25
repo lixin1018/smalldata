@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
 <%@ page contentType="text/html; charset=utf-8" language="java" pageEncoding="UTF-8" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.math.BigDecimal" %>
+<%@ page import="java.text.DecimalFormat" %>
 <%@ page import="com.novacloud.novaone.common.NcpSession" %>
 <%@ page import="com.novacloud.novaone.dao.sys.ContextUtil" %>
 <%@ page import="com.novacloud.dataHelper.control.BuyControl" %>
@@ -101,7 +103,12 @@
 						String createUserName = orderObj.getString("createUserName"); 
 						String originalTotalPrice = orderObj.getString("originalTotalPrice");  
 						String actualTotalPrice = orderObj.getString("actualTotalPrice"); 
-						String payPrice = orderObj.getString("payPrice"); 
+						
+						//String payPrice = orderObj.getString("payPrice"); 
+						BigDecimal payPriceNum = new BigDecimal(orderObj.getString("payPrice"));
+						DecimalFormat df1 = new DecimalFormat("0.00");
+						String payPrice = df1.format(payPriceNum);
+						
 						String payTime = orderObj.getString("payTime"); 
 						OrderStatusType status = OrderStatusType.valueOf(orderObj.getString("status"));
 						String statusName = buyControl.getOrderStatusName(status);  				

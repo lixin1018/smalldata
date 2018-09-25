@@ -3,6 +3,7 @@ package com.novacloud.dataHelper.control;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -155,21 +156,55 @@ public class BuyControl{
 		}
 	}
 	
-	public String getOrderStatusName(OrderStatusType status) throws Exception{
-		 switch(status){
-		 case Creating:
-			 return "正在创建";
-		 case WaitingPay:
-			 return "等待付款";
-		 case Paying:
-			 return "正在支付";
-		 case Paid:
-			 return "已付款";
-		 case Deleted:
-			 return "已取消";
-		 default:
-			 throw new Exception("Unknown Order Status Type, status = " + status.toString());
-		 }
+	public JSONObject getOrderMainInfoByOrderNumber(INcpSession ncpSession, String orderNumber) throws Exception{
+		logger.info("getOrderMainInfoByOrderNumber");
+		if(orderNumber== null || orderNumber.length() == 0){
+			return null;
+		}
+		else{
+			Session dbSession = null;
+			try{
+				BuyProcessor buyProcessor =  this.getBuyProcessor();
+				dbSession = this.openDBSession();
+				buyProcessor.setDBSession(dbSession);
+				JSONObject orderObj = buyProcessor.getOrderMainInfoByOrderNumber(ncpSession, orderNumber);  
+				return orderObj;
+			}
+			catch(Exception ex){
+				throw ex;
+			}
+			finally{
+				if(dbSession != null){
+					dbSession.close();
+				}
+			} 
+		}
+	}
+
+	
+	public String getOrderIdByOrderNumber(INcpSession ncpSession, String orderNumber) throws Exception{
+		logger.info("getOrderMainInfoByOrderNumber");
+		if(orderNumber== null || orderNumber.length() == 0){
+			return null;
+		}
+		else{
+			Session dbSession = null;
+			try{
+				BuyProcessor buyProcessor =  this.getBuyProcessor();
+				dbSession = this.openDBSession();
+				buyProcessor.setDBSession(dbSession);
+				JSONObject orderObj = buyProcessor.getOrderMainInfoByOrderNumber(ncpSession, orderNumber);  
+				return orderObj == null ? null : orderObj.getString("id");
+			}
+			catch(Exception ex){
+				throw ex;
+			}
+			finally{
+				if(dbSession != null){
+					dbSession.close();
+				}
+			} 
+		}
 	}
 
 	
@@ -192,5 +227,63 @@ public class BuyControl{
 				dbSession.close();
 			}
 		}  
+	}
+	
+	public void modifyOrderStatusAfterAliApid(INcpSession session, Map<String, String> returnParameters) throws NcpException	{
+		Session dbSession = null;
+		try{     
+			BuyProcessor buyProcessor =  this.getBuyProcessor();
+			dbSession = this.openDBSession();
+			buyProcessor.setDBSession(dbSession);
+			if(buyProcessor.rsaCheckAliV1(session, returnParameters)){	
+				buyProcessor.modifyOrderStatusAfterAliApid(session, returnParameters);
+			}
+			else{
+				Exception ex = new Exception("rsaCheckAliV1 验证Alipay返回值出错"); 
+				throw ex;
+			}
+		} 
+		catch(Exception ex) {
+        	ex.printStackTrace();
+			NcpException ncpEx = new NcpException("getAliPayFormHtml", "获取支付宝支付页面Html失败", ex); 
+			throw ncpEx;
+		} 
+		finally{
+			if(dbSession != null){
+				dbSession.close();
+			}
+		}  
+	}
+	
+	public void checkAliPayReturnInfo(INcpSession session, Map<String, String> returnParameters) throws NcpException	{
+		Session dbSession = null;
+		try{     
+			BuyProcessor buyProcessor =  this.getBuyProcessor();
+			dbSession = this.openDBSession();
+			buyProcessor.setDBSession(dbSession);
+			if(buyProcessor.rsaCheckAliV1(session, returnParameters)){	
+				buyProcessor.checkAlipayReturnInfo(session, returnParameters);
+			}
+			else{
+				Exception ex = new Exception("rsaCheckAliV1 验证Alipay返回值出错"); 
+				throw ex;
+			}
+		} 
+		catch(Exception ex) {
+        	ex.printStackTrace();
+			NcpException ncpEx = new NcpException("checkAliPayReturnInfo", "订单状态验证失败", ex); 
+			throw ncpEx;
+		} 
+		finally{
+			if(dbSession != null){
+				dbSession.close();
+			}
+		}  
+	}
+
+	
+	public String getOrderStatusName(OrderStatusType status) throws Exception{
+		BuyProcessor buyProcessor =  this.getBuyProcessor();
+		return buyProcessor.getOrderStatusName(status);
 	}
 }

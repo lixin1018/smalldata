@@ -108,7 +108,7 @@
 	width:190px;
 	font-size: 13px;
 	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #3c3c3c; 
+    color: #FE6000; 
     line-height: 40px;
 }   
 
@@ -215,7 +215,7 @@
 	top: 0px;
 	left:20px;
     height: 40px;
-    width: 200px;
+    width: auto;
 	text-decoration:none;
 	color: #3c3c3c;
 }
