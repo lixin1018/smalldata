@@ -31,3 +31,4 @@ Servers/
 #.recommenders
 .recommenders/
 s/WebContent/WEB-INF/classes/dataHelper.xml
+s/src/dataHelper.xml
