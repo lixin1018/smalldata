@@ -1,7 +1,7 @@
-package com.novacloud.dataHelper.buy;
+package com.novacloud.dataHelper.export;
 
 public enum ExportStatusType {
-	waitingExport,
+	WaitingExport,
 	Exporting,
 	Error,
 	Exported

@@ -116,10 +116,10 @@ public class ValueConverter {
 						}
 						else{
 							str = str.toLowerCase();
-							if( "y".equals(str) || "Y".equals(str) || "true".equals(str)) {
+							if( "y".equals(str) || "Y".equals(str) || "true".equals(str) || "是".equals(str)) {
 								return true;
 							}
-							else if("n".equals(str) || "N".equals(str) || "false".equals(str)){
+							else if("n".equals(str) || "N".equals(str) || "false".equals(str) || "否".equals(str)){
 								return false;
 							}
 							else {

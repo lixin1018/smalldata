@@ -252,6 +252,16 @@
     	<url-pattern>/shuShuo/getImage</url-pattern>
   	</servlet-mapping>
   	
+  	<!-- 数据订单数据下载 -->
+  	<servlet>
+    	<servlet-name>export</servlet-name>
+    	<servlet-class>com.novacloud.dataHelper.export.GetExportFile</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>export</servlet-name>
+    	<url-pattern>/order/export</url-pattern>
+  	</servlet-mapping>
+  	
   	<!-- 音频 -->
   	<servlet>
     	<servlet-name>getSSAudio</servlet-name>

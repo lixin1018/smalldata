@@ -253,6 +253,13 @@
 			</FunctionSetting> 
 		</Function>
 		
+		<!-- 启动导出任务  -->
+		<Function Name="runOrderExportData" Description="监视数据订单，启动导出任务" BeanName="processOrderExportData" MethodName="runOrderExportData" RunAt="Server" Category="AsynInvoke">
+			<FunctionSetting ResultType="void" Description="监视数据订单，启动导出任务">
+				<Parameter Name="maxExportTaskCount" Description="可冰并行的导出任务数" ValueType="java.math.BigDecimal"></Parameter>
+			</FunctionSetting> 
+		</Function>
+		
 		<!-- Excel支持的函数 - 文本 -->
 		<Function Name="concatenate" Description="将多个文本字符串合并成一个" BeanName="excelText" MethodName="concatenate" RunAt="Server" Category="ExcelText">
 			<FunctionSetting ResultType="java.lang.String" Description="将多个文本字符串合并成一个">

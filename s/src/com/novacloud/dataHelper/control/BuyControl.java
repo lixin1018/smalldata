@@ -1,9 +1,17 @@
 package com.novacloud.dataHelper.control;
  
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -22,6 +30,9 @@ import com.novacloud.novaone.common.JSONProcessor;
 import com.novacloud.novaone.common.NcpException;
 import com.novacloud.novaone.common.NcpSession;
 import com.novacloud.novaone.common.ServiceResultProcessor;
+import com.novacloud.novaone.common.ValueConverter;
+import com.novacloud.novaone.common.util.CommonFunction;
+import com.novacloud.novaone.common.util.EncrypDES;
 import com.opensymphony.xwork2.ActionSupport;  
  
 public class BuyControl{
@@ -286,4 +297,10 @@ public class BuyControl{
 		BuyProcessor buyProcessor =  this.getBuyProcessor();
 		return buyProcessor.getOrderStatusName(status);
 	}
+	
+	public String getExportFileDownloadUrlQueryString(String orderLineId, String definitionId, String definitionName, String fileName) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
+		BuyProcessor buyProcessor =  this.getBuyProcessor();
+		return buyProcessor.getExportFileDownloadUrlQueryString(orderLineId, definitionId, definitionName, fileName);
+	}
+	
 }

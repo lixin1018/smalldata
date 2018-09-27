@@ -205,8 +205,20 @@
 	font-size: 13px;
 	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
     color: #3c3c3c; 
-    line-height: 40px;
-	
+    line-height: 40px;	
+}
+
+.orderItemColumnTitleOperate{
+	position: absolute;
+	text-align: left;
+	top: 0px;
+	bottom: 0px;  
+    left: 980px;
+    width:200px;
+	font-size: 13px;
+	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
+    color: #3c3c3c; 
+    line-height: 40px;	
 }
 
 .orderLineDefinitionName{ 
@@ -270,6 +282,26 @@
 	color: #3c3c3c;
 }
 
+.orderLineOperate{ 
+	position: absolute;
+	text-align: left;
+	top: 0px;
+	left: 980px;
+    height: 40px;
+    width: 200px;
+	text-decoration:none;
+	color: #3c3c3c;
+}
+.orderLineOperate a{
+	color: #000000;
+	cursor:pointer;
+	text-decoration:none;
+}
+.orderLineOperate a:hover{  
+	color: #000000;
+	text-decoration: underline;
+}
+
 .orderItemBottom{ 
 	position: relative;
 	width:100%;
@@ -306,14 +338,15 @@
 .orderItemBottomToPayPage{ 
 	position: absolute;
 	text-align: center;
-	top: 30px; 
+	top: 25px; 
 	right: 10px;
     width: 80px;
+    height:40px;
 	font-size: 16px;
 	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
     color: #ffffff; 
     font-weight:600;
-    line-height: 30px;
+    line-height: 40px;
 	text-decoration: none;
 	background-color:#5B9BD5;
 	cursor:pointer; 

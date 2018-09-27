@@ -44,9 +44,15 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 		<property name="serviceId" value="e17fe299-dbf8-4bff-88cf-79c0d6b241b2" />		 
 	</bean>
  	
+ 	<!-- 启动导出任务 -->
+	<bean id="processOrderExportData" class="com.novacloud.dataHelper.export.ProcessOrderExportData" scope="prototype">  
+		<property name="databaseAccess" ref="databaseAccess" />
+		<property name="systemModelAccess" ref="systemModelAccess" /> 
+	</bean>
+ 	
  	<!-- 异步调用服务，调用导入任务-->
-	<bean id="importProcessor" class="com.novacloud.novaone.importExport.ImportProcessor" scope="prototype">  
-		<property name="dBParserAccess" ref="dBParserAccess" /> 	  
+	<bean id="importProcessor" class="com.novacloud.novaone.importExport.ImportProcessor" scope="prototype">
+		<property name="dBParserAccess" ref="dBParserAccess" />
 		<property name="transactionManager" ref="transactionManager" />
 	</bean>
 	  		

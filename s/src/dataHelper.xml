@@ -68,8 +68,12 @@
 	
 	<bean id="dataHelperBuyProcessor" class="com.novacloud.dataHelper.buy.BuyProcessor">
 		<property name="dBParserAccess" ref="dBParserAccess" /> 
-		<property name="aliPayProcessor" ref="aliPayProcessor" />	
+		<property name="aliPayProcessor" ref="aliPayProcessor" />
+		<property name="encrypDes" ref="encrypDes" />	
 	</bean>	
+	
+	<bean id="encrypDes" class="com.novacloud.novaone.common.util.EncrypDES" scope="singleton">
+	</bean>		
 	  
 	<bean id="dataHelperBuyServiceBean" class="com.novacloud.dataHelper.service.BuyService" scope="prototype">  
 		<property name="transactionManager" ref="transactionManager" /> 
@@ -93,5 +97,5 @@
    	    <property name="pId" value="2088231448868233" />
    	    <property name="returnUrl" value="http://localhost:8080/s/page/h/buy/returnUrl_Ali.jsp" />
    	    <property name="notifyUrl" value="http://124.128.27.10/s/page/h/buy/notifyUrl_Ali.jsp" />
-	</bean>	
+	</bean>	  
 </beans>

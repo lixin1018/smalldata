@@ -80,7 +80,7 @@ public class JobInstanceRunner implements Runnable {
 			RuntimeUserParameter runParameter = new RuntimeUserParameter(pName, value);;
 			this.parameters.add(runParameter);
 		}
-	} 
+	}
 	public String getRunParameters() {
 		return runParameters;
 	}

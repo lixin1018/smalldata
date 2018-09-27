@@ -208,7 +208,7 @@ function showCartLineCount(cartLineCount){
 	if(cartLineCount == null){
 		$(".cartCountSpan").text("(-)");
 	}
-	else{			
+	else{
 		$(".cartCountSpan").text("(" + cartLineCount + ")");
 	}
 }
@@ -221,8 +221,7 @@ function showPrice(){
 		var priceStr = price.toFixed(4);	
 		
 		$("#dataRowCountDivId").text(gridWin.totalRowCount); 
-		$("#priceDivId").text(priceStr);
-		
+		$("#priceDivId").text(priceStr);		
 	}
 }
 

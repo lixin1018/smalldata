@@ -1,20 +1,31 @@
 package com.novacloud.dataHelper.buy;
 
-import java.io.File; 
+import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.net.URLEncoder;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
-import org.hibernate.Transaction; 
+import org.hibernate.Transaction;
+
+import com.novacloud.dataHelper.export.ExportStatusType;
 import com.novacloud.novaone.common.FileOperate;
 import com.novacloud.novaone.common.INcpSession; 
 import com.novacloud.novaone.common.NcpException;
@@ -22,6 +33,7 @@ import com.novacloud.novaone.common.NcpSession;
 import com.novacloud.novaone.common.SysConfig;
 import com.novacloud.novaone.common.ValueConverter;
 import com.novacloud.novaone.common.util.CommonFunction;
+import com.novacloud.novaone.common.util.EncrypDES;
 import com.novacloud.novaone.constants.NovaCloudState;
 import com.novacloud.novaone.core.ConfigContext;
 import com.novacloud.novaone.dao.db.DataRow;
@@ -568,7 +580,7 @@ public class BuyProcessor {
 		fieldValues.put("unitprice", unitPrice); 
 		fieldValues.put("totalrowcount", BigDecimal.valueOf(totalRowCount)); 
 		fieldValues.put("newrowcount", BigDecimal.valueOf(newRowCount)); 
-		fieldValues.put("exportstatus", ExportStatusType.waitingExport); 
+		fieldValues.put("exportstatus", ExportStatusType.WaitingExport.toString()); 
 		fieldValues.put("exportedrowcount", BigDecimal.valueOf(0));
 		String orderLineId = this.dBParserAccess.insertByData(this.getDBSession(), orderLineData, fieldValues);
 		return orderLineId;
@@ -819,7 +831,12 @@ public class BuyProcessor {
 			+ "eol.datafilter as datafilter, "
 			+ "eol.newrowcount as newrowcount, "
 			+ "eol.totalrowcount as totalrowcount, "
-			+ "eol.unitprice as unitprice "
+			+ "eol.unitprice as unitprice, "
+			+ "eol.exportlog as exportlog, "
+			+ "eol.exportstarttime as exportstarttime, "
+			+ "eol.exportedrowcount as exportedrowcount, "
+			+ "eol.exportfilename as exportfilename, "
+			+ "eol.exportstatus as exportstatus "
 			+ "from dm_exportorderline eol "
 			+ "left outer join dm_importexportdefinition d on d.id = eol.definitionid "
 			+ "where eol.parentid = " +SysConfig.getParamPrefix() + "orderId ";
@@ -837,6 +854,11 @@ public class BuyProcessor {
 		dAlias.add("newrowcount");
 		dAlias.add("totalrowcount");
 		dAlias.add("unitprice");
+		dAlias.add("exportlog");
+		dAlias.add("exportstarttime");
+		dAlias.add("exportedrowcount");
+		dAlias.add("exportfilename");
+		dAlias.add("exportstatus");
 		
 		HashMap<String, ValueType> dValueTypes = new HashMap<String, ValueType>();
 		dValueTypes.put("id", ValueType.String);
@@ -849,6 +871,11 @@ public class BuyProcessor {
 		dValueTypes.put("newrowcount", ValueType.Decimal);
 		dValueTypes.put("totalrowcount", ValueType.Decimal);
 		dValueTypes.put("unitprice", ValueType.Decimal);
+		dValueTypes.put("exportlog", ValueType.String);
+		dValueTypes.put("exportstarttime", ValueType.Time);
+		dValueTypes.put("exportedrowcount", ValueType.Decimal);
+		dValueTypes.put("exportfilename", ValueType.String);
+		dValueTypes.put("exportstatus", ValueType.String);
 		
 		DataTable orderLineDt = this.dBParserAccess.selectList(this.getDBSession(), getOrderDetailSql, dP2vs, dAlias, dValueTypes);
 		List<DataRow> orderLineRows = orderLineDt.getRows();
@@ -865,7 +892,12 @@ public class BuyProcessor {
 			orderLineObj.put("dataFilter", CommonFunction.encode(orderLineRow.getStringValue("datafilter")));
 			orderLineObj.put("newRowCount", ValueConverter.convertToString(orderLineRow.getBigDecimalValue("newrowcount"), ValueType.Decimal));
 			orderLineObj.put("totalRowCount", ValueConverter.convertToString(orderLineRow.getBigDecimalValue("totalrowcount"), ValueType.Decimal));
-			orderLineObj.put("unitPrice", ValueConverter.convertToString(orderLineRow.getBigDecimalValue("unitprice"), ValueType.Decimal));			
+			orderLineObj.put("unitPrice", ValueConverter.convertToString(orderLineRow.getBigDecimalValue("unitprice"), ValueType.Decimal));		
+			orderLineObj.put("exportLog",  orderLineRow.getStringValue("exportlog") == null ? "" : orderLineRow.getStringValue("exportlog"));		
+			orderLineObj.put("exportStartTime", orderLineRow.getValue("exportstarttime") == null ? "" : ValueConverter.convertToString(orderLineRow.getValue("exportstarttime"), ValueType.Time));		
+			orderLineObj.put("exportedRowCount", orderLineRow.getValue("exportedrowcount") == null ? "" : ValueConverter.convertToString(orderLineRow.getValue("exportedrowcount"), ValueType.Decimal));
+			orderLineObj.put("exportFileName", orderLineRow.getStringValue("exportfilename") == null ? "" : orderLineRow.getStringValue("exportfilename"));					
+			orderLineObj.put("exportStatus", orderLineRow.getStringValue("exportstatus"));			
 			detailArray.add(orderLineObj);
 		}		
 		orderObj.put("lines", detailArray);		
@@ -1295,5 +1327,54 @@ public class BuyProcessor {
 		catch(Exception ex){
 			throw ex; 
 		}
+	}
+	
+	private EncrypDES encrypDes = null;
+	public EncrypDES getEncrypDes() {
+		return encrypDes;
+	}
+	public void setEncrypDes(EncrypDES encrypDes) {
+		this.encrypDes = encrypDes;
+	}
+	
+	public String getExportFileDownloadUrlQueryString(String orderLineId, String definitionId, String definitionName, String fileName) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
+		EncrypDES de1 = this.getEncrypDes();
+		Date nowTime = new Date();
+		//String timeStr = ValueConverter.dateTimeToString(nowTime, "yyyyMMddHHmmssSSS") + "|" + definitionId + "|" + fileName;	
+		String timeStr = "20180927171333333" + "_" + definitionId + "_" + fileName;	
+		byte[] bytes = de1.Encrytor(timeStr);
+		String t = Base64.getEncoder().encodeToString(bytes); 
+		String url = "olid=" + orderLineId + "&fn=" + URLEncoder.encode(definitionName, "utf-8") + "&t=" + URLEncoder.encode(t, "utf-8");
+		return url;	
+	}
+
+	public String[] checkDownloadUrl(String t) throws Exception{
+		EncrypDES de1 = this.getEncrypDes();
+		byte[] tBytes = Base64.getDecoder().decode(t);
+		byte[] decBytes = de1.Decryptor(tBytes);
+		String fullStr = new String(decBytes, "utf-8");
+		String[] strParts = fullStr.split("_");
+		String timeStr = strParts[0]; 
+		Date nowTime = new Date();
+		Date urlTime = ValueConverter.convertToTime(timeStr, "yyyyMMddHHmmssSSS");		
+		long spanMilliseconds = nowTime.getTime() - urlTime.getTime();
+		if(spanMilliseconds < 0 &&  spanMilliseconds > 30 * 60 * 1000){
+			throw new Exception("下载地址已过期, 请登录系统后重新获取下载地址");
+		}
+		else{
+			return strParts;
+		}
+	}
+
+	
+	public String getOrderLineExportFileName(INcpSession session, String orderLineId) throws Exception {
+		String getOrderDetailSql = "select eol.exportfilename as exportfilename "
+			+ "from dm_exportorderline eol "
+			+ "where eol.id = " +SysConfig.getParamPrefix() + "orderLineId ";
+		HashMap<String, Object> dP2vs = new HashMap<String, Object>();
+		dP2vs.put("orderLineId", orderLineId); 
+		
+		String fileName = (String) this.dBParserAccess.selectOne(getDBSession(), getOrderDetailSql, dP2vs);
+		return fileName;
 	}
 }

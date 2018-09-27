@@ -186,7 +186,7 @@
 							else if(status == OrderStatusType.WaitingPay){
 								 %>
 								<div class="orderItemTitleStatusName">
-							 		<%=statusName%>&nbsp;&nbsp;<a href="<%=payPageUrl%>" class="orderLineToPayPage" target="_self">去支付</a> 
+							 		<%=statusName%>&nbsp;&nbsp;<a href="<%=payPageUrl%>" class="orderLineToPayPage" target="_blank">去支付</a> 
 						 		</div>
 								<%
 							}
@@ -201,7 +201,7 @@
 					</div>
 					<div class="orderItemRight1">						
 						<div class="orderItemTitleOperateContainer">
-						<a href="<%=orderPageUrl%>" target="_self" class="toOrderDetail" orderId="<%=orderId%>">查看详情</a>
+						<a href="<%=orderPageUrl%>" target="_blank" class="toOrderDetail" orderId="<%=orderId%>">查看详情</a>
 						<%
 							if(status == OrderStatusType.WaitingPay){
 							 %>
