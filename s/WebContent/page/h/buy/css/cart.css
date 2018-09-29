@@ -1,190 +1,325 @@
-.pageHeaderTitle{
-	position:absolute;
-	left:0px;
-	top:25px;
-	font-size:20px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #666666;
-    font-weight: bold;
-}
-.cartContaienr{
-	margin:1px auto;
-	width:1200px;
-	height:auto;
-	min-height:530px;		
-	display: table;
-}  
-.cartHeaderSection{ 
-	width:100%;
-	height:35px;
-	line-height:35px;
-	position:relative;
-} 
+.pageHeaderTitleContainer{position:absolute;left:260px;top:0px;bottom:0px;width:200px;}
+.pageHeaderTitle{position:absolute;left:0px;top:25px;font-size:24px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #777777;font-weight: bold;}
+.cartContaienr{	margin:1px auto;width:1200px;height:auto;min-height:530px;display: table;}  
+.cartHeaderSection{width:100%;height:35px;line-height:35px;position:relative;}
+.cartFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+.dataListSection{}
+.columnTitleDiv{width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:13px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+.columnTitleSelectAll{position:absolute;top:10px;left:12px;width:15px;height:15px;}
+.columnTitleSelectAllName{position:absolute;top:12px;left:35px;width:40px;height:20px;}
+.columnTitleName{position:absolute;top:12px;left:80px;width:80px;height:20px;}
+.columnTitleFilter{position:absolute;top:12px;left:400px;width:80px;height:20px;}
+.columnTitleUnitPrice{position:absolute;top:12px;right:350px;width:80px;height:20px;text-align:right;}
+.columnTitleAmount{position:absolute;top:12px;right:250px;width:80px;height:20px;text-align:right;}
+.columnTitlePrice{position:absolute;top:12px;right:150px;width:80px;height:20px;text-align:right;}
+.columnTitleOperate{position:absolute;top:12px;right:0px;width:100px;height:20px;text-align:left;}
+.dataItem{position: relative;width:100%;height:35px;}
+.dataItemSelected{background-color:#FFF8E1;}
+.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;}
+.dataName{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 80px;width: 300px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+.dataFilter{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 400px;width: 700px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+.dataCheckBox{position: absolute;text-align: left;top: 5px;left: 30px; height: 15px; width: 15px;}
+.dataUnitPrice{position: absolute;text-align: right;top: 0px;bottom: 0px;right: 350px;height: 24px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+.dataRowCount{position: absolute;text-align: right;top: 0px;right: 250px;height: 24px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+.dataPrice{position: absolute;text-align: right;top: 0px;right: 150px;height: 24px;width: 80px;font-size: 14px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+.operateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 24px;width: 100px;font-size: 10px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+.removeFromCart{}
+.removeFromCart:hover{text-decoration: underline;font-weight:600;cursor:pointer;}
+.dataNameLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+.dataNameLink{ text-decoration:none; color: #666666; }
+.dataDetail{position: absolute;text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 12px; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #666666; line-height: 30px;}
+.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+.dataDetailLink{text-decoration:none;color: #666666;} 
+.alertCartError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+.cartBottomLineDiv{width:100%;height:50px;position:relative;font-size:13px;border:solid 1px #eeeeee;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+.cartTotalPriceDiv{position:absolute;top:12px;right:150px;width:180px;height:20px;text-align:right;}
+.cartTotalPrice{font-size:16px;color:#FE6000;font-weight:600;}
+.cartNoteDiv{position:absolute;top:27px;right:150px;width:240px;height:20px;text-align:right;}
+.toPayPageDiv{position:absolute;top:0px;right:0px;width:120px;bottom:0px;text-align:center;line-height:50px;font-size:16px;background-color:#FF4400;color:#ffffff;cursor:pointer;}
 
-.cartFooterSection{ 
-	width:100%;
-	height:35px;
-	line-height:35px;
-	position:relative;
-}
 
-.dataListSection{  
-}
-
-.dataItem{ 
-	position: relative;
-	width:100%;
-	height:35px;
-} 
-
-.dataItemSelected{ 
-	background-color:#FFF8E1;
-} 
-
-.dataItemSpaceBorder{  
-	position:relative; 
-	width:100%;
-	height:5px;
-	color:#ffffff;
-    border-top: dashed 1px #cccccc;
-} 
-
-.dataName{ 
-	position: absolute;
-	text-align: left;
-	top: 0px;
-	bottom: 0px;
-	left: 80px;
-    width: 300px;
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #666666; 
-    line-height: 30px;
-}
-
-.dataFilter{
-	position: absolute;
-	text-align: left;
-	top: 0px; 
-	bottom: 0px;
-	left: 400px; 
-    width: 700px;
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #666666; 
-    line-height: 30px;
-}
-
-.dataCheckBox{
-	position: absolute;
-	text-align: left;
-	top: 5px;
-	left: 30px;
-    height: 15px;
-    width: 15px;
-}
-
-.dataUnitPrice{
-	position: absolute;
-	text-align: right;
-	top: 0px;
-	bottom: 0px;
-	right: 350px;
-    height: 24px; 
-    width: 80px;
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #666666; 
-    line-height: 30px;
-}
-
-.dataRowCount{ 
-	position: absolute;
-	text-align: right;
-	top: 0px;
-	right: 250px;
-    height: 24px;
-    width: 80px; 
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #666666; 
-    line-height: 30px;
-}
-
-.dataPrice{
-	position: absolute;
-	text-align: right;
-	top: 0px;
-	right: 150px;
-    height: 24px;
-    width: 80px;
-    font-weight:600;
-	font-size: 14px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #FE6000; 
-    line-height: 30px;
-}
-
-.operateContainer{
-	position: absolute;
-	text-align: left;
-	top: 0px;
-	right: 0px;
-    height: 24px;
-    width: 100px; 
-	font-size: 10px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #666666; 
-    line-height: 30px;
-}
-.removeFromCart{
+@media all and (min-width: 240px) and (max-width: 359px){
+	.pageHeader{height:68px;}
+	.headerMain{height:68px;}
+	.headerBottom{height:48px;} 
+	.headerBottomInner{height:46px;}
+	.pageHeaderTitleContainer{left:110px;}
+	.pageHeaderTitle{top:0px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.cartContaienr{	margin:1px auto;width:100%;height:auto;min-height:530px;display: table;}  
+	.cartHeaderSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.cartFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.columnTitleDiv{width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:11px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+	.columnTitleSelectAll{position:absolute;top:10px;left:8px;width:15px;height:15px;}
+	.columnTitleSelectAllName{display:none;}
+	.columnTitleName{position:absolute;top:2px;left:35px;width:100px;height:20px;}
+	.columnTitleFilter{position:absolute;top:20px;left:35px;width:100px;height:20px;}
+	.columnTitleUnitPrice{position:absolute;top:2px;right:70px;width:60px;height:20px;text-align: right;}
+	.columnTitleAmount{position:absolute;top:20px;right:70px;width:60px;height:20px;text-align: right;}
+	.columnTitlePrice{position:absolute;top:2px;right:10px;width:60px;height:20px;text-align: right;}
+	.columnTitleOperate{position:absolute;top:20px;right:10px;width:60px;height:20px;text-align: right;}
+	.dataListSection{}
+	.dataItem{position: relative;width:100%;height:55px;}
+	.dataItemSelected{background-color:#FFF8E1;}
+	.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;}
+	.dataCheckBox{position: absolute;text-align: left;top: 18px;left: 8px; height: 15px; width: 15px;}
+	.dataName{position: absolute;text-align: left;top: 8px;height: 20px;left: 35px;right: 160px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataFilter{position: absolute;text-align: left;top: 28px;height: 20px;left: 35px;right: 0px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataUnitPrice{position: absolute;text-align: right;top: 8px;right:70px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataRowCount{position: absolute;text-align: right;top: 28px;right: 70px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataPrice{position: absolute;text-align: right;top: 8px;right: 10px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.operateContainer{position: absolute;text-align: right;top: 28px;right: 10px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.removeFromCart{}
+	.removeFromCart:hover{text-decoration: underline;font-weight:600;cursor:pointer;}
+	.dataNameLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataNameLink{ text-decoration:none; color: #666666; }
+	.dataDetail{position: absolute;text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 12px; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #666666; line-height: 30px;}
+	.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataDetailLink{text-decoration:none;color: #666666;} 
+	.alertCartError{width:100%;height:300px;text-align:center;font-size: 15px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}	
 	
 }
-.removeFromCart:hover{
-	text-decoration: underline;
-	font-weight:600;
-	cursor:pointer;
+
+@media all and (min-width: 360px) and (max-width: 479px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:150px;}
+	.pageHeaderTitle{top:5px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.cartContaienr{	margin:1px auto;width:100%;height:auto;min-height:530px;display: table;}  
+	.cartHeaderSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.cartFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.columnTitleDiv{width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:11px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+	.columnTitleSelectAll{position:absolute;top:10px;left:8px;width:15px;height:15px;}
+	.columnTitleSelectAllName{display:none;}
+	.columnTitleName{position:absolute;top:2px;left:35px;width:100px;height:20px;}
+	.columnTitleFilter{position:absolute;top:20px;left:35px;width:100px;height:20px;}
+	.columnTitleUnitPrice{position:absolute;top:2px;right:70px;width:60px;height:20px;text-align: right;}
+	.columnTitleAmount{position:absolute;top:20px;right:70px;width:60px;height:20px;text-align: right;}
+	.columnTitlePrice{position:absolute;top:2px;right:10px;width:60px;height:20px;text-align: right;}
+	.columnTitleOperate{position:absolute;top:20px;right:10px;width:60px;height:20px;text-align: right;}
+	.dataListSection{}
+	.dataItem{position: relative;width:100%;height:55px;}
+	.dataItemSelected{background-color:#FFF8E1;}
+	.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;}
+	.dataCheckBox{position: absolute;text-align: left;top: 18px;left: 8px; height: 15px; width: 15px;}
+	.dataName{position: absolute;text-align: left;top: 8px;height: 20px;left: 35px;right: 160px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataFilter{position: absolute;text-align: left;top: 28px;height: 20px;left: 35px;right: 0px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataUnitPrice{position: absolute;text-align: right;top: 8px;right:70px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataRowCount{position: absolute;text-align: right;top: 28px;right: 70px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataPrice{position: absolute;text-align: right;top: 8px;right: 10px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.operateContainer{position: absolute;text-align: right;top: 28px;right: 10px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.removeFromCart{}
+	.removeFromCart:hover{text-decoration: underline;font-weight:600;cursor:pointer;}
+	.dataNameLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataNameLink{ text-decoration:none; color: #666666; }
+	.dataDetail{position: absolute;text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 12px; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #666666; line-height: 30px;}
+	.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataDetailLink{text-decoration:none;color: #666666;} 
+	.alertCartError{width:100%;height:300px;text-align:center;font-size: 15px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}	
 }
 
-.dataNameLink:hover{  
-	color: #000000;
-	cursor:pointer;
-	text-decoration: underline;
+@media all and (min-width: 480px) and (max-width: 639px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:150px;}
+	.pageHeaderTitle{top:5px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.cartContaienr{	margin:1px auto;width:100%;height:auto;min-height:530px;display: table;}  
+	.cartHeaderSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.cartFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.columnTitleDiv{width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:11px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+	.columnTitleSelectAll{position:absolute;top:10px;left:8px;width:15px;height:15px;}
+	.columnTitleSelectAllName{display:none;}
+	.columnTitleName{position:absolute;top:2px;left:35px;width:100px;height:20px;}
+	.columnTitleFilter{position:absolute;top:20px;left:35px;width:100px;height:20px;}
+	.columnTitleUnitPrice{position:absolute;top:2px;right:70px;width:60px;height:20px;text-align: right;}
+	.columnTitleAmount{position:absolute;top:20px;right:70px;width:60px;height:20px;text-align: right;}
+	.columnTitlePrice{position:absolute;top:2px;right:10px;width:60px;height:20px;text-align: right;}
+	.columnTitleOperate{position:absolute;top:20px;right:10px;width:60px;height:20px;text-align: right;}
+	.dataListSection{}
+	.dataItem{position: relative;width:100%;height:55px;}
+	.dataItemSelected{background-color:#FFF8E1;}
+	.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;}
+	.dataCheckBox{position: absolute;text-align: left;top: 18px;left: 8px; height: 15px; width: 15px;}
+	.dataName{position: absolute;text-align: left;top: 8px;height: 20px;left: 35px;right: 160px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataFilter{position: absolute;text-align: left;top: 28px;height: 20px;left: 35px;right: 0px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataUnitPrice{position: absolute;text-align: right;top: 8px;right:70px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataRowCount{position: absolute;text-align: right;top: 28px;right: 70px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataPrice{position: absolute;text-align: right;top: 8px;right: 10px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.operateContainer{position: absolute;text-align: right;top: 28px;right: 10px;height: 20px;width: 60px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.removeFromCart{}
+	.removeFromCart:hover{text-decoration: underline;font-weight:600;cursor:pointer;}
+	.dataNameLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataNameLink{ text-decoration:none; color: #666666; }
+	.dataDetail{position: absolute;text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 12px; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #666666; line-height: 30px;}
+	.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataDetailLink{text-decoration:none;color: #666666;} 
+	.alertCartError{width:100%;height:300px;text-align:center;font-size: 15px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}	
 }
 
-.dataNameLink{ 
-	text-decoration:none;
-	color: #666666;
-}
-.dataDetail{ 
-	position: absolute;
-	text-align: right;
-	top: 0px;
-	right: 140px;
-    height: 30px;
-    width: 70px;
-	font-size: 12px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #666666; 
-    line-height: 30px;
-}
-
-.dataDetailLink:hover{  
-	color: #000000;
-	cursor:pointer;
-	text-decoration: underline;
-}
-
-.dataDetailLink{ 
-	text-decoration:none;
-	color: #666666;
+@media all and (min-width: 640px) and (max-width: 767px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:170px;}
+	.pageHeaderTitle{top:8px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:20px;}
+	.cartContaienr{	margin:1px auto;width:100%;height:auto;min-height:530px;display: table;}  
+	.cartHeaderSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.cartFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.columnTitleDiv{width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:13px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+	.columnTitleSelectAll{position:absolute;top:10px;left:8px;width:15px;height:15px;}
+	.columnTitleSelectAllName{display:none;}
+	.columnTitleName{position:absolute;top:2px;left:35px;width:100px;height:20px;}
+	.columnTitleFilter{position:absolute;top:20px;left:35px;width:100px;height:20px;}
+	.columnTitleUnitPrice{position:absolute;top:10px;right:230px;width:80px;height:20px;text-align: right;}
+	.columnTitleAmount{position:absolute;top:10px;right:150px;width:80px;height:20px;text-align: right;}
+	.columnTitlePrice{position:absolute;top:10px;right:70px;width:80px;height:20px;text-align: right;}
+	.columnTitleOperate{position:absolute;top:10px;right:10px;width:60px;height:20px;text-align: right;}
+	.dataListSection{}
+	.dataItem{position: relative;width:100%;height:55px;}
+	.dataItemSelected{background-color:#FFF8E1;}
+	.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;}
+	.dataCheckBox{position: absolute;text-align: left;top: 18px;left: 8px; height: 15px; width: 15px;}
+	.dataName{position: absolute;text-align: left;top: 8px;height: 20px;left: 35px;right: 160px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataFilter{position: absolute;text-align: left;top: 28px;height: 20px;left: 35px;right: 0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataUnitPrice{position: absolute;text-align: right;top: 8px;right:230px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataRowCount{position: absolute;text-align: right;top: 8px;right: 150px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataPrice{position: absolute;text-align: right;top: 8px;right: 70px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.operateContainer{position: absolute;text-align: right;top: 8px;right: 10px;height: 20px;width: 60px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.removeFromCart{}
+	.removeFromCart:hover{text-decoration: underline;font-weight:600;cursor:pointer;}
+	.dataNameLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataNameLink{ text-decoration:none; color: #666666; }
+	.dataDetail{position: absolute;text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 13px; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #666666; line-height: 30px;}
+	.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataDetailLink{text-decoration:none;color: #666666;} 
+	.alertCartError{width:100%;height:300px;text-align:center;font-size: 15px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}	
 } 
 
-.alertCartError{
-	width:100%;
-	height:300px;
-	text-align:center;
-	font-size: 20px;
-	color: #666666;
-    font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; 
-}
+@media all and (min-width: 768px) and (max-width: 999px){
+	.pageHeader{height:118px;}
+	.headerMain{height:118px;}
+	.headerBottom{height:88px;} 
+	.headerBottomInner{height:88px;}
+	.pageHeaderTitleContainer{left:230px;}
+	.pageHeaderTitle{top:15px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:20px;}
+	.cartContaienr{	margin:1px auto;width:100%;height:auto;min-height:530px;display: table;}  
+	.cartHeaderSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.cartFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.columnTitleDiv{width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:13px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+	.columnTitleSelectAll{position:absolute;top:10px;left:8px;width:15px;height:15px;}
+	.columnTitleSelectAllName{display:none;}
+	.columnTitleName{position:absolute;top:2px;left:35px;width:100px;height:20px;}
+	.columnTitleFilter{position:absolute;top:20px;left:35px;width:100px;height:20px;}
+	.columnTitleUnitPrice{position:absolute;top:10px;right:230px;width:80px;height:20px;text-align: right;}
+	.columnTitleAmount{position:absolute;top:10px;right:150px;width:80px;height:20px;text-align: right;}
+	.columnTitlePrice{position:absolute;top:10px;right:70px;width:80px;height:20px;text-align: right;}
+	.columnTitleOperate{position:absolute;top:10px;right:10px;width:60px;height:20px;text-align: right;}
+	.dataListSection{}
+	.dataItem{position: relative;width:100%;height:55px;}
+	.dataItemSelected{background-color:#FFF8E1;}
+	.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;}
+	.dataCheckBox{position: absolute;text-align: left;top: 18px;left: 8px; height: 15px; width: 15px;}
+	.dataName{position: absolute;text-align: left;top: 8px;height: 20px;left: 35px;right: 160px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataFilter{position: absolute;text-align: left;top: 28px;height: 20px;left: 35px;right: 0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataUnitPrice{position: absolute;text-align: right;top: 8px;right:230px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataRowCount{position: absolute;text-align: right;top: 8px;right: 150px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataPrice{position: absolute;text-align: right;top: 8px;right: 70px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.operateContainer{position: absolute;text-align: right;top: 8px;right: 10px;height: 20px;width: 60px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.removeFromCart{}
+	.removeFromCart:hover{text-decoration: underline;font-weight:600;cursor:pointer;}
+	.dataNameLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataNameLink{ text-decoration:none; color: #666666; }
+	.dataDetail{position: absolute;text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 13px; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #666666; line-height: 30px;}
+	.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataDetailLink{text-decoration:none;color: #666666;} 
+	.alertCartError{width:100%;height:300px;text-align:center;font-size: 15px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}	
+} 
+
+@media all and (min-width: 1000px) and (max-width: 1199px){	 
+	.pageHeader{height:118px;}
+	.headerMain{height:118px;}
+	.headerBottom{height:88px;} 
+	.headerBottomInner{height:88px;}
+	.pageHeaderTitleContainer{left:230px;}
+	.pageHeaderTitle{top:15px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:24px;}
+	.cartContaienr{	margin:1px auto;width:100%;height:auto;min-height:530px;display: table;}  
+	.cartHeaderSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.cartFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.columnTitleDiv{width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:13px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+	.columnTitleSelectAll{position:absolute;top:10px;left:8px;width:15px;height:15px;}
+	.columnTitleSelectAllName{display:none;}
+	.columnTitleName{position:absolute;top:2px;left:35px;width:100px;height:20px;}
+	.columnTitleFilter{position:absolute;top:20px;left:35px;width:100px;height:20px;}
+	.columnTitleUnitPrice{position:absolute;top:10px;right:230px;width:80px;height:20px;text-align: right;}
+	.columnTitleAmount{position:absolute;top:10px;right:150px;width:80px;height:20px;text-align: right;}
+	.columnTitlePrice{position:absolute;top:10px;right:70px;width:80px;height:20px;text-align: right;}
+	.columnTitleOperate{position:absolute;top:10px;right:10px;width:60px;height:20px;text-align: right;}
+	.dataListSection{}
+	.dataItem{position: relative;width:100%;height:55px;}
+	.dataItemSelected{background-color:#FFF8E1;}
+	.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;}
+	.dataCheckBox{position: absolute;text-align: left;top: 18px;left: 8px; height: 15px; width: 15px;}
+	.dataName{position: absolute;text-align: left;top: 8px;height: 20px;left: 35px;right: 160px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataFilter{position: absolute;text-align: left;top: 28px;height: 20px;left: 35px;right: 0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataUnitPrice{position: absolute;text-align: right;top: 8px;right:230px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataRowCount{position: absolute;text-align: right;top: 8px;right: 150px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.dataPrice{position: absolute;text-align: right;top: 8px;right: 70px;height: 20px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.operateContainer{position: absolute;text-align: right;top: 8px;right: 10px;height: 20px;width: 60px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 20px;}
+	.removeFromCart{}
+	.removeFromCart:hover{text-decoration: underline;font-weight:600;cursor:pointer;}
+	.dataNameLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataNameLink{ text-decoration:none; color: #666666; }
+	.dataDetail{position: absolute;text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 13px; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #666666; line-height: 30px;}
+	.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataDetailLink{text-decoration:none;color: #666666;} 
+	.alertCartError{width:100%;height:300px;text-align:center;font-size: 15px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}	
+} 
+
+@media all and (min-width: 1200px) and (max-width: 4096px){
+	.pageHeader{height:118px;}
+	.headerMain{height:118px;}
+	.headerBottom{height:88px;} 
+	.headerBottomInner{height:88px;}
+	.pageHeaderTitleContainer{position:absolute;left:260px;top:0px;bottom:0px;width:200px;}
+	.pageHeaderTitle{position:absolute;left:0px;top:25px;font-size:24px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #777777;font-weight: bold;}
+	.cartContaienr{	margin:1px auto;width:1200px;height:auto;min-height:530px;display: table;}  
+	.cartHeaderSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.cartFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.dataListSection{}
+	.columnTitleDiv{width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:13px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+	.columnTitleSelectAll{position:absolute;top:10px;left:12px;width:15px;height:15px;}
+	.columnTitleSelectAllName{position:absolute;top:12px;left:35px;width:40px;height:20px;}
+	.columnTitleName{position:absolute;top:12px;left:80px;width:80px;height:20px;}
+	.columnTitleFilter{position:absolute;top:12px;left:400px;width:80px;height:20px;}
+	.columnTitleUnitPrice{position:absolute;top:12px;right:350px;width:80px;height:20px;text-align:right;}
+	.columnTitleAmount{position:absolute;top:12px;right:250px;width:80px;height:20px;text-align:right;}
+	.columnTitlePrice{position:absolute;top:12px;right:150px;width:80px;height:20px;text-align:right;}
+	.columnTitleOperate{position:absolute;top:12px;right:0px;width:100px;height:20px;text-align:left;}
+	.dataItem{position: relative;width:100%;height:35px;}
+	.dataItemSelected{background-color:#FFF8E1;}
+	.dataItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;border-top: dashed 1px #cccccc;}
+	.dataName{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 80px;width: 300px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+	.dataFilter{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 400px;width: 700px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+	.dataCheckBox{position: absolute;text-align: left;top: 5px;left: 30px; height: 15px; width: 15px;}
+	.dataUnitPrice{position: absolute;text-align: right;top: 0px;bottom: 0px;right: 350px;height: 24px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+	.dataRowCount{position: absolute;text-align: right;top: 0px;right: 250px;height: 24px;width: 80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+	.dataPrice{position: absolute;text-align: right;top: 0px;right: 150px;height: 24px;width: 80px;font-size: 14px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+	.operateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 24px;width: 100px;font-size: 10px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #666666;line-height: 30px;}
+	.removeFromCart{}
+	.removeFromCart:hover{text-decoration: underline;font-weight:600;cursor:pointer;}
+	.dataNameLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataNameLink{ text-decoration:none; color: #666666; }
+	.dataDetail{position: absolute;text-align: right;top: 0px;right: 140px;height: 30px; width: 70px;font-size: 12px; font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #666666; line-height: 30px;}
+	.dataDetailLink:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.dataDetailLink{text-decoration:none;color: #666666;} 
+	.alertCartError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.cartBottomLineDiv{width:100%;height:50px;position:relative;font-size:13px;border:solid 1px #eeeeee;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;}
+	.cartTotalPriceDiv{position:absolute;top:12px;right:150px;width:180px;height:20px;text-align:right;}
+	.cartTotalPrice{font-size:16px;color:#FE6000;font-weight:600;}
+	.cartNoteDiv{position:absolute;top:27px;right:150px;width:240px;height:20px;text-align:right;}
+	.toPayPageDiv{position:absolute;top:0px;right:0px;width:120px;bottom:0px;text-align:center;line-height:50px;font-size:16px;background-color:#FF4400;color:#ffffff;cursor:pointer;}
+} 	 

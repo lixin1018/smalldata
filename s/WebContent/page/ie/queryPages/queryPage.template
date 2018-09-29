@@ -40,9 +40,6 @@
 		<div class="tableQueryButtonLine">
 			<div class="queryButtonDiv" id="queryBtnId" title="按照查询条件进行查询">查&nbsp;询</div>
 		</div>
-		<div class="tableQueryButtonLine">
-			<div class="queryButtonDiv" id="queryCloseBtnId" title="关闭查询窗口">关&nbsp;闭</div>
-		</div>
 		<div class="tableQuerySplitLine">
 			<div class="tableQuerySplitCell"></div> 
 		</div>
@@ -64,6 +61,9 @@
 			</div>
 			<div class="newOrderConfirmBtnDiv">
 				<a class="showOrderListPageBtn" id="showOrderListPageBtnId" href="../../h/buy/orderList.jsp" target="_blank">历史订单</a>
+			</div>
+			<div class="tableQueryButtonLine">
+				<div class="queryButtonDiv" id="queryCloseBtnId" title="关闭查询窗口">关&nbsp;闭</div>
 			</div>
 		</div>
 	</div>	 		

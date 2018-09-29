@@ -17,6 +17,7 @@
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="homepage"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	 
 	
 	<link rel="stylesheet" type="text/css" href="${css}/common.css">
 	<link rel="stylesheet" type="text/css" href="../css/siteCommon.css">
@@ -26,62 +27,28 @@
 </head>
 <body>
 	<div id="pageHeaderDiv" class="pageHeader">
-		<div class="headerTop">
-			<div class="headerTopInner">
-				<div id="headerLeftTopDiv" class="headerLeftTop">
-				<%				
-					HttpSession httpSession = request.getSession();
-					NcpSession ncpSession = new NcpSession(httpSession, false);
-					if(ncpSession.getIsOnline()){
-						String userName = ncpSession.getUserName();
-						%>				
-							<%=userName%>, &nbsp;欢迎使用数据助理&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/changePwd.jsp" class="toChangePwd">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/logout.jsp" class="toLogout">退出</a>
-						<% 
-					}
-					else{
-						%>				
-						欢迎使用数据助理, 请&nbsp;<a href="../home/login.jsp" class="toLogin">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/reg.jsp" class="toReg">注册</a>
-						<% 
-					}
-				%>					
-				</div> 
-				<div id="headerRightTopDiv" class="headerRightTop">  
-					<div class="toContainer"> 
-						<a href="../../h/buy/orderList.jsp" class="toOrderList">我的订单</a>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<a href="../home/help.jsp" class="toHelp">帮助</a>
-					</div>
-				</div>
-			</div> 
-		</div>
-		<div class="headerBottom">
-			<div class="headerBottomInner">
-				<div class="headerLeftBottom" style="width:240px;">
-					<a href="../../../"><img class="headerLogo" src="../../h/images/logo.png" /></a> 
-					<span class="headerSysName">数据助理</span>
-					<span class="headerSysSubName">Power Data Helper</span>
-				</div>
-				<div class="headerRightBottom" style="left:260px;">
-					<div class="pageHeaderTitle">购物车</div> 
-				</div>
-			</div>	  			
-		</div>	
+		<jsp:include  page="headerA.jsp">
+			<jsp:param value="购物车" name="subTitle"/>
+		</jsp:include>
 	</div>
-	<div class="sectionBlankSpace" style="border-top: solid 1px #E3E4E5; "></div>	
+	<div class="sectionBlankSpaceTopBorder"></div>
+	<div class="sectionBlankSpace"></div>	
 	<div id="pageContentDiv" class="pageContent">
 		<div id="cartContaienrDiv" class="cartContaienr">
-			<div style="width:100%;height:40px;background-color:#E3EEFF;position:relative;font-size:13px;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;">
-				<input type="checkbox" checked="checked" id="selectAllCheckboxId" style="position:absolute;top:10px;left:12px;width:15px;height:15px;" />
-				<span style="position:absolute;top:12px;left:35px;width:40px;height:20px;">全选</span>
-				<span style="position:absolute;top:12px;left:80px;width:80px;height:20px;">名称</span>
-				<span style="position:absolute;top:12px;left:400px;width:80px;height:20px;">数据筛选条件</span>
-				<span style="position:absolute;top:12px;right:350px;width:80px;height:20px;text-align:right;">单价(元/条)</span>
-				<span style="position:absolute;top:12px;right:250px;width:80px;height:20px;text-align:right;">数量(条)</span>
-				<span style="position:absolute;top:12px;right:150px;width:80px;height:20px;text-align:right;">小计(元)</span>
-				<span style="position:absolute;top:12px;right:0px;width:100px;height:20px;text-align:left;">操作</span>
+			<div class="columnTitleDiv">
+				<input class="columnTitleSelectAll" type="checkbox" checked="checked" id="selectAllCheckboxId" />
+				<span class="columnTitleSelectAllName" >全选</span>
+				<span class="columnTitleName" >名称</span>
+				<span class="columnTitleFilter">数据筛选条件</span>
+				<span class="columnTitleUnitPrice">单价</span>
+				<span class="columnTitleAmount">数量</span>
+				<span class="columnTitlePrice">金额</span>
+				<span class="columnTitleOperate">操作</span>
 			</div>
 			<div class="sectionBlankSpace"></div>
 				<% 
+					HttpSession httpSession = request.getSession();
+					NcpSession ncpSession = new NcpSession(httpSession, false);
 					if(!ncpSession.getIsOnline()){
 				%>
 				<div class="alertCartError">请登录后查看购物车</div>
@@ -141,10 +108,10 @@
 				<%
 							} 
 				%>				
-				<div style="width:100%;height:50px;position:relative;font-size:13px;border:solid 1px #eeeeee;font-family:'Microsoft YaHei','lucida grande', tahoma, verdana, arial, sans-serif;color:#666666;">
-					<div style="position:absolute;top:2px;right:150px;width:180px;height:20px;text-align:right;">合计:&nbsp;<span id="totalPriceId" style="font-size:16px;color:#FE6000;font-weight:600;">?</span></div>
-					<div style="position:absolute;top:27px;right:150px;width:240px;height:20px;text-align:right;">请点击结算, 更多优惠价格等着您</div>
-					<div id="toPayPage" style="position:absolute;top:0px;right:0px;width:120px;bottom:0px;text-align:center;line-height:50px;font-size:16px;background-color:#FF4400;color:#ffffff;cursor:pointer;">结&nbsp;算</div>
+				<div class="cartBottomLineDiv">
+					<div class="cartTotalPriceDiv">合计:&nbsp;<span id="totalPriceId" class="cartTotalPrice">?</span></div>
+					<div class="cartNoteDiv"></div>
+					<div id="toPayPage" class="toPayPageDiv">结&nbsp;算</div>
 				</div>
 				<%
 						}

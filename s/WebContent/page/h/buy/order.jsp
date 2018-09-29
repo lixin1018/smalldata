@@ -31,56 +31,17 @@
 </head>
 <body>
 	<div id="pageHeaderDiv" class="pageHeader">
-		<div class="headerTop">
-			<div class="headerTopInner">
-				<div id="headerLeftTopDiv" class="headerLeftTop">
-				<%				
-					HttpSession httpSession = request.getSession();
-					NcpSession ncpSession = new NcpSession(httpSession, false);
-					if(ncpSession.getIsOnline()){
-						String userName = ncpSession.getUserName();
-						%>				
-							<%=userName%>, &nbsp;欢迎使用数据助理&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/changePwd.jsp" class="toChangePwd">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/logout.jsp" class="toLogout">退出</a>
-						<% 
-					}
-					else{
-						%>				
-						欢迎使用数据助理, 请&nbsp;<a href="../home/login.jsp" class="toLogin">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/reg.jsp" class="toReg">注册</a>
-						<% 
-					}
-				%>					
-				</div> 
-				<div id="headerRightTopDiv" class="headerRightTop">  
-					<div class="toContainer"> 
-						<a href="../../h/buy/orderList.jsp" class="toOrderList">我的订单</a>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<a href="../home/help.jsp" class="toHelp">帮助</a>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<a href="../../h/buy/cart.jsp" class="toCartLink">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<img src="../../h/buy/images/cart.png" class="toCartImage" title="进入购入车页面"/>
-							<div id="cartLineCountSpanId" class="toCartLineCount">(?)</div>
-						</a>
-					</div>
-				</div>
-			</div> 
-		</div>
-		<div class="headerBottom">
-			<div class="headerBottomInner"">
-				<div class="headerLeftBottom" style="width:240px;">
-					<a href="../../../"><img class="headerLogo" src="../../h/images/logo.png" /></a> 
-					<span class="headerSysName">数据助理</span>
-					<span class="headerSysSubName">Power Data Helper</span>
-				</div>
-				<div class="headerRightBottom" style="left:260px;">
-					<div class="pageHeaderTitle">订单详情</div> 
-				</div>
-			</div>	  			
-		</div>	
+		<jsp:include  page="headerA.jsp">
+			<jsp:param value="订单详情" name="subTitle"/>
+		</jsp:include>
 	</div>
-	<div class="sectionBlankSpace" style="border-top: solid 1px #E3E4E5; "></div>	
+	<div class="sectionBlankSpaceTopBorder"></div>
+	<div class="sectionBlankSpace"></div>
 	<div id="pageContentDiv" class="pageContent">
 		<div id="orderContaienrDiv" class="orderContaienr"> 
 			<% 
+				HttpSession httpSession = request.getSession();
+				NcpSession ncpSession = new NcpSession(httpSession, false);
 				if(!ncpSession.getIsOnline()){ 
 			%>
 			<div class="alertOrderError">请登录后查看订单详情</div>			

@@ -8,15 +8,15 @@
 .tableQueryPopButtonDiv span{text-decoration:none;cursor:pointer;}
 .tableQueryContainer{position:absolute;font-size:13px;top:0px;height:100%;width:200px;right:0px;display:none;z-index:100;background-color:#cccccc;overflow-y:auto;}
 .tableQueryContainerShow{display:block;}
-.tableQueryNameLine{position:relative;height:20px;width:100%;padding-top:5px;display:table;} 
-.tableQueryValueLine{position:relative;height:30px;width:100%;padding-top:5px;display:table;} 
-.tableQueryItemName{position:relative;width:100px;height:25px;padding-left:10px;display:table-cell;vertical-align: bottom;}
+.tableQueryNameLine{position:relative;height:25px;width:100%;padding-top:2px;display:table;} 
+.tableQueryValueLine{position:relative;height:20px;width:100%;padding-top:2px;display:table;} 
+.tableQueryItemName{position:relative;width:100px;height:20px;padding-top:3px;padding-left:10px;display:table-cell;vertical-align: bottom;}
 .tableQueryCheckItemName{vertical-align: middle;}
 .tableQueryItemInput{width:180px;height:25px;}
 .tableQueryItemInputContainer{position:absolute;height:25px;left:10px;right:10px;background-color:#ffffff;}
 .tableQueryItemCheckTitleContainer{ left:25px; }
 .tableQueryItemInputCheck{width:25px;height:25px;}
-.tableQueryButtonLine{position:relative;height:40px;width:100%;text-align:right;}
+.tableQueryButtonLine{position:relative;height:35px;width:100%;text-align:right;}
 .tableQueryButtonLineInner{position:absolute;height:25px;left:10px;right:10px;height:25px;font-size:15px;line-height:25px;text-align:left;}
 .tableQueryButtonLineInner span{text-decoration:underline;cursor:pointer;height:25px;width:40px;margin:10px;}
 .headerMain{height:90px;}
@@ -110,13 +110,13 @@
 }
 .tableQueryHeaderLine{
 	position:relative;
-	height:30px;
+	height:20px;
 	width:100%;	
 }
 .tableQueryCloseImageBtnDiv{
 	position:absolute;
-	top:7px;
-	right:10px;
+	top:4px;
+	right:4px;
 	width:16px;
 	height:16px;
 	background:url("../image/close.png") no-repeat center center ;
@@ -125,12 +125,12 @@
 
 .tableQuerySplitLine{
 	position:relative;
-	height:40px;
+	height:10px;
 	width:100%;
 }
 .tableQuerySplitCell{
 	position:absolute;
-	top:20px;
+	top:5px;
 	left:10px;
 	right:10px;
 	border-bottom:solid 1px #dddddd;
@@ -138,11 +138,11 @@
 }
 .queryButtonDiv{
 	position:absolute;
-	top:10px;	
+	top:5px;	
 	right:10px;
 	left:10px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:center;	 
 	cursor:pointer;
     color: #ffffff;
@@ -183,71 +183,69 @@
 .newOrderConfirmInfoItemDiv{
 	position:relative; 
 	width:100%; 
-	height:35px;
+	height:25px;
 }
 .newOrderConfirmItemNameDiv{
 	position:absolute; 
 	width:50px;
 	left:0px;
-	line-height:30px;
-	height:35px; 
+	line-height:25px;
+	height:25px; 
 	text-align:right;
 }
 .unitPriceDiv{
 	position:absolute;
 	width:80px;
 	left:50px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:right;
 }
 .dataRowCountDiv{
 	position:absolute;
 	width:80px;
 	left:50px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:right;	
 }
 .originalPriceDiv{
 	position:absolute;
 	width:80px;
 	left:50px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:right;	
 }
 .priceDiv{
 	position:absolute;
 	width:80px;
 	left:50px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:right;
 	color:#f40;
-	font-size:16px;
-	font-weight:bold;
 }
 .newOrderConfirmItemPostfixDiv{
 	position:absolute;
 	width:50px;
 	left:135px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:left;
 }
 .newOrderConfirmBtnDiv{
 	position:relative;
 	width:100%;
-	height:40px;
+	height:35px;
 }
 .addToCartBtn{
 	position:absolute;
-	top:10px;
+	top:5px;
 	right:10px;
 	left:10px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:center;	 
 	cursor:pointer;
 	background-color:#5B9BD5;
@@ -255,11 +253,11 @@
 }
 .directPayAndDownloadBtn{
 	position:absolute;
-	top:10px;	
+	top:5px;	
 	right:10px;
 	left:10px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:center;	 
 	cursor:pointer;
     color: #ffffff;
@@ -267,11 +265,11 @@
 }
 .showCartPageBtn{
 	position:absolute;
-	top:10px;	
+	top:5px;	
 	right:10px;
 	left:10px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:center;	 
 	cursor:pointer;
     color: #ffffff;
@@ -281,11 +279,11 @@
 }
 .showOrderListPageBtn{
 	position:absolute;
-	top:10px;	
+	top:5px;	
 	right:10px;
 	left:10px;
-	line-height:30px;
-	height:30px;
+	line-height:25px;
+	height:25px;
 	text-align:center;	 
 	cursor:pointer;
     color: #ffffff;

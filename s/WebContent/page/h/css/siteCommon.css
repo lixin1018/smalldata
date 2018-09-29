@@ -56,7 +56,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 .toCartLink{ height:20px; line-height:20px; color:#ffffff; font-size:12px; font-weight:bold;	width:60px;	text-decoration:none; position:relative; }
 .toCartImage{ width:18px; height:16px; left:0px; bottom:0px; position:absolute; }
 .toCartLineCount{ text-align:center; width:20px; left:20px; bottom:0px;	line-height:20px; position:absolute;} 
-.sectionBlankSpace{	height:5px; width:1200px; margin:1px auto; }  
+.sectionBlankSpace{	height:5px; width:100%; margin:1px auto; }  
 .sectionBlankSpaceTopBorder{height:5px; border-top: solid 1px #E3E4E5; }
 .sectionBlankSpaceBottomBorder{height:5px; border-bottom: solid 1px #E3E4E5; }
 
@@ -289,7 +289,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 	.footerMenu{ font-size:12px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; line-height:30px; height:30px; }
 	.footerLink{ color:#999999; text-decoration:none; }
 	.pageContent{ width:100%; height:auto; } 
-	.sectionBlankSpace{	height:5px; width:1200px; margin:1px auto; }  
+	.sectionBlankSpace{	height:5px; width:100%; margin:1px auto; }  
 	.sectionBlankSpaceTopBorder{height:5px; border-top: solid 1px #E3E4E5; }
 	.sectionBlankSpaceBottomBorder{height:5px; border-bottom: solid 1px #E3E4E5; }
 	.toLogin{ color:#000000; font-weight:bold; text-decoration:none; }
@@ -369,7 +369,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 	.footerMenu{ font-size:12px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; line-height:30px; height:30px; }
 	.footerLink{ color:#999999; text-decoration:none; }
 	.pageContent{ width:100%; height:auto; } 
-	.sectionBlankSpace{	height:5px; width:1200px; margin:1px auto; }  
+	.sectionBlankSpace{	height:5px; width:100%; margin:1px auto; }  
 	.sectionBlankSpaceTopBorder{height:5px; border-top: solid 1px #E3E4E5; }
 	.sectionBlankSpaceBottomBorder{height:5px; border-bottom: solid 1px #E3E4E5; }
 	.toLogin{ color:#000000; font-weight:bold; text-decoration:none; }
@@ -449,7 +449,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 	.footerMenu{ font-size:12px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; line-height:30px; height:30px; }
 	.footerLink{ color:#999999; text-decoration:none; }
 	.pageContent{ width:100%; height:auto; } 
-	.sectionBlankSpace{	height:5px; width:1200px; margin:1px auto; }  
+	.sectionBlankSpace{	height:5px; width:100%; margin:1px auto; }  
 	.sectionBlankSpaceTopBorder{height:5px; border-top: solid 1px #E3E4E5; }
 	.sectionBlankSpaceBottomBorder{height:5px; border-bottom: solid 1px #E3E4E5; }
 	.toLogin{ color:#000000; font-weight:bold; text-decoration:none; }

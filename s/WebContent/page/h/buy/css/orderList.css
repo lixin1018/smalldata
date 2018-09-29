@@ -1,342 +1,366 @@
-.pageHeaderTitle{
-	position:absolute;
-	left:0px;
-	top:25px;
-	font-size:20px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #666666;
-    font-weight: bold;
-}
-.orderContaienr{
-	margin:1px auto;
-	width:1200px;
-	height:auto;
-	min-height:550px;	
-	min-height:530px;	
-	display: table;
-}   
-.orderFooterSection{ 
-	width:100%;
-	height:35px;
-	line-height:35px;
-	position:relative;
+.pageHeaderTitleContainer{position:absolute;left:260px;top:0px;bottom:0px;width:200px;}
+.pageHeaderTitle{position:absolute;left:0px;top:25px;font-size:24px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #777777;font-weight: bold;}
+.orderContaienr{margin:1px auto;width:1200px;height:auto;min-height:550px;min-height:530px;display: table;}   
+.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+.orderListSection{}
+.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+.orderItemRight1{position:absolute;height:100%;width:120px;right:0px;top:0px;border-left:solid 1px #eeeeee;}
+.orderItemRight2{position:absolute;height:100%;width:120px;right:120px;top:0px;border-left:solid 1px #eeeeee;}
+.orderItemRight3{position:absolute;height:100%;width:120px;right:240px;top:0px;border-left:solid 1px #eeeeee;}
+.orderItemTitle{position: relative;width:100%;height:40px;border-bottom:solid 1px #eeeeee;background-color: #E3EEFF;}
+.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 20px;width: 200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 240px;width: 400px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemTitlePayTime{text-align: center;font-size: 11px;width:120px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #aaaaaa;}
+.orderItemTitleActualTotalPrice{position: absolute;text-align: center;top: 40px;right: 0px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 40px;} 
+.orderItemTitleStatusName{position: absolute;text-align: center;top: 40px;bottom: 0px;right: 0px;left: 0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+.orderItemTitleOperateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 100%;width: 120px;}
+.closeOrder{position: absolute;text-align: center;top: 40px;right: 0px;height: 40px;width: 120px;text-decoration: none;font-size: 12px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 40px;}
+.closeOrder:hover{text-decoration: underline;font-weight:600;cursor:pointer;} 
+.toOrderDetail{position: absolute;text-align: center;top: 0px;right: 0px;height: 40px;width: 120px;color: #3c3c3c;text-decoration: none;line-height: 40px;font-size: 12px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+.toOrderDetail:hover{text-decoration: underline;font-weight:600;cursor:pointer;color: #3c3c3c;font-weight:600;}
+.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
+.orderLineIndex{position: absolute;text-align: right;top: 0px;left:15px; height: 40px;width: 30px;color: #3c3c3c;}
+.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
+.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+.orderLineToPayPage{text-decoration:none;color: #3c3c3c;}
+.orderLineToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+.orderLineDataFilter{position: absolute;text-align: left;top: 0px;left: 300px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;} 
+.orderLineDataFilter:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+.alertOrderListError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;width:500px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+.pageIndexItem{display: table-cell;text-align:center;font-size:12px;color: #666666;	width: 30px;vertical-align:middle;}
+.pageCount{display: table-cell;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+.pageItem{display: table-cell;vertical-align:middle;}
+.pageIndexCurrent{font-weight:bold;}
+.pageIndexLink{text-decoration:none;text-align:center;display:block;color: #666666;border:solid 1px #cccccc;width: 30px;height: 30px;line-height: 30px;vertical-align:middle;cursor: pointer;}
+.pageIndexText{text-align:center;display:block;color: #666666;border:solid 1px #cccccc;width: 30px;height: 30px;line-height: 30px;vertical-align:middle;}
+.pageIndexLink:hover{background-color:#808080;color:#ffffff;}
+.pageIndexOther{}
+.pageIndexFirst{}
+.pageIndexLast{}
+.pageIndexNext{}
+.pageIndexPrevious{}
+
+
+@media all and (min-width: 240px) and (max-width: 359px){
+	.pageHeader{height:68px;}
+	.headerMain{height:68px;}
+	.headerBottom{height:48px;} 
+	.headerBottomInner{height:46px;}
+	.pageHeaderTitleContainer{left:110px;}
+	.pageHeaderTitle{top:0px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{width:100%;}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemRight1{position:absolute;height:100%;width:100px;right:10px;top:0px;border-left:none;height:20px;}
+	.orderItemRight2{position:absolute;height:100%;width:180px;right:10px;top:50px;border-left:none 1px #eeeeee;height:40px;}
+	.orderItemRight3{position:absolute;height:100%;width:100px;left:10px;top:50px;border-left:none 1px #eeeeee;height:20px;}
+	.orderItemTitle{position: relative;width:100%;height:75px;border-bottom:solid 1px #eeeeee;background-color: #E3EEFF;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 25px;bottom: 0px;left: 11px;width: 200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 11px;width: 400px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitlePayTime{text-align: right;font-size: 13px;width:120px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #aaaaaa;}
+	.orderItemTitleActualTotalPrice{position: absolute;text-align: left;top: 0px;right: 0px;width: 100px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 20px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 0px;left: 0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOperateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 100%;width: 120px;}
+	.closeOrder{position: absolute;text-align: right;top: 25px;right: 0px;height: 20px;width: 100px;text-decoration: none;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 20px;}
+	.closeOrder:hover{text-decoration: underline;font-weight:600;cursor:pointer;} 
+	.toOrderDetail{position: absolute;text-align: right;top: 0px;right: 0px;height: 20px;width: 100px;color: #3c3c3c;text-decoration: none;line-height: 20px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.toOrderDetail:hover{text-decoration: underline;font-weight:600;cursor:pointer;color: #3c3c3c;font-weight:600;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
+	.orderLineIndex{position: absolute;text-align: right;top: 0px;left:15px; height: 40px;width: 30px;color: #3c3c3c;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineToPayPage{text-decoration:underline;color: #3c3c3c;}
+	.orderLineToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineDataFilter{position: absolute;text-align: left;top: 0px;left: 300px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;} 
+	.orderLineDataFilter:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.alertOrderListError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;width:500px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+	.pageIndexItem{display: table-cell;text-align:center;font-size:12px;color: #666666;	width: 30px;vertical-align:middle;}
+	.pageCount{display: table-cell;display:none;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+	.pageItem{display: table-cell;vertical-align:middle;}
+	.pageIndexOther{}
+	.pageIndexFirst{}
+	.pageIndexLast{}
+	.pageIndexNext{}
+	.pageIndexPrevious{}
 }
 
-.orderListSection{ 
+@media all and (min-width: 360px) and (max-width: 479px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:150px;}
+	.pageHeaderTitle{top:5px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{width:100%;}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemRight1{position:absolute;height:100%;width:100px;right:10px;top:0px;border-left:none;height:20px;}
+	.orderItemRight2{position:absolute;height:100%;width:180px;right:10px;top:50px;border-left:none 1px #eeeeee;height:40px;}
+	.orderItemRight3{position:absolute;height:100%;width:100px;left:10px;top:50px;border-left:none 1px #eeeeee;height:20px;}
+	.orderItemTitle{position: relative;width:100%;height:75px;border-bottom:solid 1px #eeeeee;background-color: #E3EEFF;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 25px;bottom: 0px;left: 11px;width: 200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 11px;width: 400px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitlePayTime{text-align: right;font-size: 13px;width:120px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #aaaaaa;}
+	.orderItemTitleActualTotalPrice{position: absolute;text-align: left;top: 0px;right: 0px;width: 100px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 20px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 0px;left: 0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOperateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 100%;width: 120px;}
+	.closeOrder{position: absolute;text-align: right;top: 25px;right: 0px;height: 20px;width: 100px;text-decoration: none;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 20px;}
+	.closeOrder:hover{text-decoration: underline;font-weight:600;cursor:pointer;} 
+	.toOrderDetail{position: absolute;text-align: right;top: 0px;right: 0px;height: 20px;width: 100px;color: #3c3c3c;text-decoration: none;line-height: 20px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.toOrderDetail:hover{text-decoration: underline;font-weight:600;cursor:pointer;color: #3c3c3c;font-weight:600;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
+	.orderLineIndex{position: absolute;text-align: right;top: 0px;left:15px; height: 40px;width: 30px;color: #3c3c3c;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineToPayPage{text-decoration:underline;color: #3c3c3c;}
+	.orderLineToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineDataFilter{position: absolute;text-align: left;top: 0px;left: 300px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;} 
+	.orderLineDataFilter:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.alertOrderListError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;width:500px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+	.pageIndexItem{display: table-cell;text-align:center;font-size:12px;color: #666666;	width: 30px;vertical-align:middle;}
+	.pageCount{display: table-cell;display:none;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+	.pageItem{display: table-cell;vertical-align:middle;}
+	.pageIndexOther{}
+	.pageIndexFirst{}
+	.pageIndexLast{}
+	.pageIndexNext{}
+	.pageIndexPrevious{}
 }
 
-.orderItem{ 
-	position: relative;
-	width:100%;
-	border:solid 1px #cccccc;
-}  
-
-.orderItemRight1{ 
-	position:absolute;
-	height:100%;
-	width:120px;
-	right:0px;
-	top:0px;
-	border-left:solid 1px #eeeeee; 
+@media all and (min-width: 480px) and (max-width: 639px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:150px;}
+	.pageHeaderTitle{top:5px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{width:100%;}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemRight1{position:absolute;height:100%;width:300px;right:10px;top:3px;border-left:none;height:20px;}
+	.orderItemRight2{position:absolute;height:100%;width:350px;right:10px;top:53px;border-left:none 1px #eeeeee;height:40px;}
+	.orderItemRight3{position:absolute;height:100%;width:100px;left:10px;top:53px;border-left:none 1px #eeeeee;height:20px;}
+	.orderItemTitle{position: relative;width:100%;height:75px;border-bottom:solid 1px #eeeeee;background-color: #E3EEFF;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 28px;bottom: 0px;left: 11px;width: 200px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 3px;bottom: 0px;left: 11px;width: 400px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitlePayTime{text-align: right;font-size: 15px;width:120px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #aaaaaa;}
+	.orderItemTitleActualTotalPrice{position: absolute;text-align: left;top: 0px;right: 0px;width: 100px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 20px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 0px;left: 0px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOperateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 100%;width: 120px;}
+	.closeOrder{position: absolute;text-align: right;top: 0px;right: 80px;height: 20px;width: 100px;text-decoration: none;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 20px;}
+	.closeOrder:hover{text-decoration: underline;font-weight:600;cursor:pointer;} 
+	.toOrderDetail{position: absolute;text-align: right;top: 0px;right: 0px;height: 20px;width: 100px;color: #3c3c3c;text-decoration: none;line-height: 20px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.toOrderDetail:hover{text-decoration: underline;font-weight:600;cursor:pointer;color: #3c3c3c;font-weight:600;}
+	.orderLine{position: relative;width: 100%;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
+	.orderLineIndex{position: absolute;text-align: right;top: 0px;left:15px; height: 40px;width: 30px;color: #3c3c3c;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineToPayPage{text-decoration:underline;color: #3c3c3c;}
+	.orderLineToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineDataFilter{position: absolute;text-align: left;top: 0px;left: 300px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;} 
+	.orderLineDataFilter:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.alertOrderListError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;width:500px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+	.pageIndexItem{display: table-cell;text-align:center;font-size:12px;color: #666666;	width: 30px;vertical-align:middle;}
+	.pageCount{display: table-cell;display:none;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+	.pageItem{display: table-cell;vertical-align:middle;}
+	.pageIndexOther{}
+	.pageIndexFirst{}
+	.pageIndexLast{}
+	.pageIndexNext{}
+	.pageIndexPrevious{}
 }
 
-.orderItemRight2{ 
-	position:absolute;
-	height:100%;
-	width:120px;
-	right:120px;
-	top:0px;
-	border-left:solid 1px #eeeeee; 
-}
-.orderItemRight3{ 
-	position:absolute;
-	height:100%;
-	width:120px;
-	right:240px;
-	top:0px;
-	border-left:solid 1px #eeeeee; 
-}
-
-.orderItemTitle{
-	position: relative;
-	width:100%;
-	height:40px;
-	border-bottom:solid 1px #eeeeee;
-	background-color: #E3EEFF;
-}
-
-.orderItemSpaceBorder{  
-	position:relative; 
-	width:100%;
-	height:5px;
-	color:#ffffff; 
+@media all and (min-width: 640px) and (max-width: 767px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:170px;}
+	.pageHeaderTitle{top:8px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:20px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{width:100%;}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemRight1{position:absolute;height:100%;width:300px;right:10px;top:3px;border-left:none;height:20px;}
+	.orderItemRight2{position:absolute;height:100%;width:350px;right:10px;top:53px;border-left:none 1px #eeeeee;height:40px;}
+	.orderItemRight3{position:absolute;height:100%;width:100px;left:10px;top:53px;border-left:none 1px #eeeeee;height:20px;}
+	.orderItemTitle{position: relative;width:100%;height:75px;border-bottom:solid 1px #eeeeee;background-color: #E3EEFF;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 28px;bottom: 0px;left: 11px;width: 200px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 3px;bottom: 0px;left: 11px;width: 400px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitlePayTime{text-align: right;font-size: 15px;width:120px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #aaaaaa;}
+	.orderItemTitleActualTotalPrice{position: absolute;text-align: left;top: 0px;right: 0px;width: 100px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 20px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 0px;left: 0px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOperateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 100%;width: 120px;}
+	.closeOrder{position: absolute;text-align: right;top: 0px;right: 80px;height: 20px;width: 100px;text-decoration: none;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 20px;}
+	.closeOrder:hover{text-decoration: underline;font-weight:600;cursor:pointer;} 
+	.toOrderDetail{position: absolute;text-align: right;top: 0px;right: 0px;height: 20px;width: 100px;color: #3c3c3c;text-decoration: none;line-height: 20px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.toOrderDetail:hover{text-decoration: underline;font-weight:600;cursor:pointer;color: #3c3c3c;font-weight:600;}
+	.orderLine{position: relative;width: 100%;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
+	.orderLineIndex{position: absolute;text-align: right;top: 0px;left:15px; height: 40px;width: 30px;color: #3c3c3c;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineToPayPage{text-decoration:underline;color: #3c3c3c;}
+	.orderLineToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineDataFilter{position: absolute;text-align: left;top: 0px;left: 300px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;} 
+	.orderLineDataFilter:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.alertOrderListError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;width:500px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+	.pageIndexItem{display: table-cell;text-align:center;font-size:12px;color: #666666;	width: 30px;vertical-align:middle;}
+	.pageCount{display: table-cell;display:none;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+	.pageItem{display: table-cell;vertical-align:middle;}
+	.pageIndexOther{}
+	.pageIndexFirst{}
+	.pageIndexLast{}
+	.pageIndexNext{}
+	.pageIndexPrevious{}
 } 
 
-.orderItemTitleCreateTime{
-	position: absolute;
-	text-align: left;
-	top: 0px;
-	bottom: 0px;
-	left: 20px;
-    width: 200px;
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #3c3c3c; 
-    line-height: 40px;
-}
-
-
-.orderItemTitleOrderNumber{ 
-	position: absolute;
-	text-align: left;
-	top: 0px;
-	bottom: 0px;
-	left: 240px;
-    width: 400px;
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #3c3c3c; 
-    line-height: 40px;
-}
-
-.orderItemTitlePayTime{  
-	text-align: center;  
-	font-size: 11px;
-	width:120px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #aaaaaa;
-}
-
-.orderItemTitleActualTotalPrice{ 
-	position: absolute;
-	text-align: center;
-	top: 40px; 
-	right: 0px;
-    width: 120px;
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #3c3c3c; 
-    font-weight:600;
-    line-height: 40px;
+@media all and (min-width: 768px) and (max-width: 999px){
+	.pageHeader{height:118px;}
+	.headerMain{height:118px;}
+	.headerBottom{height:88px;} 
+	.headerBottomInner{height:88px;}
+	.pageHeaderTitleContainer{left:230px;}
+	.pageHeaderTitle{top:15px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:20px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{width:100%;}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemRight1{position:absolute;height:100%;width:300px;right:10px;top:3px;border-left:none;height:20px;}
+	.orderItemRight2{position:absolute;height:100%;width:350px;right:10px;top:53px;border-left:none 1px #eeeeee;height:40px;}
+	.orderItemRight3{position:absolute;height:100%;width:100px;left:10px;top:53px;border-left:none 1px #eeeeee;height:20px;}
+	.orderItemTitle{position: relative;width:100%;height:75px;border-bottom:solid 1px #eeeeee;background-color: #E3EEFF;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 28px;bottom: 0px;left: 11px;width: 200px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 3px;bottom: 0px;left: 11px;width: 400px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitlePayTime{text-align: right;font-size: 15px;width:120px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #aaaaaa;}
+	.orderItemTitleActualTotalPrice{position: absolute;text-align: left;top: 0px;right: 0px;width: 100px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 20px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 0px;left: 0px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOperateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 100%;width: 120px;}
+	.closeOrder{position: absolute;text-align: right;top: 0px;right: 80px;height: 20px;width: 100px;text-decoration: none;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 20px;}
+	.closeOrder:hover{text-decoration: underline;font-weight:600;cursor:pointer;} 
+	.toOrderDetail{position: absolute;text-align: right;top: 0px;right: 0px;height: 20px;width: 100px;color: #3c3c3c;text-decoration: none;line-height: 20px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.toOrderDetail:hover{text-decoration: underline;font-weight:600;cursor:pointer;color: #3c3c3c;font-weight:600;}
+	.orderLine{position: relative;width: 100%;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
+	.orderLineIndex{position: absolute;text-align: right;top: 0px;left:15px; height: 40px;width: 30px;color: #3c3c3c;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineToPayPage{text-decoration:underline;color: #3c3c3c;}
+	.orderLineToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineDataFilter{position: absolute;text-align: left;top: 0px;left: 300px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;} 
+	.orderLineDataFilter:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.alertOrderListError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;width:500px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+	.pageIndexItem{display: table-cell;text-align:center;font-size:12px;color: #666666;	width: 30px;vertical-align:middle;}
+	.pageCount{display: table-cell;display:none;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+	.pageItem{display: table-cell;vertical-align:middle;}
+	.pageIndexOther{}
+	.pageIndexFirst{}
+	.pageIndexLast{}
+	.pageIndexNext{}
+	.pageIndexPrevious{}
 } 
 
-.orderItemTitleStatusName{ 
-	position: absolute;
-	text-align: center;
-	top: 40px;
-	bottom: 0px;
-	right: 0px;
-    left: 0px;
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #3c3c3c; 
-    line-height: 40px;
-}
-
-.orderItemTitleOperateContainer{
-	position: absolute;
-	text-align: left;
-	top: 0px;
-	right: 0px;
-    height: 100%;
-    width: 120px;  
-}
-
-.closeOrder{
-	position: absolute;
-	text-align: center;
-	top: 40px;
-	right: 0px;
-    height: 40px;
-    width: 120px; 
-	text-decoration: none;
-	font-size: 12px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    line-height: 40px;
-}
-.closeOrder:hover{
-	text-decoration: underline;
-	font-weight:600;
-	cursor:pointer;
-} 
-.toOrderDetail{	
-	position: absolute;
-	text-align: center;
-	top: 0px; 
-	right: 0px;
-    height: 40px;
-    width: 120px; 
-    color: #3c3c3c;  
-	text-decoration: none;
-    line-height: 40px;
-	font-size: 12px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-}
-.toOrderDetail:hover{
-	text-decoration: underline;
-	font-weight:600;
-	cursor:pointer;
-    color: #3c3c3c; 
-    font-weight:600; 
-}
-
-.orderLine{ 
-	position: relative;
-    width: 100%;
-	font-size: 13px;
-	font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;
-    color: #3c3c3c; 
-    line-height: 40px;
-    height:40px;
-}
-
-.orderLineIndex{
-	position: absolute;
-	text-align: right;
-	top: 0px;
-	left:15px;
-    height: 40px;
-    width: 30px; 
-	color: #3c3c3c;
-}
-
-.orderLineDefinitionName{ 
-	position: absolute;
-	text-align: left;
-	top: 0px;
-	left:20px;
-    height: 40px;
-    width: auto;
-	text-decoration:none;
-	color: #3c3c3c;
-}
-
-.orderLineDefinitionname:hover{  
-	color: #000000;
-	cursor:pointer;
-	text-decoration: underline;
-}
-
-.orderLineToPayPage{  
-	text-decoration:none;
-	color: #3c3c3c;
-}
-
-.orderLineToPayPage:hover{  
-	color: #000000;
-	cursor:pointer;
-	text-decoration: underline;
-}
-
-.orderLineDataFilter{ 
-	position: absolute;
-	text-align: left;
-	top: 0px;
-	left: 300px;
-    height: 40px;
-    width: 200px;
-	text-decoration:none;
-	color: #3c3c3c;
+@media all and (min-width: 1000px) and (max-width: 1199px){	 
+	.pageHeader{height:118px;}
+	.headerMain{height:118px;}
+	.headerBottom{height:88px;} 
+	.headerBottomInner{height:88px;}
+	.pageHeaderTitleContainer{left:230px;}
+	.pageHeaderTitle{top:15px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:24px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{width:100%;}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemRight1{position:absolute;height:100%;width:300px;right:10px;top:3px;border-left:none;height:20px;}
+	.orderItemRight2{position:absolute;height:100%;width:350px;right:10px;top:28px;border-left:none 1px #eeeeee;height:40px;}
+	.orderItemRight3{position:absolute;height:100%;width:100px;right:210px;top:15px;border-left:none 1px #eeeeee;height:20px;}
+	.orderItemTitle{position: relative;width:100%;height:50px;border-bottom:solid 1px #eeeeee;background-color: #E3EEFF;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 15px;bottom: 0px;left: 350px;width: 200px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 15px;bottom: 0px;left: 11px;width: 400px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitlePayTime{text-align: right;font-size: 15px;width:120px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #aaaaaa;}
+	.orderItemTitleActualTotalPrice{position: absolute;text-align: left;top: 0px;right: 0px;width: 100px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 20px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 0px;left: 0px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOperateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 100%;width: 120px;}
+	.closeOrder{position: absolute;text-align: right;top: 0px;right: 80px;height: 20px;width: 100px;text-decoration: none;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 20px;}
+	.closeOrder:hover{text-decoration: underline;font-weight:600;cursor:pointer;} 
+	.toOrderDetail{position: absolute;text-align: right;top: 0px;right: 0px;height: 20px;width: 100px;color: #3c3c3c;text-decoration: none;line-height: 20px;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.toOrderDetail:hover{text-decoration: underline;font-weight:600;cursor:pointer;color: #3c3c3c;font-weight:600;}
+	.orderLine{position: relative;width: 100%;font-size: 15px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
+	.orderLineIndex{position: absolute;text-align: right;top: 0px;left:15px; height: 40px;width: 30px;color: #3c3c3c;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineToPayPage{text-decoration:underline;color: #3c3c3c;}
+	.orderLineToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineDataFilter{position: absolute;text-align: left;top: 0px;left: 300px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;} 
+	.orderLineDataFilter:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.alertOrderListError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;width:500px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+	.pageIndexItem{display: table-cell;text-align:center;font-size:12px;color: #666666;	width: 30px;vertical-align:middle;}
+	.pageCount{display: table-cell;display:none;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+	.pageItem{display: table-cell;vertical-align:middle;}
+	.pageIndexOther{}
+	.pageIndexFirst{}
+	.pageIndexLast{}
+	.pageIndexNext{}
+	.pageIndexPrevious{}
 } 
 
-.orderLineDataFilter:hover{  
-	color: #000000;
-	cursor:pointer;
-	text-decoration: underline;
-}
-
-.alertOrderListError{
-	width:100%;
-	height:300px;
-	text-align:center;
-	font-size: 20px;
-	color: #666666;
-    font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; 
-}
-
-.pageIndexContainer{
-	position:absolute;
-	right:0px;
-	top:0px;
-	height:30px; 
-	width:500px;
-	float:right;
-	display: table;
-	border-spacing:5px 0px;
-	margin:0px;
-}
-
-.pageIndexItem{ 
-	display: table-cell; 
-	text-align:center;
-	font-size:12px;
-	color: #666666; 
-	width: 30px; 
-	vertical-align:middle;
-}
-.pageCount{ 
-	display: table-cell; 
-	text-align:left;
-	font-size:12px;
-	color: #666666; 
-	width: 30px; 
-	vertical-align:middle;
-	width:60px;
-}
-
-
-.pageItem{ 
-	display: table-cell;
-	vertical-align:middle;
-}
-
-.pageIndexCurrent{
-	font-weight:bold;
-}
-
-.pageIndexLink{  
-	text-decoration:none;
-	text-align:center;
-	display:block;
-	color: #666666;
-	border:solid 1px #cccccc;  
-	width: 30px;
-	height: 30px;
-	line-height: 30px;
-	vertical-align:middle;	
-	cursor: pointer;
-}
-.pageIndexText{  
-	text-align:center;
-	display:block;
-	color: #666666;
-	border:solid 1px #cccccc;  
-	width: 30px;
-	height: 30px;
-	line-height: 30px;
-	vertical-align:middle;	 
-}
-
-.pageIndexLink:hover{ 
-	background-color:#808080;
-	color:#ffffff;
-}
-
-.pageIndexOther{
-	
-}
-
-.pageIndexFirst{
-	
-}
-
-.pageIndexLast{
-	
-}
-.pageIndexNext{
-	
-}
-
-.pageIndexPrevious{
-	
-}
+@media all and (min-width: 1200px) and (max-width: 4096px){
+	.pageHeaderTitleContainer{position:absolute;left:260px;top:0px;bottom:0px;width:200px;}
+	.pageHeaderTitle{position:absolute;left:0px;top:25px;font-size:24px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #777777;font-weight: bold;}
+	.orderContaienr{margin:1px auto;width:1200px;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemRight1{position:absolute;height:100%;width:120px;right:0px;top:0px;border-left:solid 1px #eeeeee;}
+	.orderItemRight2{position:absolute;height:100%;width:120px;right:120px;top:0px;border-left:solid 1px #eeeeee;}
+	.orderItemRight3{position:absolute;height:100%;width:120px;right:240px;top:0px;border-left:solid 1px #eeeeee;}
+	.orderItemTitle{position: relative;width:100%;height:40px;border-bottom:solid 1px #eeeeee;background-color: #E3EEFF;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 20px;width: 200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 240px;width: 400px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+	.orderItemTitlePayTime{text-align: center;font-size: 11px;width:120px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #aaaaaa;}
+	.orderItemTitleActualTotalPrice{position: absolute;text-align: center;top: 40px;right: 0px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 40px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: center;top: 42px;bottom: 0px;right: 0px;left: 0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 20px;}
+	.orderItemTitleOperateContainer{position: absolute;text-align: left;top: 0px;right: 0px;height: 100%;width: 120px;}
+	.closeOrder{position: absolute;text-align: center;top: 40px;right: 0px;height: 40px;width: 120px;text-decoration: none;font-size: 12px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;line-height: 40px;}
+	.closeOrder:hover{text-decoration: underline;font-weight:600;cursor:pointer;} 
+	.toOrderDetail{position: absolute;text-align: center;top: 0px;right: 0px;height: 40px;width: 120px;color: #3c3c3c;text-decoration: none;line-height: 40px;font-size: 12px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.toOrderDetail:hover{text-decoration: underline;font-weight:600;cursor:pointer;color: #3c3c3c;font-weight:600;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
+	.orderLineIndex{position: absolute;text-align: right;top: 0px;left:15px; height: 40px;width: 30px;color: #3c3c3c;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineToPayPage{text-decoration:none;color: #3c3c3c;}
+	.orderLineToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineDataFilter{position: absolute;text-align: left;top: 0px;left: 300px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;} 
+	.orderLineDataFilter:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.alertOrderListError{width:100%;height:300px;text-align:center;font-size: 20px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+	.pageIndexContainer{position:absolute;right:0px;top:0px;height:30px;width:500px;float:right;display: table;border-spacing:5px 0px;margin:0px;}
+	.pageIndexItem{display: table-cell;text-align:center;font-size:12px;color: #666666;	width: 30px;vertical-align:middle;}
+	.pageCount{display: table-cell;text-align:left;font-size:12px;color: #666666;width: 30px;vertical-align:middle;width:60px;}
+	.pageItem{display: table-cell;vertical-align:middle;}
+	.pageIndexCurrent{font-weight:bold;}
+	.pageIndexLink{text-decoration:none;text-align:center;display:block;color: #666666;border:solid 1px #cccccc;width: 30px;height: 30px;line-height: 30px;vertical-align:middle;cursor: pointer;}
+	.pageIndexText{text-align:center;display:block;color: #666666;border:solid 1px #cccccc;width: 30px;height: 30px;line-height: 30px;vertical-align:middle;}
+	.pageIndexLink:hover{background-color:#808080;color:#ffffff;}
+	.pageIndexOther{}
+	.pageIndexFirst{}
+	.pageIndexLast{}
+	.pageIndexNext{}
+	.pageIndexPrevious{}
+} 	 

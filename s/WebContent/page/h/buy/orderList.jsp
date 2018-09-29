@@ -18,6 +18,7 @@
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="homepage"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	 
 	
 	<link rel="stylesheet" type="text/css" href="${css}/common.css">
 	<link rel="stylesheet" type="text/css" href="../css/siteCommon.css">
@@ -27,54 +28,17 @@
 </head>
 <body>
 	<div id="pageHeaderDiv" class="pageHeader">
-		<div class="headerTop">
-			<div class="headerTopInner">
-				<div id="headerLeftTopDiv" class="headerLeftTop">
-				<%				
-					HttpSession httpSession = request.getSession();
-					NcpSession ncpSession = new NcpSession(httpSession, false);
-					if(ncpSession.getIsOnline()){
-						String userName = ncpSession.getUserName();
-						%>				
-							<%=userName%>, &nbsp;欢迎使用数据助理&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/changePwd.jsp" class="toChangePwd">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/logout.jsp" class="toLogout">退出</a>
-						<% 
-					}
-					else{
-						%>				
-						欢迎使用数据助理, 请&nbsp;<a href="../home/login.jsp" class="toLogin">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/reg.jsp" class="toReg">注册</a>
-						<% 
-					}
-				%>					
-				</div>				
-				<div id="headerRightTopDiv" class="headerRightTop">  
-					<div class="toContainer"> 
-						<a href="../home/help.jsp" class="toHelp">帮助</a>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<a href="../../h/buy/cart.jsp" class="toCartLink">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<img src="../../h/buy/images/cart.png" class="toCartImage" title="进入购入车页面"/>
-							<div id="cartLineCountSpanId" class="toCartLineCount">(?)</div>
-						</a>
-					</div>
-				</div>
-			</div> 
-		</div>
-		<div class="headerBottom">
-			<div class="headerBottomInner"">
-				<div class="headerLeftBottom" style="width:240px;">
-					<a href="../../../"><img class="headerLogo" src="../../h/images/logo.png" /></a> 
-					<span class="headerSysName">数据助理</span>
-					<span class="headerSysSubName">Power Data Helper</span>
-				</div>
-				<div class="headerRightBottom" style="left:260px;">
-					<div class="pageHeaderTitle">订单列表</div> 
-				</div>
-			</div>	  			
-		</div>	
+		<jsp:include  page="headerA.jsp">
+			<jsp:param value="订单列表" name="subTitle"/>
+		</jsp:include>
 	</div>
-	<div class="sectionBlankSpace" style="border-top: solid 1px #E3E4E5; "></div>	
+	<div class="sectionBlankSpaceTopBorder"></div>
+	<div class="sectionBlankSpace"></div>
 	<div id="pageContentDiv" class="pageContent">
 		<div id="orderContaienrDiv" class="orderContaienr"> 
 			<% 
+				HttpSession httpSession = request.getSession();
+				NcpSession ncpSession = new NcpSession(httpSession, false);
 				if(!ncpSession.getIsOnline()){ 
 			%>
 			<div class="alertOrderListError">请登录后查看订单列表</div>			
@@ -177,8 +141,8 @@
 							if(status == OrderStatusType.Paid){
 							 %>
 							 	<div class="orderItemTitleStatusName" style="line-height:20px;">
-							 		<%=statusName%><br/>
-							 		<div class="orderItemTitlePayTime">(<%=payTime%>)</div>
+							 		<%=statusName%>
+							 		<span class="orderItemTitlePayTime">(<%=payTime%>)</span>
 						 		</div>
 								 
 							<%
@@ -186,7 +150,7 @@
 							else if(status == OrderStatusType.WaitingPay){
 								 %>
 								<div class="orderItemTitleStatusName">
-							 		<%=statusName%>&nbsp;&nbsp;<a href="<%=payPageUrl%>" class="orderLineToPayPage" target="_blank">去支付</a> 
+							 		<%=statusName%>&nbsp;&nbsp;<a href="<%=payPageUrl%>" class="orderLineToPayPage" target="_blank">去支付/下载数据</a> 
 						 		</div>
 								<%
 							}
