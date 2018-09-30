@@ -27,6 +27,7 @@ import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.alipay.api.request.AlipayTradePagePayRequest;
+import com.alipay.api.request.AlipayTradeWapPayRequest;
 import com.novacloud.novaone.common.NcpException;
 import com.novacloud.novaone.common.util.CommonFunction;
 
@@ -142,7 +143,7 @@ public class AliPayProcessor extends PayProcessor {
 		this.signType = signType;
 	}
 	
-	public String GetPayFormHtml(String orderId, String orderNumber, BigDecimal payPrice, String subjectInfo, String bodyInfo) {
+	public String GetPayFormPCHtml(String orderId, String orderNumber, BigDecimal payPrice, String subjectInfo, String bodyInfo) {
 
 		String subject = subjectInfo.replaceAll("\"", "\\\"");
 		String body = bodyInfo.replaceAll("\"", "\\\"");
@@ -166,22 +167,43 @@ public class AliPayProcessor extends PayProcessor {
 		        "    \"body\":\"" + body + "\"," +
 		        "    \"passback_params\":\"orderNo%3d" + orderNumber + "\"," +
 		        "    \"extend_params\":{\"sys_service_provider_id\":\"" + this.getPId() + "\"}" +
-		        "  }";
+		        "  }"; 
+	    
+	    alipayRequest.setBizContent(bizJson);//填充业务参数
+	    String form="";
+	    try {
+	        form = alipayClient.pageExecute(alipayRequest).getBody(); //调用SDK生成表单
+	    } catch (AlipayApiException e) {
+	        e.printStackTrace();
+	    } 
+		return form;
+	}
+	
+	public String GetPayFormMobileHtml(String orderId, String orderNumber, BigDecimal payPrice, String subjectInfo, String bodyInfo) {
 
-	    /*
+		String subject = subjectInfo.replaceAll("\"", "\\\"");
+		String body = bodyInfo.replaceAll("\"", "\\\"");
+		
+		AlipayClient alipayClient = new DefaultAlipayClient(this.getAlipayGetwayUrl(),
+				this.getAppId(),
+				this.getAppPrivateKey(),
+				this.getFormat(),
+				this.getCharset(),
+				this.getAppPublicKey(),
+				this.getSignType());
+		AlipayTradeWapPayRequest alipayRequest = new AlipayTradeWapPayRequest();//创建API对应的request
+	    alipayRequest.setReturnUrl(this.getReturnUrl());
+	    alipayRequest.setNotifyUrl(this.getNotifyUrl());
+	    
 	    String bizJson = "{" +
-	            "    \"out_trade_no\":\"" + orderNumber + \"," +
-	            "    \"product_code\":\"FAST_INSTANT_TRADE_PAY\"," +
-	            "    \"total_amount\":88.88," +
-	            "    \"subject\":\"Iphone6 16G\"," +
-	            "    \"body\":\"Iphone6 16G\"," +
-	            "    \"passback_params\":\"merchantBizType%3d3C%26merchantBizNo%3d2016010101111\"," +
-	            "    \"extend_params\":{" +
-	            "    \"sys_service_provider_id\":\"2088511833207846\"" +
-	            "    }"+
-	            "  }";//填充业务参数
-	            
-        */
+		        "    \"out_trade_no\":\"" + orderNumber + "\"," +
+		        "    \"product_code\":\"FAST_INSTANT_TRADE_PAY\"," +
+		        "    \"total_amount\":" + String.format("%.2f", payPrice) + "," +
+		        "    \"subject\":\"" + subject + "\"," +
+		        "    \"body\":\"" + body + "\"," +
+		        "    \"passback_params\":\"orderNo%3d" + orderNumber + "\"," +
+		        "    \"extend_params\":{\"sys_service_provider_id\":\"" + this.getPId() + "\"}" +
+		        "  }"; 
 	    
 	    alipayRequest.setBizContent(bizJson);//填充业务参数
 	    String form="";

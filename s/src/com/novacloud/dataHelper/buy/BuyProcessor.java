@@ -10,6 +10,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
@@ -20,6 +21,7 @@ import java.util.Random;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -425,11 +427,14 @@ public class BuyProcessor {
 			double unitPriceDouble = unitPrice.doubleValue(); 
 			JSONArray dataFilterArray =JSONArray.fromObject(dataFilter);
 			int totalRowCount = this.getRowCount(dataName, dataFilterArray);
+			
+			/*先不实现去重
 			List<String> totalDataLineIds = this.getDataLineIds(totalRowCount, dataName, dataFilterArray);
 			HashMap<String, Object> historyDataLineIds = this.getHistoryDataLineIds(session.getUserId(), definitionId, timeoutTime);
-
 			List<String> unPaidIds = this.getUnPaidDataLineCount(totalDataLineIds, historyDataLineIds);
 			int newRowCount = unPaidIds.size();
+			*/
+			int newRowCount = totalRowCount;
 			
 			BigDecimal originalPrice = this.calcPrice(totalRowCount, unitPriceDouble);
 			originalTotalPrice = originalTotalPrice.add(originalPrice);
@@ -440,7 +445,7 @@ public class BuyProcessor {
 			String orderLineId = this.createOrderLineInDB(orderId, definitionId, unitPrice, originalPrice, actualPrice, dataFilter, totalRowCount, newRowCount);
 			
 			//保存数据记录的id值到文件
-			this.saveOrderIdContentFile(session.getUserId(), orderId, orderLineId, unPaidIds);			
+			//this.saveOrderIdContentFile(session.getUserId(), orderId, orderLineId, unPaidIds);			
 		}
 		
 		BigDecimal actualTotalPrice = this.calcActualPrice(actualTotalTempPrice);
@@ -651,7 +656,7 @@ public class BuyProcessor {
 	//取两位小数
 	private BigDecimal calcActualPrice(BigDecimal orignalPrice){
 		double priceTemp = Math.floor(orignalPrice.doubleValue() * 100) / 100;
-		BigDecimal price = priceTemp == 0 ? BigDecimal.valueOf(0.01) : BigDecimal.valueOf(priceTemp);
+		BigDecimal price = priceTemp == 0 && orignalPrice.doubleValue() > 0 ? BigDecimal.valueOf(0.01) : BigDecimal.valueOf(priceTemp);
 		return price;
 	}
 
@@ -1208,9 +1213,29 @@ public class BuyProcessor {
 			throw ex;
 		} 	
 	}
-
 	
-	public String getAliPayFormHtml(INcpSession session, String orderId) throws Exception{
+	//判断 移动端/PC端
+	public boolean isMobileBrowser(HttpServletRequest request) {
+		List<String> mobileAgents = Arrays.asList("ipad", "iphone os", "rv:1.2.3.4", "ucweb", "android", "windows ce", "windows mobile");
+		String ua = request.getHeader("User-Agent").toLowerCase();
+		for (String sua : mobileAgents) {
+			if (ua.indexOf(sua) > -1) {
+				return true;//手机端
+			}
+		}	
+		return false;//PC端
+	} 
+	
+	//是否微信浏览器
+	public boolean isWechatBrowser(HttpServletRequest request) {
+		String ua = request.getHeader("User-Agent").toLowerCase();
+        if (ua.indexOf("micromessenger") > -1) {
+        	return true;//微信
+     	}
+        return false;//非微信手机浏览器      
+   	} 
+	
+	public String getAliPayFormHtml(INcpSession session, String orderId, HttpServletRequest request) throws Exception{
 		String orderNumber = "";
 		BigDecimal payPrice = new BigDecimal(0);
 		String subjectInfo = "";
@@ -1236,19 +1261,34 @@ public class BuyProcessor {
 		try{ 
 			AliPayProcessor payProcessor = this.getAliPayProcessor();	 
 			payProcessor.setDBSession(this.getDBSession());
-			String payFormHtml = payProcessor.GetPayFormHtml(orderId, orderNumber, payPrice, subjectInfo, bodyInfo);  
+			String payFormHtml = "";
+			if(payPrice.doubleValue() == 0){
+				payFormHtml = this.GetPayFormHtmlForFreeOrder(session, orderId, orderNumber);
+			}
+			else{
+				if(this.isMobileBrowser(request)){
+					payFormHtml = payProcessor.GetPayFormMobileHtml(orderId, orderNumber, payPrice, subjectInfo, bodyInfo);
+				}
+				else{
+					payFormHtml = payProcessor.GetPayFormPCHtml(orderId, orderNumber, payPrice, subjectInfo, bodyInfo);
+				}
+			}
 			return payFormHtml;
 		}
 		catch(Exception ex){
 			throw ex;
 		} 
 	}
+	
+	private String GetPayFormHtmlForFreeOrder(INcpSession session, String orderId, String orderNumber) throws Exception {
+		this.payFreeOrderStatus(session, orderNumber);
+		String html = "<script>window.location = \"order.jsp?id=" + orderId + "\";</script>";
+		return html;
+	}
 
 	
 	public void modifyOrderStatusAfterAliApid(INcpSession session, Map<String, String> returnParameters) throws Exception{
 		try{
-			AliPayProcessor payProcessor = this.getAliPayProcessor();	 
-			
 			//商户订单号
 			String orderNumber = returnParameters.get("out_trade_no");
 			
@@ -1262,6 +1302,17 @@ public class BuyProcessor {
 			Date payTime = new Date();
 			
 			this.updateOrderStatusAfterPaidWithTx(session, orderNumber, PayType.Alipay, paidAmount, payTime, tradeNumber);  
+		}
+		catch(Exception ex){
+			throw ex; 
+		}
+	}
+	
+	public void payFreeOrderStatus(INcpSession session, String orderNumber) throws Exception{
+		try{ 
+			Date payTime = new Date();
+			BigDecimal paidAmount = new BigDecimal(0);			
+			this.updateOrderStatusAfterPaidWithTx(session, orderNumber, PayType.ForFree, paidAmount, payTime, "");  
 		}
 		catch(Exception ex){
 			throw ex; 

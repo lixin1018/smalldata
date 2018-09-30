@@ -89,6 +89,7 @@
 							String orderCreateTime = dataObject.getString("createTime"); 
 							String originalTotalPrice = dataObject.getString("originalTotalPrice"); 
 							String actualTotalPrice = dataObject.getString("actualTotalPrice"); 
+							String payPrice = dataObject.getString("payPrice"); 
 							String payTime = dataObject.getString("payTime"); 
 							OrderStatusType status = OrderStatusType.valueOf(dataObject.getString("status"));
 							String statusName = buyControl.getOrderStatusName(status);
@@ -134,7 +135,7 @@
 						}
 					%>
 					<div class="orderItemRight3">
-						<div class="orderItemTitleActualTotalPrice">￥<%=actualTotalPrice%></div>
+						<div class="orderItemTitleActualTotalPrice">￥<%=payPrice%></div>
 					</div>
 					<div class="orderItemRight2">						 
 						<%

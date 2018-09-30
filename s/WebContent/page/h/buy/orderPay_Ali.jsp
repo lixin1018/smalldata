@@ -18,6 +18,7 @@
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="homepage"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	
 	<link rel="stylesheet" type="text/css" href="${css}/common.css">
 	<link rel="stylesheet" type="text/css" href="../css/siteCommon.css">
@@ -26,51 +27,17 @@
 </head>
 <body>
 	<div id="pageHeaderDiv" class="pageHeader">
-		<div class="headerTop">
-			<div class="headerTopInner">
-				<div id="headerLeftTopDiv" class="headerLeftTop">
-				<%				
-					HttpSession httpSession = request.getSession();
-					NcpSession ncpSession = new NcpSession(httpSession, false);
-					if(ncpSession.getIsOnline()){
-						String userName = ncpSession.getUserName();
-						%>
-							<%=userName%>, &nbsp;欢迎使用数据助理&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/changePwd.jsp" class="toChangePwd">修改密码</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/logout.jsp" class="toLogout">退出</a>
-						<%
-					}
-					else{
-						%>
-						欢迎使用数据助理, 请&nbsp;<a href="../home/login.jsp" class="toLogin">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../home/reg.jsp" class="toReg">注册</a>
-						<%
-					}
-				%>
-				</div> 
-				<div id="headerRightTopDiv" class="headerRightTop">  
-					<div class="toContainer"> 
-						<a href="../../h/buy/orderList.jsp" class="toOrderList">我的订单</a>
-						&nbsp;&nbsp;|&nbsp;&nbsp;
-						<a href="../home/help.jsp" class="toHelp">帮助</a>
-					</div>
-				</div>
-			</div> 
-		</div>
-		<div class="headerBottom">
-			<div class="headerBottomInner"">
-				<div class="headerLeftBottom" style="width:240px;">
-					<a href="../../../"><img class="headerLogo" src="../../h/images/logo.png" /></a> 
-					<span class="headerSysName">数据助理</span>
-					<span class="headerSysSubName">Power Data Helper</span>
-				</div>
-				<div class="headerRightBottom" style="left:260px;">
-					<div class="pageHeaderTitle">收银台</div> 
-				</div>
-			</div>	  			
-		</div>	
+		<jsp:include  page="headerA.jsp">
+			<jsp:param value="收银台" name="subTitle"/>
+		</jsp:include>
 	</div>
-	<div class="sectionBlankSpace" style="border-top: solid 1px #E3E4E5; "></div>	
+	<div class="sectionBlankSpaceTopBorder"></div>
+	<div class="sectionBlankSpace"></div>
 	<div id="pageContentDiv" class="pageContent">
 		<div id="orderContaienrDiv" class="orderContaienr"> 
 			<% 
+				HttpSession httpSession = request.getSession();
+				NcpSession ncpSession = new NcpSession(httpSession, false);
 				if(!ncpSession.getIsOnline()){ 
 			%>
 			<div class="alertOrderError">请登录后查看订单详情</div>			
@@ -99,7 +66,7 @@
 						else {
 							String payPageHtml = "";
 							try{
-								payPageHtml = buyControl.getAliPayFormHtml(ncpSession, orderId);
+								payPageHtml = buyControl.getAliPayFormHtml(ncpSession, orderId, request); 
 							}
 							catch(Exception ex){
 								String errorMessage = ex.getMessage();
@@ -118,18 +85,13 @@
 				</div>
 				<div class="orderItemSpaceBorder"></div>
 				<div class="payTypeSection">
-					<div class="payTypeCurrent" style="left:0px;">
+					<div class="payTypeCurrent">
 						支付宝支付
-					</div>
-					<!-- 
-					<div class="payTypeOther" style="left:200px;">
-						支付宝支付
-					</div>
-					 -->
+					</div> 
 					<div class="paySectionLine"></div>
-				</div>
-				<div class="payCodeSection">
-					<%=payPageHtml%>
+					<div class="payCodeSection">
+						<%=payPageHtml%>
+					</div>
 				</div>
 			</div>
 			<%

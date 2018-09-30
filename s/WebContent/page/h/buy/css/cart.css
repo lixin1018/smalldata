@@ -35,8 +35,8 @@
 .cartTotalPriceDiv{position:absolute;top:12px;right:150px;width:180px;height:20px;text-align:right;}
 .cartTotalPrice{font-size:16px;color:#FE6000;font-weight:600;}
 .cartNoteDiv{position:absolute;top:27px;right:150px;width:240px;height:20px;text-align:right;}
-.toPayPageDiv{position:absolute;top:0px;right:0px;width:120px;bottom:0px;text-align:center;line-height:50px;font-size:16px;background-color:#FF4400;color:#ffffff;cursor:pointer;}
-
+.toPayPageDiv{position:absolute;top:0px;right:10px;width:110px;bottom:0px;text-align:center;line-height:50px;font-size:16px;background-color:#FF4400;color:#ffffff;cursor:pointer;}
+.toPayPageDiv:hover{font-weight:bold;}
 
 @media all and (min-width: 240px) and (max-width: 359px){
 	.pageHeader{height:68px;}
@@ -321,5 +321,5 @@
 	.cartTotalPriceDiv{position:absolute;top:12px;right:150px;width:180px;height:20px;text-align:right;}
 	.cartTotalPrice{font-size:16px;color:#FE6000;font-weight:600;}
 	.cartNoteDiv{position:absolute;top:27px;right:150px;width:240px;height:20px;text-align:right;}
-	.toPayPageDiv{position:absolute;top:0px;right:0px;width:120px;bottom:0px;text-align:center;line-height:50px;font-size:16px;background-color:#FF4400;color:#ffffff;cursor:pointer;}
+	.toPayPageDiv{position:absolute;top:0px;right:10px;width:110px;bottom:0px;text-align:center;line-height:50px;font-size:16px;background-color:#FF4400;color:#ffffff;cursor:pointer;}
 } 	 

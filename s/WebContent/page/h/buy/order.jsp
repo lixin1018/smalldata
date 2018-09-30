@@ -23,6 +23,7 @@
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="homepage"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	
 	<link rel="stylesheet" type="text/css" href="${css}/common.css">
 	<link rel="stylesheet" type="text/css" href="../css/siteCommon.css">
@@ -102,9 +103,9 @@
 					<div class="orderItemColumnTitle"> 
 						<div class="orderItemColumnTitleDefinitionName">数据描述</div> 
 						<div class="orderItemColumnTitleUnitPrice">单价</div> 
-						<div class="orderItemColumnTitleTotalRowCount">记录数(条)</div> 
-						<div class="orderItemColumnTitleNewRowCount">本次付费记录数(条)</div>
-						<div class="orderItemColumnTitleActualPrice">小计(元)</div>
+						<div class="orderItemColumnTitleTotalRowCount">记录数</div> 
+						<div class="orderItemColumnTitleNewRowCount">本次付费记录数</div>
+						<div class="orderItemColumnTitleActualPrice">金额</div>
 						<div class="orderItemColumnTitleOperate">操作</div>
 					</div>
 					<%
@@ -156,6 +157,9 @@
 										break;
 								}
 							}
+							else{
+								operateInfo = "请支付后下载数据";
+							}
 
 							JSONArray dataFilterArray = JSONArray.fromObject(dataFilter);
 							StringBuilder dataFilterSS = new StringBuilder();
@@ -186,11 +190,17 @@
 					%>
 					<div class="orderItemBottom">
 						<div class="orderItemBottomActualTotalPrice">总价: ￥<%=actualTotalPrice%></div>
-						<div class="orderItemBottomPayPrice">实付款: ￥<%=payPrice%></div>
+						<div class="orderItemBottomPayPrice">实付: ￥<%=payPrice%></div>
 					<%
 						if(status == OrderStatusType.WaitingPay){
-					%>
-						<a href="<%=payPageUrl%>" class="orderItemBottomToPayPage" target="_self">支&nbsp;付</a>
+							%>
+							<a href="<%=payPageUrl%>" class="orderItemBottomToPayPage" target="_self">支&nbsp;付</a>
+						<%
+						}
+						else
+						{
+						%>
+						<div class="orderItemBottomPaid orderItemBottomToPayPage">已支付</div>
 					<%
 						}
 					%>

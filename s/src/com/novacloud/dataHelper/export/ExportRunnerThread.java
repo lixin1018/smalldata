@@ -228,7 +228,7 @@ public class ExportRunnerThread extends Thread {
 				//从数据库中读取数据
 				List<HashMap<String, Object>> allRows = new ArrayList<HashMap<String, Object>>();
 				for(int i = 0; i < pageCount; i++){
-					List<DataRow> onePageRows = this.getRows(dBParserAccess, dbSession, sqlParser, p2vs, userWhere, i, this.getOnePageRowSize());
+					List<DataRow> onePageRows = this.getRows(dBParserAccess, dbSession, sqlParser, p2vs, userWhere, i + 1, this.getOnePageRowSize());
 					for(int j = 0; j < onePageRows.size(); j++){
 						DataRow row = onePageRows.get(j);
 						HashMap<String, Object> excelRow = new HashMap<String, Object>();

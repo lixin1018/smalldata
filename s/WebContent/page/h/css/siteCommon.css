@@ -3,7 +3,15 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 .pageHeader{ height:118px; width:100%; }
 .headerMain{ position:relative;height:118px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; font-size:9px; overflow:hidden;}
 .headerTop{ color:#000000; background-color:#dddddd; border-bottom:solid 1px #CCCCCC; position:absolute; height:30px; left:0px; right:0px; z-index:4; }
-.headerRightTop{ position:absolute; top:0px; right:10px; height:30px; float:right; width:400px; }
+.headerRightTop{ position:absolute; top:0px; right:10px; height:30px; float:right; width:100px; }
+.headerRightTopButtonDiv{position:relative;width:100%;height:100%;text-align:right;}
+.showCartDiv{position:absolute;right:48px;width:42px;height:100%;cursor:pointer;text-align:center;}  
+.toCartPage{ color:#000000;  text-decoration:none; }
+.toCartPage:hover{	font-weight:bold; text-decoration:underline; }
+.headerRightTopSpliter{position:absolute;right:40px;width:8px;height:100%;}
+.showOrderListDiv{position:absolute;right:0px;width:40px;height:100%;cursor:pointer;text-align:center;}
+.toOrderListPage{ color:#000000;  text-decoration:none; }
+.toOrderListPage:hover{	font-weight:bold; text-decoration:underline; }
 .headerTopInner{ position:absolute; top:0px; width:100%; height:100%; left:0px; line-height:30px; }
 .headerLeftTop{	position:absolute; width:420px; top:0px; left:10px; bottom:0px; height:100%; line-height:30px; text-align:left; font-size:12px; color:#000000; } 
 .headerBottom{ background-color:#ffffff; position:absolute;	height:83px; width:100%; top:31px; left:0px; right:0px; z-index:4; }
@@ -88,10 +96,10 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 
 @media all and (min-width: 240px) and (max-width: 359px){	
 	.headerMain{ height:118px;}
-	.headerTop{ height:20px; }
-	.headerRightTop{ right:10px; height:20px; }
+	.headerTop{ height:20px; } 
 	.headerTopInner{ line-height:20px; }
 	.headerLeftTop{ left:10px; line-height:20px;  font-size:12px; } 
+	.headerRightTop {right: 10px;height: 20px;line-height: 20px;font-size: 12px;}
 	.headerBottom{ height:98px; top:21px; }
 	.headerBottomInner{ height:96px; } 
 	.headerLogo{ left:15px; top:10px; width:78px; }
@@ -130,8 +138,8 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 }
 
 @media all and (min-width: 360px) and (max-width: 479px){
-	.headerTop{ height:30px; }
-	.headerRightTop{ right:10px; height:30px; }
+	.headerTop{ height:30px; } 
+	.headerRightTop {right: 10px;height: 30px;line-height: 30px;font-size: 13px;}
 	.headerTopInner{ line-height:30px; }
 	.headerLeftTop{ left:10px; line-height:30px;  font-size:13px; height:30px; } 
 	.headerBottom{ height:88px; top:31px; }
@@ -173,7 +181,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 
 @media all and (min-width: 480px) and (max-width: 639px){	
 	.headerTop{ height:30px; }
-	.headerRightTop{ right:10px; height:30px; }
+	.headerRightTop {right: 10px;height: 30px;line-height: 30px;font-size: 13px;}
 	.headerTopInner{ line-height:30px; }
 	.headerLeftTop{ left:10px; line-height:30px;  font-size:13px; height:30px;} 
 	.headerBottom{ height:88px; top:31px; }
@@ -215,7 +223,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 
 @media all and (min-width: 640px) and (max-width: 767px){
 	.headerTop{ height:30px; }
-	.headerRightTop{ right:10px; height:30px; }
+	.headerRightTop {right: 10px;height: 30px;line-height: 30px;font-size: 13px;}
 	.headerTopInner{ line-height:30px; }
 	.headerLeftTop{ left:10px; line-height:30px;  font-size:15px; height:30px; } 
 	.headerBottom{ height:88px; top:31px; }
@@ -259,7 +267,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 	.pageHeader{ height:118px; width:100%; }
 	.headerMain{ position:relative;height:118px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; font-size:9px; }
 	.headerTop{ color:#000000; background-color:#dddddd; border-bottom:solid 1px #CCCCCC; position:absolute; height:30px; left:0px; right:0px; z-index:4; }
-	.headerRightTop{ position:absolute; top:0px; right:10px; height:30px; float:right; width:400px; }
+	.headerRightTop {right: 10px;height: 30px;line-height: 30px;font-size: 13px;}
 	.headerTopInner{ position:absolute; top:0px; width:100%; height:100%; left:0px; line-height:30px; }
 	.headerLeftTop{	position:absolute; width:420px; top:0px; left:10px; bottom:0px; height:100%; line-height:30px; text-align:left; font-size:12px; color:#000000; } 
 	.headerBottom{ background-color:#ffffff; position:absolute;	height:83px; width:100%; top:31px; left:0px; right:0px; z-index:4; }
@@ -339,7 +347,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 	.pageHeader{ height:118px; width:100%; }
 	.headerMain{ position:relative;height:118px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; font-size:9px; }
 	.headerTop{ color:#000000; background-color:#dddddd; border-bottom:solid 1px #CCCCCC; position:absolute; height:30px; left:0px; right:0px; z-index:4; }
-	.headerRightTop{ position:absolute; top:0px; right:10px; height:30px; float:right; width:400px; }
+	.headerRightTop {right: 10px;height: 30px;line-height: 30px;font-size: 13px;}
 	.headerTopInner{ position:absolute; top:0px; width:100%; height:100%; left:0px; line-height:30px; }
 	.headerLeftTop{	position:absolute; width:420px; top:0px; left:10px; bottom:0px; height:100%; line-height:30px; text-align:left; font-size:12px; color:#000000; } 
 	.headerBottom{ background-color:#ffffff; position:absolute;	height:83px; width:100%; top:31px; left:0px; right:0px; z-index:4; }
@@ -419,7 +427,7 @@ body{ position:relative; overflow-y:auto; overflow-x:auto; background-color:#fff
 	.pageHeader{ height:118px; width:100%; }
 	.headerMain{ position:relative;height:118px; font-family:"Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; font-size:9px; }
 	.headerTop{ color:#000000; background-color:#dddddd; border-bottom:solid 1px #CCCCCC; position:absolute; height:30px; left:0px; right:0px; z-index:4; }
-	.headerRightTop{ position:absolute; top:0px; right:10px; height:30px; float:right; width:400px; }
+	.headerRightTop {right: 10px;height: 30px;line-height: 30px;font-size: 13px;}
 	.headerTopInner{ position:absolute; top:0px; width:100%; height:100%; left:0px; line-height:30px; }
 	.headerLeftTop{	position:absolute; width:420px; top:0px; left:10px; bottom:0px; height:100%; line-height:30px; text-align:left; font-size:12px; color:#000000; } 
 	.headerBottom{ background-color:#ffffff; position:absolute;	height:83px; width:100%; top:31px; left:0px; right:0px; z-index:4; }

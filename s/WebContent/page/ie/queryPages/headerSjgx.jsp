@@ -1,4 +1,5 @@
 ﻿<%@ page import="com.novacloud.novaone.common.NcpSession" %>  
+<%@ page import="com.novacloud.novaone.common.util.CommonFunction" %> 
 <div class="headerTop"> 
 	<div id="headerLeftTopDiv" class="headerLeftTop">
 	<%				
@@ -11,9 +12,10 @@
 			<%=userName%>,&nbsp;欢迎您&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%=rootDir%>" class="toMainPage">首&nbsp;页</a>
 			<%
 		}
-		else{
+		else{ 
+			String loginRedirectUrl = CommonFunction.encode(request.getRequestURI() + "?" + request.getQueryString());
 			%>
-			&nbsp;&nbsp;<a href="<%=rootDir%>" class="toLogout">首&nbsp;页</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%=rootDir%>/page/h/home/login.jsp" class="toLogin">登&nbsp;录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%=rootDir%>/page/h/home/reg.jsp" class="toReg">注&nbsp;册</a>
+			&nbsp;&nbsp;<a href="<%=rootDir%>/page/h/home/index.jsp" class="toMainPage">首&nbsp;页</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%=rootDir%>/page/h/home/login.jsp?loginRedirectUrl=<%=loginRedirectUrl %>" class="toLogin">登&nbsp;录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<%=rootDir%>/page/h/home/reg.jsp" class="toReg">注&nbsp;册</a>
 			<%
 		}
 	%>				

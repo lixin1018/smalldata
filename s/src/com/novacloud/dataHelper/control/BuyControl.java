@@ -12,6 +12,7 @@ import java.util.Map;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
@@ -219,18 +220,23 @@ public class BuyControl{
 	}
 
 	
-	public String getAliPayFormHtml(INcpSession ncpSession, String  orderId) throws NcpException	{
+	public String getAliPayFormHtml(INcpSession ncpSession, String  orderId, HttpServletRequest request) throws NcpException	{
 		Session dbSession = null;
 		try{     
 			BuyProcessor buyProcessor =  this.getBuyProcessor();
+
+			if(buyProcessor.isWechatBrowser(request)){
+				throw new Exception("无法在微信里使用支付宝, 请使用手机浏览器或电脑浏览器打开此支付页面.");
+			}
+			
 			dbSession = this.openDBSession();
 			buyProcessor.setDBSession(dbSession);
-			String payFormHtml = buyProcessor.getAliPayFormHtml(ncpSession, orderId);  
+			String payFormHtml = buyProcessor.getAliPayFormHtml(ncpSession, orderId, request);  
 			return payFormHtml;
 		} 
 		catch(Exception ex) {
         	ex.printStackTrace();
-			NcpException ncpEx = new NcpException("getAliPayFormHtml", "获取支付宝支付页面Html失败", ex); 
+			NcpException ncpEx = new NcpException("getAliPayFormHtml", "支付失败. " + ex.getMessage(), ex); 
 			throw ncpEx;
 		} 
 		finally{

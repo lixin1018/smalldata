@@ -3,8 +3,8 @@
 .tableTitle{font-family:'Microsoft Yahei'; font-size:20px;font-weight:400;position:absolute;right:350px;top:15px;left:0px;height:35px;text-align:center;}
 .tablePagination{position:absolute;top:15px;right:0px;width:380px;height:35px;}
 .tableQueryBlankCell{position:relative;width:10px;height:5px;}
-.headerRightTop{width:260px;}
-.tableQueryPopButtonDiv{width:180px;position:absolute;right:10px;font-size:12px;height:30px;line-height:30px;text-align:right;}
+.headerRightTop{width:160px;}
+.tableQueryPopButtonDiv{width:180px;position:absolute;right:0px;font-size:12px;height:30px;line-height:30px;text-align:right;}
 .tableQueryPopButtonDiv span{text-decoration:none;cursor:pointer;}
 .tableQueryContainer{position:absolute;font-size:13px;top:0px;height:100%;width:200px;right:0px;display:none;z-index:100;background-color:#cccccc;overflow-y:auto;}
 .tableQueryContainerShow{display:block;}

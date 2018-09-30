@@ -4,35 +4,366 @@
 .orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
 .orderListSection{}
 .orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
-.orderItemTitle{position: relative;width:100%;height:40px;border-bottom:solid 1px #eeeeee;}
+.orderItemTitle{position: relative;width:100%;height:40px;border-bottom:solid 1px #eeeeee;background-color:#E3EEFF;}
 .orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
-.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 20px;width: 200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 40px;}
-.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 230px; width: 400px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
-.orderItemTitleCreateUserName{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 580px;width: 150px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 40px;} 
-.orderItemTitlePayTime{position: absolute;text-align: left;top: 0px;bottom: 0px;right: 120px;width: 180px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;} 
-.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;bottom: 0px;right: 10px;width:190px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 40px;}   
+.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;left: 20px;width: 200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 40px;}
+.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 0px;left: 230px; width: 400px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemTitleCreateUserName{position: absolute;text-align: left;top: 0px;left: 580px;width: 150px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 40px;} 
+.orderItemTitlePayTime{position: absolute;text-align: left;top: 0px;width: 180px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;} 
+.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 10px;width:190px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 40px;}   
 .orderItemTitleToPayPage{text-decoration:none;color: #3c3c3c;}
 .orderItemTitleToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
 .orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;}
 .orderItemColumnTitle{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;height:40px;} 
-.orderItemColumnTitleDefinitionName{position: absolute;text-align: center;top: 0px;bottom: 0px;left: 20px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
-.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;bottom: 0px;left: 450px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
-.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;bottom: 0px;left: 575px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
-.orderItemColumnTitleNewRowCount{position: absolute;text-align: right;top: 0px;bottom: 0px;left: 700px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
-.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;bottom: 0px;left: 825px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
-.orderItemColumnTitleOperate{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 980px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemColumnTitleDefinitionName{position: absolute;text-align: center;top: 0px;left: 20px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemColumnTitleNewRowCount{position: absolute;display:none;text-align: right;top: 0px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
+.orderItemColumnTitleOperate{position: absolute;text-align: left;top: 0px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 40px;}
 .orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:20px;height: 40px;width: auto;text-decoration:none;color: #3c3c3c;}
 .orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
-.orderLineUnitPrice{position: absolute;text-align: right;top: 0px;left: 450px;height: 40px;width: 125px;text-decoration:none;color: #3c3c3c;} 
-.orderLineTotalRowCount{position: absolute;text-align: right;top: 0px;left: 575px;height: 40px;width: 125px;text-decoration:none;color: #3c3c3c;}   
-.orderLineNewRowCount{position: absolute;text-align: right;top: 0px;left: 700px;height: 40px;width: 125px;text-decoration:none;color: #3c3c3c;}
-.orderLineActualPrice{position: absolute;text-align: right;top: 0px;left: 825px;height: 40px;width: 125px;text-decoration:none;color: #3c3c3c;}
-.orderLineOperate{position: absolute;text-align: left;top: 0px;left: 980px;height: 40px;width: 200px;text-decoration:none;color: #3c3c3c;}
+.orderLineUnitPrice{position: absolute;text-align: right;top: 0px;height: 40px;width: 125px;text-decoration:none;color: #3c3c3c;} 
+.orderLineTotalRowCount{position: absolute;text-align: right;top: 0px; height: 40px;width: 125px;text-decoration:none;color: #3c3c3c;}   
+.orderLineNewRowCount{position: absolute;display:none;text-align: right;top: 0px; height: 40px;width: 125px;text-decoration:none;color: #3c3c3c;}
+.orderLineActualPrice{position: absolute;text-align: right;top: 0px; height: 40px;width: 125px;text-decoration:none;color: #3c3c3c;}
+.orderLineOperate{position: absolute;text-align: left;top: 0px;height: 40px;text-decoration:none;color: #3c3c3c;}
 .orderLineOperate a{color: #000000;cursor:pointer;text-decoration:none;}
 .orderLineOperate a:hover{color: #000000;text-decoration: underline;}
 .orderItemBottom{position: relative;width:100%;height:80px;border-top:solid 1px #eeeeee;}
-.orderItemBottomActualTotalPrice{position: absolute;text-align: center;top: 0px;right: 100px;width: 120px;font-size: 14px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;font-weight:600;line-height: 30px;} 
-.orderItemBottomPayPrice{position: absolute;text-align: center;top: 30px;right: 100px;width: 120px;font-size: 14px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;font-weight:600;line-height: 30px;} 
-.orderItemBottomToPayPage{position: absolute;text-align: center;top: 25px;right: 10px;width: 80px;height:40px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;font-weight:600;line-height: 40px;text-decoration: none;background-color:#5B9BD5;cursor:pointer;}
+.orderItemBottomActualTotalPrice{position: absolute;text-align: left;top: 0px;right: 120px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 30px;font-weight:bold;} 
+.orderItemBottomPayPrice{position: absolute;text-align: left;top: 40px;right: 120px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 30px;font-weight:bold;} 
+.orderItemBottomToPayPage{position: absolute;text-align: center;top: 30px;right: 10px;width: 110px;height:50px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;line-height: 50px;text-decoration: none;background-color:#FF4400;cursor:pointer;}
 .orderItemBottomToPayPage:hover{font-weight:bold;cursor:pointer;}
+.orderItemBottomPaid{background-color:#aaaaaa;}
+.orderItemBottomPaid:hover{font-weight:normal;cursor:default;}
 .alertOrderError{width:100%;height:300px;text-align:center;font-size: 16px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+
+@media all and (min-width: 240px) and (max-width: 359px){
+	.pageHeader{height:68px;}
+	.headerMain{height:68px;}
+	.headerBottom{height:48px;} 
+	.headerBottomInner{height:46px;}
+	.pageHeaderTitleContainer{left:110px;}
+	.pageHeaderTitle{top:0px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemTitle{position: relative;width:100%;height:75px;border-bottom:solid 1px #eeeeee;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 10px;right:0px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 25px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 25px;bottom: 0px;left: 10px; right:0px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemTitleCreateUserName{position: absolute;display:none;text-align: left;top: 0px;bottom: 0px;left: 580px;width: 150px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: left;top: 50px;bottom: 0px;right: 10px;left: 10px; font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;}   
+	.orderItemTitlePayTime{position: absolute;display:none;text-align: right;top: 50px;bottom: 0px;right: 10px;width: 150px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleToPayPage{text-decoration:none;color: #3c3c3c;}
+	.orderItemTitleToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLine{position: relative;width: 100%;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;;height:75px;border-top:solid 1px #eeeeee;}
+	.orderItemColumnTitle{position: relative;width: 100%;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;height:25px;} 
+	.orderItemColumnTitleDefinitionName{position: absolute;display:none;text-align: left;top: 0px;height:25px; left: 10px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;height:25px; right: 170px;width:80px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;height: 25px;right: 90px;width:80px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleNewRowCount{position: absolute;display:none;text-align: right;top: 0px;height: 25px;right: 90px;width:125px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;height: 25px;right: 10px;width:80px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleOperate{position: absolute;display:none;text-align: left;top: 0px;height: 25px;left: 1080px;width:200px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:10px;right:0px;height: 25px;width: auto;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineUnitPrice{position: absolute;text-align: right;top: 25px;right: 170px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;} 
+	.orderLineTotalRowCount{position: absolute;text-align: right;top: 25px;right: 90px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}   
+	.orderLineNewRowCount{position: absolute;display:none;text-align: right;top: 25px;left: 800px;height: 25px;width: 125px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineActualPrice{position: absolute;text-align: right;top: 25px;right: 10px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate{position: absolute;text-align: right;top: 50px;left: 0px;height: 25px;right: 10px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate a{color: #000000;cursor:pointer;text-decoration:none;}
+	.orderLineOperate a:hover{color: #000000;text-decoration: underline;}
+	.orderItemBottom{position: relative;width:100%;height:60px;border-top:solid 1px #eeeeee;}
+	.orderItemBottomActualTotalPrice{position: absolute;text-align: left;top: 10px;right: 100px;width: 120px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomPayPrice{position: absolute;text-align: left;top: 35px;right: 100px;width: 120px;font-size: 11px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomToPayPage{position: absolute;text-align: center;top: 10px;right: 10px;width: 110px;height:50px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;line-height: 50px;text-decoration: none;background-color:#FF4400;cursor:pointer;}
+	.orderItemBottomToPayPage:hover{font-weight:bold;cursor:pointer;}
+	.orderItemBottomPaid{background-color:#aaaaaa;}
+	.orderItemBottomPaid:hover{font-weight:normal;cursor:default;}
+	.alertOrderError{width:100%;height:300px;text-align:center;font-size: 13px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+}
+
+@media all and (min-width: 360px) and (max-width: 479px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:150px;}
+	.pageHeaderTitle{top:5px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemTitle{position: relative;width:100%;height:75px;border-bottom:solid 1px #eeeeee;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 10px;right:0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 25px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 25px;bottom: 0px;left: 10px; right:0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemTitleCreateUserName{position: absolute;display:none;text-align: left;top: 0px;bottom: 0px;left: 580px;width: 150px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: left;top: 50px;bottom: 0px;right: 10px;left: 10px; font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;}   
+	.orderItemTitlePayTime{position: absolute;text-align: right;top: 50px;right: 10px;width: 180px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleToPayPage{text-decoration:none;color: #3c3c3c;}
+	.orderItemTitleToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;;height:75px;border-top:solid 1px #eeeeee;}
+	.orderItemColumnTitle{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;height:25px;} 
+	.orderItemColumnTitleDefinitionName{position: absolute;display:none;text-align: left;top: 0px;height:25px; left: 10px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;height:25px; right: 170px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;height: 25px;right: 90px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleNewRowCount{position: absolute;display:none;text-align: right;top: 0px;height: 25px;right: 90px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;height: 25px;right: 10px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleOperate{position: absolute;display:none;text-align: left;top: 0px;height: 25px;left: 1080px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:10px;right:0px;height: 25px;width: auto;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineUnitPrice{position: absolute;text-align: right;top: 25px;right: 170px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;} 
+	.orderLineTotalRowCount{position: absolute;text-align: right;top: 25px;right: 90px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}   
+	.orderLineNewRowCount{position: absolute;display:none;text-align: right;top: 25px;left: 800px;height: 25px;width: 125px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineActualPrice{position: absolute;text-align: right;top: 25px;right: 10px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate{position: absolute;text-align: right;top: 50px;left: 0px;height: 25px;right: 10px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate a{color: #000000;cursor:pointer;text-decoration:none;}
+	.orderLineOperate a:hover{color: #000000;text-decoration: underline;}
+	.orderItemBottom{position: relative;width:100%;height:60px;border-top:solid 1px #eeeeee;}
+	.orderItemBottomActualTotalPrice{position: absolute;text-align: left;top: 10px;right: 100px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomPayPrice{position: absolute;text-align: left;top: 35px;right: 100px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomToPayPage{position: absolute;text-align: center;top: 10px;right: 10px;width: 110px;height:50px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;line-height: 50px;text-decoration: none;background-color:#FF4400;cursor:pointer;}
+	.orderItemBottomToPayPage:hover{font-weight:bold;cursor:pointer;}
+	.orderItemBottomPaid{background-color:#aaaaaa;}
+	.orderItemBottomPaid:hover{font-weight:normal;cursor:default;}
+	.alertOrderError{width:100%;height:300px;text-align:center;font-size: 13px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+}
+
+@media all and (min-width: 480px) and (max-width: 639px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:150px;}
+	.pageHeaderTitle{top:5px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:16px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemTitle{position: relative;width:100%;height:50px;border-bottom:solid 1px #eeeeee;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 10px;right:0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 25px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 25px;bottom: 0px;left: 10px; right:0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemTitleCreateUserName{position: absolute;display:none;text-align: left;top: 0px;bottom: 0px;left: 580px;width: 150px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 10px;width:150px; font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;}   
+	.orderItemTitlePayTime{position: absolute;text-align: right;top: 25px;bottom: 0px;right: 10px;width: 180px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleToPayPage{text-decoration:none;color: #3c3c3c;}
+	.orderItemTitleToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;;height:50px;border-top:solid 1px #eeeeee;}
+	.orderItemColumnTitle{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;height:25px;} 
+	.orderItemColumnTitleDefinitionName{position: absolute;display:none;text-align: left;top: 0px;height:25px; left: 10px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;height:25px; right: 370px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;height: 25px;right: 290px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleNewRowCount{position: absolute;display:none;text-align: right;top: 0px;height: 25px;right: 230px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;height: 25px;right: 210px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleOperate{position: absolute;text-align: center;top: 0px;height: 25px;right:10px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:10px;right:0px;height: 25px;width: auto;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineUnitPrice{position: absolute;text-align: right;top: 25px;right: 370px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;} 
+	.orderLineTotalRowCount{position: absolute;text-align: right;top: 25px;right: 290px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}   
+	.orderLineNewRowCount{position: absolute;display:none;text-align: right;top: 25px;left: 800px;height: 25px;width: 125px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineActualPrice{position: absolute;text-align: right;top: 25px;right: 210px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate{position: absolute;text-align: center;top: 25px;right: 10px;height: 25px;width:200px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate a{color: #000000;cursor:pointer;text-decoration:none;}
+	.orderLineOperate a:hover{color: #000000;text-decoration: underline;}
+	.orderItemBottom{position: relative;width:100%;height:60px;border-top:solid 1px #eeeeee;}
+	.orderItemBottomActualTotalPrice{position: absolute;text-align: left;top: 10px;right: 100px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomPayPrice{position: absolute;text-align: left;top: 35px;right: 100px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomToPayPage{position: absolute;text-align: center;top: 10px;right: 10px;width: 110px;height:50px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;line-height: 50px;text-decoration: none;background-color:#FF4400;cursor:pointer;}
+	.orderItemBottomToPayPage:hover{font-weight:bold;cursor:pointer;}
+	.orderItemBottomPaid{background-color:#aaaaaa;}
+	.orderItemBottomPaid:hover{font-weight:normal;cursor:default;}
+	.alertOrderError{width:100%;height:300px;text-align:center;font-size: 13px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+}
+
+@media all and (min-width: 640px) and (max-width: 767px){
+	.pageHeader{height:93px;}
+	.headerMain{height:93px;}
+	.headerBottom{height:73px;} 
+	.headerBottomInner{height:71px;}
+	.pageHeaderTitleContainer{left:170px;}
+	.pageHeaderTitle{top:8px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:20px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemTitle{position: relative;width:100%;height:50px;border-bottom:solid 1px #eeeeee;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 10px;right:0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 25px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 25px;bottom: 0px;left: 10px; right:0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemTitleCreateUserName{position: absolute;display:none;text-align: left;top: 0px;bottom: 0px;left: 580px;width: 150px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 10px;width:150px; font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;}   
+	.orderItemTitlePayTime{position: absolute;text-align: right;top: 0px;bottom: 0px;right: 200px;width: 180px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleToPayPage{text-decoration:none;color: #3c3c3c;}
+	.orderItemTitleToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;;height:50px;border-top:solid 1px #eeeeee;}
+	.orderItemColumnTitle{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;height:25px;} 
+	.orderItemColumnTitleDefinitionName{position: absolute;display:none;text-align: left;top: 0px;height:25px; left: 10px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;height:25px; right: 370px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;height: 25px;right: 290px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleNewRowCount{position: absolute;display:none;text-align: right;top: 0px;height: 25px;right: 230px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;height: 25px;right: 210px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleOperate{position: absolute;text-align: center;top: 0px;height: 25px;right:10px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 0px;left:10px;right:0px;height: 25px;width: auto;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineUnitPrice{position: absolute;text-align: right;top: 25px;right: 370px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;} 
+	.orderLineTotalRowCount{position: absolute;text-align: right;top: 25px;right: 290px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}   
+	.orderLineNewRowCount{position: absolute;display:none;text-align: right;top: 25px;left: 800px;height: 25px;width: 125px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineActualPrice{position: absolute;text-align: right;top: 25px;right: 210px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate{position: absolute;text-align: center;top: 25px;right: 10px;height: 25px;width:200px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate a{color: #000000;cursor:pointer;text-decoration:none;}
+	.orderLineOperate a:hover{color: #000000;text-decoration: underline;}
+	.orderItemBottom{position: relative;width:100%;height:60px;border-top:solid 1px #eeeeee;}
+	.orderItemBottomActualTotalPrice{position: absolute;text-align: left;top: 10px;right: 100px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomPayPrice{position: absolute;text-align: left;top: 35px;right: 100px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomToPayPage{position: absolute;text-align: center;top: 10px;right: 10px;width: 110px;height:50px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;line-height: 50px;text-decoration: none;background-color:#FF4400;cursor:pointer;}
+	.orderItemBottomToPayPage:hover{font-weight:bold;cursor:pointer;}
+	.orderItemBottomPaid{background-color:#aaaaaa;}
+	.orderItemBottomPaid:hover{font-weight:normal;cursor:default;}
+	.alertOrderError{width:100%;height:300px;text-align:center;font-size: 13px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+}
+
+@media all and (min-width: 768px) and (max-width: 999px){
+	.pageHeader{height:118px;}
+	.headerMain{height:118px;}
+	.headerBottom{height:88px;} 
+	.headerBottomInner{height:88px;}
+	.pageHeaderTitleContainer{left:230px;}
+	.pageHeaderTitle{top:15px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:20px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemTitle{position: relative;width:100%;height:50px;border-bottom:solid 1px #eeeeee;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 0px;bottom: 0px;left: 10px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 25px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 25px;bottom: 0px;left: 10px; right:0px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemTitleCreateUserName{position: absolute;display:none;text-align: left;top: 0px;bottom: 0px;left: 580px;width: 150px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 0px;right: 10px;width:150px; font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;}   
+	.orderItemTitlePayTime{position: absolute;text-align: right;top: 0px;bottom: 0px;right: 200px;width: 180px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleToPayPage{text-decoration:none;color: #3c3c3c;}
+	.orderItemTitleToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;;height:35px;border-top:solid 1px #eeeeee;}
+	.orderItemColumnTitle{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;height:25px;} 
+	.orderItemColumnTitleDefinitionName{position: absolute;text-align: center;top: 0px;height:25px; left: 10px;right:450px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;height:25px; right: 370px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;height: 25px;right: 290px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleNewRowCount{position: absolute;display:none;text-align: right;top: 0px;height: 25px;right: 230px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;height: 25px;right: 210px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleOperate{position: absolute;text-align: center;top: 0px;height: 25px;right:10px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 5px;left:10px;right:0px;height: 25px;width: auto;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineUnitPrice{position: absolute;text-align: right;top: 5px;right: 370px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;} 
+	.orderLineTotalRowCount{position: absolute;text-align: right;top: 5px;right: 290px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}   
+	.orderLineNewRowCount{position: absolute;display:none;text-align: right;top: 25px;left: 800px;height: 25px;width: 125px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineActualPrice{position: absolute;text-align: right;top: 5px;right: 210px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate{position: absolute;text-align: center;top: 5px;right: 10px;height: 25px;width:200px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate a{color: #000000;cursor:pointer;text-decoration:none;}
+	.orderLineOperate a:hover{color: #000000;text-decoration: underline;}
+	.orderItemBottom{position: relative;width:100%;height:60px;border-top:solid 1px #eeeeee;}
+	.orderItemBottomActualTotalPrice{position: absolute;text-align: left;top: 10px;right: 100px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomPayPrice{position: absolute;text-align: left;top: 35px;right: 100px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomToPayPage{position: absolute;text-align: center;top: 10px;right: 10px;width: 110px;height:50px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;line-height: 50px;text-decoration: none;background-color:#FF4400;cursor:pointer;}
+	.orderItemBottomToPayPage:hover{font-weight:bold;cursor:pointer;}
+	.orderItemBottomPaid{background-color:#aaaaaa;}
+	.orderItemBottomPaid:hover{font-weight:normal;cursor:default;}
+	.alertOrderError{width:100%;height:300px;text-align:center;font-size: 13px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+}
+
+@media all and (min-width: 1000px) and (max-width: 1199px){	 
+	.pageHeader{height:118px;}
+	.headerMain{height:118px;}
+	.headerBottom{height:88px;} 
+	.headerBottomInner{height:88px;}
+	.pageHeaderTitleContainer{left:230px;}
+	.pageHeaderTitle{top:15px;bottom:0px;left:0px;right:0px;line-height:46px;font-size:24px;}
+	.orderContaienr{margin:1px auto;width:100%;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemTitle{position: relative;width:100%;height:35px;border-bottom:solid 1px #eeeeee;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 5px;bottom: 0px;left: 10px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 25px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 5px;bottom: 0px;left: 250px; width:300px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemTitleCreateUserName{position: absolute;display:none;text-align: left;top: 5px;bottom: 0px;left: 580px;width: 150px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 5px;right: 10px;width:150px; font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;}   
+	.orderItemTitlePayTime{position: absolute;text-align: right;top: 5px;bottom: 0px;right: 200px;width: 180px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleToPayPage{text-decoration:none;color: #3c3c3c;}
+	.orderItemTitleToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;;height:35px;border-top:solid 1px #eeeeee;}
+	.orderItemColumnTitle{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;height:25px;} 
+	.orderItemColumnTitleDefinitionName{position: absolute;text-align: center;top: 0px;height:25px; left: 10px;right:450px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;height:25px; right: 370px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;height: 25px;right: 290px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleNewRowCount{position: absolute;display:none;text-align: right;top: 0px;height: 25px;right: 230px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;height: 25px;right: 210px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleOperate{position: absolute;text-align: center;top: 0px;height: 25px;right:10px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 5px;left:10px;right:0px;height: 25px;width: auto;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineUnitPrice{position: absolute;text-align: right;top: 5px;right: 370px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;} 
+	.orderLineTotalRowCount{position: absolute;text-align: right;top: 5px;right: 290px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}   
+	.orderLineNewRowCount{position: absolute;display:none;text-align: right;top: 25px;left: 800px;height: 25px;width: 125px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineActualPrice{position: absolute;text-align: right;top: 5px;right: 210px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate{position: absolute;text-align: center;top: 5px;right: 10px;height: 25px;width:200px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate a{color: #000000;cursor:pointer;text-decoration:none;}
+	.orderLineOperate a:hover{color: #000000;text-decoration: underline;}
+	.orderItemBottom{position: relative;width:100%;height:60px;border-top:solid 1px #eeeeee;}
+	.orderItemBottomActualTotalPrice{position: absolute;text-align: left;top: 10px;right: 180px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomPayPrice{position: absolute;text-align: left;top: 35px;right: 180px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomToPayPage{position: absolute;text-align: center;top: 10px;right: 10px;width: 110px;height:50px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;line-height: 50px;text-decoration: none;background-color:#FF4400;cursor:pointer;}
+	.orderItemBottomToPayPage:hover{font-weight:bold;cursor:pointer;}
+	.orderItemBottomPaid{background-color:#aaaaaa;}
+	.orderItemBottomPaid:hover{font-weight:normal;cursor:default;}
+	.alertOrderError{width:100%;height:300px;text-align:center;font-size: 13px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+}
+
+@media all and (min-width: 1200px) and (max-width: 4096px){ 
+	.pageHeader{height:118px;}
+	.headerMain{height:118px;}
+	.headerBottom{height:88px;} 
+	.headerBottomInner{height:88px;}
+	.pageHeaderTitleContainer{position:absolute;left:260px;top:0px;bottom:0px;width:200px;}
+	.pageHeaderTitle{position:absolute;left:0px;top:25px;font-size:24px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #777777;font-weight: bold;}
+	.orderContaienr{margin:1px auto;width:1200px;height:auto;min-height:550px;min-height:530px;display: table;}   
+	.orderFooterSection{width:100%;height:35px;line-height:35px;position:relative;}
+	.orderListSection{}
+	.orderItem{position: relative;width:100%;border:solid 1px #cccccc;}  
+	.orderItemTitle{position: relative;width:100%;height:35px;border-bottom:solid 1px #eeeeee;}
+	.orderItemSpaceBorder{position:relative;width:100%;height:5px;color:#ffffff;} 
+	.orderItemTitleCreateTime{position: absolute;text-align: left;top: 5px;bottom: 0px;left: 10px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c; line-height: 25px;}
+	.orderItemTitleOrderNumber{position: absolute;text-align: left;top: 5px;bottom: 0px;left: 250px; width:300px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemTitleCreateUserName{position: absolute;display:none;text-align: left;top: 5px;bottom: 0px;left: 580px;width: 150px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif; color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleStatusName{position: absolute;text-align: right;top: 5px;right: 10px;width:150px; font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;}   
+	.orderItemTitlePayTime{position: absolute;text-align: right;top: 5px;bottom: 0px;right: 200px;width: 180px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;} 
+	.orderItemTitleToPayPage{text-decoration:none;color: #3c3c3c;}
+	.orderItemTitleToPayPage:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLine{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;;height:35px;border-top:solid 1px #eeeeee;}
+	.orderItemColumnTitle{position: relative;width: 100%;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;height:25px;} 
+	.orderItemColumnTitleDefinitionName{position: absolute;text-align: center;top: 0px;height:25px; left: 10px;right:450px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleUnitPrice{position: absolute;text-align: right;top: 0px;height:25px; right: 370px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleTotalRowCount{position: absolute;text-align: right;top: 0px;height: 25px;right: 290px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleNewRowCount{position: absolute;display:none;text-align: right;top: 0px;height: 25px;right: 230px;width:125px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleActualPrice{position: absolute;text-align: right;top: 0px;height: 25px;right: 210px;width:80px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderItemColumnTitleOperate{position: absolute;text-align: center;top: 0px;height: 25px;right:10px;width:200px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;}
+	.orderLineDefinitionName{position: absolute;text-align: left;top: 5px;left:10px;right:0px;height: 25px;width: auto;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineDefinitionname:hover{color: #000000;cursor:pointer;text-decoration: underline;}
+	.orderLineUnitPrice{position: absolute;text-align: right;top: 5px;right: 370px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;} 
+	.orderLineTotalRowCount{position: absolute;text-align: right;top: 5px;right: 290px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}   
+	.orderLineNewRowCount{position: absolute;display:none;text-align: right;top: 25px;left: 800px;height: 25px;width: 125px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineActualPrice{position: absolute;text-align: right;top: 5px;right: 210px;height: 25px;width: 80px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate{position: absolute;text-align: center;top: 5px;right: 10px;height: 25px;width:200px;text-decoration:none;line-height:25px;color: #3c3c3c;}
+	.orderLineOperate a{color: #000000;cursor:pointer;text-decoration:none;}
+	.orderLineOperate a:hover{color: #000000;text-decoration: underline;}
+	.orderItemBottom{position: relative;width:100%;height:60px;border-top:solid 1px #eeeeee;}
+	.orderItemBottomActualTotalPrice{position: absolute;text-align: left;top: 10px;right: 180px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #3c3c3c;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomPayPrice{position: absolute;text-align: left;top: 35px;right: 180px;width: 120px;font-size: 13px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #FE6000;line-height: 25px;font-weight:bold;} 
+	.orderItemBottomToPayPage{position: absolute;text-align: center;top: 10px;right: 10px;width: 110px;height:50px;font-size: 16px;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;color: #ffffff;line-height: 50px;text-decoration: none;background-color:#FF4400;cursor:pointer;}
+	.orderItemBottomToPayPage:hover{font-weight:bold;cursor:pointer;}
+	.orderItemBottomPaid{background-color:#aaaaaa;}
+	.orderItemBottomPaid:hover{font-weight:normal;cursor:default;}
+	.alertOrderError{width:100%;height:300px;text-align:center;font-size: 13px;color: #666666;font-family: "Microsoft YaHei","lucida grande", tahoma, verdana, arial, sans-serif;}
+}
