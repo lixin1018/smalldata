@@ -20,8 +20,6 @@ import com.novacloud.novaone.dao.sys.ContextUtil;
 
 public class GetExportFile extends HttpServlet{    
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
-           
-        request.setCharacterEncoding("UTF-8");    
         BuyProcessor buyProcessor = null;
         try {
     		NcpSession session = new NcpSession(request.getSession());  
@@ -50,8 +48,10 @@ public class GetExportFile extends HttpServlet{
         OutputStream out = null;
         try { 
             out = response.getOutputStream();
-            response.setHeader("Content-Disposition", "attachment;filename=\"" + URLEncoder.encode(fileName,"UTF-8") + ".xlsx\"");
+            //response.setHeader("Content-Disposition", "attachment;filename=\"" + fileName + ".xlsx\"");
+            response.setHeader("Content-Disposition", "attachment;filename=\"" + URLEncoder.encode(fileName, "UTF-8") + ".xlsx\"");
             response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"); 
+            response.setCharacterEncoding("utf-8");
             out.write(data);
             out.flush();
         }

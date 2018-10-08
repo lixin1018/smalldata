@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ page import="com.novacloud.novaone.common.NcpSession" %>
-<%@ include file="../../basePage.jsp" %>
+<%@ include file="../../basePageShareData.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
 	<title>大学本科专业信息</title>
@@ -10,23 +10,23 @@
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="数据助手,数据共享,数据工具,数据,数据抓取,大学本科专业信息"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
-	<meta http-equiv="description" content="大学本科专业信息">
+	<meta http-equiv="description" content="大学本科专业信息"> 
 	<script type="text/javascript" src="${dataModel}/ie_dxbkzyxx.js"></script>
-	<script type="text/javascript" src="${viewModel}/ie_dxbkzyxx.js"></script>
+	<script type="text/javascript" src="${viewModel}/ie_dxbkzyxx.js"></script> 
 	
 	<script>
 		var paramWinModelUnits = {xw: {
 id: "51f22729-3222-4c90-9cd8-8cdf0bc49003",
 name: "xw",
-label: "&#23398;&#20301;",
+label: "&#23398;&#21382;",
 valueType: valueType.string,
 decimalNum: 0,
 valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
-inputHelpType: "null",
-inputHelpName: "null",
+inputHelpType: "",
+inputHelpName: "",
 unitType:"text",
 defaultValue: null
 },
@@ -40,9 +40,13 @@ valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
-inputHelpType: "pop",
-inputHelpName: "pop/ie/popPages/dxbkxkfl.jsp",
-unitType:"text",
+inputHelpType: "list",
+inputHelpName: "ie.dxbkxkfl",
+maps: {"xkfl": "mc"},
+maps: {"xkfl": "mc"},
+list:{name: "ie.dxbkxkfl",
+columns: [{field: "xh", valueType: valueType.string, title: "序号", width: 50, hidden: false },{field: "mc", valueType: valueType.string, title: "名称", width: 100, hidden: false }]},
+unitType:"list",
 defaultValue: null
 },
 yjxk: {
@@ -55,9 +59,10 @@ valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
-inputHelpType: "null",
-inputHelpName: "null",
-unitType:"text",
+inputHelpType: "pop",
+inputHelpName: "page/ie/popPages/dxbkyjxk.jsp",
+maps: {"yjxk": "yjxk"},
+unitType:"pop",
 defaultValue: null
 },
 zy: {
@@ -70,8 +75,8 @@ valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
-inputHelpType: "null",
-inputHelpName: "null",
+inputHelpType: "",
+inputHelpName: "",
 unitType:"text",
 defaultValue: null
 },
@@ -85,8 +90,8 @@ valueLength: 20,
 isMultiValue: false,
 isNullable: true,
 isEditable: true,
-inputHelpType: "null",
-inputHelpName: "null",
+inputHelpType: "",
+inputHelpName: "",
 unitType:"text",
 defaultValue: null
 }};
@@ -99,13 +104,13 @@ defaultValue: null
 			if(result.verified){
 				gridWin.sysWhere = new Array();  
 				if(result.values.xw != null && result.values.xw.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"xw", title:"&#23398;&#20301;", operator:"like", value: result.values.xw });
+gridWin.sysWhere.push({parttype:"field", field:"xw", title:"&#23398;&#21382;", operator:"like", value: result.values.xw });
 }
 if(result.values.xkfl != null && result.values.xkfl.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"xkfl", title:"&#23398;&#31185;&#20998;&#31867;", operator:"like", value: result.values.xkfl });
+gridWin.sysWhere.push({parttype:"field", field:"xkfl", title:"&#23398;&#31185;&#20998;&#31867;", operator:"=", value: result.values.xkfl });
 }
 if(result.values.yjxk != null && result.values.yjxk.length != 0){
-gridWin.sysWhere.push({parttype:"field", field:"yjxk", title:"&#19968;&#32423;&#23398;&#31185;", operator:"like", value: result.values.yjxk });
+gridWin.sysWhere.push({parttype:"field", field:"yjxk", title:"&#19968;&#32423;&#23398;&#31185;", operator:"=", value: result.values.yjxk });
 }
 if(result.values.zy != null && result.values.zy.length != 0){
 gridWin.sysWhere.push({parttype:"field", field:"zy", title:"&#19987;&#19994;", operator:"like", value: result.values.zy });
@@ -121,24 +126,50 @@ gridWin.sysWhere.push({parttype:"field", field:"zydm", title:"&#19987;&#19994;&#
 </head>
 <body class="easyui-layout" style="width:100%;height:100%;" id="dataGridContainer"> 
 	<div id="queryControlContainerId" class="tableQueryContainer"> 
-		<div class="tableQueryLine"><div class="tableQueryItemName">&#23398;&#20301;:&nbsp;</div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xw" paramCtrl="true"/></div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemName">&#23398;&#31185;&#20998;&#31867;:&nbsp;</div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xkfl" paramCtrl="true"/></div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemName">&#19968;&#32423;&#23398;&#31185;:&nbsp;</div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="yjxk" paramCtrl="true"/></div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemName">&#19987;&#19994;:&nbsp;</div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zy" paramCtrl="true"/></div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemName">&#19987;&#19994;&#20195;&#30721;:&nbsp;</div></div>
-		<div class="tableQueryLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zydm" paramCtrl="true"/></div></div>
+		<div class="tableQueryHeaderLine">
+			<div class="tableQueryCloseImageBtnDiv" id="tableQueryCloseImageBtnDivId"></div>
+		</div> 
+		<div class="tableQueryNameLine"><div class="tableQueryItemName">&#23398;&#21382;:&nbsp;</div></div>
+<div class="tableQueryValueLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xw" paramCtrl="true"/></div></div>
+<div class="tableQueryNameLine"><div class="tableQueryItemName">&#23398;&#31185;&#20998;&#31867;:&nbsp;</div></div>
+<div class="tableQueryValueLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="xkfl" paramCtrl="true"/></div></div>
+<div class="tableQueryNameLine"><div class="tableQueryItemName">&#19968;&#32423;&#23398;&#31185;:&nbsp;</div></div>
+<div class="tableQueryValueLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="yjxk" paramCtrl="true"/></div></div>
+<div class="tableQueryNameLine"><div class="tableQueryItemName">&#19987;&#19994;:&nbsp;</div></div>
+<div class="tableQueryValueLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zy" paramCtrl="true"/></div></div>
+<div class="tableQueryNameLine"><div class="tableQueryItemName">&#19987;&#19994;&#20195;&#30721;:&nbsp;</div></div>
+<div class="tableQueryValueLine"><div class="tableQueryItemInputContainer"><input class="tableQueryItemInput" type="text" name="zydm" paramCtrl="true"/></div></div>
 	 
-	<div class="tableQueryBlankCell">&nbsp;</div> 
+		<div class="tableQueryBlankCell">&nbsp;</div> 
 		<div class="tableQueryButtonLine">
-			<div class="tableQueryButtonLineInner">
-				<span id="queryButton" title="按照查询条件进行查询">查&nbsp;询</span>
-				<span id="queryButtonCloseBtnId" title="关闭查询条件录入框">关&nbsp;闭</span>
-			</div> 
-		</div>  	
+			<div class="queryButtonDiv" id="queryBtnId" title="按照查询条件进行查询">查&nbsp;询</div>
+		</div>
+		<div class="tableQuerySplitLine">
+			<div class="tableQuerySplitCell"></div> 
+		</div>
+		<div class="newOrderConfirmContainerDiv" id="newOrderConfirmContainerDivId">
+			<!-- <div class="newOrderConfirmheaderDiv"><div class="newOrderConfirmTitleDiv">计算价格</div></div> -->
+			<div class="newOrderConfirmInfoItemDiv"><div class="newOrderConfirmItemNameDiv">单&nbsp;价: </div><div class="unitPriceDiv" id="unitPriceDivId"></div><div class="newOrderConfirmItemPostfixDiv">元/条</div></div>
+			<div class="newOrderConfirmInfoItemDiv"><div class="newOrderConfirmItemNameDiv">数&nbsp;量: </div><div class="dataRowCountDiv" id="dataRowCountDivId"></div><div class="newOrderConfirmItemPostfixDiv">条</div></div>
+			<!--<div class="newOrderConfirmInfoItemDiv"><div class="newOrderConfirmItemNameDiv">原&nbsp;价: </div><div class="originalPriceDiv" id="originalPriceDivId"></div><div class="newOrderConfirmItemPostfixDiv">元</div></div>-->
+			<div class="newOrderConfirmInfoItemDiv"><div class="newOrderConfirmItemNameDiv">价&nbsp;格: </div><div class="priceDiv" id="priceDivId"></div><div class="newOrderConfirmItemPostfixDiv">元</div></div>
+			<div class="newOrderConfirmBtnDiv">
+				<div class="addToCartBtn" id="addToCartBtnId">放入购物车</div>
+			</div>
+			<!--
+			<div class="newOrderConfirmBtnDiv">
+				<div class="directPayAndDownloadBtn" id="directPayAndDownloadBtnId">直接支付</div>
+			</div> -->
+			<div class="newOrderConfirmBtnDiv">
+				<a class="showCartPageBtn" id="showCartPageBtnId" href="../../h/buy/cart.jsp" target="_blank">购物车<span class="cartCountSpan"></span></a>
+			</div>
+			<div class="newOrderConfirmBtnDiv">
+				<a class="showOrderListPageBtn" id="showOrderListPageBtnId" href="../../h/buy/orderList.jsp" target="_blank">历史订单</a>
+			</div>
+			<div class="tableQueryButtonLine">
+				<div class="queryButtonDiv" id="queryCloseBtnId" title="关闭查询窗口">关&nbsp;闭</div>
+			</div>
+		</div>
 	</div>	 		
 	<div class="headerMain" data-options="region:'north',border:false">  
 		<jsp:include  page="headerSjgx.jsp">

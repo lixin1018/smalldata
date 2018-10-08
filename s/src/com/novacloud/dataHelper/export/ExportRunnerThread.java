@@ -17,7 +17,8 @@ import com.novacloud.novaone.dao.db.IDBParserAccess;
 import com.novacloud.novaone.dao.db.SelectSqlParser;
 import com.novacloud.novaone.dao.db.ValueType;
 import com.novacloud.novaone.dao.sys.ContextUtil;
-import com.novacloud.novaone.dao.sys.DataBaseDao; 
+import com.novacloud.novaone.dao.sys.DataBaseDao;
+import com.novacloud.novaone.importExport.commonFunction.BigExcelWriter;
 import com.novacloud.novaone.importExport.commonFunction.ExcelWriter;
 import com.novacloud.novaone.importExport.definition.DataType;
 import com.novacloud.novaone.importExport.definition.ExcelColumn;
@@ -145,8 +146,7 @@ public class ExportRunnerThread extends Thread {
 	}
 	
 	@Override
-	public void run() {		
-		ProcessOrderExportData.AddRunningTask(this.getOrderLineId());		 
+	public void run() {			 
 		Session dbSession = null;
 		IDBParserAccess dBParserAccess = null;
 		Data orderLineData = null;
@@ -174,7 +174,7 @@ public class ExportRunnerThread extends Thread {
 			File excelFile = new File(excelFilePath);
 			if(!excelFile.exists()){
 				//构造导出用的excel格式
-				ExcelWriter ew = new ExcelWriter(); 
+				BigExcelWriter ew = new BigExcelWriter(); 
 				ExcelParser ep = new ExcelParser();
 				List<ExcelColumn> allExcelColumns = new ArrayList<ExcelColumn>();
 				HashMap<String, ViewDispunit> allViewUnits = exportViewModel.getDispunits();

@@ -309,4 +309,9 @@ public class BuyControl{
 		return buyProcessor.getExportFileDownloadUrlQueryString(orderLineId, definitionId, definitionName, fileName);
 	}
 	
+	public String getProgress(Date exportStartTime, int totalRowCount, int exportedRowCount){
+		double progress = (double)exportedRowCount * (double)100/ (double)totalRowCount;
+		String progressStr = String.format("%.2f%%", progress);
+		return progressStr;
+	}
 }

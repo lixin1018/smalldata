@@ -70,6 +70,7 @@
 		<property name="dBParserAccess" ref="dBParserAccess" /> 
 		<property name="aliPayProcessor" ref="aliPayProcessor" />
 		<property name="encrypDes" ref="encrypDes" />	
+		<property name="maxRowCount" value="1000000" />	
 	</bean>	
 	
 	<bean id="encrypDes" class="com.novacloud.novaone.common.util.EncrypDES" scope="singleton">

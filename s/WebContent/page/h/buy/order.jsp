@@ -131,21 +131,15 @@
 							if(status == OrderStatusType.Paid){
 								switch(exportStatus){
 									case WaitingExport:
-										operateInfo = "正在排队等待, 请稍后刷新界面";
+										operateInfo = "正在排队, 请稍后刷新界面";
 										break;
 									case Exporting:
 										if(exportedRowCount > 0){
-											Date nowTime = new Date();
-											double remainTotalMilliseconds = ( nowTime.getTime() - exportStartTime.getTime()) * ((double)totalRowCount - (double)exportedRowCount) / (double)exportedRowCount;
-											long remainTotalSeconds = (long)Math.ceil(remainTotalMilliseconds / (double)1000);
-											long remainSeconds =  remainTotalSeconds % 60;
-											long remainTotalMinutes =  Math.floorDiv(remainTotalSeconds, 60);
-											long remainMinutes =  remainTotalMinutes % 60;
-											long remainTotalHours =  Math.floorDiv(remainTotalMinutes, 60);
-											operateInfo = "正在生成数据文件, 剩余时间 " + (remainTotalHours == 0 ? "" : (remainTotalHours + "小时"))  +  remainMinutes + "分钟" +  remainSeconds + "秒";											
+											String progress = buyControl.getProgress(exportStartTime, totalRowCount, exportedRowCount);
+											operateInfo = "正在生成文件... " + progress;											
 										}
 										else{
-											operateInfo = "马上开始生成数据文件, 请稍后刷新界面";
+											operateInfo = "即将开始生成文件, 请稍后刷新界面";
 										}
 										break;
 									case Exported:		

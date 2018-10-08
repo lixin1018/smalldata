@@ -129,7 +129,8 @@ public class ProcessOrderExportData extends ExternalBase{
 	private void startExportThread(String orderLineId, String definitionId, String dataName, String dataFilter, int totalRowCount){
 		logger.info("startExportThread, orderLineId = " + orderLineId);
     	try{ 
-    		 
+
+    		ProcessOrderExportData.AddRunningTask(orderLineId);	
     		ExportRunnerThread exportThread = new ExportRunnerThread();
     		exportThread.setOrderLineId(orderLineId);
     		exportThread.setDefinitionId(definitionId);
@@ -139,6 +140,8 @@ public class ProcessOrderExportData extends ExternalBase{
     		exportThread.start();
     	}
     	catch(Exception ex){
+
+    		ProcessOrderExportData.RemoveRunningTask(orderLineId);	
     		ex.printStackTrace();
 			logger.error("startExportThread error, orderLineId = " + orderLineId, ex);
     	} 

@@ -143,29 +143,43 @@ public class BuyProcessor {
 				else{
 					BigDecimal unitPrice = dRow.getBigDecimalValue("unitprice");
 					String dataName = "ie_" + dRow.getStringValue("dbtablename");
-					
-					BigDecimal rowCount = BigDecimal.valueOf(this.getRowCount(dataName, dataFilterArray));
-					
-					String dataFilter = dataFilterArray.toString();
-					
-					BigDecimal price = unitPrice.multiply(rowCount);
-					
-					Data cartLineData = DataCollection.getData("dm_ExportCartLine");				
-					HashMap<String, Object> uFieldValues = new HashMap<String, Object>();
-					uFieldValues.put("definitionid", definitionId);
-					uFieldValues.put("createtime", new Date());
-					uFieldValues.put("createuserid", session.getUserId());
-					uFieldValues.put("datafilter", dataFilter);
-					uFieldValues.put("price", price);
-					uFieldValues.put("rowcount", rowCount);
-					uFieldValues.put("unitprice", unitPrice);
-					uFieldValues.put("status", CartLineStatusType.InCart.toString());
-					String cartLineId = this.dBParserAccess.insertByData(dbSession, cartLineData, uFieldValues);
-					return cartLineId;
+
+					int rowCountInt = this.getRowCount(dataName, dataFilterArray);
+					BigDecimal rowCount = BigDecimal.valueOf(rowCountInt);
+					if(rowCountInt > this.getMaxRowCount()){
+						NcpException ncpEx = new NcpException("addToCart_overMaxRowCount", "单次购买的数据不能超过" + this.getMaxRowCount() + "行, 请联系管理员获取更高权限");
+						throw ncpEx;
+					}
+					else{
+						String dataFilter = dataFilterArray.toString();
+						
+						BigDecimal price = unitPrice.multiply(rowCount);
+						
+						Data cartLineData = DataCollection.getData("dm_ExportCartLine");				
+						HashMap<String, Object> uFieldValues = new HashMap<String, Object>();
+						uFieldValues.put("definitionid", definitionId);
+						uFieldValues.put("createtime", new Date());
+						uFieldValues.put("createuserid", session.getUserId());
+						uFieldValues.put("datafilter", dataFilter);
+						uFieldValues.put("price", price);
+						uFieldValues.put("rowcount", rowCount);
+						uFieldValues.put("unitprice", unitPrice);
+						uFieldValues.put("status", CartLineStatusType.InCart.toString());
+						String cartLineId = this.dBParserAccess.insertByData(dbSession, cartLineData, uFieldValues);
+						return cartLineId;
+					}
 				}
 			}				
 		}
 	} 
+	
+	private int maxRowCount = 1000000;
+	public void setMaxRowCount(int maxRowCount){
+		this.maxRowCount = maxRowCount;
+	}
+	private int getMaxRowCount() { 
+		return this.maxRowCount;
+	}
 	
 	private int getRowCount(String dataName, JSONArray dataFilterArray) throws Exception {		
 		Data data = DataCollection.getData(dataName);
@@ -1389,14 +1403,21 @@ public class BuyProcessor {
 	}
 	
 	public String getExportFileDownloadUrlQueryString(String orderLineId, String definitionId, String definitionName, String fileName) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException, UnsupportedEncodingException{
-		EncrypDES de1 = this.getEncrypDes();
-		Date nowTime = new Date();
-		//String timeStr = ValueConverter.dateTimeToString(nowTime, "yyyyMMddHHmmssSSS") + "|" + definitionId + "|" + fileName;	
-		String timeStr = "20180927171333333" + "_" + definitionId + "_" + fileName;	
-		byte[] bytes = de1.Encrytor(timeStr);
-		String t = Base64.getEncoder().encodeToString(bytes); 
-		String url = "olid=" + orderLineId + "&fn=" + URLEncoder.encode(definitionName, "utf-8") + "&t=" + URLEncoder.encode(t, "utf-8");
-		return url;	
+		try{
+			EncrypDES de1 = this.getEncrypDes();
+			Date nowTime = new Date();
+			//String timeStr = ValueConverter.dateTimeToString(nowTime, "yyyyMMddHHmmssSSS") + "|" + definitionId + "|" + fileName;	
+			String timeStr = "20180927171333333" + "_" + definitionId + "_" + fileName;	
+			byte[] bytes = de1.Encrytor(timeStr);
+			String t = Base64.getEncoder().encodeToString(bytes); 
+			String url = "olid=" + orderLineId + "&fn=" + URLEncoder.encode(definitionName, "utf-8") + "&t=" + URLEncoder.encode(t, "utf-8");
+			return url;
+		}
+		catch(Exception ex){
+			ex.printStackTrace();
+			logger.error(ex.getMessage());
+			throw ex;
+		}
 	}
 
 	public String[] checkDownloadUrl(String t) throws Exception{

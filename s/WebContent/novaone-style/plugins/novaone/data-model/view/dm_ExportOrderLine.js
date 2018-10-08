@@ -1,0 +1,42 @@
+viewModels.dm_ExportOrderLine = {
+  id:"bf25ce67-e48a-4fcc-8be4-e1b85138591d",
+  name:"dm_ExportOrderLine",
+  dataName:"dm_ExportOrderLine",
+  colModel:[
+    {name:"ncpRowSelect", label:" ", width:20, hidden:false, sortable:false, search:false, resizable:false, editable:false, canEdit:false, nullable:true, edittype:"checkbox", dispunitType:"checkbox"},
+    {name:"id", label:"id", width:0, hidden:true, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"definitionid", label:"definitionid", width:0, hidden:true, sortable:false, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"definitionname", label:"数据名称", width:200, hidden:false, sortable:false, search:true, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"datafilter", label:"过滤条件", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"totalrowcount", label:"总记录数", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"newrowcount", label:"新购买记录数", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"unitprice", label:"单价", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"originalprice", label:"原价", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"actualprice", label:"实收", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"parentid", label:"parentid", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"exportstatus", label:"导出状态", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"exportstarttime", label:"导出开始时间", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"exportendtime", label:"导出完成时间", width:150, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"exportedrowcount", label:"已导出记录数", width:60, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"decimal"},
+    {name:"exportlog", label:"导出情况日志", width:200, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"},
+    {name:"exportfilename", label:"导出文件名", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:false, edittype:"text", dispunitType:"text"}
+  ],
+  dispUnitModel:[
+    {name:"id", label:"id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"definitionid", label:"definitionid", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"definitionname", label:"数据名称", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"datafilter", label:"过滤条件", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"totalrowcount", label:"总记录数", editable:false,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"newrowcount", label:"新购买记录数", editable:false,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"unitprice", label:"单价", editable:false,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"originalprice", label:"原价", editable:false,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"actualprice", label:"实收", editable:true,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"parentid", label:"parentid", editable:false,nullable:false, hidden:true, dispunitType:"text", },
+    {name:"exportstatus", label:"导出状态", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"exportstarttime", label:"导出开始时间", editable:false,nullable:false, hidden:false, dispunitType:"time", },
+    {name:"exportendtime", label:"导出完成时间", editable:false,nullable:false, hidden:false, dispunitType:"time", },
+    {name:"exportedrowcount", label:"已导出记录数", editable:false,nullable:false, hidden:false, dispunitType:"decimal", },
+    {name:"exportlog", label:"导出情况日志", editable:false,nullable:false, hidden:false, dispunitType:"text", },
+    {name:"exportfilename", label:"导出文件名", editable:false,nullable:false, hidden:false, dispunitType:"text", }
+  ]
+}
