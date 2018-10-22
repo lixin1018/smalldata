@@ -51,9 +51,9 @@
 	
 	<bean id="emailUtils" class="com.novacloud.dataHelper.util.EmailUtils" scope="prototype">  
 	    <property name="host" value="smtp.163.com" />  
-	    <property name="from" value="wangsuilian@163.com" />  
-	    <property name="user" value="wangsuilian" />  
-	    <property name="pwd" value="moker1018" />  
+	    <property name="from" value="shujuzhuli@163.com" />  
+	    <property name="user" value="shujuzhuli" />  
+	    <property name="pwd" value="sjzl2018" />  
 	</bean>	
 	
 	<bean id="dataHelperUserProcessor" class="com.novacloud.dataHelper.user.UserProcessor">

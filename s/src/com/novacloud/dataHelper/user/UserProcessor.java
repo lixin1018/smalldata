@@ -225,7 +225,7 @@ public class UserProcessor {
 			fieldValues.put("forgetchangepwdtime", forgetChangePwdTime); 
 			this.dBParserAccess.updateByData(dbSession, userData, fieldValues, userId);			
 			
-			String content = userCode + ":\r\n\r\n    您好, 我是数据助理机器人小z!"
+			String content = userCode + ":\r\n\r\n    您好, 我是数据助理客服机器人!"
 					+ "\r\n    您申请了重置密码, 本次的验证码是 " + randomString + "。"
 					+ "\r\n    (此验证码" + changePwdValidateCodeTimeout + "分钟后失效)."
 					+ "\r\n\r\n数据助理"

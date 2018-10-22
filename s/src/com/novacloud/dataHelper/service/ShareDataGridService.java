@@ -33,7 +33,10 @@ public class ShareDataGridService extends DataService{
 			}
 
 			NcpSession session = null;
-			if(currentPage > 2){
+			if(currentPage > 10){
+				throw new Exception("只能查看前10页数据, 更多数据请购买/下载");
+			}
+			else if(currentPage > 1){
 				//查看超过第三页的数据时，需要登录
 				session = new NcpSession(this.getHttpSession(), true);
 			}
@@ -54,7 +57,7 @@ public class ShareDataGridService extends DataService{
 		}	 
 		catch(Exception ex) {
         	ex.printStackTrace();
-			NcpException ncpEx = new NcpException("001", "查询数据未成功", ex);
+			NcpException ncpEx = new NcpException("select_ie_data_failed", "查询数据未成功", ex);
 			this.addResponse(ncpEx.toJsonString()); 	 	 
 		}	 
 		finally{

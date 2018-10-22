@@ -325,27 +325,30 @@
 			<div data-options="region:'north',border:false">
 				<table>
 					<tr style="height:22px;">
-						<td style="width:75px;height:22px;text-align:right;">编码</td>
-						<td style="width:250px;height:22px;"><input type="text" name="code" class="easyui-validatebox" style="width:230px;height:22px;" cardCtrl="true"></input></td>
-						<td style="width:75px;height:22px;text-align:right;">名称</td>
-						<td style="width:250px;height:22px;"><input type="text" name="name" class="easyui-validatebox" style="width:230px;height:22px;" cardCtrl="true"></input></td>
-						<td style="width:75px;height:22px;text-align:right;">数据表名</td>
-						<td style="width:250px;height:22px;"><input type="text" name="dbtablename" class="easyui-validatebox" style="width:230px;height:22px;" cardCtrl="true"></input></td>
-					</tr>
-					<tr style="height:22px;">
-						<td style="width:75px;height:22px;text-align:right;">单价</td>
-						<td style="width:250px;height:22px;"><input type="text" name="unitprice" style="width:230px;height:22px;" cardCtrl="true"></input></td> 
-						<td style="width:75px;height:22px;text-align:right;">创建人</td>
-						<td style="width:250px;height:22px;"><input type="text" name="createusername" style="width:230px;height:22px;" cardCtrl="true"></input></td> 
-						<td style="width:75px;height:22px;text-align:right;">创建时间</td>
-						<td style="width:250px;height:22px;"><input type="text" name="createtime" style="width:230px;height:22px;" cardCtrl="true"></input></td> 
-					</tr>
-					<tr style="height:22px;">	
-						<td style="width:80px;text-align:right;">描述</td>
-						<td style="width:550px;height:22px;" colspan="3"><textarea  name="description" style="width:550px;height:22px;" cardCtrl="true"></textarea></td>
+						<td style="width:80px;height:22px;text-align:right;">编码</td>
+						<td style="width:200px;height:22px;"><input type="text" name="code" class="easyui-validatebox" style="width:200px;height:22px;" cardCtrl="true"></input></td>
+						<td style="width:80px;height:22px;text-align:right;">名称</td>
+						<td style="width:200px;height:22px;"><input type="text" name="name" class="easyui-validatebox" style="width:200px;height:22px;" cardCtrl="true"></input></td>
+						<td style="width:80px;height:22px;text-align:right;">数据表名</td>
+						<td style="width:200px;height:22px;"><input type="text" name="dbtablename" class="easyui-validatebox" style="width:200px;height:22px;" cardCtrl="true"></input></td>
 						<td style="width:80px;text-align:right;">自动更新模型</td>
 						<td style="width:150px;height:22px;"><input type="checkbox" name="autoupdatemodel" style="width:150px;height:22px;" cardCtrl="true"></input></td> 
-					</tr>   
+
+					</tr>
+					<tr style="height:22px;">
+						<td style="width:80px;height:22px;text-align:right;">单价</td>
+						<td style="width:200px;height:22px;"><input type="text" name="unitprice" style="width:200px;height:22px;" cardCtrl="true"></input></td> 
+						<td style="width:80px;height:22px;text-align:right;">折扣</td>
+						<td style="width:200px;height:22px;"><input type="text" name="discountrate" style="width:200px;height:22px;" cardCtrl="true"></input></td> 	
+						<td style="width:80px;height:22px;text-align:right;">创建人</td>
+						<td style="width:200px;height:22px;"><input type="text" name="createusername" style="width:200px;height:22px;" cardCtrl="true"></input></td> 
+						<td style="width:80px;height:22px;text-align:right;">创建时间</td>
+						<td style="width:200px;height:22px;"><input type="text" name="createtime" style="width:200px;height:22px;" cardCtrl="true"></input></td> 
+						</tr>
+					<tr style="height:22px;">	
+						<td style="width:80px;text-align:right;">描述</td>
+						<td style="width:750px;height:22px;" colspan="7"><textarea  name="description" style="width:750px;height:22px;" cardCtrl="true"></textarea></td>
+					</tr>
 				</table>
 			</div>
 			<div data-options="region:'center',border:false" class="ncpInnerContainer">

@@ -163,7 +163,7 @@ public class BuyProcessor {
 						uFieldValues.put("datafilter", dataFilter);
 						uFieldValues.put("price", price);
 						uFieldValues.put("rowcount", rowCount);
-						uFieldValues.put("unitprice", unitPrice);
+						//uFieldValues.put("unitprice", unitPrice);
 						uFieldValues.put("status", CartLineStatusType.InCart.toString());
 						String cartLineId = this.dBParserAccess.insertByData(dbSession, cartLineData, uFieldValues);
 						return cartLineId;
@@ -260,7 +260,7 @@ public class BuyProcessor {
 	
 	public List<DataRow> getCartLineInfos(String userId, List<String> cartLineIds, boolean forUpdate) throws SQLException{
 		StringBuilder getCartLineSql = new StringBuilder();
-		getCartLineSql.append("select cl.id as cartlineid, cl.datafilter as datafilter, d.id as definitionid, cl.unitprice as unitprice, cl.rowcount as rowcount, cl.price as price, d.dbtablename as dbtablename, d.name as dataname "
+		getCartLineSql.append("select cl.id as cartlineid, cl.datafilter as datafilter, d.id as definitionid, d.unitprice as unitprice, cl.rowcount as rowcount, cl.price as price, d.dbtablename as dbtablename, d.name as dataname "
 				+ "from dm_exportcartline cl "
 				+ "left outer join dm_importexportdefinition d on d.id = cl.definitionid "
 				+ "where cl.createuserid = " + SysConfig.getParamPrefix() + "userId "
@@ -1063,7 +1063,7 @@ public class BuyProcessor {
 			+ "d.id as definitionid, "
 			+ "d.name as definitionname, "
 			+ "d.dbtablename as dbtablename, "
-			+ "cl.unitprice as unitprice, "
+			+ "d.unitprice as unitprice, "
 			+ "cl.price as price, "
 			+ "cl.createtime as createtime, "
 			+ "cl.rowcount as rowcount "
