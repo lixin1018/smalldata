@@ -140,7 +140,7 @@
 		}
 		grid.onRowCheckClick = function(rowId, checked){
 			var row = grid.datatable.rows(rowId).allCells()
-			var idFieldName = initParam.showField; //grid.dataModel.idFieldName;
+			var idFieldName = initParam.keyField == null ? initParam.showField : initParam.keyField; //grid.dataModel.idFieldName;
 			var idValue = row[idFieldName];
 			if(checked){
 				addSelectedItem(idValue, row);

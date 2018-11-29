@@ -473,13 +473,14 @@ function NcpView(p) {
 					param.changeValueFunc(param.selectedRows);
 				}
 			},
-			value : param.value,
-			keyField: param.keyFieldName,
+			value : param.value, 
+			keyField: param.fieldModel.maps[param.fieldModel.foreignKeyName],
 			
 			//多值
 			isMultiValue:param.isMultiValue,
 
 			//数据权限过滤
+			previousKeyField : param.fieldModel.foreignKeyName,
 			previousField : param.fieldModel.name,
 			previousData : param.dataModel.name,
 			popDataField : param.fieldModel.maps[param.fieldModel.name],
@@ -943,6 +944,23 @@ function NcpView(p) {
 	}
 
 	this.createCustomDispunit = function(name, dispunitType, ctrl, fieldModel, options, style) {
+		for ( var i = this.externalObjects.length - 1; i >= 0; i--) {
+			var externalObj = this.externalObjects[i];
+			var func = externalObj["createCustomDispunit"];
+			if (func != null) {
+				var customDispunitCtrl = func({
+					name: name, 
+					dispunitType: dispunitType, 
+					ctrl: ctrl,
+					fieldModel: fieldModel, 
+					options: options, 
+					style: style
+				});
+				if(customDispunitCtrl != null){
+					return customDispunitCtrl;
+				}
+			}
+		}
 		return null;
 	}
 

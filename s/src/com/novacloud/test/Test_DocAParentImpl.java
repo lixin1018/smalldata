@@ -27,7 +27,11 @@ public class Test_DocAParentImpl extends DataBaseDao {
 		String childDataName3 = "test_DocAChild3";
 		String parentIdFieldName3 = "parentid"; 
 		multiSelectChildValueProcessor.DeleteMultiSelectChildValues(this.getDBSession(), requestObj, childDataName3, parentIdFieldName3);
-	}
+
+		String childDataName4 = "test_DocAChild4";
+		String parentIdFieldName4 = "parentid"; 
+		multiSelectChildValueProcessor.DeleteMultiSelectChildValues(this.getDBSession(), requestObj, childDataName4, parentIdFieldName4);
+}
 	
 	@Override
 	protected void afterSave(INcpSession session, JSONObject requestObj, HashMap<String,Object> resultHash) throws Exception{		
@@ -45,6 +49,11 @@ public class Test_DocAParentImpl extends DataBaseDao {
 		String parentIdFieldName3 = "parentid";
 		String valueFieldName3 = "name";
 		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName3, parentIdFieldName3, valueFieldName3);
+
+		String childDataName4 = "test_DocAChild4";
+		String parentIdFieldName4 = "parentid";
+		String valueFieldName4 = "typeid";
+		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName4, parentIdFieldName4, valueFieldName4);
 	}
 	
 	@Override
@@ -67,5 +76,12 @@ public class Test_DocAParentImpl extends DataBaseDao {
 		String valueFieldName3 = "name";
 		String parentDataIdFieldName3 = "id";		
 		multiSelectChildValueProcessor.GetMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName3, parentIdFieldName3, valueFieldName3, "", parentDataIdFieldName3);
+		
+		String childDataName4 = "test_DocAChild4";
+		String parentIdFieldName4 = "parentid";
+		String valueFieldName4 = "typename";
+		String foreignKeyFieldName4 = "typeid";
+		String parentDataIdFieldName4 = "id";		
+		multiSelectChildValueProcessor.GetMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName4, parentIdFieldName4, valueFieldName4, foreignKeyFieldName4, parentDataIdFieldName4);
 	}
 }

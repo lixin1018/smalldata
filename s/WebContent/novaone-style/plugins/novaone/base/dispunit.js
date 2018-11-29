@@ -48,11 +48,12 @@
 				options : options.options,
 				changeValueFunc : function(rowData) {
 					var idField = options.idField;
+					var textField = options.textField;
 					var values = new Array();
-					for(var rowId in rowData){
-						var value = rowData[rowId];
+					for(var id in rowData){
+						var value = rowData[id];
 						if(idField != null){
-							value[idField] = rowId;							
+							value[idField] = id;							
 						}
 						values.push(value);
 					}

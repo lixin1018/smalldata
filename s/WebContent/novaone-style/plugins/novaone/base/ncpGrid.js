@@ -862,7 +862,12 @@ function NcpGrid(p) {
 	}
 	
 	this.setCustomDispunitEditValue = function(ctrl, cModel, fieldModel, row){
-		
+		this.doExternalFunctionContinue("setCustomDispunitEditValue", {
+			ctrl: ctrl, 
+			cModel: cModel, 
+			fieldModel: fieldModel,
+			row: row
+		});
 	}
 
 	//初始化某个录入控件

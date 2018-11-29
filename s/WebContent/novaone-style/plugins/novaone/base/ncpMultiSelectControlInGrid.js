@@ -1,213 +1,194 @@
 //子表以多选方式在父表Grid界面中编辑保存  added by lixin 20181127
-function NcpMultiSelectControlInGrid(){
-	var that = this;
+function NcpMultiSelectControlInGrid(p){
+	var that = this;  
+	this.childColumnName = p.childColumnName;
+	this.childColumnWidth = p.childColumnWidth;
+	this.childDataModel = p.childDataModel; 
+	this.childViewModel = p.childViewModel;
+	this.parentDataModel = p.parentDataModel;
+	this.parentViewModel = p.parentViewModel;
 	
-	this.serviceName = "dataNcpService";
-	
-	this.containerId = null;
-	this.childDataModel = null; 
-	this.childViewModel = null; 
-	this.childListFieldName = null; 
-	this.parentCardControl = null;
-	this.keyFieldName = null;
-	this.listName = null;
-	this.listColumns = null;
-	this.colMaps = null;
-	this.initialValues = null;
+	this.childListFieldName = p.childListFieldName; 
+	this.parentGridControl = null;
+	this.childKeyFieldName = p.childKeyFieldName; 
+	 
+	that.parentViewModel.colModel.push({
+		name: that.childDataModel.name, 
+		label: that.childColumnName, 
+		width: that.childColumnWidth, 
+		hidden: false, 
+		sortable: false, 
+		search: false, 
+		resizable: true, 
+		editable: true, 
+		canEdit: true, 
+		nullable: true, 
+		edittype: "text", 
+		dispunitType: "popMulti",
+		formatter: function(cellvalue, options, rowObject){
+			var rowId = options.rowId;
+			var row = that.parentGridControl.datatable.rows(rowId);
+			var values = row[options.colModel.name];
+			var textFieldArray = new Array();
+			if(values != null){
+				for ( var i = 0; i < values.length; i++) {
+					var oneRow = values[i];
+					textFieldArray.push(oneRow[that.childListFieldName]);
+				}
+			}
+			var textFieldStr = cmnPcr.arrayToString(textFieldArray, ",");
+			return textFieldStr;
+		}
+	});
 	
 	this.init = function(p){
-		this.parentCardControl = p.parentCardControl;
-		this.childDataModel = p.childDataModel;
-		this.childViewModel = p.childViewModel;
-		this.childListFieldName = p.childListFieldName;
-		this.containerId = p.containerId;
-		var fieldModel = p.childDataModel.fields[p.childListFieldName];
-		this.keyFieldName = fieldModel.foreignKeyName == "" ? p.childListFieldName : fieldModel.foreignKeyName;
-		this.listName = fieldModel.list.name;
-		this.listColumns = fieldModel.list.columns;
-		this.colMaps = fieldModel.maps;
-
+		that.parentGridControl = p.parentGridControl;
+	
 		var externalObject = {				
 			beforeDoSave: function(param){
-				var rowId = null;
+				var rowIds = new Array();
 				if(param.insert.count()>0){ 
 					//新建保存
 					var row = param.insert.getRowByIndex(0);
-					rowId = row.rowId;
+					rowIds.push(row.rowId);
 				}
 				else{
 					//编辑保存
 					var row = param.update.getRowByIndex(0);
-					rowId = row.rowId;
+					rowIds.push(row.rowId);
 				} 
-				
+			
 				if(param.otherRequestParam == null){
 					param.otherRequestParam = {};
 				}  
 				if(param.otherRequestParam.multiSelects == null){
 					param.otherRequestParam["multiSelects"] = {};
 				}
-				
-				param.otherRequestParam.multiSelects[that.childDataModel.name] =[{
-					rowId: rowId,
-					values: that.getValues()
-				}];		
+			
+				var multiSelectsArray = new Array();
+				param.otherRequestParam.multiSelects[that.childDataModel.name] = multiSelectsArray;
+				for(var i = 0; i < rowIds.length; i++){
+					var rowId = rowIds[i];
+					var valuesArray = $("#" + rowId+"_" + that.childDataModel.name).popMultiDispunit("getValue");
+					var saveValueArray = new Array();
+					var fieldModel = that.childDataModel.fields[that.childListFieldName];
+					var destKeyFieldName = fieldModel.foreignKeyName;
+					var destValueFieldName = fieldModel.name;
+					var sourceKeyFieldName = fieldModel.maps[destKeyFieldName];
+					var sourceValueFieldName = fieldModel.maps[destValueFieldName];
+					for(var j = 0; j < valuesArray.length; j++){
+						var fieldName = sourceKeyFieldName == null ? sourceValueFieldName : sourceKeyFieldName;
+						saveValueArray.push(valuesArray[j][fieldName]);
+					}
+					multiSelectsArray.push({
+						rowId: rowId,
+						values: saveValueArray
+					});		
+				}
 				return true;
 			},
-			afterDoCancel:function(param){
-				//加载原来的数据
-				that.restoreValues();
+			afterDoCancel: function(param){
+				//加载原来的数据 
 				return true;
 			},
-			afterDoAdd:function(param){
-				//显示空的数据，即取消选择所有选项
-				that.showValues({});
+			processSaveData: function(param){					
+				var multiSelectsArray = param.otherRequestParam.multiSelects[that.childDataModel.name];
+				var fieldModel = that.childDataModel.fields[that.childListFieldName];
+				var destKeyFieldName = fieldModel.foreignKeyName;
+				var destValueFieldName = fieldModel.name;
+				var sourceKeyFieldName = fieldModel.maps[destKeyFieldName];
+				var sourceValueFieldName = fieldModel.maps[destValueFieldName]; 
+				for(var i = 0; i < multiSelectsArray.length; i++){
+					var rowId = multiSelectsArray[i].rowId;
+					var values = $("#" + rowId+"_" + that.childDataModel.name).popMultiDispunit("getValue");
+					var newValues = new Array();
+					for(var j = 0; j < values.length; j++){
+						var newValue = {};
+						newValue[destValueFieldName] = values[j][sourceValueFieldName];
+						if(sourceKeyFieldName != null){
+							newValue[destKeyFieldName] = values[j][sourceKeyFieldName];
+						}
+						newValues.push(newValue);
+					}
+					that.parentGridControl.datatable.rows(rowId)[that.childDataModel.name] = newValues;
+				}
 				return true;
 			},
-			afterDoPage:function(param){
+			processPageData: function(param){
 				var otherResponseParam = param.otherResponseParam; 
-				var values =  otherResponseParam.multiSelects[that.childDataModel.name].length == 0 ? {} : otherResponseParam.multiSelects[that.childDataModel.name][0].values;
-				that.initValues({values: values});	
+				var multiSelectsArray = otherResponseParam.multiSelects[that.childDataModel.name];
+				for(var i = 0; i < multiSelectsArray.length; i++){
+					var idValue = multiSelectsArray[i].idValue;
+					var values = multiSelectsArray[i].values;
+					var row = param.datatable.getRowByIdField(idValue, that.parentDataModel.idFieldName);
+					row[that.childDataModel.name] = values;
+				} 
+				return true;
 			},
 			refreshOterhEditCtrlStatus: function(param){
 				that.setReadonly({
 					isReadonly: param.isReadonly
 				});
-			}
-		} 
-			
-		that.parentCardControl.addExternalObject(externalObject); 
-		
-		this.getListDataFromServer({
-			childCardName: that.childCardName,
-			listName: that.listName,
-			listColumns: that.listColumns,
-			colMaps: that.colMaps,
-			where: p.where,
-			orderby: p.orderby,
-			showInputControls: function(param){
-				that.showInputControls(param);
-			}
-		});		
-	} 
-	
-	this.showInputControls = function(p){
-		var allHtml = "";
-		for(var i = 0; i < p.rows.length; i++){
-			allHtml += that.createOneInputControl(p.rows[i], p.colMaps);
-		} 
-		$("#" + that.containerId).html(allHtml);
-		
-		that.showValues({values: that.initialValues});
-		this.setReadonly({isReadonly: that.parentCardControl.currentStatus != formStatusType.edit});
-	}
-	
-	this.initValues = function(p){
-		that.initialValues = p.values;
-		that.showValues(p);
-	}
-	
-	this.restoreValues = function(){
-		that.showValues({values: that.initialValues});
-	}
-	
-	this.showValues = function(p){
-		$("#" + that.containerId).find("input").attr("checked",false);
-		if(p.values != null){
-			for(var i = 0; i < p.values.length; i++){ 
-				var key = cmnPcr.html_encode(p.values[i]);
-				$("#" + that.containerId).find("input[value='" + key + "']").attr("checked",true);
-			}
-		}
-	}
-	
-	this.getValues = function(p){
-		var values = [];
-	    var ctrls = $("#" + that.containerId).find("input");
-		for(var i = 0; i < ctrls.length; i++){
-			var ctrl = ctrls[i];
-			if($(ctrl).is(':checked')){
-				values.push($(ctrl).val());
+				return true;
+			},
+			setCustomDispunitEditValue: function(param){
+				if(param.cModel.name == that.childDataModel.name){
+					var fieldModel = that.childDataModel.fields[that.childListFieldName];
+					var	idField = fieldModel.maps[fieldModel.foreignKeyName];
+					var	textField = fieldModel.maps[that.childListFieldName];
+					var values = param.row[that.childDataModel.name];
+					var popValues = new Array();
+					if(values != null){
+						for(var i = 0; i < values.length; i++){
+							var popValue = {};
+							if(idField != null){
+								popValue[idField] = values[i][fieldModel.foreignKeyName];
+							}
+							popValue[textField] = values[i][that.childListFieldName];
+							popValues.push(popValue);
+						}
+					}
+					$(param.ctrl).popMultiDispunit("setValue", popValues);
+				}
+				return true;
+			},
+			createCustomDispunit: function(param) {
+				if(param.name != that.childDataModel.name){
+					return null;
+				}
+				else{
+					var rowId = param.options.rowId;
+					var row = that.parentGridControl.datatable.rows(rowId);
+					var values = row[that.childDataModel.name];
+					var fieldModel = that.childDataModel.fields[that.childListFieldName];		
+					param.options.fieldName = that.childListFieldName;
+					param.options.changeFunc = function(ctrl, rowData, rowId){
+						
+					}
+					return $(param.ctrl).popMultiDispunit({
+						idField : fieldModel.maps[fieldModel.foreignKeyName],
+						textField : fieldModel.maps[that.childListFieldName],
+						options : param.options,
+						showPopFunc : function(p) {
+							var fieldModel =  that.childDataModel.fields[p.options.fieldName];
+							that.parentGridControl.doPop({
+								viewName : fieldModel.view.name,
+								value : p.value,
+								rowId : p.options.rowId,//card方式下此属性无用，grid方式下有用，用来确定是哪一行的 
+								fieldName : fieldModel.maps[that.childListFieldName], //that.childListFieldName,
+								fieldModel : fieldModel,
+								dataModel : that.childDataModel,
+								isMultiValue : true,
+								changeValueFunc : p.changeValueFunc
+							});
+						},
+						style : param.style
+					});
+				}
 			} 
 		}
-		return values;
-	}
-	
-	this.setReadonly = function(p){
-		$("#" + that.containerId).find("input").attr("disabled", p.isReadonly);
-	}
-	
-	this.createOneInputControl = function(row, colMaps){
-		var keyHtml = cmnPcr.html_encode(row[this.keyFieldName]);
-		var valueHtml = "";
-		for(var i = 0; i < that.listColumns.length; i++){
-			var column = that.listColumns[i];
-			if(!column.hidden){
-				var destFieldName = that.getDestFieldName(column.field, colMaps);
-				valueHtml = valueHtml + (valueHtml.length == 0 ? "" : ", ") +  cmnPcr.html_encode(row[destFieldName])
-			}
-		} 
-		var oneHtml = "<span><input type=\"checkbox\" value=\"" + keyHtml + "\" />" + valueHtml + "</span>";
-		return oneHtml;
-	}
-	
-	this.getListDataFromServer = function(param){
-		var requestParam = {
-			serviceName : that.serviceName,
-			waitingBarParentId : null,
-			funcName : "getList",
-			successFunc : function(obj) {
-				param.rows = that.getListRowsFromBackInfo(obj.result.table.rows, param.listColumns, param.colMaps);
-				param.showInputControls(param); 
-			},
-			args : {
-				requestParam : cmnPcr.jsonToStr( {
-					dataName : param.childCardName,
-					listName : param.listName,
-					where : param.where == undefined ? [] : param.where,
-					orderby : param.orderby == undefined ? [] : param.orderby,  
-				})
-			}
-		};
-		var serverAccess = new ServerAccess();
-		serverAccess.request(requestParam);
-	}
-
-	//从返回值中获取下拉的数据
-	this.getListRowsFromBackInfo = function(allServerRows, columns, colMaps) {
-		var rows = new Array();
-		for ( var i = 0; i < allServerRows.length; i++) {
-			var serverRow = allServerRows[i];
-			var row = {};
-			for(var destFieldName in colMaps){
-				var sourceFieldName = colMaps[destFieldName];
-				var valueType = that.getColumnValueType(sourceFieldName, columns);
-				var value = cmnPcr.strToObject(serverRow[sourceFieldName], valueType);
-				row[destFieldName] = value;
-			}
-			rows.push(row);
-		} 
-		return rows;
-	}
-	
-	this.getColumnValueType = function(fieldName, columns){
-		for(var i = 0; i < columns.length; i++){
-			var column = columns[i];
-			if(column.field == fieldName){
-				return column.valueType;
-			}		
-		}
-		return null;
-	}
-	
-	this.getDestFieldName = function(sourceFieldName, colMaps){
-		for(var destFieldName in colMaps){
-			if(colMaps[destFieldName] == sourceFieldName){
-				return destFieldName;
-			}		
-		}
-		return null;
-	}
-	
+		
+		that.parentGridControl.addExternalObject(externalObject);  
+	} 
 	
 }

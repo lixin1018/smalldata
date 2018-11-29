@@ -15,175 +15,53 @@
 	<script type="text/javascript" src="${dataModel}/test_DocAChild1.js"></script>
 	<script type="text/javascript" src="${dataModel}/test_DocAChild2.js"></script>
 	<script type="text/javascript" src="${dataModel}/test_DocAChild3.js"></script>
+	<script type="text/javascript" src="${dataModel}/test_DocAChild4.js"></script>
 	<script type="text/javascript" src="${viewModel}/test_DocAParent.js"></script>
 	<script type="text/javascript" src="${viewModel}/test_DocAChild1.js"></script>
 	<script type="text/javascript" src="${viewModel}/test_DocAChild2.js"></script>
 	<script type="text/javascript" src="${viewModel}/test_DocAChild3.js"></script>
+	<script type="text/javascript" src="${viewModel}/test_DocAChild4.js"></script>
 	
 	<script> 
-		$(document).ready(function(){ 
-			viewModels.test_DocAParent.colModel.push({
-				name: "test_DocAChild3", 
-				label: "子表3", 
-				width: 300, 
-				hidden: false, 
-				sortable: false, 
-				search: false, 
-				resizable: true, 
-				editable: true, 
-				canEdit: true, 
-				nullable: true, 
-				edittype: "text", 
-				dispunitType: "popMulti",
-				formatter: multiSelectsFormater
+		$(document).ready(function(){  
+		
+			var multiSelectCtrl3 = new NcpMultiSelectControlInGrid({
+				childColumnName: "表3",
+				childColumnWidth: 300,
+				childDataModel: dataModels.test_DocAChild3,
+				childViewModel: viewModels.test_DocAChild3,
+				parentViewModel: viewModels.test_DocAParent,
+				parentDataModel: dataModels.test_DocAParent,
+				childListFieldName:"name",
+				childKeyFieldName: null
 			});
-			/*
-			viewModels.test_DocAParent.colModel.push({
-				name: "test_DocAChild2", 
-				label: "子表2", 
-				width: 300, 
-				hidden: false, 
-				sortable: false, 
-				search: false, 
-				resizable: true, 
-				editable: true, 
-				canEdit: true, 
-				nullable: true, 
-				edittype: "text", 
-				dispunitType: "popMulti",
-				formatter: multiSelectsFormater
-			});*/
-			
-			function multiSelectsFormater(cellvalue, options, rowObject){
-				var rowId = options.rowId;
-				var row = grid.datatable.rows(rowId);
-				var values = row["test_DocAChild3"];
-				var textFieldArray = new Array();
-				if(values != null){
-					for ( var i = 0; i < values.length; i++) {
-						var oneRow = values[i];
-						textFieldArray.push(oneRow["name"]);
-					}
-				}
-				var textFieldStr = cmnPcr.arrayToString(textFieldArray, ",");
-				return textFieldStr;
-			}
+			var multiSelectCtrl4 = new NcpMultiSelectControlInGrid({
+				childColumnName: "表4",
+				childColumnWidth: 300,
+				childDataModel: dataModels.test_DocAChild4,
+				childViewModel: viewModels.test_DocAChild4,
+				parentViewModel: viewModels.test_DocAParent,
+				parentDataModel: dataModels.test_DocAParent,
+				childListFieldName:"typename",
+				childKeyFieldName: "typeid"
+			});
 		
 			var p = { 
 				containerId:"testGridContainer",   
-				multiselect:true,  
-				dataModel:dataModels.test_DocAParent,
-				onePageRowCount:20,
-				isRefreshAfterSave:false,
-				viewModel:viewModels.test_DocAParent 
+				multiselect: true,  
+				dataModel: dataModels.test_DocAParent,
+				onePageRowCount: 20,
+				isRefreshAfterSave: false,
+				viewModel: viewModels.test_DocAParent 
 			};
 			var grid = new NcpGrid(p);
-			
-			var externalObject = {				
-				beforeDoSave: function(param){
-					var rowIds = new Array();
-					if(param.insert.count()>0){ 
-						//新建保存
-						var row = param.insert.getRowByIndex(0);
-						rowIds.push(row.rowId);
-					}
-					else{
-						//编辑保存
-						var row = param.update.getRowByIndex(0);
-						rowIds.push(row.rowId);
-					} 
-				
-					if(param.otherRequestParam == null){
-						param.otherRequestParam = {};
-					}  
-					if(param.otherRequestParam.multiSelects == null){
-						param.otherRequestParam["multiSelects"] = {};
-					}
-				
-					var multiSelectsArray = new Array();
-					param.otherRequestParam.multiSelects["test_DocAChild3"] = multiSelectsArray;
-					for(var i = 0; i < rowIds.length; i++){
-						var rowId = rowIds[i];
-						var valuesArray = $("#" + rowId+"_" + "test_DocAChild3").popMultiDispunit("getValue");
-						var saveValueArray = new Array();
-						for(var j = 0; j < valuesArray.length; j++){
-							saveValueArray.push(valuesArray[j]["name"]);
-						}
-						multiSelectsArray.push({
-							rowId: rowId,
-							values: saveValueArray
-						});		
-					}
-					return true;
-				},
-				afterDoCancel: function(param){
-					//加载原来的数据 
-					return true;
-				},
-				processSaveData: function(param){					
-					var multiSelectsArray = param.otherRequestParam.multiSelects["test_DocAChild3"];
-					for(var i = 0; i < multiSelectsArray.length; i++){
-						var rowId = multiSelectsArray[i].rowId;
-						var values = $("#" + rowId+"_" + "test_DocAChild3").popMultiDispunit("getValue");
-						grid.datatable.rows(rowId)["test_DocAChild3"] = values;
-					}
-				},
-				processPageData: function(param){
-					var otherResponseParam = param.otherResponseParam; 
-					var multiSelectsArray = otherResponseParam.multiSelects["test_DocAChild3"];
-					for(var i = 0; i < multiSelectsArray.length; i++){
-						var idValue = multiSelectsArray[i].idValue;
-						var values = multiSelectsArray[i].values;
-						var row = param.datatable.getRowByIdField(idValue, "id");
-						row["test_DocAChild3"] = values;
-					} 
-				},
-				refreshOterhEditCtrlStatus: function(param){
-					that.setReadonly({
-						isReadonly: param.isReadonly
-					});
-				}
-			}
-			
-			grid.addExternalObject(externalObject); 
-			
+			multiSelectCtrl3.init({
+				parentGridControl: grid
+			});
+			multiSelectCtrl4.init({
+				parentGridControl: grid
+			});
 			grid.show();
-	
-			grid.setCustomDispunitEditValue = function(ctrl, cModel, fieldModel, row){
-				var values = row["test_DocAChild3"];
-				$(ctrl).popMultiDispunit("setValue", values);
-			}
-			
-			grid.createCustomDispunit = function(name, dispunitType, ctrl, fieldModel, options, style) {
-				var rowId = options.rowId;
-				var row = grid.datatable.rows(rowId);
-				var values = row["test_DocAChild3"];
-				var fieldModel = dataModels.test_DocAChild3.fields["name"];		
-				options.fieldName = "name";
-				options.changeFunc = function(ctrl, rowData, rowId){
-					
-				}
-				return $(ctrl).popMultiDispunit({
-					idField : null,
-					textField : "name",
-					options : options,
-					showPopFunc : function(p) {
-						var fieldModel =  dataModels.test_DocAChild3.fields[p.options.fieldName];
-						grid.doPop({
-							viewName : fieldModel.view.name,
-							value : p.value,
-							rowId : p.options.rowId,//card方式下此属性无用，grid方式下有用，用来确定是哪一行的
-							keyFieldName: null,
-							fieldName : fieldModel.name,
-							fieldModel : fieldModel,
-							dataModel : dataModels.test_DocAChild3,
-							isMultiValue : true,
-							changeValueFunc : p.changeValueFunc
-						});
-					},
-					style : style
-				});
-			}
 		});  
 	</script>
 </head>  
