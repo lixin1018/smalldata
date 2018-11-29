@@ -3,32 +3,6 @@ dataModels.eg_Definition = {
   name:"eg_Definition",
   idFieldName:"id",
   fields:{
-    id:{
-      id:"daaa7468-af7c-48b7-9da3-3e44def95302",
-      name:"id",
-      displayName:"id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    modifytime:{
-      id:"7b6c6446-675d-4c48-9193-7e7e0bbb62f5",
-      name:"modifytime",
-      displayName:"修改时间",
-      valueType:valueType.time,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:20,
-      decimalNum:0,
-      isReadonly:false
-    },
     createtime:{
       id:"5d7236dc-b50b-415e-a892-e3fc3d1def08",
       name:"createtime",
@@ -55,6 +29,32 @@ dataModels.eg_Definition = {
       decimalNum:0,
       isReadonly:false
     },
+    modifytime:{
+      id:"7b6c6446-675d-4c48-9193-7e7e0bbb62f5",
+      name:"modifytime",
+      displayName:"修改时间",
+      valueType:valueType.time,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:20,
+      decimalNum:0,
+      isReadonly:false
+    },
+    modifyusername:{
+      id:"9057f9db-e218-4dc8-9323-885f6007f310",
+      name:"modifyusername",
+      displayName:"修改人",
+      valueType:valueType.string,
+      isSave:false,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
     teamid:{
       id:"8743cf76-f5b5-49d4-9759-6ae8c555a56a",
       name:"teamid",
@@ -65,6 +65,71 @@ dataModels.eg_Definition = {
       inputHelpName:"",
       foreignKeyName:"",
       valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    name:{
+      id:"b066e4ad-7572-4bfb-af08-6060e2bd8cc8",
+      name:"name",
+      displayName:"名称",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1000,
+      decimalNum:0,
+      isReadonly:false
+    },
+    createuserid:{
+      id:"0ad56370-c8ff-4638-b414-a0fbc5d37bdf",
+      name:"createuserid",
+      displayName:"创建人id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    description:{
+      id:"335c1afd-856b-420d-be33-de34fa31c458",
+      name:"description",
+      displayName:"描述",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1000,
+      decimalNum:0,
+      isReadonly:false
+    },
+    id:{
+      id:"daaa7468-af7c-48b7-9da3-3e44def95302",
+      name:"id",
+      displayName:"id",
+      valueType:valueType.string,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:40,
+      decimalNum:0,
+      isReadonly:false
+    },
+    isdeleted:{
+      id:"ba967f41-b06a-47a0-907d-c514cb7598be",
+      name:"isdeleted",
+      displayName:"已删除",
+      valueType:valueType.boolean,
+      isSave:true,
+      inputHelpType:"",
+      inputHelpName:"",
+      foreignKeyName:"",
+      valueLength:1,
       decimalNum:0,
       isReadonly:false
     },
@@ -100,71 +165,6 @@ dataModels.eg_Definition = {
 {field:"memberid",valueType:valueType.string,title:"memberid",width:0,hidden:true}
         ]
       },
-      isReadonly:false
-    },
-    description:{
-      id:"335c1afd-856b-420d-be33-de34fa31c458",
-      name:"description",
-      displayName:"描述",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:1000,
-      decimalNum:0,
-      isReadonly:false
-    },
-    isdeleted:{
-      id:"ba967f41-b06a-47a0-907d-c514cb7598be",
-      name:"isdeleted",
-      displayName:"已删除",
-      valueType:valueType.boolean,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:1,
-      decimalNum:0,
-      isReadonly:false
-    },
-    name:{
-      id:"b066e4ad-7572-4bfb-af08-6060e2bd8cc8",
-      name:"name",
-      displayName:"名称",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:1000,
-      decimalNum:0,
-      isReadonly:false
-    },
-    createuserid:{
-      id:"0ad56370-c8ff-4638-b414-a0fbc5d37bdf",
-      name:"createuserid",
-      displayName:"创建人id",
-      valueType:valueType.string,
-      isSave:true,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
-      isReadonly:false
-    },
-    modifyusername:{
-      id:"9057f9db-e218-4dc8-9323-885f6007f310",
-      name:"modifyusername",
-      displayName:"修改人",
-      valueType:valueType.string,
-      isSave:false,
-      inputHelpType:"",
-      inputHelpName:"",
-      foreignKeyName:"",
-      valueLength:40,
-      decimalNum:0,
       isReadonly:false
     }
   }

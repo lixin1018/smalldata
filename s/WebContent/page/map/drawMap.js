@@ -110,7 +110,9 @@ function groupMouseover(domElement){
 		alertArea({
 			code: code,
 			fillColor: "#6BB5EA",
-			strokeColor: "#6BB5EA"
+			strokeColor: "#6BB5EA",
+			showName: true,
+			govPoint:true
 		});  
 	}, 100);
 } 

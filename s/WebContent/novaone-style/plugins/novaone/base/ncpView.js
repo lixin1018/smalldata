@@ -300,8 +300,8 @@ function NcpView(p) {
 			waitingBarParentId : this.containerId,
 			funcName : "select",
 			successFunc : function(obj) {
-				param.datatable = that
-						.getDataTableFromBackInfo(obj.result.table.rows);
+				param.datatable = that.getDataTableFromBackInfo(obj.result.table.rows);
+				param.otherResponseParam = obj.result.otherResponseParam;
 				param.sumRow = null;// that.getSumRow(obj);  
 				param.totalRowCount = obj.result.rowCount;
 				that.setCtrlStatus(formStatusType.browse);
@@ -474,6 +474,7 @@ function NcpView(p) {
 				}
 			},
 			value : param.value,
+			keyField: param.keyFieldName,
 			
 			//多值
 			isMultiValue:param.isMultiValue,
@@ -606,6 +607,8 @@ function NcpView(p) {
 								: obj.result.idValueToRowIds);
 				param.table = dt;
 
+				param.otherResponseParam = obj.result.otherResponseParam;
+
 				//从idvalue到rowid的对应关系中，获取rowid到idvalue
 				var rowIdToIdValues = {};
 				for ( var idValue in obj.result.idValueToRowIds) {
@@ -702,18 +705,19 @@ function NcpView(p) {
 			funcName : "delete",
 			successFunc : function(obj) {
 				//编辑状态下也可以删除，所以删除后不用转换为浏览状态
-			//that.setCtrlStatus(formStatusType.browse);
-			that.processDeleteData(param);
-			that.afterBaseDelete(param);
-			that.afterDoDelete(param);
-		},
-		args : {
-			requestParam : cmnPcr.jsonToStr( {
-				dataName : this.dataModel.name,
-				deleteRows : param.existRowIdValues,
-				otherRequestParam:param.otherRequestParam
-			})
-		}
+				//that.setCtrlStatus(formStatusType.browse);
+				param.otherResponseParam = obj.result.otherResponseParam;
+				that.processDeleteData(param);
+				that.afterBaseDelete(param);
+				that.afterDoDelete(param);
+			},
+			args : {
+				requestParam : cmnPcr.jsonToStr( {
+					dataName : this.dataModel.name,
+					deleteRows : param.existRowIdValues,
+					otherRequestParam:param.otherRequestParam
+				})
+			}
 		};
 		this.ProcessServerAccess(requestParam);
 	}

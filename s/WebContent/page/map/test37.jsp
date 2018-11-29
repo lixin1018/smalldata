@@ -13,7 +13,7 @@
 	<script src="drawMap.js"></script>
 	<script src="allDistrictMainPoints.js"></script>
 	<script src="allNamePoints.js"></script>
-	<script src="370000_L1.js"></script>
+	<script src="sources/370000_L1.js"></script>
 	<script>		
 		$(document).ready(function(){
 			var boundaryInfo = boundaryList["370000_L1"];

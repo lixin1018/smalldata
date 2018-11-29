@@ -341,6 +341,8 @@ public class ImportExportDefinition {
 
 		    fieldNode.addAttribute("IsUnique", ((Boolean)field.getIsUnique()).toString());
 
+		    fieldNode.addAttribute("FractionLength", ((Integer)field.getFractionLength()).toString());
+
 		    fieldNode.addAttribute("Width", ((Integer)field.getWidth()).toString());
 
 		    fieldNode.addAttribute("DisplayWidth", ((Integer)field.getDisplayWidth()).toString()); 

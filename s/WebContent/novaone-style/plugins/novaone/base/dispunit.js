@@ -47,16 +47,28 @@
 				value : value,
 				options : options.options,
 				changeValueFunc : function(rowData) {
-					$(that).popMultiDispunit("setValue", rowData);
-					if (rowData != null && rowData.length != 0) {
+					var idField = options.idField;
+					var values = new Array();
+					for(var rowId in rowData){
+						var value = rowData[rowId];
+						if(idField != null){
+							value[idField] = rowId;							
+						}
+						values.push(value);
+					}
+					$(that).popMultiDispunit("setValue", values);
+					if (values != null && values.length != 0) {
 						if (options.options.changeFunc != undefined) {
-							options.options.changeFunc(that, rowData,
+							options.options.changeFunc(that, values,
 									options.options.rowId);
 						}
-					} else {
+					} 
+					/*
+					else {
 						var initValue = $(that).popMultiDispunit("getValue"); //cmnPcr.strToJson($(that).attr("jsonValue"));
 						$(that).popMultiDispunit("setValue", initValue);
 					}
+					*/
 				}
 			});
 		}
@@ -82,43 +94,55 @@
 
 $.fn.popMultiDispunit.methods = {
 	getValue : function(jq) {
-		var value = cmnPcr.strToJson($(jq).attr("jsonValue"));		
-		for(var k in value){
-			value[k] = value[k] == null? null : decodeURIComponent(value[k]);
+		var textField = $(jq).attr("textField");
+		var idField = $(jq).attr("idField");
+		var idValueArray = $(jq).attr("idValue").length == 0 ? null : $(jq).attr("idValue").split(",");	
+		var valueArray = $(jq).attr("jsonValue").length == 0 ? null : $(jq).attr("jsonValue").split(",");	
+		var values = new Array();
+		if(valueArray != null){
+			for(var i = 0; i < valueArray.length; i++){
+				var value = {};
+				if(idField != null){
+					value[idField] = idValueArray[i];
+				}
+				value[textField] = decodeURIComponent(valueArray[i]);				
+				values.push(value);
+			}	
 		}
-		return value;
+		return values;
 	},
-	setValue : function(jq, value) {
-		if (value == null) {
-			value = {};
+	setValue : function(jq, values) {
+		if (values == null) {
+			values = [];
 		}
 		var textField = $(jq).attr("textField");
-
+  
 		var textFieldArray = new Array();
-		for ( var rowId in value) {
-			var oneRow = value[rowId];
+		for ( var i = 0; i < values.length; i++) {
+			var oneRow = values[i];
 			textFieldArray.push(oneRow[textField]);
 		}
 		var textFieldStr = cmnPcr.arrayToString(textFieldArray, ",");
 		$(jq).val(textFieldStr);
-		$(jq).attr("initValue", textFieldStr);
+		//$(jq).attr("initValue", textFieldStr); 
 
 		var idField = $(jq).attr("idField");
+		var idFieldArray = new Array();
 		if (idField != null) {
-			var idFieldArray = new Array();
-			for ( var rowId in value) {
-				var oneRow = value[rowId];
+			for ( var i = 0; i < values.length; i++) {
+				var oneRow = values[i];
 				idFieldArray.push(oneRow[idField]);
 			}
-			$(jq).attr("idValue", cmnPcr.arrayToString(idFieldArray, ","));
+		}
+		$(jq).attr("idValue", cmnPcr.arrayToString(idFieldArray, ","));
+		
+		var encodeValueArray = new Array();
+		for ( var i = 0; i < values.length; i++) {
+			var oneRow = values[i];
+			encodeValueArray.push(oneRow[textField] == null ? null : encodeURIComponent(oneRow[textField]));
 		}
 		
-		var encodeValue = {};
-		for(var k in value){
-			encodeValue[k] = value[k] == null ? null : encodeURIComponent(value[k]);
-		}
-		
-		$(jq).attr("jsonValue", cmnPcr.jsonToStr(encodeValue));
+		$(jq).attr("jsonValue", cmnPcr.arrayToString(encodeValueArray, ","));
 		return jq;
 	},
 	setReadonly : function(jq, isReadonly) {

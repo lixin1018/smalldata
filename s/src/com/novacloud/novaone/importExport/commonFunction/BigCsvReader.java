@@ -320,7 +320,7 @@ public class BigCsvReader implements IFileReader{
 		}
 	}
 	
-	public void checkValueLength(List<String[]> allRows, HashMap<String, String> itemName2DbName, HashMap<String, Integer> dbFieldNameToLength) throws Exception{ 
+	public void checkValueLength(List<String[]> allRows, HashMap<String, String> itemName2DbName, HashMap<String, Integer> dbFieldNameToLength, HashMap<String, DataType> dbFieldNameToType) throws Exception{ 
 		
 		int rowCount = allRows.size(); 
 		for(int i = 0; i < rowCount; i++){  
@@ -330,7 +330,7 @@ public class BigCsvReader implements IFileReader{
 				if(sourceValue != null && sourceValue.length() != 0){  
 				    CsvColumn ec = index2CsvColumns.get(colIndex); 
 					String itemName = ec.getItemName();
-					if(dbFieldNameToLength.containsKey(itemName)){		
+					if(dbFieldNameToLength.containsKey(itemName) && dbFieldNameToType.get(itemName) == DataType.String){		
 						int dbFieldWidth = dbFieldNameToLength.get(itemName);
 						if(sourceValue.length() > dbFieldWidth){ 
 							throw new Exception("字段值过长, rowIndex = " + i + ", itemName = " + itemName + ", dataLength = " + sourceValue.length() + ", dbFieldWidth = " + dbFieldWidth);

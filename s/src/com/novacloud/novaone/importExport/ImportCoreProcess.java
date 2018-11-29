@@ -17,7 +17,8 @@ import com.novacloud.novaone.dao.db.IDBParserAccess;
 import com.novacloud.novaone.dao.db.ValueType;
 import com.novacloud.novaone.importExport.commonFunction.BigCsvReader;
 import com.novacloud.novaone.importExport.commonFunction.BigExcelReader; 
-import com.novacloud.novaone.importExport.commonFunction.IFileReader; 
+import com.novacloud.novaone.importExport.commonFunction.IFileReader;
+import com.novacloud.novaone.importExport.definition.DataType;
 import com.novacloud.novaone.importExport.definition.ExcelParser;
 import com.novacloud.novaone.importExport.definition.Field;
 import com.novacloud.novaone.importExport.definition.FileParser;
@@ -323,13 +324,15 @@ public class ImportCoreProcess{
 			Field f = allFields.get(i);
 			itemName2DbName.put(f.getItemName(), f.getDbFieldName());
 		}
-		
+
+		HashMap<String, DataType> dbFieldNameToType = new HashMap<String, DataType>();
 		HashMap<String, Integer> dbFieldNameToLength = new HashMap<String, Integer>();
 		for(int i=0;i<allFields.size();i++){
 			Field f = allFields.get(i); 
+			dbFieldNameToType.put(f.getDbFieldName(), f.getFieldType());
 			dbFieldNameToLength.put(f.getDbFieldName(), f.getWidth());
 		} 
-		fileReader.checkValueLength(allMemoRows, itemName2DbName, dbFieldNameToLength); 
+		fileReader.checkValueLength(allMemoRows, itemName2DbName, dbFieldNameToLength, dbFieldNameToType); 
 	}
 	
 	private void updateImportStatus(ImportStatusType statusType, int addSucceedNum, String logInfo){

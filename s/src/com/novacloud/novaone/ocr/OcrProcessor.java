@@ -47,13 +47,12 @@ public class OcrProcessor{
             Tesseract instance = Tesseract.getInstance();
             instance.setDatapath("d:/t");//设置训练库 
             instance.setLanguage("chi_sim");//中文识别 
-            //instance.setPageSegMode(TessPageSegMode.PSM_SINGLE_LINE);
+            instance.setPageSegMode(TessPageSegMode.PSM_SINGLE_BLOCK);
             //instance.setOcrEngineMode(TessOcrEngineMode.OEM_TESSERACT_ONLY);
             tessInstance = instance;
 		}
 		return tessInstance;
 	}
-	
 
 	public String getStringFromImage(String filePath) throws Exception {  
 	   try {

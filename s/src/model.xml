@@ -120,4 +120,9 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	<bean id="ss_Play" class="com.novacloud.shuShuo.SS_PlayImpl" scope="prototype">  
 		<property name="dBParserAccess" ref="dBParserAccess" />  
 	</bean>  
+	
+	<!-- 测试父子表，子表以多选方式在父表界面中编辑保存  added by lixin 20181127-->
+	<bean id="test_DocAParent" class="com.novacloud.test.Test_DocAParentImpl" scope="prototype"> 
+		<property name="multiSelectChildValueProcessor" ref="multiSelectChildValueProcessor" />
+	</bean>	
 </beans>

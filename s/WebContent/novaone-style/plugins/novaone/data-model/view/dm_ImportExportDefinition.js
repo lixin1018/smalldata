@@ -13,7 +13,8 @@ viewModels.dm_ImportExportDefinition = {
     {name:"unitprice", label:"单价", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"decimal"},
     {name:"createuserid", label:"创建人id", width:0, hidden:true, sortable:false, search:false, resizable:false, editable:true, canEdit:false, nullable:true, edittype:"text", dispunitType:"text"},
     {name:"createusername", label:"创建人", width:80, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:false, nullable:true, edittype:"text", dispunitType:"text"},
-    {name:"createtime", label:"创建时间", width:150, hidden:false, sortable:true, search:false, resizable:true, editable:true, canEdit:false, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"}
+    {name:"createtime", label:"创建时间", width:150, hidden:false, sortable:true, search:false, resizable:true, editable:true, canEdit:false, nullable:true, edittype:"text", formatter:timeFormater, dispunitType:"time"},
+    {name:"discountrate", label:"折扣", width:100, hidden:false, sortable:false, search:false, resizable:true, editable:true, canEdit:true, nullable:false, edittype:"text", dispunitType:"decimal"}
   ],
   dispUnitModel:[
     {name:"id", label:"id", editable:false,nullable:false, hidden:true, dispunitType:"text", },
@@ -25,6 +26,7 @@ viewModels.dm_ImportExportDefinition = {
     {name:"unitprice", label:"单价", editable:true,nullable:false, hidden:false, dispunitType:"decimal", },
     {name:"createuserid", label:"创建人id", editable:false,nullable:true, hidden:true, dispunitType:"text", },
     {name:"createusername", label:"创建人", editable:false,nullable:true, hidden:false, dispunitType:"text", },
-    {name:"createtime", label:"创建时间", editable:false,nullable:true, hidden:false, dispunitType:"time", }
+    {name:"createtime", label:"创建时间", editable:false,nullable:true, hidden:false, dispunitType:"time", },
+    {name:"discountrate", label:"折扣", editable:true,nullable:false, hidden:false, dispunitType:"decimal", }
   ]
 }

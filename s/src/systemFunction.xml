@@ -445,4 +445,10 @@
 		<property name="imageDir" value="D:/SmallData/Images/" /> 
 		<property name="audioDir" value="D:/SmallData/Audios/" /> 
 	</bean>	
+	
+	<!-- 处理子表多选保存、删除、获取 added by lixin 20181127 -->
+	<bean id="multiSelectChildValueProcessor" class="com.novacloud.novaone.dao.sys.MultiSelectChildValueProcessor" scope="prototype"> 
+		<property name="dBParserAccess" ref="dBParserAccess" />
+	</bean>	
+	
 </beans>

@@ -384,6 +384,9 @@ function NcpCard(p) {
 			this.doCtrlMethod(name, "setReadonly", isReadonly ? isReadonly
 					: !unitModel.editable);
 		}
+
+		//设置其他控件的编辑状态 added by lixin 20181127 
+		this.doExternalFunction("refreshOterhEditCtrlStatus", {isReadonly: isReadonly}); 
 	}
 
 	//获取显示域的显示定义
