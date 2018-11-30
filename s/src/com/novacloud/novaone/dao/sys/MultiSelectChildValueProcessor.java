@@ -14,7 +14,7 @@ import com.novacloud.novaone.model.sysmodel.DataField;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-//处理子表多选保存、删除、获取 added by lixin 20181127
+//处理子表多条记录同时保存、删除、获取 added by lixin 20181130
 public class MultiSelectChildValueProcessor {
 
 	private IDBParserAccess dBParserAccess; 
@@ -22,15 +22,29 @@ public class MultiSelectChildValueProcessor {
 		this.dBParserAccess = dBParserAccess;
 	}  
 	
+	//查询
+	//requestObj客户端的请求的信息
+	//resultHash服务器端处理返回的信息
+	//childDataName子表Data模型名称
+	//parentIdFieldName子表中关联父表id的字段名，例如parentid
+	//valueFieldName子表中显示下拉（弹出）值的字段（数据库中可以不存在此字段，Data模型中存在），例如typename
+	//foreignKeyFieldName子表中存储下来（弹出）值的Id的字段（可以理解为外键，可以不定义此字段），例如typeid
+	//parentDataIdFieldName父表的Id字段名，例如id	
 	public void GetMultiSelectChildValues(Session dbSession, JSONObject requestObj, HashMap<String,Object> resultHash, String childDataName, String parentIdFieldName, String valueFieldName, String foreignKeyFieldName, String parentDataIdFieldName){
-		HashMap tableHash = (HashMap)resultHash.get("table");
-		JSONArray rowJsonArray = (JSONArray)tableHash.get("rows");
+
 		Data childData = DataCollection.getData(childDataName);
 		
+		//获取本次查询返回的父表记录
+		HashMap tableHash = (HashMap)resultHash.get("table");
+		JSONArray rowJsonArray = (JSONArray)tableHash.get("rows");
+		
 		JSONArray childDataJsonArray = new JSONArray();
+		//循环所有的父表记录
 		for(int i = 0; i < rowJsonArray.size(); i++){
 			String parentId = rowJsonArray.getJSONObject(i).getString(parentDataIdFieldName);
 			JSONArray childValueArray =  new JSONArray();
+			
+			//根据父表id值，获取子表对应的记录（多条）
 			DataTable childDt = this.dBParserAccess.getDtByFieldValue(dbSession, childData, parentIdFieldName, "=", parentId);
 			List<DataRow> childRows = childDt.getRows();
 			for(int j = 0; j < childRows.size(); j++){
@@ -48,6 +62,7 @@ public class MultiSelectChildValueProcessor {
 			childDataJsonArray.add(childDataJson);			
 		}
 
+		//将子表的数据作为本次请求的otherResponseParam，返回给客户端
 		String otherResponseParamPropertyName = "otherResponseParam";
 		if(!resultHash.containsKey(otherResponseParamPropertyName)){
 			resultHash.put(otherResponseParamPropertyName, new JSONObject());
@@ -61,7 +76,14 @@ public class MultiSelectChildValueProcessor {
 		JSONObject multiSelectJson = otherResponseParamJson.getJSONObject(multiSelectsPropertyName);
 		multiSelectJson.put(childDataName, childDataJsonArray);	
 	}
-	
+
+	//保存
+	//requestObj客户端的请求的信息
+	//resultHash服务器端处理返回的信息
+	//childDataName子表Data模型名称
+	//parentDataName父表Data模型名称
+	//parentIdFieldName子表中关联父表id的字段名，例如parentid
+	//valueFieldName子表中存储下拉（弹出）值（或Id）的字段（数据库中需要存在此字段），例如typename或者typeid
 	public void SaveMultiSelectChildValues(Session dbSession, JSONObject requestObj, HashMap<String,Object> resultHash, String childDataName, String parentDataName, String parentIdFieldName, String valueFieldName){
 		Data childData = DataCollection.getData(childDataName);		
 		
@@ -85,7 +107,7 @@ public class MultiSelectChildValueProcessor {
 						String rowId = multiSelectObj.getString("rowId");
 						String idValue = rowIdToIdValues.get(rowId);
 				   
-						//删除以前的子表记录
+						//从数据库中delete该父表记录对应的所有子表记录
 						this.dBParserAccess.deleteByData(dbSession, childData, parentIdFieldName, "=", idValue);
 				   
 						JSONArray valueArray = multiSelectObj.getJSONArray("values");
@@ -95,7 +117,7 @@ public class MultiSelectChildValueProcessor {
 							fieldValues.put(parentIdFieldName, idValue);
 							fieldValues.put(valueFieldName, value);				
 					   
-							//添加新记录
+							//再重新将子表记录insert到数据库中
 							this.dBParserAccess.insertByData(dbSession, childData, fieldValues);
 						}		
 					}
@@ -103,10 +125,16 @@ public class MultiSelectChildValueProcessor {
 			}
 		}
 	}
-	
+
+	//删除
+	//requestObj客户端的请求的信息 
+	//childDataName子表Data模型名称
+	//parentDataName父表Data模型名称
+	//parentIdFieldName子表中关联父表id的字段名，例如parentid
 	public void DeleteMultiSelectChildValues(Session dbSession, JSONObject requestObj, String childDataName, String parentIdFieldName){
 		Data childData = DataCollection.getData(childDataName);		
 
+		//获取本次需要删除的父表记录Id（可以是多条）
 		List<String> ids = null;
 		if(requestObj.containsKey("deleteRows")) {
 			JSONObject rowIdToIdValues = requestObj.getJSONObject("deleteRows");
@@ -126,6 +154,8 @@ public class MultiSelectChildValueProcessor {
 			Object fieldValue = ValueConverter.convertToDBObject(fieldValueStr, field.getValueType());
 			ids = this.dBParserAccess.getIds(dbSession, parentData.getIdFieldName(), parentData, fieldName, operateStr, fieldValue);
 		}
+		
+		//逐一删除对应的子表记录
 		for(int i = 0; i < ids.size(); i++){
 			this.dBParserAccess.deleteByData(dbSession, childData, parentIdFieldName, "=", ids.get(i));
 		}

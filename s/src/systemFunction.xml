@@ -446,7 +446,7 @@
 		<property name="audioDir" value="D:/SmallData/Audios/" /> 
 	</bean>	
 	
-	<!-- 处理子表多选保存、删除、获取 added by lixin 20181127 -->
+	<!-- 处理子表多条记录同时保存、删除、获取 added by lixin 20181130 -->
 	<bean id="multiSelectChildValueProcessor" class="com.novacloud.novaone.dao.sys.MultiSelectChildValueProcessor" scope="prototype"> 
 		<property name="dBParserAccess" ref="dBParserAccess" />
 	</bean>	

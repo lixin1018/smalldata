@@ -262,7 +262,7 @@
 	    				insert:middlePartCtrl.getDatatableHash(mLineArgs[rowId].insert),
 	    				deleteRows:mLineArgs[rowId].deleteRows,
 	    				
-	    				//其它参数
+	    				//其它参数 added by lixin20181130
 	    				otherRequestParam: mLineArgs[rowId].otherRequestParam
 		    		};	    		
 		    	}
@@ -282,7 +282,7 @@
 			    	    				insert:lastPartCtrl.getDatatableHash(partLineArgs[parentRowId].insert),
 			    	    				deleteRows:partLineArgs[parentRowId].deleteRows,
 			    	    				
-			    	    				//其它参数
+			    	    				//其它参数 added by lixin20181130
 			    	    				otherRequestParam: partLineArgs[parentRowId].otherRequestParam	    				
 			    	    		}
 		
@@ -506,7 +506,7 @@
 			lineCachePartArgs.update = param.update;
 			lineCachePartArgs.insert = param.insert;
 			
-			//扩展其它参数
+			//扩展其它参数 added by lixin 20181130
 			lineCachePartArgs.otherRequestParam = param.otherRequestParam;
 			
 			partCtrl.setCtrlStatus(formStatusType.browse);

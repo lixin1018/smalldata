@@ -242,7 +242,8 @@ function NcpMultiStyleSheetWin(p){
 			mainCardCtrl.doPage({isEdit:false,
 				pageNumber:1 }); 
 		}
-		
+
+		//MultiStyleSheetWin绑定其他事件 add by lixin 20181130
 		this.initOtherEvent(sheet);
 
 		//第一次打开窗口，执行操作
@@ -258,7 +259,7 @@ function NcpMultiStyleSheetWin(p){
 		this.sheetCtrl = sheet;
 	}
 	
-	//MultiStyleSheetWin绑定其他事件
+	//MultiStyleSheetWin绑定其他事件 add by lixin 20181130
 	this.initOtherEvent = function(sheetCtrl){
 		
 	}
@@ -354,7 +355,8 @@ function NcpMultiStyleCardWin(p){
 			card.doPage({isEdit:false,
 				pageNumber:1 }); 
 		}
-		
+
+		//MultiStyleCardWin绑定其他事件 add by lixin 20181130
 		this.initOtherEvent(card);
 		
 		//第一次打开窗口，执行操作
@@ -369,8 +371,8 @@ function NcpMultiStyleCardWin(p){
 		}
 		this.cardCtrl = card;
 	}
-	
-	//MultiStyleCardWin绑定其他事件
+	 
+	//MultiStyleCardWin绑定其他事件 add by lixin 20181130
 	this.initOtherEvent = function(cardCtrl){
 		
 	}

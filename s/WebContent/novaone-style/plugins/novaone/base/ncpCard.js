@@ -53,8 +53,7 @@ function NcpCard(p) {
 	this.orderby = p.orderby;
 
 	//添加、修改后保存成功后，是否重新获取当前记录在所有记录中的序号，如果记录太多，速度会比较慢
-	this.isRefreshPageNumber = p.isRefreshPageNumber == undefined ? true
-			: p.isRefreshPageNumber;
+	this.isRefreshPageNumber = p.isRefreshPageNumber == undefined ? true : p.isRefreshPageNumber;
 
 	//获取当前行Id
 	this.getCurrentIdValue = function() {
@@ -381,11 +380,10 @@ function NcpCard(p) {
 		var isReadonly = this.currentStatus != formStatusType.edit;
 		for ( var name in this.allCardCtrls.allKeys()) {
 			var unitModel = this.getUnitModel(name);
-			this.doCtrlMethod(name, "setReadonly", isReadonly ? isReadonly
-					: !unitModel.editable);
+			this.doCtrlMethod(name, "setReadonly", isReadonly ? isReadonly : !unitModel.editable);
 		}
 
-		//设置其他控件的编辑状态 added by lixin 20181127 
+		//设置其他控件的编辑状态，变为可绑定多个refreshOterhEditCtrlStatus的形式 added by lixin 20181130
 		this.doExternalFunction("refreshOterhEditCtrlStatus", {isReadonly: isReadonly}); 
 	}
 

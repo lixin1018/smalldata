@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<!-- 父表记录列表，最原始的方式 add by lixin 20181130-->
+<!DOCTYPE html>
 <%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ include file="../basePage.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">

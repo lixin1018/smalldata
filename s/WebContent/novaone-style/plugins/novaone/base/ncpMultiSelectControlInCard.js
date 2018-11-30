@@ -1,4 +1,5 @@
-//子表以多选方式在父表界面中编辑保存  added by lixin 20181127
+//子表以多选方式在父表界面中编辑保存  added by lixin 20181130
+//展示形式为多个CheckBox显示在卡片界面中
 function NcpMultiSelectControlInCard(){
 	var that = this;
 	
@@ -31,6 +32,7 @@ function NcpMultiSelectControlInCard(){
 
 		var externalObject = {				
 			beforeDoSave: function(param){
+				//卡片方式下，每次父表记录只可能编辑一条，且必须有一条
 				var rowId = null;
 				if(param.insert.count()>0){ 
 					//新建保存

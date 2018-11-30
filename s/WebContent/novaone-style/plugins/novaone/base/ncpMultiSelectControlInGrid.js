@@ -1,4 +1,5 @@
-//子表以多选方式在父表Grid界面中编辑保存  added by lixin 20181127
+//子表以多选方式在父表界面中编辑保存  added by lixin 20181130
+//展示形式为弹出多选窗口，用于表格界面中
 function NcpMultiSelectControlInGrid(p){
 	var that = this;  
 	this.childColumnName = p.childColumnName;
@@ -47,6 +48,7 @@ function NcpMultiSelectControlInGrid(p){
 	
 		var externalObject = {				
 			beforeDoSave: function(param){
+				//表格方式下，每次父表记录只可能编辑多条
 				var rowIds = new Array();
 				if(param.insert != null && param.insert.count() > 0){ 
 					//新建保存

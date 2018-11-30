@@ -862,6 +862,7 @@ function NcpGrid(p) {
 	}
 	
 	this.setCustomDispunitEditValue = function(ctrl, cModel, fieldModel, row){
+		//设置编辑控件的值，变为可绑定多个setCustomDispunitEditValue的形式 added by lixin 20181130
 		this.doExternalFunctionContinue("setCustomDispunitEditValue", {
 			ctrl: ctrl, 
 			cModel: cModel, 

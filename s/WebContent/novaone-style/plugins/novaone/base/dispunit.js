@@ -1,4 +1,5 @@
-﻿$.fn.popMultiDispunit = function(options, value) {
+﻿//弹出多选窗口 modified by lixin 20181130
+$.fn.popMultiDispunit = function(options, value) {
 	if (typeof options == "string") {
 		var method = $.fn.popMultiDispunit.methods[options];
 		if (method != undefined) {
@@ -92,7 +93,6 @@
 	}
 	return this;
 }
-
 $.fn.popMultiDispunit.methods = {
 	getValue : function(jq) {
 		var textField = $(jq).attr("textField");

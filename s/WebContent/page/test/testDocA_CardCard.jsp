@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<!-- 父子孙三级在一个窗口中编辑，父表test_DocAParent显示为card方式，其中：
+子表test_DocAChild1和test_DocAChild2以多选checkbox方式展示在父表区域， 
+子表test_DocAChild5显示为grid方式，test_DocAChild5_1显示在test_DocAChild5的一列中，以弹出方式编辑 add by lixin 20181130-->
+<!DOCTYPE html>
 <%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ include file="../basePage.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿<!-- 父表记录列表，双击记录行进入卡片方式 added by lixin 20181130-->
+<!DOCTYPE html>
 <%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ include file="../basePage.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">

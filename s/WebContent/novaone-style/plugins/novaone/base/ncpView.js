@@ -301,7 +301,10 @@ function NcpView(p) {
 			funcName : "select",
 			successFunc : function(obj) {
 				param.datatable = that.getDataTableFromBackInfo(obj.result.table.rows);
+
+				//获取otherResponseParam返回值 added by lixin 20181130
 				param.otherResponseParam = obj.result.otherResponseParam;
+				
 				param.sumRow = null;// that.getSumRow(obj);  
 				param.totalRowCount = obj.result.rowCount;
 				that.setCtrlStatus(formStatusType.browse);
@@ -474,6 +477,7 @@ function NcpView(p) {
 				}
 			},
 			value : param.value, 
+			//传递弹出的窗口里，主键字段为keyField（当不存储弹出值的id时，keyField为空） added by lixin 20181130
 			keyField: param.fieldModel.maps[param.fieldModel.foreignKeyName],
 			
 			//多值
@@ -608,6 +612,7 @@ function NcpView(p) {
 								: obj.result.idValueToRowIds);
 				param.table = dt;
 
+				//获取otherResponseParam返回值 added by lixin 20181130
 				param.otherResponseParam = obj.result.otherResponseParam;
 
 				//从idvalue到rowid的对应关系中，获取rowid到idvalue
@@ -943,6 +948,7 @@ function NcpView(p) {
 		}
 	}
 
+	//可扩展多个createCustomDispunit方法 modified by lixin 20181130
 	this.createCustomDispunit = function(name, dispunitType, ctrl, fieldModel, options, style) {
 		for ( var i = this.externalObjects.length - 1; i >= 0; i--) {
 			var externalObj = this.externalObjects[i];

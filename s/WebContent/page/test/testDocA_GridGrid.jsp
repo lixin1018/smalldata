@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<!-- 父子二级在一个窗口中编辑，父表test_DocAParent显示为grid方式，
+子表test_DocAChild1和test_DocAChild2分别显示为test_DocAParent的一列，以弹出方式编辑 add by lixin 20181130-->
+<!DOCTYPE html>
 <%@ page contentType="text/html; charset=utf-8" language="java" %>
 <%@ include file="../basePage.jsp" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
