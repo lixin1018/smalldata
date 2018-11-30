@@ -260,7 +260,10 @@
 		    		mSaveLineArgs[rowId] = {
 	    				update:middlePartCtrl.getDatatableHash(mLineArgs[rowId].update),
 	    				insert:middlePartCtrl.getDatatableHash(mLineArgs[rowId].insert),
-	    				deleteRows:mLineArgs[rowId].deleteRows
+	    				deleteRows:mLineArgs[rowId].deleteRows,
+	    				
+	    				//其它参数
+	    				otherRequestParam: mLineArgs[rowId].otherRequestParam
 		    		};	    		
 		    	}
 		    	
@@ -277,7 +280,10 @@
 			    	    		dealedPartArgs[parentRowId] = {
 			    	    				update:lastPartCtrl.getDatatableHash(partLineArgs[parentRowId].update),
 			    	    				insert:lastPartCtrl.getDatatableHash(partLineArgs[parentRowId].insert),
-			    	    				deleteRows:partLineArgs[parentRowId].deleteRows	    	    				
+			    	    				deleteRows:partLineArgs[parentRowId].deleteRows,
+			    	    				
+			    	    				//其它参数
+			    	    				otherRequestParam: partLineArgs[parentRowId].otherRequestParam	    				
 			    	    		}
 		
 				    	    	if(rowId2Ids[parentRowId] == undefined){
@@ -369,8 +375,7 @@
 					isRefreshAfterSave:this.isRefreshAfterSave,
 					mainArgs:that.clientCacheData.mainArgs,
 					lineArgs:that.clientCacheData.saveLineArgs,
-					rowId2Ids:that.clientCacheData.rowId2Ids,
-					otherRequestParam:param.otherRequestParam
+					rowId2Ids:that.clientCacheData.rowId2Ids
 				})}
 			}; 
 			var serverAccess = new ServerAccess();
@@ -418,6 +423,10 @@
 				//将父表数据保存在clientCacheData里，并递归执行子表的保存
 				that.clientCacheData.mainArgs.update = partCtrl.getDatatableHash(param.update);
 				that.clientCacheData.mainArgs.insert = partCtrl.getDatatableHash(param.insert);
+				
+				//处理其它参数
+				that.clientCacheData.mainArgs.otherRequestParam = param.otherRequestParam;				
+				
 			    var childPartModels = that.getChildPartModels(partCtrl.partModelName); 
 			    for(var i = 0;i<childPartModels.length;i++){
 			    	var childPartModel = childPartModels[i];
@@ -496,6 +505,10 @@
 			var lineCachePartArgs = that.getLineCachePartArgs(partCtrl);
 			lineCachePartArgs.update = param.update;
 			lineCachePartArgs.insert = param.insert;
+			
+			//扩展其它参数
+			lineCachePartArgs.otherRequestParam = param.otherRequestParam;
+			
 			partCtrl.setCtrlStatus(formStatusType.browse);
 		}
 		
@@ -532,7 +545,11 @@
 						waitingBarParentId : this.containerId,
 						funcName : "select", 
 						successFunc : function(obj){ 
-							param.datatable = partCtrl.getDataTableFromBackInfo(obj.result.table.rows);  
+							param.datatable = partCtrl.getDataTableFromBackInfo(obj.result.table.rows); 
+							
+							//接收其它返回值otherResponseParam
+							param.otherResponseParam = obj.result.otherResponseParam;
+							
 							param.sumRow = null;// that.getSumRow(obj);  
 							that.setLineCachePartTable(partCtrl, param.datatable),
 							param.totalRowCount = obj.result.rowCount;

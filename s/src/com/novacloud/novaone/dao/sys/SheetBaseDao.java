@@ -100,6 +100,15 @@ public class SheetBaseDao implements ISheetBaseDao{
 		IDataBaseDao dDao = this.getDataDao(dataName);
 		mainArgsJson.put("dataName", dataName);
 		mainArgsJson.put("isRefreshAfterSave", isRefreshAfterSave);
+
+		/*
+		//将otherRequestParam传递给各个表保存时用
+		JSONObject otherRequestParamJson = requestObj.containsKey("otherRequestParam") ? requestObj.getJSONObject("otherRequestParam") : null;
+		if(otherRequestParamJson != null){ 
+			mainArgsJson.put("otherRequestParam", otherRequestParamJson);
+		}
+		*/
+		
 		HashMap<String, Object> mainResultHash= dDao.save(session, mainArgsJson);
 		JSONObject mainIdValueToRowIds = (JSONObject)mainResultHash.get("idValueToRowIds"); 
 		String mainIdValue = "-1";
@@ -152,6 +161,14 @@ public class SheetBaseDao implements ISheetBaseDao{
 						JSONObject row = (JSONObject)rowObj;
 						row.put(middlePart.getParentPointerField(), mainIdValue);
 					}
+
+					/*
+					//将otherRequestParam传递给子表保存时用
+					if(otherRequestParamJson != null){ 
+						mS.put("otherRequestParam", otherRequestParamJson);
+					}
+					*/
+					
 					HashMap<String, Object> mResultHash= mdDao.save(session, mS); 
 					JSONObject mIdValueToRowIds = (JSONObject)mResultHash.get("idValueToRowIds");
 					for(Object idValue : mIdValueToRowIds.keySet()){
@@ -183,6 +200,15 @@ public class SheetBaseDao implements ISheetBaseDao{
 							JSONObject row = (JSONObject)rowObj;
 							row.put(lastPart.getParentPointerField(), mIdValue);
 						}
+						
+
+						/*
+						//将otherRequestParam传递给孙表保存时用
+						if(otherRequestParamJson != null){ 
+							lS.put("otherRequestParam", otherRequestParamJson);
+						}
+						*/
+						
 						ldDao.save(session, lS);
 					}
 					if(lS.getJSONObject("deleteRows").size()>0){

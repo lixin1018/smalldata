@@ -31,29 +31,33 @@ public class Test_DocAParentImpl extends DataBaseDao {
 		String childDataName4 = "test_DocAChild4";
 		String parentIdFieldName4 = "parentid"; 
 		multiSelectChildValueProcessor.DeleteMultiSelectChildValues(this.getDBSession(), requestObj, childDataName4, parentIdFieldName4);
-}
+	}
 	
 	@Override
 	protected void afterSave(INcpSession session, JSONObject requestObj, HashMap<String,Object> resultHash) throws Exception{		
 		String childDataName1 = "test_DocAChild1";
 		String parentIdFieldName1 = "parentid";
 		String valueFieldName1 = "name";
-		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName1, parentIdFieldName1, valueFieldName1);
+		String parentDataName1 = "test_DocAParent";
+		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName1, parentDataName1, parentIdFieldName1, valueFieldName1);
 		
 		String childDataName2 = "test_DocAChild2";
 		String parentIdFieldName2 = "parentid";
 		String valueFieldName2 = "typeid";
-		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName2, parentIdFieldName2, valueFieldName2);
+		String parentDataName2 = "test_DocAParent";
+		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName2, parentDataName2, parentIdFieldName2, valueFieldName2);
 		
 		String childDataName3 = "test_DocAChild3";
 		String parentIdFieldName3 = "parentid";
 		String valueFieldName3 = "name";
-		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName3, parentIdFieldName3, valueFieldName3);
+		String parentDataName3 = "test_DocAParent";
+		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName3, parentDataName3, parentIdFieldName3, valueFieldName3);
 
 		String childDataName4 = "test_DocAChild4";
 		String parentIdFieldName4 = "parentid";
 		String valueFieldName4 = "typeid";
-		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName4, parentIdFieldName4, valueFieldName4);
+		String parentDataName4 = "test_DocAParent";
+		multiSelectChildValueProcessor.SaveMultiSelectChildValues(this.getDBSession(), requestObj, resultHash, childDataName4, parentDataName4, parentIdFieldName4, valueFieldName4);
 	}
 	
 	@Override

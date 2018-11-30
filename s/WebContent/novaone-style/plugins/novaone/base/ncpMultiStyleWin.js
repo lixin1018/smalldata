@@ -242,6 +242,8 @@ function NcpMultiStyleSheetWin(p){
 			mainCardCtrl.doPage({isEdit:false,
 				pageNumber:1 }); 
 		}
+		
+		this.initOtherEvent(sheet);
 
 		//第一次打开窗口，执行操作
 		if(p.isNew){
@@ -254,6 +256,11 @@ function NcpMultiStyleSheetWin(p){
 			p.doShow(p);
 		} 
 		this.sheetCtrl = sheet;
+	}
+	
+	//MultiStyleSheetWin绑定其他事件
+	this.initOtherEvent = function(sheetCtrl){
+		
 	}
 	
 	this.initSheetEvent = function(sheetCtrl){
@@ -348,6 +355,8 @@ function NcpMultiStyleCardWin(p){
 				pageNumber:1 }); 
 		}
 		
+		this.initOtherEvent(card);
+		
 		//第一次打开窗口，执行操作
 		if(p.isNew){
 			p.doAdd(p);
@@ -359,6 +368,11 @@ function NcpMultiStyleCardWin(p){
 			p.doShow(p);
 		}
 		this.cardCtrl = card;
+	}
+	
+	//MultiStyleCardWin绑定其他事件
+	this.initOtherEvent = function(cardCtrl){
+		
 	}
 	
 	this.initCardEvent = function(cardCtrl){ 

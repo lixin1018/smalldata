@@ -9,6 +9,7 @@ function NcpMultiSelectControlInCard(){
 	this.childViewModel = null; 
 	this.childListFieldName = null; 
 	this.parentCardControl = null;
+	this.parentDataName = null;
 	this.keyFieldName = null;
 	this.listName = null;
 	this.listColumns = null;
@@ -17,6 +18,7 @@ function NcpMultiSelectControlInCard(){
 	
 	this.init = function(p){
 		this.parentCardControl = p.parentCardControl;
+		this.parentDataName = p.parentCardControl.dataModel.name;
 		this.childDataModel = p.childDataModel;
 		this.childViewModel = p.childViewModel;
 		this.childListFieldName = p.childListFieldName;
@@ -48,7 +50,11 @@ function NcpMultiSelectControlInCard(){
 					param.otherRequestParam["multiSelects"] = {};
 				}
 				
-				param.otherRequestParam.multiSelects[that.childDataModel.name] =[{
+				if(param.otherRequestParam.multiSelects[that.parentDataName] == null){
+					param.otherRequestParam.multiSelects[that.parentDataName] = {};
+				}
+				
+				param.otherRequestParam.multiSelects[that.parentDataName][that.childDataModel.name] =[{
 					rowId: rowId,
 					values: that.getValues()
 				}];		
@@ -147,7 +153,7 @@ function NcpMultiSelectControlInCard(){
 				valueHtml = valueHtml + (valueHtml.length == 0 ? "" : ", ") +  cmnPcr.html_encode(row[destFieldName])
 			}
 		} 
-		var oneHtml = "<span><input type=\"checkbox\" value=\"" + keyHtml + "\" />" + valueHtml + "</span>";
+		var oneHtml = "<span><input type=\"checkbox\" value=\"" + keyHtml + "\" style=\"margin-top: 0px;margin-bottom: 1px;vertical-align: middle;\" />" + valueHtml + "</span>";
 		return oneHtml;
 	}
 	

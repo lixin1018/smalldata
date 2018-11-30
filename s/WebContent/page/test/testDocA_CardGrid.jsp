@@ -12,14 +12,19 @@
 	
 	
 	<script type="text/javascript" src="${basejs}/ncpMultiSelectControlInCard.js"></script>
+	<script type="text/javascript" src="${sheetModel}/test_DocA.js"></script>
 	<script type="text/javascript" src="${dataModel}/test_DocAParent.js"></script>
 	<script type="text/javascript" src="${dataModel}/test_DocAChild1.js"></script>
 	<script type="text/javascript" src="${dataModel}/test_DocAChild2.js"></script>
+	<script type="text/javascript" src="${dataModel}/test_DocAChild5.js"></script>
+	<script type="text/javascript" src="${dataModel}/test_DocAChild5_1.js"></script>
 	<script type="text/javascript" src="${viewModel}/test_DocAParent.js"></script>
 	<script type="text/javascript" src="${viewModel}/test_DocAChild1.js"></script>
 	<script type="text/javascript" src="${viewModel}/test_DocAChild2.js"></script>
+	<script type="text/javascript" src="${viewModel}/test_DocAChild5.js"></script>
+	<script type="text/javascript" src="${viewModel}/test_DocAChild5_1.js"></script>
 	
-	<script> 
+	<script>
 		$(document).ready(function(){  
 			var p = { 
 					containerId:"testGridContainer",   
@@ -27,7 +32,8 @@
 					dataModel:dataModels.test_DocAParent,
 					onePageRowCount:20,
 					isRefreshAfterSave:true,
-					viewModel:viewModels.test_DocAParent, 
+					viewModel:viewModels.test_DocAParent,
+					sheetModel:sheetModels.test_DocA, 
 					detailPageUrl:"testDocA_CardCard.jsp"
 				};
 			var win = new NcpMultiStyleWin(p); 

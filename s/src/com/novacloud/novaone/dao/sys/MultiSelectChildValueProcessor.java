@@ -37,7 +37,7 @@ public class MultiSelectChildValueProcessor {
 				DataRow childRow = childRows.get(j);
 				JSONObject childValueObj = new JSONObject();
 				childValueObj.put(valueFieldName, childRow.getStringValue(valueFieldName));
-				if(foreignKeyFieldName !=null && foreignKeyFieldName.length() > 0){
+				if(foreignKeyFieldName != null && foreignKeyFieldName.length() > 0){
 					childValueObj.put(foreignKeyFieldName, childRow.getStringValue(foreignKeyFieldName));
 				}
 				childValueArray.add(childValueObj);
@@ -62,7 +62,7 @@ public class MultiSelectChildValueProcessor {
 		multiSelectJson.put(childDataName, childDataJsonArray);	
 	}
 	
-	public void SaveMultiSelectChildValues(Session dbSession, JSONObject requestObj, HashMap<String,Object> resultHash, String childDataName, String parentIdFieldName, String valueFieldName){
+	public void SaveMultiSelectChildValues(Session dbSession, JSONObject requestObj, HashMap<String,Object> resultHash, String childDataName, String parentDataName, String parentIdFieldName, String valueFieldName){
 		Data childData = DataCollection.getData(childDataName);		
 		
 		JSONObject idValueToRowIdsObj = (JSONObject)resultHash.get("idValueToRowIds");
@@ -76,26 +76,29 @@ public class MultiSelectChildValueProcessor {
 		JSONObject otherRequestParamObj = requestObj.getJSONObject("otherRequestParam");
 		if(otherRequestParamObj != null && !otherRequestParamObj.isNullObject()){
 			JSONObject multiSelectsObj = otherRequestParamObj.getJSONObject("multiSelects");
-			if(multiSelectsObj != null && !multiSelectsObj.isNullObject() && multiSelectsObj.containsKey(childDataName)){
-			   JSONArray multiSelectsArray = multiSelectsObj.getJSONArray(childDataName);
-			   for(int i = 0; i < multiSelectsArray.size(); i++){
-				   JSONObject multiSelectObj = multiSelectsArray.getJSONObject(i);
-				   String rowId = multiSelectObj.getString("rowId");
-				   String idValue = rowIdToIdValues.get(rowId);
+			if(multiSelectsObj != null && !multiSelectsObj.isNullObject() && multiSelectsObj.containsKey(parentDataName)){
+				JSONObject parentMultiSelectsObj = multiSelectsObj.getJSONObject(parentDataName);
+				if(parentMultiSelectsObj != null && !parentMultiSelectsObj.isNullObject() && parentMultiSelectsObj.containsKey(childDataName)){
+					JSONArray multiSelectsArray = parentMultiSelectsObj.getJSONArray(childDataName);
+					for(int i = 0; i < multiSelectsArray.size(); i++){
+						JSONObject multiSelectObj = multiSelectsArray.getJSONObject(i);
+						String rowId = multiSelectObj.getString("rowId");
+						String idValue = rowIdToIdValues.get(rowId);
 				   
-				   //删除以前的子表记录
-				   this.dBParserAccess.deleteByData(dbSession, childData, parentIdFieldName, "=", idValue);
+						//删除以前的子表记录
+						this.dBParserAccess.deleteByData(dbSession, childData, parentIdFieldName, "=", idValue);
 				   
-				   JSONArray valueArray = multiSelectObj.getJSONArray("values");
-				   for(int j = 0; j < valueArray.size(); j++){
-					   String value = valueArray.getString(j);
-					   HashMap<String, Object> fieldValues = new HashMap<String, Object>();
-					   fieldValues.put(parentIdFieldName, idValue);
-					   fieldValues.put(valueFieldName, value);				
+						JSONArray valueArray = multiSelectObj.getJSONArray("values");
+						for(int j = 0; j < valueArray.size(); j++){
+							String value = valueArray.getString(j);
+							HashMap<String, Object> fieldValues = new HashMap<String, Object>();
+							fieldValues.put(parentIdFieldName, idValue);
+							fieldValues.put(valueFieldName, value);				
 					   
-					   //添加新记录
-					   this.dBParserAccess.insertByData(dbSession, childData, fieldValues);
-				   }			   
+							//添加新记录
+							this.dBParserAccess.insertByData(dbSession, childData, fieldValues);
+						}		
+					}
 			   	}
 			}
 		}

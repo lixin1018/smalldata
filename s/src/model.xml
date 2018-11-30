@@ -125,4 +125,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	<bean id="test_DocAParent" class="com.novacloud.test.Test_DocAParentImpl" scope="prototype"> 
 		<property name="multiSelectChildValueProcessor" ref="multiSelectChildValueProcessor" />
 	</bean>	
+	<bean id="test_DocAChild5" class="com.novacloud.test.Test_DocAChild5Impl" scope="prototype"> 
+		<property name="multiSelectChildValueProcessor" ref="multiSelectChildValueProcessor" />
+	</bean>	
 </beans>

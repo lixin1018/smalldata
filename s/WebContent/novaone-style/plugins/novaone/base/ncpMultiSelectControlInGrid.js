@@ -6,6 +6,7 @@ function NcpMultiSelectControlInGrid(p){
 	this.childDataModel = p.childDataModel; 
 	this.childViewModel = p.childViewModel;
 	this.parentDataModel = p.parentDataModel;
+	this.parentDataName = this.parentDataModel.name;
 	this.parentViewModel = p.parentViewModel;
 	
 	this.childListFieldName = p.childListFieldName; 
@@ -47,15 +48,19 @@ function NcpMultiSelectControlInGrid(p){
 		var externalObject = {				
 			beforeDoSave: function(param){
 				var rowIds = new Array();
-				if(param.insert.count()>0){ 
+				if(param.insert != null && param.insert.count() > 0){ 
 					//新建保存
-					var row = param.insert.getRowByIndex(0);
-					rowIds.push(row.rowId);
+					for(var i = 0; i < param.insert.count(); i++){
+						var row = param.insert.getRowByIndex(i);
+						rowIds.push(row.rowId);
+					}
 				}
-				else{
-					//编辑保存
-					var row = param.update.getRowByIndex(0);
-					rowIds.push(row.rowId);
+				else if(param.update != null && param.update.count() > 0){
+					//编辑保存 
+					for(var i = 0; i < param.update.count(); i++){
+						var row = param.update.getRowByIndex(i);
+						rowIds.push(row.rowId);
+					}
 				} 
 			
 				if(param.otherRequestParam == null){
@@ -64,9 +69,13 @@ function NcpMultiSelectControlInGrid(p){
 				if(param.otherRequestParam.multiSelects == null){
 					param.otherRequestParam["multiSelects"] = {};
 				}
+				
+				if(param.otherRequestParam.multiSelects[that.parentDataName] == null){
+					param.otherRequestParam.multiSelects[that.parentDataName] = {};
+				}
 			
 				var multiSelectsArray = new Array();
-				param.otherRequestParam.multiSelects[that.childDataModel.name] = multiSelectsArray;
+				param.otherRequestParam.multiSelects[that.parentDataName][that.childDataModel.name] = multiSelectsArray;
 				for(var i = 0; i < rowIds.length; i++){
 					var rowId = rowIds[i];
 					var valuesArray = $("#" + rowId+"_" + that.childDataModel.name).popMultiDispunit("getValue");
@@ -92,7 +101,7 @@ function NcpMultiSelectControlInGrid(p){
 				return true;
 			},
 			processSaveData: function(param){					
-				var multiSelectsArray = param.otherRequestParam.multiSelects[that.childDataModel.name];
+				var multiSelectsArray = param.otherRequestParam.multiSelects[that.parentDataName][that.childDataModel.name];
 				var fieldModel = that.childDataModel.fields[that.childListFieldName];
 				var destKeyFieldName = fieldModel.foreignKeyName;
 				var destValueFieldName = fieldModel.name;
